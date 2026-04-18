@@ -216,6 +216,13 @@
     flex: 1; min-width: 0; padding: 8px 14px; border: none;
     font-size: 13px; outline: none; background: var(--card);
   }
+  .search-mode-btn {
+    padding: 4px 10px; border: none; border-left: 1px solid var(--border);
+    font-size: 11px; font-weight: 600; cursor: pointer; flex-shrink: 0;
+    background: var(--tag-bg); color: var(--text-secondary); transition: all 0.15s;
+  }
+  .search-mode-btn:hover { background: var(--primary-light); }
+  .search-mode-btn.fuzzy { background: var(--primary); color: white; }
   select {
     padding: 8px 28px 8px 10px; border: 1px solid var(--border); border-radius: 8px;
     font-size: 13px; background: var(--card); outline: none; cursor: pointer;
@@ -493,7 +500,8 @@
         <option value="author">Author</option>
         <option value="abstract">Abstract</option>
       </select>
-      <input class="search-box" id="searchInput" type="text" placeholder="Search papers...">
+      <input class="search-box" id="searchInput" type="text" placeholder="Search papers (exact phrase)...">
+      <button class="search-mode-btn" id="searchModeBtn" onclick="toggleSearchMode()" title="Toggle fuzzy (split-word) matching">Exact</button>
     </div>
     <button class="collection-btn" id="collectionBtn" onclick="toggleCollectionView()" style="display:none;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -658,6 +666,7 @@ let codeOnly = false;
 let quickDateFilter = ''; // '', 'today', 'week'
 let collection = new Map(); // Paper_link -> paper object
 let collectionView = false;
+let fuzzySearch = false;
 
 function initDataSourceSelect() {
   const sel = document.getElementById('dataSource');
@@ -883,21 +892,19 @@ function applyFilters() {
     if (codeOnly && !(p.code && p.code.trim())) return false;
     if (q) {
       const scope = document.getElementById('searchScope').value;
-      if (scope === 'author') {
-        // Author: phrase match — search full query as-is in Authors field
-        if (!(p.Authors || '').toLowerCase().includes(q)) return false;
-      } else if (scope === 'title') {
-        const terms = q.split(/\s+/);
-        const title = (p.Title || '').toLowerCase();
-        if (!terms.every(t => title.includes(t))) return false;
-      } else if (scope === 'abstract') {
-        const terms = q.split(/\s+/);
-        const abs = (p.Abstract || '').toLowerCase();
-        if (!terms.every(t => abs.includes(t))) return false;
-      } else {
-        const haystack = [p.Title, p.Authors, p.Abstract, p.Type, p.Subtype, p['abbr.'], p.Publication, p._vlm_keywords || '', p._tasks || ''].join(' ').toLowerCase();
+      let haystack;
+      if (scope === 'author') haystack = (p.Authors || '').toLowerCase();
+      else if (scope === 'title') haystack = (p.Title || '').toLowerCase();
+      else if (scope === 'abstract') haystack = (p.Abstract || '').toLowerCase();
+      else haystack = [p.Title, p.Authors, p.Abstract, p.Type, p.Subtype, p['abbr.'], p.Publication, p._vlm_keywords || '', p._tasks || ''].join(' ').toLowerCase();
+
+      if (fuzzySearch) {
+        // Fuzzy: split into words, all must appear
         const terms = q.split(/\s+/);
         if (!terms.every(t => haystack.includes(t))) return false;
+      } else {
+        // Exact: full phrase match
+        if (!haystack.includes(q)) return false;
       }
     }
     return true;
@@ -906,11 +913,11 @@ function applyFilters() {
   // Relevance sort when searching, otherwise normal sort
   if (q) {
     const scope = document.getElementById('searchScope').value;
-    const terms = q.split(/\s+/);
-    if (scope !== 'all') {
-      // Scoped search: just use default sort
+    if (scope !== 'all' || !fuzzySearch) {
       filtered.sort(sortCompare);
     } else {
+      // Fuzzy + All: rank by where the terms appear
+      const terms = q.split(/\s+/);
       filtered.forEach(p => {
         const title = (p.Title || '').toLowerCase();
         const abbr = (p['abbr.'] || '').toLowerCase();
@@ -1423,6 +1430,15 @@ function toggleCollectionView() {
     btn.style.borderColor = '';
     applyFilters();
   }
+}
+
+function toggleSearchMode() {
+  fuzzySearch = !fuzzySearch;
+  const btn = document.getElementById('searchModeBtn');
+  btn.textContent = fuzzySearch ? 'Fuzzy' : 'Exact';
+  btn.classList.toggle('fuzzy', fuzzySearch);
+  document.getElementById('searchInput').placeholder = fuzzySearch ? 'Search papers (split-word fuzzy)...' : 'Search papers (exact phrase)...';
+  if (document.getElementById('searchInput').value) applyFilters();
 }
 
 function toggleQuickFilter(mode) {
