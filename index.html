@@ -24,6 +24,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+  .main-wrap { flex: 1; }
 
   /* Header */
   .header {
@@ -397,6 +398,7 @@
 </head>
 <body>
 
+<div class="main-wrap">
 <div class="loading-overlay" id="loadingOverlay">
   <div class="loading-scene">
     <div class="loading-orbit"></div>
@@ -482,7 +484,8 @@
 <div class="paper-list" id="paperList"></div>
 <div class="pagination" id="pagination"></div>
 
-<footer style="margin-top:auto;padding:16px 0;text-align:center;font-size:11px;color:#94a3b8;">
+</div><!-- .main-wrap -->
+<footer style="padding:16px 0;text-align:center;font-size:11px;color:#94a3b8;">
   <a href='https://www.counters-free.net/' style="color:inherit;text-decoration:none;">visits:</a>
   <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=fb6eb33e03e201b26048add495de3cda89f56796'></script>
   <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1536583/t/5"></script>
