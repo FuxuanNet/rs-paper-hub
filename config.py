@@ -1,15 +1,8 @@
 """Configuration for arXiv remote sensing paper scraper."""
 
 # Search parameters
-SEARCH_QUERY = (
-    '(ti:"remote sensing" OR abs:"remote sensing")'
-    " AND ("
-    "cat:eess.IV OR cat:eess.SP OR "
-    "cat:cs.AI OR cat:cs.LG OR cat:cs.MM OR "
-    "cat:physics.geo-ph OR cat:physics.ao-ph OR "
-    "cat:stat.ML OR cat:cs.RO OR cat:cs.NE"
-    ")"
-)
+# Search parameters — 不限分类，全量搜索
+SEARCH_QUERY = 'ti:"remote sensing" OR abs:"remote sensing"'
 
 # Date range
 START_YEAR = 2020

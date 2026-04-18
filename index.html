@@ -182,6 +182,13 @@
   <input class="search-box" id="searchInput" type="text" placeholder="Search title, authors, abstract, keywords...">
   <select id="typeFilter"><option value="">All Types</option></select>
   <select id="yearFilter"><option value="">All Years</option></select>
+  <select id="monthFilter">
+    <option value="">All Months</option>
+    <option value="1">Jan</option><option value="2">Feb</option><option value="3">Mar</option>
+    <option value="4">Apr</option><option value="5">May</option><option value="6">Jun</option>
+    <option value="7">Jul</option><option value="8">Aug</option><option value="9">Sep</option>
+    <option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
+  </select>
   <select id="vlmFilter" style="display:none;">
     <option value="">All VLM</option>
     <option value="true">VLM Only</option>
@@ -360,6 +367,7 @@ function applyFilters() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
   const type = document.getElementById('typeFilter').value;
   const year = document.getElementById('yearFilter').value;
+  const month = document.getElementById('monthFilter').value;
 
   const vlm = document.getElementById('vlmFilter').value;
   const vlmKw = document.getElementById('vlmKeywordFilter').value;
@@ -368,6 +376,7 @@ function applyFilters() {
   filtered = allPapers.filter(p => {
     if (type && p.Type !== type) return false;
     if (year && String(p.Year) !== year) return false;
+    if (month && String(p.Month) !== month) return false;
     if (cat && p.Category !== cat) return false;
     if (vlm === 'true' && !p._is_vlm) return false;
     if (vlm === 'false' && p._is_vlm) return false;
@@ -548,6 +557,7 @@ function renderMathInPage() {
 document.getElementById('searchInput').addEventListener('input', debounce(applyFilters, 300));
 document.getElementById('typeFilter').addEventListener('change', applyFilters);
 document.getElementById('yearFilter').addEventListener('change', applyFilters);
+document.getElementById('monthFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmKeywordFilter').addEventListener('change', applyFilters);
 document.getElementById('categoryFilter').addEventListener('change', applyFilters);

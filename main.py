@@ -104,6 +104,10 @@ def main():
         help="Skip papers already in output CSV"
     )
     parser.add_argument(
+        "--update", action="store_true",
+        help="Quick update: only scrape recent 3 months and append new papers"
+    )
+    parser.add_argument(
         "--status", action="store_true",
         help="Show current progress and exit"
     )
@@ -136,6 +140,21 @@ def main():
         download_papers(papers, args.output_dir, progress=progress)
         logger.info("Done!")
         return
+
+    # Update mode: only scrape recent months, auto-incremental
+    if args.update:
+        from datetime import datetime
+        now = datetime.now()
+        args.start_year = now.year if now.month > 3 else now.year - 1
+        start_month = now.month - 3 if now.month > 3 else now.month + 9
+        args.end_year = now.year
+        args.incremental = True
+        # Reset scrape progress so it doesn't skip
+        progress.data["scrape"]["completed"] = False
+        progress.data["scrape"]["last_year"] = args.start_year
+        progress.data["scrape"]["last_month"] = max(start_month - 1, 1)
+        progress.save()
+        logger.info(f"Update mode: scraping {args.start_year}-{start_month:02d} to {now.year}-{now.month:02d}")
 
     # Step 1: Fetch from arXiv (resumable by month)
     if progress.scrape_completed and not args.max_results:
