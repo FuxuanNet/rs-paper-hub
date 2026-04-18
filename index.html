@@ -550,9 +550,9 @@ function render() {
     <div class="paper-card" onclick="toggleAbstract(event, ${idx})">
       <div class="paper-title"><a href="${escHtml(p.Paper_link)}" target="_blank" onclick="event.stopPropagation()">${renderLatex(p.Title)}</a></div>
       <div class="paper-meta">
+        <span class="tag year">${p.Date || (p.Year + '-' + String(p.Month).padStart(2,'0'))}</span>
         <span class="tag">${escHtml(p.Type)}</span>
         ${p.Subtype ? `<span class="tag">${escHtml(p.Subtype.substring(0, 50))}</span>` : ''}
-        <span class="tag year">${p.Date || (p.Year + '-' + String(p.Month).padStart(2,'0'))}</span>
         ${pubTag}
         ${catTag}${vlmTag}${vlmKwTags}
       </div>
