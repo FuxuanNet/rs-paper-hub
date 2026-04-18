@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="asset/logo.png" alt="RS-Paper-Hub" width="200">
+<img src="asset/logo.png" alt="RS-Paper-Hub" width="100">
 
 # RS-Paper-Hub
 

@@ -71,9 +71,20 @@
     background: var(--card); border-radius: 12px; padding: 20px;
     box-shadow: var(--shadow); border: 1px solid var(--border);
   }
-  .chart-card h3 { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+  .chart-card h3 { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+  .chart-reset {
+    font-size: 11px; color: var(--primary); cursor: pointer; padding: 2px 8px;
+    border: 1px solid var(--primary); border-radius: 4px; background: none;
+    display: none; transition: all 0.15s;
+  }
+  .chart-reset:hover { background: var(--primary); color: white; }
   .bar-chart { display: flex; flex-direction: column; gap: 6px; }
-  .bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+  .bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; border-radius: 4px; padding: 2px 4px; transition: background 0.15s; }
+  .bar-row:hover { background: var(--primary-light); }
+  .bar-row.active { background: var(--primary-light); font-weight: 600; }
+  #oldYears.collapsed { display: none; }
+  .toggle-arrow { display: inline-block; font-size: 10px; transition: transform 0.2s; margin-right: 4px; }
+  .toggle-arrow.open { transform: rotate(90deg); }
   .bar-label { width: 140px; text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .bar-track { flex: 1; height: 22px; background: var(--tag-bg); border-radius: 4px; overflow: hidden; position: relative; }
   .bar-fill { height: 100%; background: linear-gradient(90deg, #4f46e5, #7c3aed); border-radius: 4px; transition: width 0.4s; min-width: 2px; }
@@ -227,15 +238,15 @@
 
 <div class="charts" id="chartsArea" style="display: none;">
   <div class="chart-card">
-    <h3>Papers by Year</h3>
+    <h3><span>Papers by Year</span><button class="chart-reset" id="yearReset" onclick="clearChartFilter('year')">Reset</button></h3>
     <div class="bar-chart" id="yearChart"></div>
   </div>
   <div class="chart-card">
-    <h3>Top Types</h3>
+    <h3><span>Top Types</span><button class="chart-reset" id="typeReset" onclick="clearChartFilter('type')">Reset</button></h3>
     <div class="bar-chart" id="typeChart"></div>
   </div>
   <div class="chart-card" id="categoryChartCard" style="display:none;">
-    <h3>Category Distribution</h3>
+    <h3><span>Category Distribution</span><button class="chart-reset" id="categoryReset" onclick="clearChartFilter('category')">Reset</button></h3>
     <div class="bar-chart" id="categoryChart"></div>
   </div>
 </div>
@@ -303,6 +314,7 @@ async function loadData(file) {
   typeSelect.innerHTML = '<option value="">All Types</option>';
   yearSelect.innerHTML = '<option value="">All Years</option>';
   document.getElementById('yearRangeGroup').style.display = 'none';
+  chartSel.year.clear(); chartSel.type.clear(); chartSel.category.clear();
   document.getElementById('searchInput').value = '';
   // Show/hide VLM filters based on data
   const hasVlm = allPapers.some(p => '_is_vlm' in p);
@@ -406,7 +418,7 @@ function renderStats(papers) {
 
 function applyFilters() {
   const q = document.getElementById('searchInput').value.toLowerCase().trim();
-  const type = document.getElementById('typeFilter').value;
+  const typeDD = document.getElementById('typeFilter').value;
   const yearVal = document.getElementById('yearFilter').value;
   const yearFrom = document.getElementById('yearFromFilter').value;
   const yearTo = document.getElementById('yearToFilter').value;
@@ -414,16 +426,27 @@ function applyFilters() {
 
   const vlm = document.getElementById('vlmFilter').value;
   const vlmKw = document.getElementById('vlmKeywordFilter').value;
-  const cat = document.getElementById('categoryFilter').value;
+  const catDD = document.getElementById('categoryFilter').value;
+
+  // Effective filters: chart multi-select takes priority, dropdown as fallback
+  const yearSet = chartSel.year.size > 0 ? chartSel.year : null;
+  const typeSet = chartSel.type.size > 0 ? chartSel.type : null;
+  const catSet = chartSel.category.size > 0 ? chartSel.category : null;
 
   filtered = allPapers.filter(p => {
-    if (type && p.Type !== type) return false;
-    if (yearVal === '_range') {
+    // Type filter
+    if (typeSet) { if (!typeSet.has(p.Type)) return false; }
+    else if (typeDD && p.Type !== typeDD) return false;
+    // Year filter
+    if (yearSet) { if (!yearSet.has(String(p.Year))) return false; }
+    else if (yearVal === '_range') {
       if (yearFrom && Number(p.Year) < Number(yearFrom)) return false;
       if (yearTo && Number(p.Year) > Number(yearTo)) return false;
     } else if (yearVal && String(p.Year) !== yearVal) return false;
     if (month && String(p.Month) !== month) return false;
-    if (cat && p.Category !== cat) return false;
+    // Category filter
+    if (catSet) { if (!catSet.has(p.Category)) return false; }
+    else if (catDD && p.Category !== catDD) return false;
     if (vlm === 'true' && !p._is_vlm) return false;
     if (vlm === 'false' && p._is_vlm) return false;
     if (vlmKw && !(p._vlm_keywords || '').includes(vlmKw)) return false;
@@ -527,29 +550,84 @@ function goPage(p) {
   window.scrollTo({ top: document.querySelector('.paper-list').offsetTop - 20, behavior: 'smooth' });
 }
 
+// Multi-select chart filters: each key holds a Set of selected values
+const chartSel = { year: new Set(), type: new Set(), category: new Set() };
+let _chartDriven = false; // prevent dropdown change listener from clearing chartSel
+
+function toggleChartFilter(key, value) {
+  if (chartSel[key].has(value)) chartSel[key].delete(value);
+  else chartSel[key].add(value);
+  syncDropdownFromChart(key);
+  applyFilters();
+}
+
+function clearChartFilter(key) {
+  chartSel[key].clear();
+  syncDropdownFromChart(key);
+  applyFilters();
+}
+
+function syncDropdownFromChart(key) {
+  _chartDriven = true;
+  const selMap = { year: 'yearFilter', type: 'typeFilter', category: 'categoryFilter' };
+  const sel = document.getElementById(selMap[key]);
+  if (chartSel[key].size === 0) {
+    sel.value = '';
+  } else if (chartSel[key].size === 1) {
+    sel.value = String([...chartSel[key]][0]);
+  } else {
+    sel.value = '';
+  }
+  if (key === 'year') document.getElementById('yearRangeGroup').style.display = 'none';
+  _chartDriven = false;
+}
+
 function renderCharts() {
   if (!chartsVisible) return;
+
+  // Show/hide reset buttons with selection count
+  const yr = document.getElementById('yearReset'), tr = document.getElementById('typeReset'), cr = document.getElementById('categoryReset');
+  yr.style.display = chartSel.year.size > 0 ? 'inline-block' : 'none';
+  yr.textContent = chartSel.year.size > 1 ? `Reset (${chartSel.year.size})` : 'Reset';
+  tr.style.display = chartSel.type.size > 0 ? 'inline-block' : 'none';
+  tr.textContent = chartSel.type.size > 1 ? `Reset (${chartSel.type.size})` : 'Reset';
+  cr.style.display = chartSel.category.size > 0 ? 'inline-block' : 'none';
+  cr.textContent = chartSel.category.size > 1 ? `Reset (${chartSel.category.size})` : 'Reset';
+
+  // Charts always render from allPapers so all options stay visible
   // Year chart
   const yearCounts = {};
-  filtered.forEach(p => { yearCounts[p.Year] = (yearCounts[p.Year] || 0) + 1; });
+  allPapers.forEach(p => { yearCounts[p.Year] = (yearCounts[p.Year] || 0) + 1; });
   const yearEntries = Object.entries(yearCounts).sort((a,b) => a[0] - b[0]);
   const maxYear = Math.max(...yearEntries.map(e => e[1]));
-  document.getElementById('yearChart').innerHTML = yearEntries.map(([y, c]) =>
-    `<div class="bar-row"><span class="bar-label">${y}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxYear*100}%"></div><span class="bar-value">${c}</span></div></div>`
-  ).join('');
+  const oldYears = yearEntries.filter(([y]) => Number(y) < 2020);
+  const newYears = yearEntries.filter(([y]) => Number(y) >= 2020);
+  const yearBar = (y, c) => `<div class="bar-row${chartSel.year.has(y)?' active':''}" onclick="toggleChartFilter('year','${y}')"><span class="bar-label">${y}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxYear*100}%"></div><span class="bar-value">${c}</span></div></div>`;
+  let yearHtml = '';
+  if (oldYears.length > 0) {
+    const oldTotal = oldYears.reduce((s, e) => s + e[1], 0);
+    const hasOldActive = oldYears.some(([y]) => chartSel.year.has(y));
+    yearHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('oldYears').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasOldActive?' open':''}">&#9654;</span> Before 2020</span><div class="bar-track"><div class="bar-fill" style="width:${oldTotal/maxYear*100}%;opacity:0.5"></div><span class="bar-value">${oldTotal}</span></div></div>`;
+    yearHtml += `<div id="oldYears" class="${hasOldActive?'':'collapsed'}">`;
+    yearHtml += oldYears.map(([y, c]) => yearBar(y, c)).join('');
+    yearHtml += '</div>';
+  }
+  yearHtml += newYears.map(([y, c]) => yearBar(y, c)).join('');
+  document.getElementById('yearChart').innerHTML = yearHtml;
 
   // Type chart
   const typeCounts = {};
-  filtered.forEach(p => { if(p.Type) typeCounts[p.Type] = (typeCounts[p.Type] || 0) + 1; });
+  allPapers.forEach(p => { if(p.Type) typeCounts[p.Type] = (typeCounts[p.Type] || 0) + 1; });
   const typeEntries = Object.entries(typeCounts).sort((a,b) => b[1] - a[1]).slice(0, 10);
   const maxType = Math.max(...typeEntries.map(e => e[1]));
-  document.getElementById('typeChart').innerHTML = typeEntries.map(([t, c]) =>
-    `<div class="bar-row"><span class="bar-label" title="${t}">${t}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxType*100}%"></div><span class="bar-value">${c}</span></div></div>`
-  ).join('');
+  document.getElementById('typeChart').innerHTML = typeEntries.map(([t, c]) => {
+    const safe = t.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    return `<div class="bar-row${chartSel.type.has(t)?' active':''}" onclick="toggleChartFilter('type','${safe}')"><span class="bar-label" title="${escHtml(t)}">${escHtml(t)}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxType*100}%"></div><span class="bar-value">${c}</span></div></div>`;
+  }).join('');
 
-  // Category chart (only if data has Category field)
+  // Category chart
   const catCounts = {};
-  filtered.forEach(p => { if (p.Category) catCounts[p.Category] = (catCounts[p.Category] || 0) + 1; });
+  allPapers.forEach(p => { if (p.Category) catCounts[p.Category] = (catCounts[p.Category] || 0) + 1; });
   const catCard = document.getElementById('categoryChartCard');
   const catEntries = Object.entries(catCounts).sort((a,b) => b[1] - a[1]);
   if (catEntries.length > 0) {
@@ -558,7 +636,8 @@ function renderCharts() {
     const colors = { Method: '#4f46e5', Survey: '#0891b2', Dataset: '#059669', 'Dataset+Method': '#7c3aed', Application: '#d97706', Other: '#94a3b8' };
     document.getElementById('categoryChart').innerHTML = catEntries.map(([c, n]) => {
       const color = colors[c] || '#4f46e5';
-      return `<div class="bar-row"><span class="bar-label">${c}</span><div class="bar-track"><div class="bar-fill" style="width:${n/maxCat*100}%;background:${color}"></div><span class="bar-value">${n}</span></div></div>`;
+      const safe = c.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      return `<div class="bar-row${chartSel.category.has(c)?' active':''}" onclick="toggleChartFilter('category','${safe}')"><span class="bar-label">${escHtml(c)}</span><div class="bar-track"><div class="bar-fill" style="width:${n/maxCat*100}%;background:${color}"></div><span class="bar-value">${n}</span></div></div>`;
     }).join('');
   } else {
     catCard.style.display = 'none';
@@ -660,8 +739,9 @@ function renderMathInPage() {
 
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', debounce(applyFilters, 300));
-document.getElementById('typeFilter').addEventListener('change', applyFilters);
+document.getElementById('typeFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.type.clear(); applyFilters(); });
 document.getElementById('yearFilter').addEventListener('change', () => {
+  if (!_chartDriven) chartSel.year.clear();
   const v = document.getElementById('yearFilter').value;
   document.getElementById('yearRangeGroup').style.display = v === '_range' ? 'flex' : 'none';
   applyFilters();
@@ -671,7 +751,7 @@ document.getElementById('yearToFilter').addEventListener('change', applyFilters)
 document.getElementById('monthFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmKeywordFilter').addEventListener('change', applyFilters);
-document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+document.getElementById('categoryFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.category.clear(); applyFilters(); });
 document.querySelectorAll('.sort-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
