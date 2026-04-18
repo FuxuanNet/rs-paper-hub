@@ -203,13 +203,15 @@
   }
   .search-wrap:focus-within { border-color: var(--primary); }
   .search-scope {
-    padding: 8px 6px 8px 10px; border: none; border-right: 1px solid var(--border);
-    font-size: 12px; font-weight: 500; color: var(--primary); background: var(--tag-bg);
-    outline: none; cursor: pointer; appearance: none; -webkit-appearance: none;
-    background-image: url("image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%234f46e5' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 4px center;
-    padding-right: 18px; flex-shrink: 0;
+    padding: 8px 22px 8px 10px; border: none; border-right: 1px solid var(--border);
+    font-size: 13px; font-weight: 600; color: var(--primary); background: var(--tag-bg);
+    outline: none; cursor: pointer;
+    appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%234f46e5' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 8px center;
+    flex-shrink: 0;
   }
+  .search-scope:hover { background: var(--primary-light); }
   .search-box {
     flex: 1; min-width: 0; padding: 8px 14px; border: none;
     font-size: 13px; outline: none; background: var(--card);
