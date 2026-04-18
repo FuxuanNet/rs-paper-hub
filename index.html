@@ -114,7 +114,7 @@
   .bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; border-radius: 4px; padding: 2px 4px; transition: background 0.15s; }
   .bar-row:hover { background: var(--primary-light); }
   .bar-row.active { background: var(--primary-light); font-weight: 600; }
-  #oldYears.collapsed { display: none; }
+  #oldYears.collapsed, #restTypes.collapsed { display: none; }
   .toggle-arrow { display: inline-block; font-size: 10px; transition: transform 0.2s; margin-right: 4px; }
   .toggle-arrow.open { transform: rotate(90deg); }
   .bar-label { width: 140px; text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -216,9 +216,12 @@
 
   /* Toggle charts */
   .toggle-charts {
-    padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px;
-    background: var(--card); cursor: pointer; font-size: 12px;
+    padding: 8px 14px; border: none; border-radius: 8px;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white;
+    cursor: pointer; font-size: 12px; font-weight: 500;
+    box-shadow: 0 2px 6px rgba(79,70,229,0.3); transition: all 0.2s;
   }
+  .toggle-charts:hover { box-shadow: 0 4px 12px rgba(79,70,229,0.4); transform: translateY(-1px); }
 
   /* Bibtex modal */
   .modal-overlay {
@@ -711,32 +714,44 @@ function renderCharts() {
   // Year chart
   const yearCounts = {};
   allPapers.forEach(p => { yearCounts[p.Year] = (yearCounts[p.Year] || 0) + 1; });
-  const yearEntries = Object.entries(yearCounts).sort((a,b) => a[0] - b[0]);
+  const yearEntries = Object.entries(yearCounts).sort((a,b) => b[0] - a[0]);
   const maxYear = Math.max(...yearEntries.map(e => e[1]));
-  const oldYears = yearEntries.filter(([y]) => Number(y) < 2020);
-  const newYears = yearEntries.filter(([y]) => Number(y) >= 2020);
+  const cutoffYear = new Date().getFullYear() - 9;
+  const recentYears = yearEntries.filter(([y]) => Number(y) >= cutoffYear);
+  const oldYears = yearEntries.filter(([y]) => Number(y) < cutoffYear);
   const yearBar = (y, c) => `<div class="bar-row${chartSel.year.has(y)?' active':''}" onclick="toggleChartFilter('year','${y}')"><span class="bar-label">${y}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxYear*100}%"></div><span class="bar-value">${c}</span></div></div>`;
-  let yearHtml = '';
+  let yearHtml = recentYears.map(([y, c]) => yearBar(y, c)).join('');
   if (oldYears.length > 0) {
     const oldTotal = oldYears.reduce((s, e) => s + e[1], 0);
     const hasOldActive = oldYears.some(([y]) => chartSel.year.has(y));
-    yearHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('oldYears').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasOldActive?' open':''}">&#9654;</span> Before 2020</span><div class="bar-track"><div class="bar-fill" style="width:${oldTotal/maxYear*100}%;opacity:0.5"></div><span class="bar-value">${oldTotal}</span></div></div>`;
+    yearHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('oldYears').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasOldActive?' open':''}">&#9654;</span> Before ${cutoffYear}</span><div class="bar-track"><div class="bar-fill" style="width:${oldTotal/maxYear*100}%;opacity:0.5"></div><span class="bar-value">${oldTotal}</span></div></div>`;
     yearHtml += `<div id="oldYears" class="${hasOldActive?'':'collapsed'}">`;
     yearHtml += oldYears.map(([y, c]) => yearBar(y, c)).join('');
     yearHtml += '</div>';
   }
-  yearHtml += newYears.map(([y, c]) => yearBar(y, c)).join('');
   document.getElementById('yearChart').innerHTML = yearHtml;
 
   // Type chart
   const typeCounts = {};
   allPapers.forEach(p => { if(p.Type) typeCounts[p.Type] = (typeCounts[p.Type] || 0) + 1; });
-  const typeEntries = Object.entries(typeCounts).sort((a,b) => b[1] - a[1]).slice(0, 10);
+  const typeEntries = Object.entries(typeCounts).sort((a,b) => b[1] - a[1]);
   const maxType = Math.max(...typeEntries.map(e => e[1]));
-  document.getElementById('typeChart').innerHTML = typeEntries.map(([t, c]) => {
+  const topTypes = typeEntries.slice(0, 10);
+  const restTypes = typeEntries.slice(10);
+  const typeBar = ([t, c]) => {
     const safe = t.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     return `<div class="bar-row${chartSel.type.has(t)?' active':''}" onclick="toggleChartFilter('type','${safe}')"><span class="bar-label" title="${escHtml(t)}">${escHtml(t)}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxType*100}%"></div><span class="bar-value">${c}</span></div></div>`;
-  }).join('');
+  };
+  let typeHtml = topTypes.map(typeBar).join('');
+  if (restTypes.length > 0) {
+    const restTotal = restTypes.reduce((s, e) => s + e[1], 0);
+    const hasRestActive = restTypes.some(([t]) => chartSel.type.has(t));
+    typeHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTypes').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTypes.length} more</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxType*100}%;opacity:0.5"></div><span class="bar-value">${restTotal}</span></div></div>`;
+    typeHtml += `<div id="restTypes" class="${hasRestActive?'':'collapsed'}">`;
+    typeHtml += restTypes.map(typeBar).join('');
+    typeHtml += '</div>';
+  }
+  document.getElementById('typeChart').innerHTML = typeHtml;
 
   // Category chart
   const catCounts = {};
