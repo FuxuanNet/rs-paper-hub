@@ -223,7 +223,7 @@
   .bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; border-radius: 4px; padding: 2px 4px; transition: background 0.15s; }
   .bar-row:hover { background: var(--primary-light); }
   .bar-row.active { background: var(--primary-light); font-weight: 600; }
-  #oldYears.collapsed, #restTypes.collapsed { display: none; }
+  #oldYears.collapsed, #restTypes.collapsed, #restTasks.collapsed { display: none; }
   .toggle-arrow { display: inline-block; font-size: 10px; transition: transform 0.2s; margin-right: 4px; }
   .toggle-arrow.open { transform: rotate(90deg); }
   .bar-label { width: 140px; text-align: right; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -451,6 +451,10 @@
     <h3><span>Category Distribution</span><button class="chart-reset" id="categoryReset" onclick="clearChartFilter('category')">Reset</button></h3>
     <div class="bar-chart" id="categoryChart"></div>
   </div>
+  <div class="chart-card" id="taskChartCard" style="display:none;">
+    <h3><span>Task Distribution</span><button class="chart-reset" id="taskReset" onclick="clearChartFilter('task')">Reset</button></h3>
+    <div class="bar-chart" id="taskChart"></div>
+  </div>
 </div>
 
 <div class="paper-list" id="paperList"></div>
@@ -498,6 +502,12 @@ const ICON = {
   authors: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
   abstract: '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="17" y1="10" x2="3" y2="10"/><line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="14" x2="3" y2="14"/><line x1="17" y1="18" x2="3" y2="18"/></svg>',
 };
+const TASK_NAMES = {
+  CLS: 'Classification', ITR: 'Image-Text Retrieval', GeoLoc: 'Geolocation',
+  VQA: 'Visual Question Answering', IC: 'Image Captioning', CD: 'Change Detection',
+  OD: 'Object Detection', VG: 'Visual Grounding', SEG: 'Segmentation',
+  SR: 'Super-Resolution', '3D': '3D Reconstruction',
+};
 const DATA_SOURCES = [
   { label: 'All Papers', file: 'papers.json', key: 'all' },
   { label: 'VLM', file: 'papers_vlm.json', key: 'vlm' },
@@ -541,7 +551,7 @@ async function loadData(file) {
   typeSelect.innerHTML = '<option value="">All Types</option>';
   yearSelect.innerHTML = '<option value="">All Years</option>';
   document.getElementById('yearRangeGroup').style.display = 'none';
-  chartSel.year.clear(); chartSel.type.clear(); chartSel.category.clear();
+  chartSel.year.clear(); chartSel.type.clear(); chartSel.category.clear(); chartSel.task.clear();
   document.getElementById('searchInput').value = '';
   // Show/hide VLM filters based on data
   const hasVlm = allPapers.some(p => '_is_vlm' in p);
@@ -574,7 +584,7 @@ async function loadData(file) {
     });
     Object.entries(tasks).sort((a,b) => b[1] - a[1]).forEach(([t, n]) => {
       const o = document.createElement('option');
-      o.value = t; o.textContent = t + ' (' + n + ')'; taskSel.appendChild(o);
+      o.value = t; o.textContent = (TASK_NAMES[t] || t) + ' (' + n + ')'; taskSel.appendChild(o);
     });
   }
   populateFilters();
@@ -585,6 +595,8 @@ async function loadData(file) {
 async function init() {
   initDataSourceSelect();
   await loadData(document.getElementById('dataSource').value);
+  // Update recent papers badge
+  renderRecentList();
   // Hide loading overlay
   const overlay = document.getElementById('loadingOverlay');
   overlay.classList.add('hidden');
@@ -689,6 +701,7 @@ function applyFilters() {
   const yearSet = chartSel.year.size > 0 ? chartSel.year : null;
   const typeSet = chartSel.type.size > 0 ? chartSel.type : null;
   const catSet = chartSel.category.size > 0 ? chartSel.category : null;
+  const taskSet = chartSel.task.size > 0 ? chartSel.task : null;
 
   filtered = allPapers.filter(p => {
     // Type filter
@@ -707,7 +720,9 @@ function applyFilters() {
     if (vlm === 'true' && !p._is_vlm) return false;
     if (vlm === 'false' && p._is_vlm) return false;
     if (vlmKw && !(p._vlm_keywords || '').includes(vlmKw)) return false;
-    if (taskDD && !(p._tasks || '').split(';').includes(taskDD)) return false;
+    // Task filter: chart multi-select or dropdown
+    if (taskSet) { const pts = (p._tasks || '').split(';'); if (![...taskSet].some(t => pts.includes(t))) return false; }
+    else if (taskDD && !(p._tasks || '').split(';').includes(taskDD)) return false;
     if (codeOnly && !(p.code && p.code.trim())) return false;
     if (q) {
       const haystack = [p.Title, p.Authors, p.Abstract, p.Type, p.Subtype, p['abbr.'], p.Publication, p._vlm_keywords || '', p._tasks || ''].join(' ').toLowerCase();
@@ -764,7 +779,7 @@ function render() {
       return `<span class="tag vlm-kw">${escHtml(cleanRegexLabel(k))}</span>`;
     }).join('');
     const taskTags = (p._tasks || '').split(';').filter(t => t.trim()).map(t => {
-      return `<span class="tag task">${escHtml(t)}</span>`;
+      return `<span class="tag task">${escHtml(TASK_NAMES[t] || t)}</span>`;
     }).join('');
     return `
     <div class="paper-card" onclick="toggleAbstract(event, ${idx})">
@@ -825,7 +840,7 @@ function goPage(p) {
 }
 
 // Multi-select chart filters: each key holds a Set of selected values
-const chartSel = { year: new Set(), type: new Set(), category: new Set() };
+const chartSel = { year: new Set(), type: new Set(), category: new Set(), task: new Set() };
 let _chartDriven = false; // prevent dropdown change listener from clearing chartSel
 
 function toggleChartFilter(key, value) {
@@ -843,7 +858,7 @@ function clearChartFilter(key) {
 
 function syncDropdownFromChart(key) {
   _chartDriven = true;
-  const selMap = { year: 'yearFilter', type: 'typeFilter', category: 'categoryFilter' };
+  const selMap = { year: 'yearFilter', type: 'typeFilter', category: 'categoryFilter', task: 'taskFilter' };
   const sel = document.getElementById(selMap[key]);
   if (chartSel[key].size === 0) {
     sel.value = '';
@@ -867,6 +882,9 @@ function renderCharts() {
   tr.textContent = chartSel.type.size > 1 ? `Reset (${chartSel.type.size})` : 'Reset';
   cr.style.display = chartSel.category.size > 0 ? 'inline-block' : 'none';
   cr.textContent = chartSel.category.size > 1 ? `Reset (${chartSel.category.size})` : 'Reset';
+  const tkr = document.getElementById('taskReset');
+  tkr.style.display = chartSel.task.size > 0 ? 'inline-block' : 'none';
+  tkr.textContent = chartSel.task.size > 1 ? `Reset (${chartSel.task.size})` : 'Reset';
 
   // Charts always render from allPapers so all options stay visible
   // Year chart
@@ -927,6 +945,37 @@ function renderCharts() {
     }).join('');
   } else {
     catCard.style.display = 'none';
+  }
+
+  // Task chart
+  const taskCounts = {};
+  allPapers.forEach(p => {
+    (p._tasks || '').split(';').filter(t => t.trim()).forEach(t => { taskCounts[t] = (taskCounts[t] || 0) + 1; });
+  });
+  const taskCard = document.getElementById('taskChartCard');
+  const taskEntries = Object.entries(taskCounts).sort((a,b) => b[1] - a[1]);
+  if (taskEntries.length > 0) {
+    taskCard.style.display = '';
+    const maxTask = Math.max(...taskEntries.map(e => e[1]));
+    const topTasks = taskEntries.slice(0, 5);
+    const restTasks = taskEntries.slice(5);
+    const taskBar = ([t, n]) => {
+      const safe = t.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+      const label = TASK_NAMES[t] || t;
+      return `<div class="bar-row${chartSel.task.has(t)?' active':''}" onclick="toggleChartFilter('task','${safe}')"><span class="bar-label" title="${escHtml(label)}">${escHtml(label)}</span><div class="bar-track"><div class="bar-fill" style="width:${n/maxTask*100}%;background:#c2410c"></div><span class="bar-value">${n}</span></div></div>`;
+    };
+    let taskHtml = topTasks.map(taskBar).join('');
+    if (restTasks.length > 0) {
+      const restTotal = restTasks.reduce((s, e) => s + e[1], 0);
+      const hasRestActive = restTasks.some(([t]) => chartSel.task.has(t));
+      taskHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTasks').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTasks.length} more (${restTotal})</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxTask*100}%;opacity:0.5;background:#c2410c"></div><span class="bar-value">${restTotal}</span></div></div>`;
+      taskHtml += `<div id="restTasks" class="${hasRestActive?'':'collapsed'}">`;
+      taskHtml += restTasks.map(taskBar).join('');
+      taskHtml += '</div>';
+    }
+    document.getElementById('taskChart').innerHTML = taskHtml;
+  } else {
+    taskCard.style.display = 'none';
   }
 }
 
@@ -1037,7 +1086,7 @@ document.getElementById('yearToFilter').addEventListener('change', applyFilters)
 document.getElementById('monthFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmFilter').addEventListener('change', applyFilters);
 document.getElementById('vlmKeywordFilter').addEventListener('change', applyFilters);
-document.getElementById('taskFilter').addEventListener('change', applyFilters);
+document.getElementById('taskFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.task.clear(); applyFilters(); });
 document.getElementById('categoryFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.category.clear(); applyFilters(); });
 document.querySelectorAll('.sort-btn').forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1071,6 +1120,61 @@ function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTi
 window.addEventListener('scroll', () => {
   document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
 });
+
+// Recent papers side panel
+let recentTab = 'daily';
+
+function toggleRecentPanel() {
+  const panel = document.getElementById('recentPanel');
+  const overlay = document.getElementById('recentOverlay');
+  const isOpen = panel.classList.toggle('open');
+  overlay.classList.toggle('show', isOpen);
+  if (isOpen) renderRecentList();
+}
+
+function switchRecentTab(tab, btn) {
+  recentTab = tab;
+  document.querySelectorAll('.recent-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderRecentList();
+}
+
+function renderRecentList() {
+  const list = document.getElementById('recentList');
+  const now = new Date();
+  const todayStr = now.toISOString().slice(0, 10);
+  const monday = new Date(now);
+  const day = monday.getDay();
+  monday.setDate(monday.getDate() - (day === 0 ? 6 : day - 1));
+  const mondayStr = monday.toISOString().slice(0, 10);
+
+  let papers;
+  if (recentTab === 'daily') {
+    papers = allPapers.filter(p => p.Date === todayStr);
+  } else {
+    papers = allPapers.filter(p => p.Date >= mondayStr);
+  }
+  papers.sort((a, b) => (b.Date || '').localeCompare(a.Date || ''));
+
+  // Update toggle badge
+  const toggle = document.getElementById('recentToggle');
+  const dailyCount = allPapers.filter(p => p.Date === todayStr).length;
+  toggle.textContent = dailyCount > 0 ? `NEW +${dailyCount}` : 'NEW PAPERS';
+
+  if (papers.length === 0) {
+    list.innerHTML = `<div class="recent-empty">${recentTab === 'daily' ? 'No papers today yet' : 'No papers this week'}</div>`;
+    return;
+  }
+
+  list.innerHTML = papers.map(p => {
+    const cats = [p.Type, p.Category].filter(Boolean).join(' / ');
+    return `<div class="recent-item" onclick="window.open('${escHtml(p.Paper_link)}','_blank')">
+      <div class="recent-item-date">${escHtml(p.Date)}</div>
+      <div class="recent-item-title">${escHtml(p.Title)}</div>
+      <div class="recent-item-meta">${escHtml(cats)}</div>
+    </div>`;
+  }).join('');
+}
 
 init();
 </script>
