@@ -214,6 +214,10 @@
     <h3>Top Types</h3>
     <div class="bar-chart" id="typeChart"></div>
   </div>
+  <div class="chart-card" id="categoryChartCard" style="display:none;">
+    <h3>Category Distribution</h3>
+    <div class="bar-chart" id="categoryChart"></div>
+  </div>
 </div>
 
 <div class="paper-list" id="paperList"></div>
@@ -499,6 +503,23 @@ function renderCharts() {
   document.getElementById('typeChart').innerHTML = typeEntries.map(([t, c]) =>
     `<div class="bar-row"><span class="bar-label" title="${t}">${t}</span><div class="bar-track"><div class="bar-fill" style="width:${c/maxType*100}%"></div><span class="bar-value">${c}</span></div></div>`
   ).join('');
+
+  // Category chart (only if data has Category field)
+  const catCounts = {};
+  filtered.forEach(p => { if (p.Category) catCounts[p.Category] = (catCounts[p.Category] || 0) + 1; });
+  const catCard = document.getElementById('categoryChartCard');
+  const catEntries = Object.entries(catCounts).sort((a,b) => b[1] - a[1]);
+  if (catEntries.length > 0) {
+    catCard.style.display = '';
+    const maxCat = Math.max(...catEntries.map(e => e[1]));
+    const colors = { Method: '#4f46e5', Survey: '#0891b2', Dataset: '#059669', 'Dataset+Method': '#7c3aed', Application: '#d97706', Other: '#94a3b8' };
+    document.getElementById('categoryChart').innerHTML = catEntries.map(([c, n]) => {
+      const color = colors[c] || '#4f46e5';
+      return `<div class="bar-row"><span class="bar-label">${c}</span><div class="bar-track"><div class="bar-fill" style="width:${n/maxCat*100}%;background:${color}"></div><span class="bar-value">${n}</span></div></div>`;
+    }).join('');
+  } else {
+    catCard.style.display = 'none';
+  }
 }
 
 function showBibtex(idx) {

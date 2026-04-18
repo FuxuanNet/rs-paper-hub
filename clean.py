@@ -101,7 +101,7 @@ def main():
 
     # Save
     columns = [
-        "Type", "Subtype", "Month", "Year", "Institute",
+        "Type", "Subtype", "Date", "Month", "Year", "Institute",
         "Title", "abbr.", "Paper_link", "Abstract",
         "code", "Publication", "BibTex", "Authors",
     ]

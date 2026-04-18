@@ -36,7 +36,7 @@ def save_results(papers: list[dict], output_dir: str):
     os.makedirs(output_dir, exist_ok=True)
 
     columns = [
-        "Type", "Subtype", "Month", "Year", "Institute",
+        "Type", "Subtype", "Date", "Month", "Year", "Institute",
         "Title", "abbr.", "Paper_link", "Abstract",
         "code", "Publication", "BibTex", "Authors",
     ]

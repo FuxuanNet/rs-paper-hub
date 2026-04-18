@@ -96,7 +96,7 @@ def main():
 
     # Output columns
     columns = [
-        "Category", "Type", "Subtype", "Month", "Year", "Institute",
+        "Category", "Type", "Subtype", "Date", "Month", "Year", "Institute",
         "Title", "abbr.", "Paper_link", "Abstract",
         "code", "Publication", "BibTex", "Authors",
     ]

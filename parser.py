@@ -112,6 +112,7 @@ def parse_result(result: arxiv.Result) -> dict:
     return {
         "Type": get_category_type(primary_cat),
         "Subtype": get_subtype(categories, primary_cat),
+        "Date": result.published.strftime("%Y-%m-%d"),
         "Month": result.published.month,
         "Year": result.published.year,
         "Institute": extract_institute(result),
