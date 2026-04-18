@@ -2,7 +2,7 @@
 
 # Search parameters
 # Search parameters — 不限分类，全量搜索
-SEARCH_QUERY = 'ti:"remote sensing" OR abs:"remote sensing"'
+SEARCH_QUERY = 'ti:"remote sensing" OR abs:"remote sensing" OR ti:"earth observation" OR abs:"earth observation"'
 
 # Date range
 START_YEAR = 2020

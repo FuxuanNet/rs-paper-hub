@@ -23,12 +23,14 @@ RS-Paper-Hub automatically scrapes remote sensing papers from arXiv (2020–pres
 ### Key Features
 
 - **Automated Scraping** — Fetch papers via arXiv API with rate limiting and retry
-- **Incremental Update** — `--update` grabs only the latest papers
+- **Incremental by Default** — Only new papers are fetched; duplicates auto-removed
 - **Resumable** — Progress tracked in `progress.json`; interrupted runs pick up where they left off
-- **One-Click Pipeline** — `pipeline.py` runs cleaning, filtering, and classification in one command
+- **One-Click Pipeline** — `pipeline.py` runs cleaning, deduplication, filtering, and classification in one command
 - **Data Cleaning** — Extract code repo URLs from abstracts into the `code` field
+- **Auto-Deduplication** — Pipeline removes duplicate papers by `Paper_link` automatically
+- **Classification** — Auto-label all papers as `Method`, `Dataset`, `Survey`, `Application`, `Dataset+Method`, etc.
 - **VLM Filtering** — Keyword-based filtering for Vision-Language Model related papers
-- **Classification** — Auto-label papers as `Method`, `Dataset`, `Survey`, `Application`, etc.
+- **Interactive Web Viewer** — Search with relevance ranking, multi-dimensional chart filtering, year range selection, BibTeX export, and mobile-friendly collapsible UI
 - **PDF Download** — Batch download with deduplication, organized by year
 
 ---
@@ -50,14 +52,16 @@ python pipeline.py
 ## Daily Workflow
 
 ```bash
-# 1. Grab latest papers (last 3 months, skip existing)
+# 1. Grab latest papers (last 7 days, incremental by default)
 python main.py --update
 
-# 2. Run full pipeline (clean → filter → classify → export)
+# 2. Run full pipeline (deduplicate → clean → classify → filter → export)
 python pipeline.py
 ```
 
 That's it. All output files (`papers.csv/json`, `papers_vlm.csv/json`) are updated in place.
+
+> **Note:** `--incremental` is enabled by default — existing papers are always skipped. Use `--no-incremental` to force a full re-fetch.
 
 ---
 
@@ -78,7 +82,7 @@ python main.py --max-results 100
 # Incremental (skip existing)
 python main.py --incremental
 
-# Quick update (latest 3 months)
+# Quick update (latest 7 days)
 python main.py --update
 
 # Check progress
@@ -97,11 +101,13 @@ python pipeline.py --input output/papers.json
 
 `pipeline.py` runs the following steps automatically:
 
-1. **Clean** — Extract code URLs from abstracts, fill `code` field
-2. **Save** — Write cleaned `papers.csv` + `papers.json`
-3. **Filter** — Select VLM-related papers by keyword matching
-4. **Classify** — Label each VLM paper as Method / Dataset / Survey / Application
-5. **Export** — Write `papers_vlm.csv/json` and `papers_vlm_annotated.json`
+1. **Load & Deduplicate** — Remove duplicate papers by `Paper_link`
+2. **Clean** — Extract code URLs from abstracts, fill `code` field
+3. **Classify All** — Label every paper as Method / Dataset / Survey / Application / Other
+4. **Save** — Write cleaned `papers.csv` + `papers.json`
+5. **Filter VLM** — Select VLM-related papers by keyword matching
+6. **Classify VLM** — Refine categories for VLM subset
+7. **Export** — Write `papers_vlm.csv/json` and `papers_vlm_annotated.json`
 
 ### Individual Tools
 
@@ -140,8 +146,9 @@ python main.py --download-only
 | `--end-year` | End year | 2026 |
 | `--max-results` | Max papers to fetch | unlimited |
 | `--output-dir` | Output directory | `output` |
-| `--update` | Quick update (latest 3 months) | off |
-| `--incremental` | Skip existing papers | off |
+| `--update` | Quick update (latest 7 days) | off |
+| `--no-incremental` | Disable incremental, re-fetch all | off |
+| `--incremental` | Skip existing papers | **on** |
 | `--download` | Download PDFs | off |
 | `--download-only` | Download PDFs only (skip scraping) | off |
 | `--with-code` | Query Papers With Code for repos | off |
@@ -239,7 +246,16 @@ SEARCH_QUERY = '(ti:"remote sensing" OR abs:"remote sensing") AND cat:cs.CV'
 python3 -m http.server 8080
 ```
 
-Open http://localhost:8080 — supports search, filtering, sorting, charts, BibTeX copy, and LaTeX rendering.
+Open http://localhost:8080 — features include:
+
+- **Relevance-ranked search** — Title matches prioritized over abstract matches
+- **Multi-dimensional chart filtering** — Click year/type/category bars to filter, multi-select supported
+- **Year range selection** — Single year or custom range via dropdown
+- **Paper classification** — All papers auto-labeled (Method, Dataset, Survey, Application, etc.)
+- **Today's new papers badge** — Shows `+N` count on the stats bar
+- **Mobile-friendly** — Collapsible filter panel with responsive layout
+- **BibTeX export** — One-click copy with modal preview
+- **LaTeX rendering** — Math formulas rendered via KaTeX
 
 ---
 

@@ -83,6 +83,11 @@ class ProgressTracker:
         self.data["scrape"]["total_scraped"] = total
         self.save()
 
+    def update_new_count(self, count: int):
+        """Record how many new papers were added in this update run."""
+        self.data["last_new_count"] = count
+        self.save()
+
     def should_skip_month(self, year: int, month: int) -> bool:
         """Check if this year-month was already fully scraped."""
         last_y = self.last_scraped_year

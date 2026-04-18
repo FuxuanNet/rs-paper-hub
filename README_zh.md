@@ -23,12 +23,14 @@ RS-Paper-Hub 自动从 arXiv 采集 2020 年至今的遥感论文，提取结构
 ### 核心功能
 
 - **自动采集** — 通过 arXiv API 抓取论文，内置限流与重试
-- **增量更新** — `--update` 只抓取最近 3 个月的新论文
+- **默认增量** — 自动跳过已有论文，`--update` 抓取最近 7 天新论文
 - **断点续传** — 进度保存在 `progress.json`，中断后自动恢复
-- **一键处理** — `pipeline.py` 一条命令完成清洗、筛选、分类
+- **一键处理** — `pipeline.py` 一条命令完成去重、清洗、分类、筛选
+- **自动去重** — Pipeline 按 `Paper_link` 自动去除重复论文
 - **数据清洗** — 从摘要提取代码仓库链接，自动填充 `code` 字段
+- **全量分类** — 所有论文自动标记为 `Method`、`Dataset`、`Survey`、`Application`、`Dataset+Method` 等
 - **VLM 筛选** — 基于关键词规则筛选视觉语言模型相关论文
-- **自动分类** — 将论文标记为 `Method`、`Dataset`、`Survey`、`Application` 等
+- **交互式网页** — 相关度搜索、多维图表筛选、年份范围选择、BibTeX 导出、移动端适配
 - **PDF 下载** — 批量下载，自动去重，按年份归档
 
 ---
@@ -50,14 +52,16 @@ python pipeline.py
 ## 日常更新
 
 ```bash
-# 1. 抓取最新论文（最近 3 个月，跳过已有）
+# 1. 抓取最新论文（最近 7 天，默认增量）
 python main.py --update
 
-# 2. 一键处理（清洗 → 筛选 → 分类 → 导出）
+# 2. 一键处理（去重 → 清洗 → 分类 → 筛选 → 导出）
 python pipeline.py
 ```
 
 两条命令搞定。所有输出文件（`papers.csv/json`、`papers_vlm.csv/json`）自动更新。
+
+> **注意：** `--incremental` 默认开启，已有论文会自动跳过。如需全量重新采集，请使用 `--no-incremental`。
 
 ---
 
@@ -78,7 +82,7 @@ python main.py --max-results 100
 # 增量模式（跳过已有论文）
 python main.py --incremental
 
-# 快速更新（最近 3 个月）
+# 快速更新（最近 7 天）
 python main.py --update
 
 # 查看进度
@@ -97,11 +101,13 @@ python pipeline.py --input output/papers.json
 
 `pipeline.py` 自动执行以下步骤：
 
-1. **清洗** — 从摘要提取代码链接，填充 `code` 字段
-2. **保存** — 写入清洗后的 `papers.csv` + `papers.json`
-3. **筛选** — 按关键词匹配 VLM 相关论文
-4. **分类** — 为每篇 VLM 论文标记 Method / Dataset / Survey / Application
-5. **导出** — 写入 `papers_vlm.csv/json` 和 `papers_vlm_annotated.json`
+1. **加载与去重** — 按 `Paper_link` 去除重复论文
+2. **清洗** — 从摘要提取代码链接，填充 `code` 字段
+3. **全量分类** — 为所有论文标记 Method / Dataset / Survey / Application / Other
+4. **保存** — 写入清洗后的 `papers.csv` + `papers.json`
+5. **VLM 筛选** — 按关键词匹配 VLM 相关论文
+6. **VLM 分类** — 细化 VLM 子集分类
+7. **导出** — 写入 `papers_vlm.csv/json` 和 `papers_vlm_annotated.json`
 
 ### 单独工具
 
@@ -140,8 +146,9 @@ python main.py --download-only
 | `--end-year` | 结束年份 | 2026 |
 | `--max-results` | 最大论文数量 | 无限制 |
 | `--output-dir` | 输出目录 | `output` |
-| `--update` | 快速更新（仅最近 3 个月） | 关 |
-| `--incremental` | 跳过已有论文 | 关 |
+| `--update` | 快速更新（仅最近 7 天） | 关 |
+| `--incremental` | 跳过已有论文 | **开** |
+| `--no-incremental` | 禁用增量，全量重抓 | 关 |
 | `--download` | 下载 PDF | 关 |
 | `--download-only` | 仅下载 PDF（跳过采集） | 关 |
 | `--with-code` | 查询 Papers With Code 代码链接 | 关 |
@@ -163,7 +170,7 @@ python main.py --download-only
 
 | 字段 | 说明 | 示例 |
 |------|------|------|
-| `Category` | 论文类别（仅 VLM 输出） | Method, Dataset, Survey |
+| `Category` | 论文类别 | Method, Dataset, Survey |
 | `Type` | arXiv 主分类 | Computer Vision |
 | `Subtype` | 其他分类 | Image and Video Processing |
 | `Date` | 精确发布日期 | 2024-03-15 |
@@ -239,7 +246,16 @@ SEARCH_QUERY = '(ti:"remote sensing" OR abs:"remote sensing") AND cat:cs.CV'
 python3 -m http.server 8080
 ```
 
-打开 http://localhost:8080 即可查看。支持搜索、筛选、排序、图表统计、BibTeX 复制和 LaTeX 公式渲染。
+打开 http://localhost:8080 即可查看，功能包括：
+
+- **相关度搜索** — 标题匹配优先于摘要匹配
+- **多维图表筛选** — 点击年份/类型/分类柱状图即可筛选，支持多选
+- **年份范围选择** — 单年或自定义范围
+- **论文自动分类** — 所有论文自动标记（Method、Dataset、Survey、Application 等）
+- **今日新增标记** — 统计栏显示 `+N` 新增数量
+- **移动端适配** — 可折叠筛选面板，响应式布局
+- **BibTeX 导出** — 一键复制，弹窗预览
+- **LaTeX 渲染** — KaTeX 数学公式渲染
 
 ---
 

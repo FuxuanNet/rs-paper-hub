@@ -49,20 +49,26 @@ def _build_month_list(start_year: int, end_year: int) -> list[tuple[int, int]]:
     return months
 
 
+def _build_date_range_query(date_from: datetime, date_to: datetime) -> str:
+    """Build arXiv search query for a specific date range."""
+    start = date_from.strftime("%Y%m%d")
+    end = date_to.strftime("%Y%m%d")
+    return f'{SEARCH_QUERY} AND submittedDate:[{start}0000 TO {end}2359]'
+
+
 def fetch_papers(
     start_year: int = START_YEAR,
     end_year: int = END_YEAR,
     max_results: int | None = None,
     progress: ProgressTracker | None = None,
+    date_from: datetime | None = None,
+    date_to: datetime | None = None,
 ) -> list[arxiv.Result]:
     """
-    Fetch papers from arXiv API for the given date range.
+    Fetch papers from arXiv API.
 
-    Args:
-        start_year: Start year (inclusive)
-        end_year: End year (inclusive)
-        max_results: Max total results (None = all)
-        progress: ProgressTracker for resumable scraping
+    If date_from/date_to are provided, fetches that exact date range in one query.
+    Otherwise, iterates month by month over the year range.
 
     Returns:
         List of arxiv.Result objects
@@ -76,9 +82,47 @@ def fetch_papers(
         num_retries=MAX_RETRIES,
     )
 
+    # Date-range mode (for --update): single query for the date range
+    if date_from and date_to:
+        query = _build_date_range_query(date_from, date_to)
+        logger.info(f"Querying date range: {date_from.strftime('%Y-%m-%d')} to {date_to.strftime('%Y-%m-%d')}")
+
+        search = arxiv.Search(
+            query=query,
+            max_results=max_results,
+            sort_by=arxiv.SortCriterion.SubmittedDate,
+            sort_order=arxiv.SortOrder.Descending,
+        )
+
+        retry_count = 0
+        while True:
+            try:
+                for result in client.results(search):
+                    all_results.append(result)
+                    total_fetched += 1
+                    if max_results and total_fetched >= max_results:
+                        break
+                break
+            except arxiv.UnexpectedEmptyPageError:
+                break
+            except Exception as e:
+                retry_count += 1
+                if retry_count > MAX_RETRIES:
+                    logger.error(f"Failed after {MAX_RETRIES} retries: {e}")
+                    break
+                wait = REQUEST_DELAY * (2 ** retry_count)
+                logger.warning(f"Retry {retry_count}, waiting {wait}s...")
+                time.sleep(wait)
+
+        if progress:
+            progress.mark_scrape_done(total_fetched)
+
+        logger.info(f"Total fetched: {total_fetched} papers")
+        return all_results
+
+    # Month-by-month mode (for full scrape)
     months = _build_month_list(start_year, end_year)
 
-    # Progress bar over months
     pbar = tqdm(
         months,
         desc="Scraping arXiv",

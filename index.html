@@ -499,11 +499,21 @@ function renderStats(papers) {
   const years = new Set(papers.map(p => p.Year).filter(Boolean));
   const withCode = papers.filter(p => p.code && p.code.trim()).length;
   document.getElementById('statsBar').innerHTML = `
-    <div class="stat"><div class="num">${papers.length}</div><div class="label">Papers</div></div>
+    <div class="stat"><div class="num">${papers.length}<span id="newBadge"></span></div><div class="label">Papers</div></div>
     <div class="stat"><div class="num">${types.size}</div><div class="label">Types</div></div>
     <div class="stat"><div class="num">${years.size}</div><div class="label">Years</div></div>
     <div class="stat" style="cursor:pointer" onclick="toggleCodeFilter()"><div class="num">${withCode}</div><div class="label" id="codeLabel">With Code</div></div>
   `;
+  // Load new count from progress.json
+  fetch('./output/progress.json').then(r => r.ok ? r.json() : null).then(data => {
+    if (!data) return;
+    const count = data.last_new_count || 0;
+    const badge = document.getElementById('newBadge');
+    if (badge) {
+      badge.style.cssText = `font-size:12px;color:${count > 0 ? '#10b981' : '#94a3b8'};font-weight:500;margin-left:4px`;
+      badge.textContent = '+' + count;
+    }
+  }).catch(() => {});
 }
 
 function applyFilters() {

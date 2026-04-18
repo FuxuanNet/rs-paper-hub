@@ -100,12 +100,16 @@ def main():
         help="Only download PDFs for papers already in output CSV (skip scraping)"
     )
     parser.add_argument(
-        "--incremental", action="store_true",
-        help="Skip papers already in output CSV"
+        "--incremental", action="store_true", default=True,
+        help="Skip papers already in output CSV (default: on)"
+    )
+    parser.add_argument(
+        "--no-incremental", action="store_false", dest="incremental",
+        help="Disable incremental mode, re-fetch all papers"
     )
     parser.add_argument(
         "--update", action="store_true",
-        help="Quick update: only scrape recent 3 months and append new papers"
+        help="Quick update: only scrape recent 7 days and append new papers"
     )
     parser.add_argument(
         "--status", action="store_true",
@@ -141,20 +145,18 @@ def main():
         logger.info("Done!")
         return
 
-    # Update mode: only scrape recent months, auto-incremental
+    # Update mode: fetch last 7 days, auto-incremental
     if args.update:
-        from datetime import datetime
+        from datetime import datetime, timedelta
         now = datetime.now()
-        args.start_year = now.year if now.month > 3 else now.year - 1
-        start_month = now.month - 3 if now.month > 3 else now.month + 9
-        args.end_year = now.year
+        date_from = now - timedelta(days=7)
         args.incremental = True
         # Reset scrape progress so it doesn't skip
         progress.data["scrape"]["completed"] = False
-        progress.data["scrape"]["last_year"] = args.start_year
-        progress.data["scrape"]["last_month"] = max(start_month - 1, 1)
+        progress.data["scrape"]["last_year"] = None
+        progress.data["scrape"]["last_month"] = None
         progress.save()
-        logger.info(f"Update mode: scraping {args.start_year}-{start_month:02d} to {now.year}-{now.month:02d}")
+        logger.info(f"Update mode: scraping {date_from.strftime('%Y-%m-%d')} to {now.strftime('%Y-%m-%d')}")
 
     # Step 1: Fetch from arXiv (resumable by month)
     if progress.scrape_completed and not args.max_results:
@@ -172,12 +174,17 @@ def main():
                 f"({progress.total_scraped} papers already scraped)"
             )
 
-    results = fetch_papers(
+    fetch_kwargs = dict(
         start_year=args.start_year,
         end_year=args.end_year,
         max_results=args.max_results,
         progress=progress,
     )
+    if args.update:
+        fetch_kwargs["date_from"] = date_from
+        fetch_kwargs["date_to"] = now
+
+    results = fetch_papers(**fetch_kwargs)
     logger.info(f"Fetched {len(results)} papers from arXiv")
 
     if not results:
@@ -194,6 +201,9 @@ def main():
         before = len(papers)
         papers = [p for p in papers if p["Paper_link"] not in existing]
         logger.info(f"Incremental: {before - len(papers)} existing skipped, {len(papers)} new")
+
+    # Record new paper count in progress
+    progress.update_new_count(len(papers))
 
     if not papers:
         logger.info("No new papers to process.")

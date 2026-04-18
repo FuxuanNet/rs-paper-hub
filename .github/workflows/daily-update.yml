@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Update papers (latest 3 months)
+      - name: Update papers (last 7 days)
         run: python main.py --update
 
       - name: Backfill dates for new papers

@@ -59,6 +59,16 @@ def run(input_path: str, output_dir: str):
         papers = json.load(f)
     logger.info(f"Loaded {len(papers)} papers")
 
+    # ── Deduplicate by Paper_link (keep last occurrence) ──
+    before = len(papers)
+    seen = {}
+    for p in papers:
+        link = p.get("Paper_link", "")
+        seen[link if link else id(p)] = p
+    papers = list(seen.values())
+    if len(papers) < before:
+        logger.info(f"  Deduplicated: {before} -> {len(papers)} ({before - len(papers)} duplicates removed)")
+
     # ── Step 1: Clean abstracts → fill code field ─────────
     logger.info("[1/4] Cleaning abstracts & extracting code URLs...")
     code_filled = 0
