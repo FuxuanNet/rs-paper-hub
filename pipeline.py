@@ -70,24 +70,34 @@ def run(input_path: str, output_dir: str):
     if len(papers) < before:
         logger.info(f"  Deduplicated: {before} -> {len(papers)} ({before - len(papers)} duplicates removed)")
 
-    # ── Step 1: Clean abstracts → fill code field ─────────
-    logger.info("[1/4] Cleaning abstracts & extracting code URLs...")
-    code_filled = 0
-    for p in papers:
-        old_code = p.get("code", "")
-        clean_abstract(p)
-        if (not old_code or str(old_code) in ("", "nan")) and p.get("code") and str(p["code"]) not in ("", "nan"):
-            code_filled += 1
-    logger.info(f"  Code field filled from abstract: {code_filled}")
+    # ── Step 1: Clean abstracts → fill code field (incremental) ──
+    need_code = [p for p in papers if not p.get("code") or str(p["code"]) in ("", "nan")]
+    if need_code:
+        logger.info(f"[1/6] Cleaning abstracts & extracting code URLs ({len(need_code)}/{len(papers)})...")
+        code_filled = 0
+        for p in need_code:
+            clean_abstract(p)
+            if p.get("code") and str(p["code"]) not in ("", "nan"):
+                code_filled += 1
+        logger.info(f"  Code field filled from abstract: {code_filled}")
+    else:
+        logger.info("[1/6] Code extraction: all papers already have code field, skipped")
 
-    # ── Step 2: Classify all papers ────────────────────────
-    logger.info("[2/6] Classifying all papers...")
-    classify_papers(papers)
+    # ── Step 2: Classify (incremental) ────────────────────
+    need_classify = [p for p in papers if not p.get("Category")]
+    if need_classify:
+        logger.info(f"[2/6] Classifying papers ({len(need_classify)}/{len(papers)})...")
+        classify_papers(need_classify)
+    else:
+        logger.info("[2/6] Classification: all papers already classified, skipped")
 
-    # ── Step 2.5: Tag tasks ───────────────────────────────
-    logger.info("[3/6] Tagging tasks from title & abstract...")
-    tag_all_papers(papers)
-
+    # ── Step 3: Tag tasks (incremental) ───────────────────
+    need_tasks = [p for p in papers if "_tasks" not in p]
+    if need_tasks:
+        logger.info(f"[3/6] Tagging tasks ({len(need_tasks)}/{len(papers)})...")
+        tag_all_papers(need_tasks)
+    else:
+        logger.info("[3/6] Task tagging: all papers already tagged, skipped")
 
     all_cat_counter = Counter(p.get("Category", "Other") for p in papers)
     for cat, count in all_cat_counter.most_common():
