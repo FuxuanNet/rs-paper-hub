@@ -474,16 +474,17 @@
   <p>A curated collection of remote sensing papers from arXiv</p>
   <nav class="nav-bar">
     <a href="https://github.com/ML4Sustain/rs-paper-hub" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
-    <a href="https://github.com/ML4Sustain/rs-paper-hub/issues" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Issues</a>
-    <a href="https://github.com/ML4Sustain/rs-paper-hub#readme" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Docs</a>
+    <a href="https://github.com/ML4Sustain/rs-paper-hub/issues" target="_blank" data-i18n="issues"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Issues</a>
+    <a href="https://github.com/ML4Sustain/rs-paper-hub#readme" target="_blank" data-i18n="docs"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>Docs</a>
     <a href="https://github.com/ML4Sustain" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>ML4Sustain</a>
-    <a href="mailto:jiancheng.pan.plus@gmail.com"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a>
+    <a href="mailto:jiancheng.pan.plus@gmail.com" data-i18n="contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Contact</a>
+    <a href="javascript:void(0)" id="langToggle" onclick="toggleLang()" style="cursor:pointer;font-weight:600;">中文</a>
   </nav>
 </div>
 
 <div class="stats-bar" id="statsBar"></div>
 <div style="max-width:1200px;margin:0 auto;padding:8px 24px 0;">
-  <div style="font-size:12px;color:#94a3b8;background:#f8fafc;border:1px dashed #e2e8f0;border-radius:6px;padding:6px 12px;text-align:center;">
+  <div id="noteDisclaimer" style="font-size:12px;color:#94a3b8;background:#f8fafc;border:1px dashed #e2e8f0;border-radius:6px;padding:6px 12px;text-align:center;">
     Note: Category and task labels are rule-based and may contain inaccuracies. We are continuously improving them. This does not affect tracking the latest research trends.
   </div>
 </div>
@@ -505,13 +506,13 @@
     </div>
     <button class="collection-btn" id="collectionBtn" onclick="toggleCollectionView()" style="display:none;">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      Collection <span class="collection-badge" id="collectionBadge">0</span>
+      <span id="collectionLabel">Collection</span> <span class="collection-badge" id="collectionBadge">0</span>
     </button>
     <button class="export-btn" onclick="showExportDialog()" title="Export filtered results as BibTeX">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Export
+      <span id="exportLabel">Export</span>
     </button>
-    <button class="filter-toggle" id="filterToggle" onclick="document.getElementById('filterPanel').classList.toggle('open');this.classList.toggle('open')">Filters ▼</button>
+    <button class="filter-toggle" id="filterToggle" onclick="document.getElementById('filterPanel').classList.toggle('open');this.classList.toggle('open');this.textContent=this.classList.contains('open')?t('filters')+' ▲':t('filters')+' ▼'">Filters ▼</button>
     <span class="result-count" id="resultCount"></span>
   </div>
   <div class="filter-panel" id="filterPanel">
@@ -607,24 +608,24 @@
     <button class="close-btn" onclick="closeExportDialog()">&times;</button>
     <h3>Export BibTeX</h3>
     <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">
-      <strong id="exportCount"></strong> filtered papers available.
+      <strong id="exportCount"></strong> <span id="exportAvailLabel">filtered papers available.</span>
     </p>
     <div style="margin-bottom:12px;">
       <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
         <input type="radio" name="exportScope" value="all" checked style="cursor:pointer;">
-        Export all filtered results
+        <span id="exportLabelAll">Export all filtered results</span>
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
         <input type="radio" name="exportScope" value="collection" style="cursor:pointer;">
-        Export collection (<span id="exportCollectionCount">0</span> papers)
+        <span id="exportLabelCollection">Export collection</span> (<span id="exportCollectionCount">0</span>)
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
         <input type="radio" name="exportScope" value="page" style="cursor:pointer;">
-        Export current page only
+        <span id="exportLabelPage">Export current page only</span>
       </label>
       <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
         <input type="radio" name="exportScope" value="range" style="cursor:pointer;">
-        <span>Export range:</span>
+        <span id="exportLabelRange">Export range:</span>
         <input type="number" id="exportFrom" min="1" value="1" style="width:50px;padding:4px;border:1px solid var(--border);border-radius:4px;font-size:12px;text-align:center;">
         <span>~</span>
         <input type="number" id="exportTo" min="1" value="20" style="width:50px;padding:4px;border:1px solid var(--border);border-radius:4px;font-size:12px;text-align:center;">
@@ -632,7 +633,7 @@
     </div>
     <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:16px;">
       <input type="checkbox" id="exportAbstract" style="width:16px;height:16px;cursor:pointer;">
-      Include abstracts
+      <span id="exportLabelAbstract">Include abstracts</span>
     </label>
     <button class="copy-btn" onclick="doExport()" style="width:100%;">Download .bib</button>
   </div>
@@ -640,6 +641,221 @@
 
 <script>
 const PER_PAGE = 20;
+
+// ── i18n ──
+const LANG = {
+  en: {
+    siteTitle: 'RS Paper Hub',
+    siteSubtitle: 'A curated collection of remote sensing papers from arXiv',
+    github: 'GitHub', issues: 'Issues', docs: 'Docs', contact: 'Contact',
+    statPapers: 'Papers', statTypes: 'Types', statYears: 'Years', statWithCode: 'With Code',
+    noteDisclaimer: 'Note: Category and task labels are rule-based and may contain inaccuracies. We are continuously improving them. This does not affect tracking the latest research trends.',
+    today: 'Today', thisWeek: 'This Week',
+    searchAll: 'All', searchTitle: 'Title', searchAuthor: 'Author', searchAbstract: 'Abstract',
+    searchExactPlaceholder: 'Search papers (exact phrase)...',
+    searchFuzzyPlaceholder: 'Search papers (split-word fuzzy)...',
+    exact: 'Exact', fuzzy: 'Fuzzy',
+    collection: 'Collection', export_: 'Export', filters: 'Filters',
+    allTypes: 'All Types', allYears: 'All Years', customRange: 'Custom Range...',
+    allMonths: 'All Months',
+    monthNames: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+    allCategories: 'All Categories', allVLM: 'All VLM', vlmOnly: 'VLM Only', nonVLM: 'Non-VLM',
+    allKeywords: 'All Keywords', allTasks: 'All Tasks',
+    sortNew: 'New', sortOld: 'Old', sortAZ: 'A-Z',
+    charts: 'Charts',
+    chartPapersByYear: 'Papers by Year', chartTopTypes: 'Top Types',
+    chartCategoryDist: 'Category Distribution', chartTaskDist: 'Task Distribution',
+    reset: 'Reset',
+    papersFound: 'papers found', collected: 'collected',
+    noMatchFilters: 'No papers match your current filters.',
+    noMatchToday: 'No remote sensing papers published today.',
+    noMatchWeek: 'No remote sensing papers found this week yet.',
+    paper: 'Paper', code: 'Code', collect: 'Collect', collectDone: 'Collected',
+    newPapers: 'NEW PAPERS', recentPapers: 'Recent Papers',
+    noPapersToday: 'No papers today yet', noPapersWeek: 'No papers this week',
+    bibtex: 'BibTeX', copyClipboard: 'Copy to Clipboard', copied: 'Copied!',
+    exportBibtex: 'Export BibTeX', filteredAvail: 'filtered papers available.',
+    exportAll: 'Export all filtered results',
+    exportCollection: 'Export collection',
+    exportPage: 'Export current page only',
+    exportRange: 'Export range:',
+    includeAbstracts: 'Include abstracts',
+    downloadBib: 'Download .bib',
+    dsAllPapers: 'All Papers', dsVLM: 'Vision-Language Model',
+    noBibtex: 'No BibTeX available',
+    scholar: 'Scholar',
+    before: 'Before', more: 'more',
+    visits: 'visits:',
+  },
+  zh: {
+    siteTitle: 'RS Paper Hub',
+    siteSubtitle: '来自 arXiv 的遥感论文精选合集',
+    github: 'GitHub', issues: '问题反馈', docs: '文档', contact: '联系我们',
+    statPapers: '论文总数', statTypes: '类型', statYears: '年份', statWithCode: '含代码',
+    noteDisclaimer: '注意：类别和任务标签基于规则生成，可能存在不准确之处。我们正在持续改进。这不影响追踪最新研究趋势。',
+    today: '今日', thisWeek: '本周',
+    searchAll: '全部', searchTitle: '标题', searchAuthor: '作者', searchAbstract: '摘要',
+    searchExactPlaceholder: '搜索论文（精确短语）...',
+    searchFuzzyPlaceholder: '搜索论文（分词模糊）...',
+    exact: '精确', fuzzy: '模糊',
+    collection: '收藏夹', export_: '导出', filters: '筛选',
+    allTypes: '所有类型', allYears: '所有年份', customRange: '自定义范围...',
+    allMonths: '所有月份',
+    monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+    allCategories: '所有类别', allVLM: '所有 VLM', vlmOnly: '仅 VLM', nonVLM: '非 VLM',
+    allKeywords: '所有关键词', allTasks: '所有任务',
+    sortNew: '最新', sortOld: '最旧', sortAZ: 'A-Z',
+    charts: '图表',
+    chartPapersByYear: '论文年度分布', chartTopTypes: '热门类型',
+    chartCategoryDist: '类别分布', chartTaskDist: '任务分布',
+    reset: '重置',
+    papersFound: '篇论文', collected: '篇已收藏',
+    noMatchFilters: '没有符合当前筛选条件的论文。',
+    noMatchToday: '今日暂无遥感论文发布。',
+    noMatchWeek: '本周暂无遥感论文。',
+    paper: '论文', code: '代码', collect: '收藏', collectDone: '已收藏',
+    newPapers: '最新论文', recentPapers: '近期论文',
+    noPapersToday: '今日暂无论文', noPapersWeek: '本周暂无论文',
+    bibtex: '引用', copyClipboard: '复制到剪贴板', copied: '已复制！',
+    exportBibtex: '导出引用', filteredAvail: '篇筛选论文可导出。',
+    exportAll: '导出所有筛选结果',
+    exportCollection: '导出收藏夹',
+    exportPage: '仅导出当前页',
+    exportRange: '导出范围：',
+    includeAbstracts: '包含摘要',
+    downloadBib: '下载 .bib',
+    dsAllPapers: '全部论文', dsVLM: '视觉语言模型',
+    noBibtex: '暂无引用信息',
+    scholar: '谷歌学术',
+    before: '早于', more: '更多',
+    visits: '访问量：',
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'en';
+function t(k) { return LANG[currentLang][k] || LANG.en[k] || k; }
+
+function applyLang() {
+  document.documentElement.lang = currentLang === 'zh' ? 'zh-CN' : 'en';
+  document.title = t('siteTitle') + ' - ' + t('siteSubtitle');
+  // Header
+  document.querySelector('.header h1').lastChild.textContent = t('siteTitle');
+  document.querySelector('.header p').textContent = t('siteSubtitle');
+  // Nav links
+  document.querySelectorAll('.nav-bar a[data-i18n]').forEach(a => {
+    const key = a.getAttribute('data-i18n');
+    // Preserve SVG, update text
+    const svg = a.querySelector('svg');
+    a.textContent = t(key);
+    if (svg) a.prepend(svg);
+  });
+  // Note
+  const noteEl = document.getElementById('noteDisclaimer');
+  if (noteEl) noteEl.textContent = t('noteDisclaimer');
+  // Quick filters
+  const qfToday = document.getElementById('qfToday');
+  const qfWeek = document.getElementById('qfWeek');
+  qfToday.firstChild.textContent = t('today');
+  qfWeek.firstChild.textContent = t('thisWeek');
+  // Search scope
+  const scope = document.getElementById('searchScope');
+  scope.options[0].text = t('searchAll');
+  scope.options[1].text = t('searchTitle');
+  scope.options[2].text = t('searchAuthor');
+  scope.options[3].text = t('searchAbstract');
+  // Search placeholder & mode
+  document.getElementById('searchInput').placeholder = fuzzySearch ? t('searchFuzzyPlaceholder') : t('searchExactPlaceholder');
+  document.getElementById('searchModeBtn').textContent = fuzzySearch ? t('fuzzy') : t('exact');
+  // Collection & Export
+  document.getElementById('collectionLabel').textContent = t('collection');
+  document.getElementById('exportLabel').textContent = t('export_');
+  // Filter toggle
+  const ft = document.getElementById('filterToggle');
+  ft.textContent = t('filters') + (ft.classList.contains('open') ? ' ▲' : ' ▼');
+  // Filters
+  document.querySelector('#typeFilter option[value=""]').text = t('allTypes');
+  document.querySelector('#yearFilter option[value=""]').text = t('allYears');
+  const rangeOpt = document.querySelector('#yearFilter option[value="_range"]');
+  if (rangeOpt) rangeOpt.text = t('customRange');
+  document.querySelector('#monthFilter option[value=""]').text = t('allMonths');
+  // Month names
+  const monthSel = document.getElementById('monthFilter');
+  for (let i = 1; i <= 12; i++) {
+    const opt = monthSel.querySelector(`option[value="${i}"]`);
+    if (opt) opt.text = t('monthNames')[i - 1];
+  }
+  // Category / VLM / Task filters
+  const catFirst = document.querySelector('#categoryFilter option[value=""]');
+  if (catFirst) catFirst.text = t('allCategories');
+  const vlmSel = document.getElementById('vlmFilter');
+  if (vlmSel.options[0]) vlmSel.options[0].text = t('allVLM');
+  if (vlmSel.options[1]) vlmSel.options[1].text = t('vlmOnly');
+  if (vlmSel.options[2]) vlmSel.options[2].text = t('nonVLM');
+  const kwFirst = document.querySelector('#vlmKeywordFilter option[value=""]');
+  if (kwFirst) kwFirst.text = t('allKeywords');
+  const taskFirst = document.querySelector('#taskFilter option[value=""]');
+  if (taskFirst) taskFirst.text = t('allTasks');
+  // Sort buttons
+  const sortBtns = document.querySelectorAll('.sort-btn');
+  sortBtns[0].textContent = t('sortNew');
+  sortBtns[1].textContent = t('sortOld');
+  sortBtns[2].textContent = t('sortAZ');
+  // Charts toggle
+  document.getElementById('toggleCharts').textContent = t('charts') + (chartsVisible ? ' ▲' : ' ▼');
+  // Chart headings
+  document.querySelectorAll('.chart-card h3 span:first-child').forEach(s => {
+    const id = s.closest('.chart-card').querySelector('.bar-chart').id;
+    if (id === 'yearChart') s.textContent = t('chartPapersByYear');
+    else if (id === 'typeChart') s.textContent = t('chartTopTypes');
+    else if (id === 'categoryChart') s.textContent = t('chartCategoryDist');
+    else if (id === 'taskChart') s.textContent = t('chartTaskDist');
+  });
+  // Chart reset buttons
+  document.querySelectorAll('.chart-reset').forEach(b => {
+    const count = b.textContent.match(/\((\d+)\)/);
+    b.textContent = count ? t('reset') + ' (' + count[1] + ')' : t('reset');
+  });
+  // Recent panel
+  document.querySelector('.recent-panel-header h3').textContent = t('recentPapers');
+  const recentTabs = document.querySelectorAll('.recent-tab');
+  recentTabs[0].textContent = t('today');
+  recentTabs[1].textContent = t('thisWeek');
+  // BibTeX modal
+  document.querySelector('#bibtexModal .modal h3').textContent = t('bibtex');
+  document.querySelector('#bibtexModal .copy-btn').textContent = t('copyClipboard');
+  // Export modal
+  document.querySelector('#exportModal .modal h3').textContent = t('exportBibtex');
+  // Export labels
+  document.getElementById('exportLabelAll').textContent = t('exportAll');
+  document.getElementById('exportLabelCollection').textContent = t('exportCollection');
+  document.getElementById('exportLabelPage').textContent = t('exportPage');
+  document.getElementById('exportLabelRange').textContent = t('exportRange');
+  document.getElementById('exportLabelAbstract').textContent = t('includeAbstracts');
+  document.querySelector('#exportModal .copy-btn').textContent = t('downloadBib');
+  const exportAvailLabel = document.getElementById('exportAvailLabel');
+  if (exportAvailLabel) exportAvailLabel.textContent = t('filteredAvail');
+  // Data source select
+  const dsSel = document.getElementById('dataSource');
+  [...dsSel.options].forEach((opt, i) => {
+    opt.textContent = i === 0 ? t('dsAllPapers') : t('dsVLM');
+  });
+  // Lang toggle button text
+  const langBtn = document.getElementById('langToggle');
+  if (langBtn) langBtn.textContent = currentLang === 'en' ? '中文' : 'EN';
+  // Re-render dynamic content
+  if (allPapers.length) {
+    renderStats(allPapers);
+    render();
+    if (chartsVisible) renderCharts();
+    renderRecentList();
+  }
+}
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'zh' : 'en';
+  localStorage.setItem('lang', currentLang);
+  applyLang();
+}
 const ICON = {
   arxiv: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>',
   github: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>',
@@ -670,10 +886,10 @@ let fuzzySearch = false;
 
 function initDataSourceSelect() {
   const sel = document.getElementById('dataSource');
-  DATA_SOURCES.forEach(ds => {
+  DATA_SOURCES.forEach((ds, i) => {
     const o = document.createElement('option');
     o.value = ds.file;
-    o.textContent = ds.label;
+    o.textContent = i === 0 ? t('dsAllPapers') : t('dsVLM');
     sel.appendChild(o);
   });
   // Restore last selection from URL hash or default
@@ -696,8 +912,8 @@ async function loadData(file) {
   // Reset filters
   const typeSelect = document.getElementById('typeFilter');
   const yearSelect = document.getElementById('yearFilter');
-  typeSelect.innerHTML = '<option value="">All Types</option>';
-  yearSelect.innerHTML = '<option value="">All Years</option>';
+  typeSelect.innerHTML = `<option value="">${t('allTypes')}</option>`;
+  yearSelect.innerHTML = `<option value="">${t('allYears')}</option>`;
   document.getElementById('yearRangeGroup').style.display = 'none';
   chartSel.year.clear(); chartSel.type.clear(); chartSel.category.clear(); chartSel.task.clear();
   quickDateFilter = '';
@@ -714,7 +930,7 @@ async function loadData(file) {
   const hasCat = allPapers.some(p => p.Category);
   const catSel = document.getElementById('categoryFilter');
   catSel.style.display = hasCat ? '' : 'none';
-  catSel.innerHTML = '<option value="">All Categories</option>';
+  catSel.innerHTML = `<option value="">${t('allCategories')}</option>`;
   if (hasCat) {
     const cats = {};
     allPapers.forEach(p => { if (p.Category) cats[p.Category] = (cats[p.Category] || 0) + 1; });
@@ -727,7 +943,7 @@ async function loadData(file) {
   const hasTask = allPapers.some(p => p._tasks);
   const taskSel = document.getElementById('taskFilter');
   taskSel.style.display = hasTask ? '' : 'none';
-  taskSel.innerHTML = '<option value="">All Tasks</option>';
+  taskSel.innerHTML = `<option value="">${t('allTasks')}</option>`;
   if (hasTask) {
     const tasks = {};
     allPapers.forEach(p => {
@@ -749,6 +965,8 @@ async function init() {
   await loadData(document.getElementById('dataSource').value);
   // Update recent papers badge
   renderRecentList();
+  // Apply saved language
+  applyLang();
   // Hide loading overlay
   const overlay = document.getElementById('loadingOverlay');
   overlay.classList.add('hidden');
@@ -776,7 +994,7 @@ function cleanRegexLabel(s) {
 
 function populateVlmKeywords() {
   const sel = document.getElementById('vlmKeywordFilter');
-  sel.innerHTML = '<option value="">All Keywords</option>';
+  sel.innerHTML = `<option value="">${t('allKeywords')}</option>`;
   // Extract readable keyword labels from regex patterns
   const kwSet = new Set();
   allPapers.forEach(p => {
@@ -802,7 +1020,7 @@ function populateFilters() {
   const yearFromSelect = document.getElementById('yearFromFilter');
   const yearToSelect = document.getElementById('yearToFilter');
   types.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeSelect.appendChild(o); });
-  yearSelect.appendChild(Object.assign(document.createElement('option'), { value: '_range', textContent: 'Custom Range...' }));
+  yearSelect.appendChild(Object.assign(document.createElement('option'), { value: '_range', textContent: t('customRange') }));
   years.forEach(y => { const o = document.createElement('option'); o.value = y; o.textContent = y; yearSelect.appendChild(o); });
   // Populate range selects (ascending)
   const yearsAsc = [...years].reverse();
@@ -819,10 +1037,10 @@ function renderStats(papers) {
   const years = new Set(papers.map(p => p.Year).filter(Boolean));
   const withCode = papers.filter(p => p.code && p.code.trim()).length;
   document.getElementById('statsBar').innerHTML = `
-    <div class="stat"><div class="num">${papers.length}<span id="newBadge"></span></div><div class="label">Papers</div></div>
-    <div class="stat"><div class="num">${types.size}</div><div class="label">Types</div></div>
-    <div class="stat"><div class="num">${years.size}</div><div class="label">Years</div></div>
-    <div class="stat" style="cursor:pointer" onclick="toggleCodeFilter()"><div class="num">${withCode}</div><div class="label" id="codeLabel">With Code</div></div>
+    <div class="stat"><div class="num">${papers.length}<span id="newBadge"></span></div><div class="label">${t('statPapers')}</div></div>
+    <div class="stat"><div class="num">${types.size}</div><div class="label">${t('statTypes')}</div></div>
+    <div class="stat"><div class="num">${years.size}</div><div class="label">${t('statYears')}</div></div>
+    <div class="stat" style="cursor:pointer" onclick="toggleCodeFilter()"><div class="num">${withCode}</div><div class="label" id="codeLabel">${t('statWithCode')}${codeOnly?' ✓':''}</div></div>
   `;
   // Load new count from progress.json
   fetch('./output/progress.json').then(r => r.ok ? r.json() : null).then(data => {
@@ -948,17 +1166,17 @@ function sortCompare(a, b) {
 function applySorting() { filtered.sort(sortCompare); }
 
 function render() {
-  document.getElementById('resultCount').textContent = `${filtered.length} papers found`;
+  document.getElementById('resultCount').textContent = `${filtered.length} ${t('papersFound')}`;
   const start = (currentPage - 1) * PER_PAGE;
   const page = filtered.slice(start, start + PER_PAGE);
   const list = document.getElementById('paperList');
 
   if (filtered.length === 0) {
     const msg = quickDateFilter === 'today'
-      ? 'No remote sensing papers published today.'
+      ? t('noMatchToday')
       : quickDateFilter === 'week'
-      ? 'No remote sensing papers found this week yet.'
-      : 'No papers match your current filters.';
+      ? t('noMatchWeek')
+      : t('noMatchFilters');
     list.innerHTML = `<div style="text-align:center;padding:60px 20px;color:var(--text-secondary);">
       <div style="font-size:40px;margin-bottom:12px;">📭</div>
       <div style="font-size:15px;font-weight:500;margin-bottom:6px;">${msg}</div>
@@ -970,7 +1188,7 @@ function render() {
   list.innerHTML = page.map((p, localIdx) => {
     const idx = start + localIdx;
     const pubTag = p.Publication ? `<span class="tag pub">${escHtml(p.Publication.substring(0, 60))}</span>` : '';
-    const codeLink = p.code && p.code.trim() ? `<a href="${escHtml(p.code)}" target="_blank">${ICON.github}Code</a>` : '';
+    const codeLink = p.code && p.code.trim() ? `<a href="${escHtml(p.code)}" target="_blank">${ICON.github}${t('code')}</a>` : '';
     const catTag = p.Category ? `<span class="tag category">${escHtml(p.Category)}</span>` : '';
     const vlmTag = p._is_vlm ? '<span class="tag vlm">VLM</span>' : '';
     const vlmKwTags = (p._vlm_keywords || '').split(';').filter(k => k.trim()).map(k => {
@@ -995,11 +1213,11 @@ function render() {
       <div class="paper-authors"><span class="field-icon">${ICON.authors}</span>${escHtml(p.Authors)}</div>
       <div class="paper-abstract-wrap"><span class="field-icon">${ICON.abstract}</span><div class="paper-abstract" id="abs-${idx}">${renderLatex(p.Abstract)}</div></div>
       <div class="paper-links">
-        <a href="${escHtml(p.Paper_link)}" target="_blank" onclick="event.stopPropagation()">${ICON.arxiv}Paper</a>
+        <a href="${escHtml(p.Paper_link)}" target="_blank" onclick="event.stopPropagation()">${ICON.arxiv}${t('paper')}</a>
         ${codeLink}
-        <a href="javascript:void(0)" onclick="event.stopPropagation(); showBibtex(${idx})">${ICON.bibtex}BibTeX</a>
-        <a href="${scholarUrl}" target="_blank" onclick="event.stopPropagation()">${ICON.scholar}Scholar</a>
-        <button class="collect-btn${isCollected?' collected':''}" onclick="event.stopPropagation(); toggleCollect(${idx})">${collectIcon}${isCollected?'Collected':'Collect'}</button>
+        <a href="javascript:void(0)" onclick="event.stopPropagation(); showBibtex(${idx})">${ICON.bibtex}${t('bibtex')}</a>
+        <a href="${scholarUrl}" target="_blank" onclick="event.stopPropagation()">${ICON.scholar}${t('scholar')}</a>
+        <button class="collect-btn${isCollected?' collected':''}" onclick="event.stopPropagation(); toggleCollect(${idx})">${collectIcon}${isCollected?t('collectDone'):t('collect')}</button>
       </div>
     </div>`;
   }).join('');
@@ -1080,14 +1298,14 @@ function renderCharts() {
   // Show/hide reset buttons with selection count
   const yr = document.getElementById('yearReset'), tr = document.getElementById('typeReset'), cr = document.getElementById('categoryReset');
   yr.style.display = chartSel.year.size > 0 ? 'inline-block' : 'none';
-  yr.textContent = chartSel.year.size > 1 ? `Reset (${chartSel.year.size})` : 'Reset';
+  yr.textContent = chartSel.year.size > 1 ? `${t('reset')} (${chartSel.year.size})` : t('reset');
   tr.style.display = chartSel.type.size > 0 ? 'inline-block' : 'none';
-  tr.textContent = chartSel.type.size > 1 ? `Reset (${chartSel.type.size})` : 'Reset';
+  tr.textContent = chartSel.type.size > 1 ? `${t('reset')} (${chartSel.type.size})` : t('reset');
   cr.style.display = chartSel.category.size > 0 ? 'inline-block' : 'none';
-  cr.textContent = chartSel.category.size > 1 ? `Reset (${chartSel.category.size})` : 'Reset';
+  cr.textContent = chartSel.category.size > 1 ? `${t('reset')} (${chartSel.category.size})` : t('reset');
   const tkr = document.getElementById('taskReset');
   tkr.style.display = chartSel.task.size > 0 ? 'inline-block' : 'none';
-  tkr.textContent = chartSel.task.size > 1 ? `Reset (${chartSel.task.size})` : 'Reset';
+  tkr.textContent = chartSel.task.size > 1 ? `${t('reset')} (${chartSel.task.size})` : t('reset');
 
   // Charts always render from allPapers so all options stay visible
   // Year chart
@@ -1103,7 +1321,7 @@ function renderCharts() {
   if (oldYears.length > 0) {
     const oldTotal = oldYears.reduce((s, e) => s + e[1], 0);
     const hasOldActive = oldYears.some(([y]) => chartSel.year.has(y));
-    yearHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('oldYears').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasOldActive?' open':''}">&#9654;</span> Before ${cutoffYear}</span><div class="bar-track"><div class="bar-fill" style="width:${oldTotal/maxYear*100}%;opacity:0.5"></div><span class="bar-value">${oldTotal}</span></div></div>`;
+    yearHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('oldYears').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasOldActive?' open':''}">&#9654;</span> ${t('before')} ${cutoffYear}</span><div class="bar-track"><div class="bar-fill" style="width:${oldTotal/maxYear*100}%;opacity:0.5"></div><span class="bar-value">${oldTotal}</span></div></div>`;
     yearHtml += `<div id="oldYears" class="${hasOldActive?'':'collapsed'}">`;
     yearHtml += oldYears.map(([y, c]) => yearBar(y, c)).join('');
     yearHtml += '</div>';
@@ -1125,7 +1343,7 @@ function renderCharts() {
   if (restTypes.length > 0) {
     const restTotal = restTypes.reduce((s, e) => s + e[1], 0);
     const hasRestActive = restTypes.some(([t]) => chartSel.type.has(t));
-    typeHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTypes').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTypes.length} more</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxType*100}%;opacity:0.5"></div><span class="bar-value">${restTotal}</span></div></div>`;
+    typeHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTypes').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTypes.length} ${t('more')}</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxType*100}%;opacity:0.5"></div><span class="bar-value">${restTotal}</span></div></div>`;
     typeHtml += `<div id="restTypes" class="${hasRestActive?'':'collapsed'}">`;
     typeHtml += restTypes.map(typeBar).join('');
     typeHtml += '</div>';
@@ -1171,7 +1389,7 @@ function renderCharts() {
     if (restTasks.length > 0) {
       const restTotal = restTasks.reduce((s, e) => s + e[1], 0);
       const hasRestActive = restTasks.some(([t]) => chartSel.task.has(t));
-      taskHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTasks').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTasks.length} more (${restTotal})</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxTask*100}%;opacity:0.5;background:#c2410c"></div><span class="bar-value">${restTotal}</span></div></div>`;
+      taskHtml += `<div class="bar-row year-toggle" onclick="document.getElementById('restTasks').classList.toggle('collapsed');this.querySelector('.toggle-arrow').classList.toggle('open')" style="color:var(--primary);font-weight:500"><span class="bar-label"><span class="toggle-arrow${hasRestActive?' open':''}">&#9654;</span> ${restTasks.length} ${t('more')} (${restTotal})</span><div class="bar-track"><div class="bar-fill" style="width:${restTotal/maxTask*100}%;opacity:0.5;background:#c2410c"></div><span class="bar-value">${restTotal}</span></div></div>`;
       taskHtml += `<div id="restTasks" class="${hasRestActive?'':'collapsed'}">`;
       taskHtml += restTasks.map(taskBar).join('');
       taskHtml += '</div>';
@@ -1185,7 +1403,7 @@ function renderCharts() {
 function showBibtex(idx) {
   const paper = filtered[idx];
   if (!paper) return;
-  document.getElementById('bibtexContent').textContent = paper.BibTex || 'No BibTeX available';
+  document.getElementById('bibtexContent').textContent = paper.BibTex || t('noBibtex');
   document.getElementById('bibtexModal').classList.add('show');
 }
 
@@ -1197,8 +1415,8 @@ function copyBibtex() {
   const text = document.getElementById('bibtexContent').textContent;
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.querySelector('.copy-btn');
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy to Clipboard', 1500);
+    btn.textContent = t('copied');
+    setTimeout(() => btn.textContent = t('copyClipboard'), 1500);
   });
 }
 
@@ -1378,7 +1596,7 @@ document.querySelectorAll('.sort-btn').forEach(btn => {
 document.getElementById('toggleCharts').addEventListener('click', () => {
   chartsVisible = !chartsVisible;
   document.getElementById('chartsArea').style.display = chartsVisible ? 'grid' : 'none';
-  document.getElementById('toggleCharts').textContent = chartsVisible ? 'Charts ▲' : 'Charts ▼';
+  document.getElementById('toggleCharts').textContent = chartsVisible ? t('charts') + ' ▲' : t('charts') + ' ▼';
   if (chartsVisible) renderCharts();
 });
 document.getElementById('bibtexModal').addEventListener('click', e => {
@@ -1388,7 +1606,7 @@ document.getElementById('bibtexModal').addEventListener('click', e => {
 function toggleCodeFilter() {
   codeOnly = !codeOnly;
   const label = document.getElementById('codeLabel');
-  label.textContent = codeOnly ? 'With Code ✓' : 'With Code';
+  label.textContent = codeOnly ? t('statWithCode') + ' ✓' : t('statWithCode');
   label.style.color = codeOnly ? 'var(--primary)' : '';
   applyFilters();
 }
@@ -1422,7 +1640,7 @@ function toggleCollectionView() {
     filtered = [...collection.values()];
     filtered.sort(sortCompare);
     currentPage = 1;
-    document.getElementById('resultCount').textContent = `${filtered.length} collected`;
+    document.getElementById('resultCount').textContent = `${filtered.length} ${t('collected')}`;
     render();
     renderCharts();
   } else {
@@ -1435,9 +1653,9 @@ function toggleCollectionView() {
 function toggleSearchMode() {
   fuzzySearch = !fuzzySearch;
   const btn = document.getElementById('searchModeBtn');
-  btn.textContent = fuzzySearch ? 'Fuzzy' : 'Exact';
+  btn.textContent = fuzzySearch ? t('fuzzy') : t('exact');
   btn.classList.toggle('fuzzy', fuzzySearch);
-  document.getElementById('searchInput').placeholder = fuzzySearch ? 'Search papers (split-word fuzzy)...' : 'Search papers (exact phrase)...';
+  document.getElementById('searchInput').placeholder = fuzzySearch ? t('searchFuzzyPlaceholder') : t('searchExactPlaceholder');
   if (document.getElementById('searchInput').value) applyFilters();
 }
 
@@ -1509,10 +1727,10 @@ function renderRecentList() {
   // Update toggle badge
   const toggle = document.getElementById('recentToggle');
   const dailyCount = allPapers.filter(p => p.Date === todayStr).length;
-  toggle.textContent = dailyCount > 0 ? `NEW +${dailyCount}` : 'NEW PAPERS';
+  toggle.textContent = dailyCount > 0 ? `NEW +${dailyCount}` : t('newPapers');
 
   if (papers.length === 0) {
-    list.innerHTML = `<div class="recent-empty">${recentTab === 'daily' ? 'No papers today yet' : 'No papers this week'}</div>`;
+    list.innerHTML = `<div class="recent-empty">${recentTab === 'daily' ? t('noPapersToday') : t('noPapersWeek')}</div>`;
     return;
   }
 
