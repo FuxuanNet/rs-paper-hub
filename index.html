@@ -23,7 +23,7 @@
     --shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding-bottom: 40px; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
 
   /* Header */
   .header {
@@ -208,13 +208,19 @@
   #vlmFilter, #vlmKeywordFilter { border-color: #f9a8d4; color: #9d174d; background-color: #fdf2f8; }
   #taskFilter { border-color: #fdba74; color: #c2410c; background-color: #fff7ed; }
   .quick-filter {
-    padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
+    position: relative; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
     background: var(--card); cursor: pointer; font-size: 12px; font-weight: 500;
     white-space: nowrap; transition: all 0.2s; color: var(--text-secondary);
   }
   .quick-filter:hover { border-color: var(--primary); color: var(--primary); }
   .quick-filter.active { background: var(--primary); color: white; border-color: var(--primary); }
-  .quick-filter .qf-count { font-weight: 700; margin-left: 2px; }
+  .qf-badge {
+    position: absolute; top: -6px; right: -6px; min-width: 16px; height: 16px;
+    padding: 0 4px; border-radius: 8px; background: #ef4444; color: white;
+    font-size: 10px; font-weight: 700; line-height: 16px; text-align: center;
+    display: none;
+  }
+  .qf-badge.show { display: block; }
   .result-count { font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
 
   /* Charts area */
@@ -416,8 +422,8 @@
 <div class="controls">
   <div class="controls-top">
     <select id="dataSource"></select>
-    <button class="quick-filter" id="qfToday" onclick="toggleQuickFilter('today')">Today <span class="qf-count" id="qfTodayCount"></span></button>
-    <button class="quick-filter" id="qfWeek" onclick="toggleQuickFilter('week')">This Week <span class="qf-count" id="qfWeekCount"></span></button>
+    <button class="quick-filter" id="qfToday" onclick="toggleQuickFilter('today')">Today<span class="qf-badge" id="qfTodayCount"></span></button>
+    <button class="quick-filter" id="qfWeek" onclick="toggleQuickFilter('week')">This Week<span class="qf-badge" id="qfWeekCount"></span></button>
     <input class="search-box" id="searchInput" type="text" placeholder="Search title, authors, abstract, keywords...">
     <button class="filter-toggle" id="filterToggle" onclick="document.getElementById('filterPanel').classList.toggle('open');this.classList.toggle('open')">Filters ▼</button>
     <span class="result-count" id="resultCount"></span>
@@ -476,7 +482,7 @@
 <div class="paper-list" id="paperList"></div>
 <div class="pagination" id="pagination"></div>
 
-<footer style="position:fixed;bottom:0;left:0;width:100%;background:var(--card);border-top:1px solid var(--border);padding:8px 0;text-align:center;font-size:11px;color:#94a3b8;z-index:40;">
+<footer style="margin-top:auto;padding:16px 0;text-align:center;font-size:11px;color:#94a3b8;">
   <a href='https://www.counters-free.net/' style="color:inherit;text-decoration:none;">visits:</a>
   <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=fb6eb33e03e201b26048add495de3cda89f56796'></script>
   <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1536583/t/5"></script>
@@ -1166,8 +1172,12 @@ function updateQuickFilterCounts() {
   const mondayStr = monday.toISOString().slice(0, 10);
   const todayCount = allPapers.filter(p => p.Date === todayStr).length;
   const weekCount = allPapers.filter(p => p.Date >= mondayStr).length;
-  document.getElementById('qfTodayCount').textContent = todayCount > 0 ? todayCount : '';
-  document.getElementById('qfWeekCount').textContent = weekCount > 0 ? weekCount : '';
+  const todayBadge = document.getElementById('qfTodayCount');
+  const weekBadge = document.getElementById('qfWeekCount');
+  todayBadge.textContent = todayCount;
+  todayBadge.classList.toggle('show', todayCount > 0);
+  weekBadge.textContent = weekCount;
+  weekBadge.classList.toggle('show', weekCount > 0);
 }
 
 function debounce(fn, ms) { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
