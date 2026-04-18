@@ -380,8 +380,8 @@ function populateFilters() {
   const yearFromSelect = document.getElementById('yearFromFilter');
   const yearToSelect = document.getElementById('yearToFilter');
   types.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; typeSelect.appendChild(o); });
-  years.forEach(y => { const o = document.createElement('option'); o.value = y; o.textContent = y; yearSelect.appendChild(o); });
   yearSelect.appendChild(Object.assign(document.createElement('option'), { value: '_range', textContent: 'Custom Range...' }));
+  years.forEach(y => { const o = document.createElement('option'); o.value = y; o.textContent = y; yearSelect.appendChild(o); });
   // Populate range selects (ascending)
   const yearsAsc = [...years].reverse();
   yearFromSelect.innerHTML = ''; yearToSelect.innerHTML = '';
