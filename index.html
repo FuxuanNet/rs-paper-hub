@@ -231,12 +231,32 @@
   .qf-badge.show { display: block; }
   .result-count { font-size: 13px; color: var(--text-secondary); white-space: nowrap; }
   .export-btn {
-    padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
+    position: relative; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
     background: var(--card); cursor: pointer; font-size: 12px; font-weight: 500;
     color: var(--text-secondary); display: inline-flex; align-items: center; gap: 4px;
     white-space: nowrap; transition: all 0.2s;
   }
   .export-btn:hover { border-color: var(--primary); color: var(--primary); }
+  .collect-btn {
+    font-size: 12px; color: var(--text-secondary); cursor: pointer; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 8px; border-radius: 5px; border: 1px solid var(--border);
+    background: none; transition: all 0.15s;
+  }
+  .collect-btn:hover { border-color: #f59e0b; color: #f59e0b; }
+  .collect-btn.collected { border-color: #f59e0b; color: #f59e0b; background: #fffbeb; }
+  .collection-btn {
+    position: relative; padding: 6px 12px; border: 1px solid #fcd34d; border-radius: 8px;
+    background: #fffbeb; cursor: pointer; font-size: 12px; font-weight: 500;
+    color: #92400e; display: inline-flex; align-items: center; gap: 4px;
+    white-space: nowrap; transition: all 0.2s;
+  }
+  .collection-btn:hover { background: #fef3c7; }
+  .collection-badge {
+    min-width: 16px; height: 16px; padding: 0 4px; border-radius: 8px;
+    background: #f59e0b; color: white; font-size: 10px; font-weight: 700;
+    line-height: 16px; text-align: center;
+  }
 
   /* Charts area */
   .charts {
@@ -456,6 +476,10 @@
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Export
     </button>
+    <button class="collection-btn" id="collectionBtn" onclick="toggleCollectionView()" style="display:none;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Collection <span class="collection-badge" id="collectionBadge">0</span>
+    </button>
     <button class="filter-toggle" id="filterToggle" onclick="document.getElementById('filterPanel').classList.toggle('open');this.classList.toggle('open')">Filters ▼</button>
     <span class="result-count" id="resultCount"></span>
   </div>
@@ -551,9 +575,30 @@
   <div class="modal" style="max-width:420px;">
     <button class="close-btn" onclick="closeExportDialog()">&times;</button>
     <h3>Export BibTeX</h3>
-    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">
-      Export <strong id="exportCount"></strong> filtered papers as BibTeX.
+    <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">
+      <strong id="exportCount"></strong> filtered papers available.
     </p>
+    <div style="margin-bottom:12px;">
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
+        <input type="radio" name="exportScope" value="all" checked style="cursor:pointer;">
+        Export all filtered results
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
+        <input type="radio" name="exportScope" value="collection" style="cursor:pointer;">
+        Export collection (<span id="exportCollectionCount">0</span> papers)
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:8px;">
+        <input type="radio" name="exportScope" value="page" style="cursor:pointer;">
+        Export current page only
+      </label>
+      <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
+        <input type="radio" name="exportScope" value="range" style="cursor:pointer;">
+        <span>Export range:</span>
+        <input type="number" id="exportFrom" min="1" value="1" style="width:50px;padding:4px;border:1px solid var(--border);border-radius:4px;font-size:12px;text-align:center;">
+        <span>~</span>
+        <input type="number" id="exportTo" min="1" value="20" style="width:50px;padding:4px;border:1px solid var(--border);border-radius:4px;font-size:12px;text-align:center;">
+      </label>
+    </div>
     <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-bottom:16px;">
       <input type="checkbox" id="exportAbstract" style="width:16px;height:16px;cursor:pointer;">
       Include abstracts
@@ -588,6 +633,8 @@ let currentPage = 1;
 let chartsVisible = false;
 let codeOnly = false;
 let quickDateFilter = ''; // '', 'today', 'week'
+let collection = new Map(); // Paper_link -> paper object
+let collectionView = false;
 
 function initDataSourceSelect() {
   const sel = document.getElementById('dataSource');
@@ -869,6 +916,8 @@ function render() {
       return `<span class="tag task">${escHtml(TASK_NAMES[t] || t)}</span>`;
     }).join('');
     const scholarUrl = 'https://scholar.google.com/scholar?q=' + encodeURIComponent(p.Title);
+    const isCollected = collection.has(p.Paper_link);
+    const collectIcon = isCollected ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>' : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>';
     return `
     <div class="paper-card" onclick="toggleAbstract(event, ${idx})">
       <div class="paper-title"><a href="${escHtml(p.Paper_link)}" target="_blank" onclick="event.stopPropagation()">${renderLatex(p.Title)}</a></div>
@@ -886,6 +935,7 @@ function render() {
         ${codeLink}
         <a href="javascript:void(0)" onclick="event.stopPropagation(); showBibtex(${idx})">${ICON.bibtex}BibTeX</a>
         <a href="${scholarUrl}" target="_blank" onclick="event.stopPropagation()">${ICON.scholar}Scholar</a>
+        <button class="collect-btn${isCollected?' collected':''}" onclick="event.stopPropagation(); toggleCollect(${idx})">${collectIcon}${isCollected?'Collected':'Collect'}</button>
       </div>
     </div>`;
   }).join('');
@@ -1090,6 +1140,10 @@ function copyBibtex() {
 
 function showExportDialog() {
   document.getElementById('exportCount').textContent = filtered.length;
+  document.getElementById('exportCollectionCount').textContent = collection.size;
+  document.getElementById('exportTo').value = Math.min(filtered.length, 20);
+  document.getElementById('exportTo').max = filtered.length;
+  document.getElementById('exportFrom').max = filtered.length;
   document.getElementById('exportModal').classList.add('show');
 }
 
@@ -1099,7 +1153,23 @@ function closeExportDialog() {
 
 function doExport() {
   const withAbstract = document.getElementById('exportAbstract').checked;
-  const bibtex = filtered.map(p => {
+  const scope = document.querySelector('input[name="exportScope"]:checked').value;
+
+  let papers;
+  if (scope === 'collection') {
+    papers = [...collection.values()];
+  } else if (scope === 'page') {
+    const start = (currentPage - 1) * PER_PAGE;
+    papers = filtered.slice(start, start + PER_PAGE);
+  } else if (scope === 'range') {
+    const from = Math.max(1, parseInt(document.getElementById('exportFrom').value) || 1);
+    const to = Math.min(filtered.length, parseInt(document.getElementById('exportTo').value) || filtered.length);
+    papers = filtered.slice(from - 1, to);
+  } else {
+    papers = filtered;
+  }
+
+  const bibtex = papers.map(p => {
     // Use existing BibTeX if available
     if (p.BibTex && p.BibTex.trim()) {
       let bib = p.BibTex.trim();
@@ -1256,6 +1326,45 @@ function toggleCodeFilter() {
   label.textContent = codeOnly ? 'With Code ✓' : 'With Code';
   label.style.color = codeOnly ? 'var(--primary)' : '';
   applyFilters();
+}
+
+function toggleCollect(idx) {
+  const p = filtered[idx];
+  if (!p) return;
+  if (collection.has(p.Paper_link)) {
+    collection.delete(p.Paper_link);
+  } else {
+    collection.set(p.Paper_link, p);
+  }
+  updateCollectionUI();
+  render();
+}
+
+function updateCollectionUI() {
+  const btn = document.getElementById('collectionBtn');
+  const badge = document.getElementById('collectionBadge');
+  const count = collection.size;
+  btn.style.display = count > 0 ? 'inline-flex' : 'none';
+  badge.textContent = count;
+}
+
+function toggleCollectionView() {
+  collectionView = !collectionView;
+  const btn = document.getElementById('collectionBtn');
+  if (collectionView) {
+    btn.style.background = '#fef3c7';
+    btn.style.borderColor = '#f59e0b';
+    filtered = [...collection.values()];
+    filtered.sort(sortCompare);
+    currentPage = 1;
+    document.getElementById('resultCount').textContent = `${filtered.length} collected`;
+    render();
+    renderCharts();
+  } else {
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    applyFilters();
+  }
 }
 
 function toggleQuickFilter(mode) {
