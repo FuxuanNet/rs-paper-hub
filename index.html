@@ -238,6 +238,17 @@
   #monthFilter { border-color: #fcd34d; color: #92400e; background-color: #fffbeb; }
   #vlmFilter, #vlmKeywordFilter { border-color: #f9a8d4; color: #9d174d; background-color: #fdf2f8; }
   #taskFilter { border-color: #fdba74; color: #c2410c; background-color: #fff7ed; }
+  .ds-tabs {
+    display: inline-flex; border: 1.5px solid var(--primary); border-radius: 10px; overflow: hidden;
+  }
+  .ds-tabs button {
+    padding: 7px 16px; border: none; background: transparent; font-size: 13px; font-weight: 600;
+    cursor: pointer; color: var(--primary); transition: all 0.2s; white-space: nowrap;
+    border-right: 1px solid var(--primary-light);
+  }
+  .ds-tabs button:last-child { border-right: none; }
+  .ds-tabs button:hover { background: var(--primary-light); }
+  .ds-tabs button.active { background: var(--primary); color: white; }
   .quick-filter {
     position: relative; padding: 6px 12px; border: 1px solid var(--border); border-radius: 8px;
     background: var(--card); cursor: pointer; font-size: 12px; font-weight: 500;
@@ -442,7 +453,7 @@
     .controls-top {
       flex-wrap: wrap;
     }
-    .controls-top select#dataSource { flex: 0 0 auto; }
+    .controls-top .ds-tabs { flex: 0 0 auto; }
     .controls-top .quick-filter { flex: 0 0 auto; }
     .search-wrap { min-width: 0; flex: 1 1 100%; order: 10; margin-top: 8px; }
     .filter-toggle { display: block; order: 11; margin-top: 8px; }
@@ -496,7 +507,7 @@
 
 <div class="controls">
   <div class="controls-top">
-    <select id="dataSource"></select>
+    <div class="ds-tabs" id="dataSource"></div>
     <button class="quick-filter" id="qfToday" onclick="toggleQuickFilter('today')">Today<span class="qf-badge" id="qfTodayCount"></span></button>
     <button class="quick-filter" id="qfWeek" onclick="toggleQuickFilter('week')">This Week<span class="qf-badge" id="qfWeekCount"></span></button>
     <div class="search-wrap">
@@ -850,10 +861,9 @@ function applyLang() {
   document.querySelector('#exportModal .copy-btn').textContent = t('downloadBib');
   const exportAvailLabel = document.getElementById('exportAvailLabel');
   if (exportAvailLabel) exportAvailLabel.textContent = t('filteredAvail');
-  // Data source select
-  const dsSel = document.getElementById('dataSource');
-  [...dsSel.options].forEach(opt => {
-    opt.textContent = t('ds_' + opt.value);
+  // Data source tabs
+  document.querySelectorAll('#dataSource button').forEach(btn => {
+    btn.textContent = t('ds_' + btn.dataset.key);
   });
   // Lang toggle button text
   const langBtn = document.getElementById('langToggle');
@@ -902,22 +912,26 @@ let collectionView = false;
 let fuzzySearch = false;
 
 function initDataSourceSelect() {
-  const sel = document.getElementById('dataSource');
-  DATA_SOURCES.forEach(ds => {
-    const o = document.createElement('option');
-    o.value = ds.key;
-    o.textContent = t('ds_' + ds.key);
-    sel.appendChild(o);
+  const container = document.getElementById('dataSource');
+  DATA_SOURCES.forEach((ds, i) => {
+    const btn = document.createElement('button');
+    btn.dataset.key = ds.key;
+    btn.textContent = t('ds_' + ds.key);
+    if (i === 0) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      location.hash = ds.key;
+      loadDataFromSource(ds);
+    });
+    container.appendChild(btn);
   });
-  // Restore last selection from URL hash or default
+  // Restore last selection from URL hash
   const hash = location.hash.replace('#', '');
   const matchedDs = DATA_SOURCES.find(d => d.key === hash);
-  if (matchedDs) sel.value = matchedDs.key;
-  sel.addEventListener('change', () => {
-    const ds = DATA_SOURCES.find(d => d.key === sel.value);
-    location.hash = ds ? ds.key : '';
-    loadDataFromSource(ds);
-  });
+  if (matchedDs) {
+    container.querySelectorAll('button').forEach(b => b.classList.toggle('active', b.dataset.key === matchedDs.key));
+  }
 }
 
 function loadDataFromSource(ds) {
@@ -984,8 +998,8 @@ async function loadData(file) {
 
 async function init() {
   initDataSourceSelect();
-  const selKey = document.getElementById('dataSource').value;
-  const ds = DATA_SOURCES.find(d => d.key === selKey) || DATA_SOURCES[0];
+  const activeBtn = document.querySelector('#dataSource button.active');
+  const ds = DATA_SOURCES.find(d => d.key === (activeBtn ? activeBtn.dataset.key : 'all')) || DATA_SOURCES[0];
   await loadData(ds.file);
   // Update recent papers badge
   renderRecentList();
