@@ -4,12 +4,158 @@
   <id>https://rspaper.top/output/feed.xml</id>
   <link href="https://rspaper.top/output/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-19T15:35:36Z</updated>
+  <updated>2026-04-20T02:37:38Z</updated>
   <subtitle>Latest remote sensing papers (last 7 days) — 19 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>From Articles to Canopies: Knowledge-Driven Pseudo-Labelling for Tree Species Classification using LLM Experts</title>
+    <link href="http://arxiv.org/abs/2604.16115v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.16115v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Michał Romaszewski</name>
+    </author>
+    <author>
+      <name>Dominik Kopeć</name>
+    </author>
+    <author>
+      <name>Michał Cholewa</name>
+    </author>
+    <author>
+      <name>Katarzyna Kołodziej</name>
+    </author>
+    <author>
+      <name>Przemysław Głomb</name>
+    </author>
+    <author>
+      <name>Jan Niedzielko</name>
+    </author>
+    <author>
+      <name>Jakub Charyton</name>
+    </author>
+    <author>
+      <name>Justyna Wylazłowska</name>
+    </author>
+    <author>
+      <name>Anna Jarocińska</name>
+    </author>
+    <summary type="text">Hyperspectral tree species classification is challenging due to limited and imbalanced class labels, spectral mixing (overlapping light signatures from multiple species), and ecological heterogeneity (variability among ecological systems). Addressing these challenges requires methods that integrate biological and structural characteristics of vegetation, such as canopy architecture and interspecific interactions, rather than relying solely on spectral signatures. This paper presents a biologically informed, semi-supervised deep learning method that integrates multi-sensor Earth observation data, specifically hyperspectral imaging (HSI) and airborne laser scanning (ALS), with expert, ecological knowledge. The approach relies on biologically inspired pseudo-labelling over a precomputed canopy graph, yielding accurate classification at low training cost. In addition, ecological priors on species cohabitation are automatically derived from reliable sources using large language models (LLMs) and encoded as a cohabitation matrix with likelihoods of species occurring together. These priors are incorporated into the pseudo-labelling strategy, effectively introducing expert knowledge into the model. Experiments on a real-world forest dataset demonstrate 5.6% improvement over the best reference method. Expert evaluation of cohabitation priors reveals high accuracy with differences no larger than 15%.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; CLS&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+  </entry>
+  <entry>
+    <title>Robust Multispectral Semantic Segmentation under Missing or Full Modalities via Structured Latent Projection</title>
+    <link href="http://arxiv.org/abs/2604.15856v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15856v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Irem Ulku</name>
+    </author>
+    <author>
+      <name>Erdem Akagündüz</name>
+    </author>
+    <author>
+      <name>Ömer Özgür Tanrıöver</name>
+    </author>
+    <summary type="text">Multimodal remote sensing data provide complementary information for semantic segmentation, but in real-world deployments, some modalities may be unavailable due to sensor failures, acquisition issues, or challenging atmospheric conditions. Existing multimodal segmentation models typically address missing modalities by learning a shared representation across inputs. However, this approach can introduce a trade-off by compromising modality-specific complementary information and reducing performance when all modalities are available. In this paper, we tackle this limitation with CBC-SLP, a multimodal semantic segmentation model designed to preserve both modality-invariant and modality-specific information. Inspired by the theoretical results on modality alignment, which state that perfectly aligned multimodal representations can lead to sub-optimal performance in downstream prediction tasks, we propose a novel structured latent projection approach as an architectural inductive bias. Rather than enforcing this strategy through a loss term, we incorporate it directly into the architecture. In particular, to use the complementary information effectively while maintaining robustness under random modality dropout, we structure the latent representations into shared and modality-specific components and adaptively transfer them to the decoder according to the random modality availability mask. Extensive experiments on three multimodal remote sensing image sets demonstrate that CBC-SLP consistently outperforms state-of-the-art multimodal models across full and missing modality scenarios. Besides, we empirically demonstrate that the proposed strategy can recover the complementary information that may not be preserved in a shared representation. The code is available at https://github.com/iremulku/Multispectral-Semantic-Segmentation-via-Structured-Latent-Projection-CBC-SLP-.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/iremulku/Multispectral-Semantic-Segmentation-via-Structured-Latent-Projection-CBC-SLP-"&gt;https://github.com/iremulku/Multispectral-Semantic-Segmentation-via-Structured-Latent-Projection-CBC-SLP-&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 15 pages, 7 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; SEG&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+    <category term="Artificial Intelligence" />
+  </entry>
+  <entry>
+    <title>SSFT: A Lightweight Spectral-Spatial Fusion Transformer for Generic Hyperspectral Classification</title>
+    <link href="http://arxiv.org/abs/2604.15828v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15828v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Alexander Musiat</name>
+    </author>
+    <author>
+      <name>Nikolas Ebert</name>
+    </author>
+    <author>
+      <name>Oliver Wasenmüller</name>
+    </author>
+    <summary type="text">Hyperspectral imaging enables fine-grained recognition of materials by capturing rich spectral signatures, but learning robust classifiers is challenging due to high dimensionality, spectral redundancy, limited labeled data, and strong domain shifts. Beyond earth observation, labeled HSI data is often scarce and imbalanced, motivating compact models for generic hyperspectral classification across diverse acquisition regimes. We propose the lightweight Spectral-Spatial Fusion Transformer (SSFT), which factorizes representation learning into spectral and spatial pathways and integrates them via cross-attention to capture complementary wavelength-dependent and structural information. We evaluate our SSFT on the challenging HSI-Benchmark, a heterogeneous multi-dataset benchmark covering earth observation, fruit condition assessment, and fine-grained material recognition. SSFT achieves state-of-the-art overall performance, ranking first while using less than 2% of the parameters of the previous leading method. We further evaluate transfer to the substantially larger SpectralEarth benchmark under the official protocol, where SSFT remains competitive despite its compact size. Ablation studies show that both spectral and spatial pathways are crucial, with spatial modeling contributing most, and that SSFT remains robust without data augmentation.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; CLS&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+  </entry>
+  <entry>
+    <title>PixDLM: A Dual-Path Multimodal Language Model for UAV Reasoning Segmentation</title>
+    <link href="http://arxiv.org/abs/2604.15670v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15670v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Shuyan Ke</name>
+    </author>
+    <author>
+      <name>Yifan Mei</name>
+    </author>
+    <author>
+      <name>Changli Wu</name>
+    </author>
+    <author>
+      <name>Yonghan Zheng</name>
+    </author>
+    <author>
+      <name>Jiayi Ji</name>
+    </author>
+    <author>
+      <name>Liujuan Cao</name>
+    </author>
+    <author>
+      <name>Rongrong Ji</name>
+    </author>
+    <summary type="text">Reasoning segmentation has recently expanded from ground-level scenes to remote-sensing imagery, yet UAV data poses distinct challenges, including oblique viewpoints, ultra-high resolutions, and extreme scale variations. To address these issues, we formally define the UAV Reasoning Segmentation task and organize its semantic requirements into three dimensions: Spatial, Attribute, and Scene-level reasoning. Based on this formulation, we construct DRSeg, a large-scale benchmark for UAV reasoning segmentation, containing 10k high-resolution aerial images paired with Chain-of-Thought QA supervision across all three reasoning types. As a benchmark companion, we introduce PixDLM, a simple yet effective pixel-level multimodal language model that serves as a unified baseline for this task. Experiments on DRSeg establish strong baseline results and highlight the unique challenges of UAV reasoning segmentation, providing a solid foundation for future research.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; CVPR 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+  </entry>
+  <entry>
+    <title>Towards Realistic Open-Vocabulary Remote Sensing Segmentation: Benchmark and Baseline</title>
+    <link href="http://arxiv.org/abs/2604.15652v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15652v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Bingyu Li</name>
+    </author>
+    <author>
+      <name>Tao Huo</name>
+    </author>
+    <author>
+      <name>Haocheng Dong</name>
+    </author>
+    <author>
+      <name>Da Zhang</name>
+    </author>
+    <author>
+      <name>Zhiyuan Zhao</name>
+    </author>
+    <author>
+      <name>Junyu Gao</name>
+    </author>
+    <author>
+      <name>Xuelong Li</name>
+    </author>
+    <summary type="text">Open-vocabulary remote sensing image segmentation (OVRSIS) remains underexplored due to fragmented datasets, limited training diversity, and the lack of evaluation benchmarks that reflect realistic geospatial application demands. Our previous \textit{OVRSISBenchV1} established an initial cross-dataset evaluation protocol, but its limited scope is insufficient for assessing realistic open-world generalization. To address this issue, we propose \textit{OVRSISBenchV2}, a large-scale and application-oriented benchmark for OVRSIS. We first construct \textbf{OVRSIS95K}, a balanced dataset of about 95K image--mask pairs covering 35 common semantic categories across diverse remote sensing scenes. Built upon OVRSIS95K and 10 downstream datasets, OVRSISBenchV2 contains 170K images and 128 categories, substantially expanding scene diversity, semantic coverage, and evaluation difficulty. Beyond standard open-vocabulary segmentation, it further includes downstream protocols for building extraction, road extraction, and flood detection, thereby better reflecting realistic geospatial application demands and complex deployment scenarios. We also propose \textbf{Pi-Seg}, a baseline for OVRSIS. Pi-Seg improves transferability through a \textbf{positive-incentive noise} mechanism, where learnable and semantically guided perturbations broaden the visual-text feature space during training. Extensive experiments on OVRSISBenchV1, OVRSISBenchV2, and downstream tasks show that Pi-Seg delivers strong and consistent results, particularly on the more challenging OVRSISBenchV2 benchmark. Our results highlight both the importance of realistic benchmark design and the effectiveness of perturbation-based transfer for OVRSIS. The code and datasets are available at \href{https://github.com/LiBingyu01/RSKT-Seg/tree/Pi-Seg}{LiBingyu01/RSKT-Seg/tree/Pi-Seg}.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/LiBingyu01/RSKT-Seg/tree/Pi-Seg"&gt;https://github.com/LiBingyu01/RSKT-Seg/tree/Pi-Seg&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Dataset&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+  </entry>
   <entry>
     <title>Physically-Induced Atmospheric Adversarial Perturbations: Enhancing Transferability and Robustness in Remote Sensing Image Classification</title>
     <link href="http://arxiv.org/abs/2604.14643v1" rel="alternate" type="text/html" />
@@ -235,6 +381,30 @@
     <category term="Artificial Intelligence" />
   </entry>
   <entry>
+    <title>SatBLIP: Context Understanding and Feature Identification from Satellite Imagery with Vision-Language Learning</title>
+    <link href="http://arxiv.org/abs/2604.14373v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.14373v2</id>
+    <published>2026-04-15T00:00:00Z</published>
+    <updated>2026-04-15T00:00:00Z</updated>
+    <author>
+      <name>Xue Wu</name>
+    </author>
+    <author>
+      <name>Shengting Cao</name>
+    </author>
+    <author>
+      <name>Shenglin Li</name>
+    </author>
+    <author>
+      <name>Jiaqi Gong</name>
+    </author>
+    <summary type="text">Rural environmental risks are shaped by place-based conditions (e.g., housing quality, road access, land-surface patterns), yet standard vulnerability indices are coarse and provide limited insight into risk contexts. We propose SatBLIP, a satellite-specific vision-language framework for rural context understanding and feature identification that predicts county-level Social Vulnerability Index (SVI). SatBLIP addresses limitations of prior remote sensing pipelines-handcrafted features, manual virtual audits, and natural-image-trained VLMs-by coupling contrastive image-text alignment with bootstrapped captioning tailored to satellite semantics. We use GPT-4o to generate structured descriptions of satellite tiles (roof type/condition, house size, yard attributes, greenery, and road context), then fine-tune a satellite-adapted BLIP model to generate captions for unseen images. Captions are encoded with CLIP and fused with LLM-derived embeddings via attention for SVI estimation under spatial aggregation. Using SHAP, we identify salient attributes (e.g., roof form/condition, street width, vegetation, cars/open space) that consistently drive robust predictions, enabling interpretable mapping of rural risk environments.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; IC&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+    <category term="Artificial Intelligence" />
+  </entry>
+  <entry>
     <title>GCA Framework: A Gulf-Grounded Dataset and Agentic Pipeline for Climate Decision Support</title>
     <link href="http://arxiv.org/abs/2604.12306v1" rel="alternate" type="text/html" />
     <id>http://arxiv.org/abs/2604.12306v1</id>
@@ -387,162 +557,5 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; CVPR 2026&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Computer Vision" />
-  </entry>
-  <entry>
-    <title>Semantic-Geometric Dual Compression: Training-Free Visual Token Reduction for Ultra-High-Resolution Remote Sensing Understanding</title>
-    <link href="http://arxiv.org/abs/2604.11122v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11122v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>Yueying Li</name>
-    </author>
-    <author>
-      <name>Fengxiang Wang</name>
-    </author>
-    <author>
-      <name>Yan Li</name>
-    </author>
-    <author>
-      <name>Mingshuo Chen</name>
-    </author>
-    <author>
-      <name>Mengying Zhao</name>
-    </author>
-    <author>
-      <name>Long Lan</name>
-    </author>
-    <summary type="text">Multimodal Large Language Models (MLLMs) have demonstrated immense potential in Earth observation. However, the massive visual tokens generated when processing Ultra-High-Resolution (UHR) imagery introduce prohibitive computational overhead, severely bottlenecking their inference efficiency. Existing visual token compression methods predominantly adopt static and uniform compression strategies, neglecting the inherent "Semantic-Geometric Duality" in remote sensing interpretation tasks. Specifically, object semantic tasks focus on the abstract semantics of objects and benefit from aggressive background pruning, whereas scene geometric tasks critically rely on the integrity of spatial topology. To address this challenge, we propose DualComp, a task-adaptive dual-stream token compression framework. Dynamically guided by a lightweight pre-trained router, DualComp decouples feature processing into two dedicated pathways. In the object semantic stream, the Spatially-Contiguous Semantic Aggregator (SCSA) utilizes size-adaptive clustering to aggregates redundant background while protecting small object. In the scene geometric stream, the Instruction-Guided Structure Recoverer (IGSR) introduces a greedy path-tracing topology completion mechanism to reconstruct spatial skeletons. Experiments on the UHR remote sensing benchmark XLRS-Bench demonstrate that DualComp accomplishes high-fidelity remote sensing interpretation at an exceptionally low computational cost, achieving simultaneous improvements in both efficiency and accuracy.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Computer Vision" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Seg2Change: Adapting Open-Vocabulary Semantic Segmentation Model for Remote Sensing Change Detection</title>
-    <link href="http://arxiv.org/abs/2604.11231v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11231v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>You Su</name>
-    </author>
-    <author>
-      <name>Yonghong Song</name>
-    </author>
-    <author>
-      <name>Jingqi Chen</name>
-    </author>
-    <author>
-      <name>Zehan Wen</name>
-    </author>
-    <summary type="text">Change detection is a fundamental task in remote sensing, aiming to quantify the impacts of human activities and ecological dynamics on land-cover changes. Existing change detection methods are limited to predefined classes in training datasets, which constrains their scalability in real-world scenarios. In recent years, numerous advanced open-vocabulary semantic segmentation models have emerged for remote sensing imagery. However, there is still a lack of an effective framework for directly applying these models to open-vocabulary change detection (OVCD), a novel task that integrates vision and language to detect changes across arbitrary categories. To address these challenges, we first construct a category-agnostic change detection dataset, termed CA-CDD. Further, we design a category-agnostic change head to detect the transitions of arbitrary categories and index them to specific classes. Based on them, we propose Seg2Change, an adapter designed to adapt open-vocabulary semantic segmentation models to change detection task. Without bells and whistles, this simple yet effective framework achieves state-of-the-art OVCD performance (+9.52 IoU on WHU-CD and +5.50 mIoU on SECOND). Our code is released at https://github.com/yogurts-sy/Seg2Change.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/yogurts-sy/Seg2Change"&gt;https://github.com/yogurts-sy/Seg2Change&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 21 pages, 15 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; CD;SEG&lt;/p&gt;</content>
-    <category term="Computer Vision" />
-  </entry>
-  <entry>
-    <title>Observe Less, Understand More: Cost-aware Cross-scale Observation for Remote Sensing Understanding</title>
-    <link href="http://arxiv.org/abs/2604.11415v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11415v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>Zhenghao Xie</name>
-    </author>
-    <author>
-      <name>Jing Xiao</name>
-    </author>
-    <author>
-      <name>Zhenqi Wang</name>
-    </author>
-    <author>
-      <name>Kexin Ma</name>
-    </author>
-    <author>
-      <name>Liang Liao</name>
-    </author>
-    <author>
-      <name>Gui-Song Xia</name>
-    </author>
-    <author>
-      <name>Mi Wang</name>
-    </author>
-    <summary type="text">Remote sensing understanding inherently requires multi-resolution observation, since different targets and application tasks demand different levels of spatial detail. While low-resolution (LR) imagery enables efficient global observation, high-resolution (HR) imagery provides critical local details at much higher acquisition cost and limited coverage. This motivates a cross-scale sensing strategy that selectively acquires HR imagery from LR-based global perception to improve task performance under constrained cost. Existing methods for HR sampling methods typically make selection decisions from isolated LR patches, which ignore fine-grained intra-patch importance and cross-patch contextual interactions, leading to fragmented feature representation and suboptimal scene reasoning under sparse HR observations. To address this issue, we formulate cross-scale remote sensing understanding as a unified cost-aware problem that couples fine-grained HR sampling with cross-patch representation prediction, enabling more effective task reasoning with fewer HR observations. Furthermore, we present GL-10M, a large-scale benchmark of 10 million spatially aligned multi-resolution images, enabling systematic evaluation of budget-constrained cross-scale reasoning in remote sensing. Extensive experiments on recognition and retrieval tasks show that our method consistently achieves a superior performance-cost trade-off.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Computer Vision" />
-  </entry>
-  <entry>
-    <title>HuiYanEarth-SAR: A Foundation Model for High-Fidelity and Low-Cost Global Remote Sensing Imagery Generation</title>
-    <link href="http://arxiv.org/abs/2604.11444v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11444v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>Yongxiang Liu</name>
-    </author>
-    <author>
-      <name>Jie Zhou</name>
-    </author>
-    <author>
-      <name>Yafei Song</name>
-    </author>
-    <author>
-      <name>Tianpeng Liu</name>
-    </author>
-    <author>
-      <name>Li Liu</name>
-    </author>
-    <summary type="text">Synthetic Aperture Radar (SAR) imagery generation is essential for deepening the study of scattering mechanisms, establishing trustworthy electromagnetic scene models, and fundamentally alleviating the data scarcity bottleneck that constrains development in this field. However, existing methods find it difficult to simultaneously ensure high fidelity in both global geospatial semantics and microscopic scattering mechanisms, resulting in severe challenges for global generation. To address this, we propose \textbf{HuiYanEarth-SAR}, the first foundational SAR imagery generation model based on AlphaEarth and integrated scattering mechanisms. By injecting geospatial priors to control macroscopic structures and utilizing implicit scattering characteristic modeling to ensure the authenticity of microscopic textures, we achieve the capability of generating high-fidelity SAR images for global locations solely based on geographic coordinates. This study not only constructs an efficient SAR scene simulator but also establishes a bridge connecting geography, scatter mechanism, and artificial intelligence from a methodological standpoint. It advances SAR research by expanding the paradigm from perception and understanding to simulation and creation, providing key technical support for constructing a high-confidence digital twin of the Earth.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Computer Vision" />
-  </entry>
-  <entry>
-    <title>The Impact of Federated Learning on Distributed Remote Sensing Archives</title>
-    <link href="http://arxiv.org/abs/2604.11562v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11562v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>Anand Umashankar</name>
-    </author>
-    <author>
-      <name>Karam Tomotaki-Dawoud</name>
-    </author>
-    <author>
-      <name>Nicolai Schneider</name>
-    </author>
-    <summary type="text">Remote sensing archives are inherently distributed: Earth observation missions such as Sentinel-1, Sentinel-2, and Sentinel-3 have collectively accumulated more than 5 petabytes of imagery, stored and processed across many geographically dispersed platforms. Training machine learning models on such data in a centralized fashion is impractical due to data volume, sovereignty constraints, and geographic distribution. Federated learning (FL) addresses this by keeping data local and exchanging only model updates. A central challenge for remote sensing is the non-IID nature of Earth observation data: label distributions vary strongly by geographic region, degrading the convergence of standard FL algorithms. In this paper, we conduct a systematic empirical study of three FL strategies -- FedAvg, FedProx, and bulk synchronous parallel (BSP) -- applied to multi-label remote sensing image classification under controlled non-IID label-skew conditions. We evaluate three convolutional neural network (CNN) architectures of increasing depth (LeNet, AlexNet, and ResNet-34) and analyze the joint effect of algorithm choice, model capacity, client fraction, client count, batch size, and communication cost. Experiments on the UC Merced multi-label dataset show that FedProx outperforms FedAvg for deeper architectures under data heterogeneity, that BSP approaches centralized accuracy at the cost of high sequential communication, and that LeNet provides the best accuracy-communication trade-off for the dataset scale considered.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; This work was completed in 2021. It is posted as a historical record and reference baseline&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; CLS&lt;/p&gt;</content>
-    <category term="Computer Vision" />
-  </entry>
-  <entry>
-    <title>A Mamba-Based Multimodal Network for Multiscale Blast-Induced Rapid Structural Damage Assessment</title>
-    <link href="http://arxiv.org/abs/2604.11709v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.11709v1</id>
-    <published>2026-04-13T00:00:00Z</published>
-    <updated>2026-04-13T00:00:00Z</updated>
-    <author>
-      <name>Wanli Ma</name>
-    </author>
-    <author>
-      <name>Sivasakthy Selvakumaran</name>
-    </author>
-    <author>
-      <name>Dain G. Farrimond</name>
-    </author>
-    <author>
-      <name>Adam A. Dennis</name>
-    </author>
-    <author>
-      <name>Samuel E. Rigby</name>
-    </author>
-    <summary type="text">Accurate and rapid structural damage assessment (SDA) is crucial for post-disaster management, helping responders prioritise resources, plan rescues, and support recovery. Traditional field inspections, though precise, are limited by accessibility, safety risks, and time constraints, especially after large explosions. Machine learning with remote sensing has emerged as a scalable solution for rapid SDA, with Mamba-based networks achieving state-of-the-art performance. However, these methods often require extensive training and large datasets, limiting real-world applicability. Moreover, they fail to incorporate key physical characteristics of blast loading for SDA. To overcome these challenges, we propose a Mamba-based multimodal network for rapid SDA that integrates multi-scale blast-loading information with optical remote sensing images. Evaluated on the 2020 Beirut explosion, our method significantly improves performance over state-of-the-art approaches. Code is available at: https://github.com/IMPACTSquad/Blast-Mamba</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/IMPACTSquad/Blast-Mamba"&gt;https://github.com/IMPACTSquad/Blast-Mamba&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Artificial Intelligence" />
   </entry>
 </feed>

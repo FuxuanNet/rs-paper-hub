@@ -2,11 +2,11 @@
   "scrape": {
     "last_year": null,
     "last_month": null,
-    "total_scraped": 5575,
+    "total_scraped": 5580,
     "completed": true
   },
   "downloaded": [],
   "failed": [],
-  "updated_at": "2026-04-18T18:00:42.750974",
-  "last_new_count": 0
+  "updated_at": "2026-04-20T02:37:08.511836",
+  "last_new_count": 9
 }
