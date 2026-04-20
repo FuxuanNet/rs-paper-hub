@@ -2,7 +2,7 @@
 
 <img src="asset/logo.png" alt="RS-Paper-Hub" width="100">
 
-# RS-Paper-Hub
+# MM-Paper-Hub
 
 **A curated collection of multimodal papers from arXiv, with automated scraping, cleaning, task tagging, MM filtering, and MA filtering.**
 
