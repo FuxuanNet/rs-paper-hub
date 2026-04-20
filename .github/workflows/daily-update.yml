@@ -30,7 +30,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Update papers (last 7 days)
-        run: python main.py --update --max-results 500
+        run: python main.py --update
 
       - name: Run pipeline (clean + filter + classify)
         run: python pipeline.py
