@@ -110,7 +110,7 @@ def main():
     )
     parser.add_argument(
         "--update", action="store_true",
-        help="Quick update: only scrape recent 7 days and append new papers"
+        help="Quick update: only scrape recent 1 days and append new papers"
     )
     parser.add_argument(
         "--status", action="store_true",
@@ -146,11 +146,11 @@ def main():
         logger.info("Done!")
         return
 
-    # Update mode: fetch last 7 days, auto-incremental
+    # Update mode: fetch last 1 days, auto-incremental
     if args.update:
         from datetime import datetime, timedelta
         now = datetime.now()
-        date_from = now - timedelta(days=7)
+        date_from = now - timedelta(days=1)
         args.incremental = True
         # Reset scrape progress so it doesn't skip
         progress.data["scrape"]["completed"] = False
