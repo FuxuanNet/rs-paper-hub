@@ -1,8 +1,49 @@
-"""Configuration for arXiv remote sensing paper scraper."""
+"""Configuration for arXiv multimodal paper scraper."""
 
-# Search parameters
-# Search parameters — 不限分类，全量搜索
-SEARCH_QUERY = 'ti:"remote sensing" OR abs:"remote sensing" OR ti:"earth observation" OR abs:"earth observation"'
+# Search parameters (tiered strategy)
+# 1) Strict categories are fully included.
+# 2) Gated category requires multimodal keyword hit.
+STRICT_CATEGORIES = ["cs.MM", "cs.MA"]
+GATED_CATEGORY = "cs.CV"
+ALLOWED_PRIMARY_CATEGORIES = {"cs.CV", "cs.MM", "cs.MA"}
+
+CV_MM_TERMS = [
+    "multimodal",
+    "multi-modal",
+    "vision-language",
+    "visual-language",
+    "image-text",
+    "text-image",
+    "cross-modal",
+    "vision language model",
+    "multimodal large language model",
+    "MLLM",
+    "LMM",
+    "VLM",
+    "visual question answering",
+    "image captioning",
+    "visual grounding",
+    "text-to-image",
+    "image-to-text",
+    # CV-side spatial intelligence (for retrieval scope in cs.CV)
+    "spatial intelligence",
+    "spatial reasoning",
+    "3d scene understanding",
+    "3d vision-language",
+    "vision-language navigation",
+    "visual navigation",
+    "embodied multimodal",
+]
+
+
+def build_search_query() -> str:
+    strict = " OR ".join(f"cat:{cat}" for cat in STRICT_CATEGORIES)
+    cv_terms = " OR ".join(f'ti:"{term}" OR abs:"{term}"' for term in CV_MM_TERMS)
+    gated = f"(cat:{GATED_CATEGORY} AND ({cv_terms}))"
+    return f"({strict}) OR {gated}"
+
+
+SEARCH_QUERY = build_search_query()
 
 # Date range
 START_YEAR = 2020
@@ -25,6 +66,7 @@ JSON_FILENAME = "papers.json"
 # arXiv category full names
 CATEGORY_NAMES = {
     "cs.CV": "Computer Vision",
+    "cs.MA": "Multiagent Systems",
     "cs.AI": "Artificial Intelligence",
     "cs.LG": "Machine Learning",
     "cs.MM": "Multimedia",

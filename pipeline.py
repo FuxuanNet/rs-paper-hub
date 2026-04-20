@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-One-click pipeline: clean all data + filter VLM + classify.
+One-click pipeline: clean all data + filter MM/MA + classify.
 
 Usage:
     python pipeline.py                # Process output/papers.json
@@ -16,8 +16,8 @@ from collections import Counter
 import pandas as pd
 
 from cleaning.abstract_cleaner import clean_abstract
-from cleaning.filter.vlm_filter import filter_vlm_papers
-from cleaning.filter.agent_filter import filter_agent_papers
+from cleaning.filter.mm_filter import filter_mm_papers
+from cleaning.filter.ma_filter import filter_ma_papers
 from cleaning.classifier import classify_papers
 from cleaning.task_tagger import tag_all_papers
 
@@ -28,14 +28,25 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# All output columns
 ALL_COLUMNS = [
+    "PrimaryCategory", "Categories",
     "Category", "Type", "Subtype", "Date", "Month", "Year", "Institute",
     "Title", "abbr.", "Paper_link", "Abstract",
     "code", "Publication", "BibTex", "Authors", "_tasks",
 ]
 
-VLM_COLUMNS = ["Category"] + ALL_COLUMNS
+SUBSET_COLUMNS = ALL_COLUMNS
+
+LEGACY_OUTPUT_FILES = [
+    "papers_vlm.csv",
+    "papers_vlm.json",
+    "papers_vlm_annotated.json",
+    "papers_agent.csv",
+    "papers_agent.json",
+    "papers_agent_annotated.json",
+    "feed_vlm.xml",
+    "feed_agent.xml",
+]
 
 
 def save(papers: list[dict], csv_path: str, json_path: str, columns: list[str]):
@@ -44,7 +55,7 @@ def save(papers: list[dict], csv_path: str, json_path: str, columns: list[str]):
     df.to_csv(csv_path, index=False, encoding="utf-8-sig")
 
     clean = [
-        {k: ("" if pd.isna(v) else v) for k, v in p.items() if k in columns}
+        {k: ("" if pd.isna(p.get(k, "")) else p.get(k, "")) for k in columns}
         for p in papers
     ]
     with open(json_path, "w", encoding="utf-8") as f:
@@ -54,14 +65,26 @@ def save(papers: list[dict], csv_path: str, json_path: str, columns: list[str]):
     logger.info(f"  -> {json_path}")
 
 
+def remove_legacy_outputs(output_dir: str):
+    """Delete legacy VLM/Agent output files from previous versions."""
+    removed = []
+    for filename in LEGACY_OUTPUT_FILES:
+        path = os.path.join(output_dir, filename)
+        if os.path.exists(path):
+            os.remove(path)
+            removed.append(filename)
+    if removed:
+        logger.info("Removed legacy outputs: " + ", ".join(removed))
+
+
 def run(input_path: str, output_dir: str):
-    # ── Load ──────────────────────────────────────────────
     logger.info(f"Loading {input_path}...")
     with open(input_path, "r", encoding="utf-8") as f:
         papers = json.load(f)
     logger.info(f"Loaded {len(papers)} papers")
 
-    # ── Deduplicate by Paper_link (keep last occurrence) ──
+    remove_legacy_outputs(output_dir)
+
     before = len(papers)
     seen = {}
     for p in papers:
@@ -71,7 +94,10 @@ def run(input_path: str, output_dir: str):
     if len(papers) < before:
         logger.info(f"  Deduplicated: {before} -> {len(papers)} ({before - len(papers)} duplicates removed)")
 
-    # ── Step 1: Clean abstracts → fill code field (incremental) ──
+    for p in papers:
+        p.setdefault("PrimaryCategory", "")
+        p.setdefault("Categories", "")
+
     need_code = [p for p in papers if not p.get("code") or str(p["code"]) in ("", "nan")]
     if need_code:
         logger.info(f"[1/9] Cleaning abstracts & extracting code URLs ({len(need_code)}/{len(papers)})...")
@@ -84,7 +110,6 @@ def run(input_path: str, output_dir: str):
     else:
         logger.info("[1/9] Code extraction: all papers already have code field, skipped")
 
-    # ── Step 2: Classify (incremental) ────────────────────
     need_classify = [p for p in papers if not p.get("Category")]
     if need_classify:
         logger.info(f"[2/9] Classifying papers ({len(need_classify)}/{len(papers)})...")
@@ -92,7 +117,6 @@ def run(input_path: str, output_dir: str):
     else:
         logger.info("[2/9] Classification: all papers already classified, skipped")
 
-    # ── Step 3: Tag tasks (incremental) ───────────────────
     need_tasks = [p for p in papers if "_tasks" not in p]
     if need_tasks:
         logger.info(f"[3/9] Tagging tasks ({len(need_tasks)}/{len(papers)})...")
@@ -104,7 +128,6 @@ def run(input_path: str, output_dir: str):
     for cat, count in all_cat_counter.most_common():
         logger.info(f"  {cat}: {count}")
 
-    # ── Step 3: Save cleaned full dataset ─────────────────
     logger.info("[4/9] Saving cleaned dataset...")
     save(
         papers,
@@ -113,81 +136,63 @@ def run(input_path: str, output_dir: str):
         ALL_COLUMNS,
     )
 
-    # ── Step 4: Filter VLM papers ─────────────────────────
-    logger.info("[5/9] Filtering VLM-related papers...")
-    matched, annotated = filter_vlm_papers(papers)
-    logger.info(f"  VLM-related: {len(matched)} / {len(papers)}")
+    logger.info("[5/9] Filtering MM-related papers...")
+    mm_matched, mm_annotated = filter_mm_papers(papers)
+    logger.info(f"  MM-related: {len(mm_matched)} / {len(papers)}")
 
-    # ── Step 5: Classify VLM papers ───────────────────────
-    logger.info("[6/9] Classifying VLM papers...")
-    classify_papers(matched)
+    logger.info("[6/9] Classifying MM papers...")
+    classify_papers(mm_matched)
 
-
-    cat_counter = Counter(p.get("Category", "Other") for p in matched)
-    for cat, count in cat_counter.most_common():
+    mm_cat_counter = Counter(p.get("Category", "Other") for p in mm_matched)
+    for cat, count in mm_cat_counter.most_common():
         logger.info(f"  {cat}: {count}")
 
-    year_counter = Counter(p.get("Year", "?") for p in matched)
-    logger.info("  Year distribution:")
-    for year in sorted(year_counter):
-        logger.info(f"    {year}: {year_counter[year]}")
-
-    # ── Save VLM outputs ──────────────────────────────────
-    logger.info("Saving VLM outputs...")
+    logger.info("Saving MM outputs...")
     save(
-        matched,
-        os.path.join(output_dir, "papers_vlm.csv"),
-        os.path.join(output_dir, "papers_vlm.json"),
-        VLM_COLUMNS,
+        mm_matched,
+        os.path.join(output_dir, "papers_mm.csv"),
+        os.path.join(output_dir, "papers_mm.json"),
+        SUBSET_COLUMNS,
     )
+    mm_annotated_path = os.path.join(output_dir, "papers_mm_annotated.json")
+    with open(mm_annotated_path, "w", encoding="utf-8") as f:
+        json.dump(mm_annotated, f, ensure_ascii=False, indent=2)
+    logger.info(f"  -> {mm_annotated_path}")
 
-    # Annotated full list
-    annotated_path = os.path.join(output_dir, "papers_vlm_annotated.json")
-    with open(annotated_path, "w", encoding="utf-8") as f:
-        json.dump(annotated, f, ensure_ascii=False, indent=2)
-    logger.info(f"  -> {annotated_path}")
+    logger.info("[7/9] Filtering MA-related papers...")
+    ma_matched, ma_annotated = filter_ma_papers(papers)
+    logger.info(f"  MA-related: {len(ma_matched)} / {len(papers)}")
 
-    # ── Step 7: Filter Agent papers ──────────────────────
-    logger.info("[7/9] Filtering Agent-related papers...")
-    agent_matched, agent_annotated = filter_agent_papers(papers)
-    logger.info(f"  Agent-related: {len(agent_matched)} / {len(papers)}")
+    logger.info("[8/9] Classifying MA papers...")
+    classify_papers(ma_matched)
 
-    # ── Step 8: Classify Agent papers ────────────────────
-    logger.info("[8/9] Classifying Agent papers...")
-    classify_papers(agent_matched)
-
-    agent_cat_counter = Counter(p.get("Category", "Other") for p in agent_matched)
-    for cat, count in agent_cat_counter.most_common():
+    ma_cat_counter = Counter(p.get("Category", "Other") for p in ma_matched)
+    for cat, count in ma_cat_counter.most_common():
         logger.info(f"  {cat}: {count}")
 
-    # ── Save Agent outputs ────────────────────────────────
-    logger.info("Saving Agent outputs...")
+    logger.info("Saving MA outputs...")
     save(
-        agent_matched,
-        os.path.join(output_dir, "papers_agent.csv"),
-        os.path.join(output_dir, "papers_agent.json"),
-        ALL_COLUMNS,
+        ma_matched,
+        os.path.join(output_dir, "papers_ma.csv"),
+        os.path.join(output_dir, "papers_ma.json"),
+        SUBSET_COLUMNS,
     )
+    ma_annotated_path = os.path.join(output_dir, "papers_ma_annotated.json")
+    with open(ma_annotated_path, "w", encoding="utf-8") as f:
+        json.dump(ma_annotated, f, ensure_ascii=False, indent=2)
+    logger.info(f"  -> {ma_annotated_path}")
 
-    agent_annotated_path = os.path.join(output_dir, "papers_agent_annotated.json")
-    with open(agent_annotated_path, "w", encoding="utf-8") as f:
-        json.dump(agent_annotated, f, ensure_ascii=False, indent=2)
-    logger.info(f"  -> {agent_annotated_path}")
-
-    # ── Step 9: Generate Atom feeds for Zotero ────────────
     logger.info("[9/9] Generating Atom feeds...")
     from rss_generator import generate_feeds
-    generate_feeds(papers, matched, agent_matched, output_dir,
-                   site_url="https://rspaper.top")
+    generate_feeds(papers, mm_matched, ma_matched, output_dir, site_url="https://rspaper.top")
 
-    # ── Summary ───────────────────────────────────────────
     logger.info("=" * 50)
-    logger.info(f"Done! Total: {len(papers)} | VLM: {len(matched)} | Agent: {len(agent_matched)}")
-    logger.info(f"  papers.csv/json           - all {len(papers)} papers (cleaned)")
-    logger.info(f"  papers_vlm.csv/json       - {len(matched)} VLM papers (with Category)")
-    logger.info(f"  papers_vlm_annotated.json - full list with VLM flags")
-    logger.info(f"  papers_agent.csv/json     - {len(agent_matched)} Agent papers (with Category)")
-    logger.info(f"  papers_agent_annotated.json - full list with Agent flags")
+    logger.info(f"Done! Total: {len(papers)} | MM: {len(mm_matched)} | MA: {len(ma_matched)}")
+    logger.info(f"  papers.csv/json          - all {len(papers)} papers (cleaned)")
+    logger.info(f"  papers_mm.csv/json       - {len(mm_matched)} MM papers (with Category)")
+    logger.info(f"  papers_mm_annotated.json - full list with MM flags")
+    logger.info(f"  papers_ma.csv/json       - {len(ma_matched)} MA papers (with Category)")
+    logger.info(f"  papers_ma_annotated.json - full list with MA flags")
 
 
 def main():

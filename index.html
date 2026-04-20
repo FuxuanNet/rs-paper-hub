@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RS Paper Hub - A curated collection of remote sensing papers from arXiv</title>
+<title>RS Paper Hub - A curated collection of multimodal papers from arXiv</title>
 <link rel="icon" type="image/png" href="asset/logo.png">
 <link rel="apple-touch-icon" href="asset/logo.png">
 <link rel="alternate" type="application/atom+xml" title="RS Papers - All" href="output/feed.xml">
-<link rel="alternate" type="application/atom+xml" title="RS Papers - VLM" href="output/feed_vlm.xml">
-<link rel="alternate" type="application/atom+xml" title="RS Papers - Agent" href="output/feed_agent.xml">
+<link rel="alternate" type="application/atom+xml" title="RS Papers - MM" href="output/feed_mm.xml">
+<link rel="alternate" type="application/atom+xml" title="RS Papers - MA" href="output/feed_ma.xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -278,7 +278,7 @@
   #typeFilter { border-color: #a5b4fc; color: #4f46e5; background-color: #eef2ff; }
   #categoryFilter { border-color: #93c5fd; color: #1e40af; background-color: #eff6ff; }
   #monthFilter { border-color: #fcd34d; color: #92400e; background-color: #fffbeb; }
-  #vlmFilter, #vlmKeywordFilter { border-color: #f9a8d4; color: #9d174d; background-color: #fdf2f8; }
+  #mmFilter, #mmKeywordFilter { border-color: #f9a8d4; color: #9d174d; background-color: #fdf2f8; }
   #taskFilter { border-color: #fdba74; color: #c2410c; background-color: #fff7ed; }
   .ds-tabs {
     display: inline-flex; border: 1.5px solid var(--primary); border-radius: 10px; overflow: hidden;
@@ -384,8 +384,8 @@
   .tag.year { background: #fef3c7; color: #92400e; }
   .tag.pub { background: #d1fae5; color: #065f46; }
   .tag.category { background: #dbeafe; color: #1e40af; }
-  .tag.vlm { background: #fce7f3; color: #9d174d; }
-  .tag.vlm-kw { background: #ede9fe; color: #5b21b6; font-size: 11px; }
+  .tag.mm { background: #fce7f3; color: #9d174d; }
+  .tag.mm-kw { background: #ede9fe; color: #5b21b6; font-size: 11px; }
   .tag.task { background: #fff7ed; color: #c2410c; font-size: 11px; font-weight: 600; }
   .field-icon { display: inline; vertical-align: middle; margin-right: 4px; opacity: 0.5; }
   .paper-authors { font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; padding-left: 20px; position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -529,7 +529,7 @@
 
 <div class="header">
   <h1><span class="h1-text-wrap"><img src="asset/logo.png" alt="Logo">RS Paper Hub</span></h1>
-  <p>A curated collection of remote sensing papers from arXiv</p>
+  <p>A curated collection of multimodal papers from arXiv</p>
   <nav class="nav-bar">
     <a href="https://github.com/ML4Sustain/rs-paper-hub" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>GitHub</a>
     <a href="https://github.com/ML4Sustain/rs-paper-hub/issues" target="_blank" data-i18n="issues"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>Issues</a>
@@ -540,8 +540,8 @@
       <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('open')" title="RSS Feeds"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56z"/><path d="M4 10.1v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>RSS</a>
       <div class="rss-menu">
         <a href="output/feed.xml" target="_blank">All Papers</a>
-        <a href="output/feed_vlm.xml" target="_blank">VLM Papers</a>
-        <a href="output/feed_agent.xml" target="_blank">Agent Papers</a>
+        <a href="output/feed_mm.xml" target="_blank">MM Papers</a>
+        <a href="output/feed_ma.xml" target="_blank">MA Papers</a>
       </div>
     </span>
     <a href="javascript:void(0)" id="langToggle" onclick="toggleLang()" style="cursor:pointer;font-weight:600;position:relative;top:-0.5px;">中文</a>
@@ -597,12 +597,12 @@
       <option value="10">Oct</option><option value="11">Nov</option><option value="12">Dec</option>
     </select>
     <select id="categoryFilter" style="display:none;"></select>
-    <select id="vlmFilter" style="display:none;">
-      <option value="">All VLM</option>
-      <option value="true">VLM Only</option>
-      <option value="false">Non-VLM</option>
+    <select id="mmFilter" style="display:none;">
+      <option value="">All MM</option>
+      <option value="true">MM Only</option>
+      <option value="false">Non-MM</option>
     </select>
-    <select id="vlmKeywordFilter" style="display:none;max-width:180px;"></select>
+    <select id="mmKeywordFilter" style="display:none;max-width:180px;"></select>
     <select id="taskFilter" style="display:none;"></select>
     <div class="sort-group">
       <button class="sort-btn active" data-sort="newest">New</button>
@@ -722,7 +722,7 @@ const PER_PAGE = 20;
 const LANG = {
   en: {
     siteTitle: 'RS Paper Hub',
-    siteSubtitle: 'A curated collection of remote sensing papers from arXiv',
+    siteSubtitle: 'A curated collection of multimodal papers from arXiv',
     github: 'GitHub', issues: 'Issues', docs: 'Docs', contact: 'Contact',
     statPapers: 'Papers', statTypes: 'Types', statYears: 'Years', statWithCode: 'With Code',
     noteDisclaimer: 'Note: Category and task labels are rule-based and may contain inaccuracies. We are continuously improving them. This does not affect tracking the latest research trends.',
@@ -735,7 +735,7 @@ const LANG = {
     allTypes: 'All Types', allYears: 'All Years', customRange: 'Custom Range...',
     allMonths: 'All Months',
     monthNames: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-    allCategories: 'All Categories', allVLM: 'All VLM', vlmOnly: 'VLM Only', nonVLM: 'Non-VLM',
+    allCategories: 'All Categories', allMM: 'All MM', mmOnly: 'MM Only', nonMM: 'Non-MM',
     allKeywords: 'All Keywords', allTasks: 'All Tasks',
     sortNew: 'New', sortOld: 'Old', sortAZ: 'A-Z',
     charts: 'Charts',
@@ -744,8 +744,8 @@ const LANG = {
     reset: 'Reset',
     papersFound: 'papers found', collected: 'collected',
     noMatchFilters: 'No papers match your current filters.',
-    noMatchToday: 'No remote sensing papers published today.',
-    noMatchWeek: 'No remote sensing papers found this week yet.',
+    noMatchToday: 'No multimodal papers published today.',
+    noMatchWeek: 'No multimodal papers found this week yet.',
     paper: 'Paper', code: 'Code', collect: 'Collect', collectDone: 'Collected',
     newPapers: 'NEW PAPERS', recentPapers: 'Recent Papers',
     noPapersToday: 'No papers today yet', noPapersWeek: 'No papers this week',
@@ -757,7 +757,7 @@ const LANG = {
     exportRange: 'Export range:',
     includeAbstracts: 'Include abstracts',
     downloadBib: 'Download .bib',
-    ds_all: 'All Papers', ds_vlm: 'Vision-Language Model', ds_agent: 'Agent',
+    ds_all: 'All Papers', ds_mm: 'Multimodal', ds_ma: 'Multiagent Systems',
     noBibtex: 'No BibTeX available',
     scholar: 'Scholar',
     before: 'Before', more: 'more',
@@ -765,8 +765,8 @@ const LANG = {
     friendLinks: 'Links',
   },
   zh: {
-    siteTitle: '遥感论文社',
-    siteSubtitle: '来自 arXiv 的遥感论文精选合集',
+    siteTitle: '多模态论文社',
+    siteSubtitle: '来自 arXiv 的多模态论文精选合集',
     github: 'GitHub', issues: '问题反馈', docs: '文档', contact: '联系我们',
     statPapers: '论文总数', statTypes: '类型', statYears: '年份', statWithCode: '含代码',
     noteDisclaimer: '注意：arXiv论文发布日期和声明日期存在2-3天延迟; 类别和任务标签基于规则生成，可能存在不准确之处。我们正在持续改进。这不影响追踪最新研究趋势。',
@@ -779,7 +779,7 @@ const LANG = {
     allTypes: '所有类型', allYears: '所有年份', customRange: '自定义范围...',
     allMonths: '所有月份',
     monthNames: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
-    allCategories: '所有类别', allVLM: '所有 VLM', vlmOnly: '仅 VLM', nonVLM: '非 VLM',
+    allCategories: '所有类别', allMM: '所有 MM', mmOnly: '仅 MM', nonMM: '非 MM',
     allKeywords: '所有关键词', allTasks: '所有任务',
     sortNew: '最新', sortOld: '最旧', sortAZ: 'A-Z',
     charts: '图表',
@@ -788,8 +788,8 @@ const LANG = {
     reset: '重置',
     papersFound: '篇论文', collected: '篇已收藏',
     noMatchFilters: '没有符合当前筛选条件的论文。',
-    noMatchToday: '今日暂无遥感论文发布。',
-    noMatchWeek: '本周暂无遥感论文。',
+    noMatchToday: '今日暂无多模态论文发布。',
+    noMatchWeek: '本周暂无多模态论文。',
     paper: '论文', code: '代码', collect: '收藏', collectDone: '已收藏',
     newPapers: '最新论文', recentPapers: '近期论文',
     noPapersToday: '今日暂无论文', noPapersWeek: '本周暂无论文',
@@ -801,7 +801,7 @@ const LANG = {
     exportRange: '导出范围：',
     includeAbstracts: '包含摘要',
     downloadBib: '下载 .bib',
-    ds_all: '全部论文', ds_vlm: '视觉语言模型', ds_agent: 'Agent',
+    ds_all: '全部论文', ds_mm: '多模态', ds_ma: '多智能体系统',
     noBibtex: '暂无引用信息',
     scholar: '谷歌学术',
     before: '早于', more: '更多',
@@ -824,7 +824,7 @@ function applyLang() {
   wrap.className = 'h1-text-wrap';
   wrap.appendChild(img);
   if (currentLang === 'zh') {
-    wrap.insertAdjacentHTML('beforeend', '遥感论文社');
+    wrap.insertAdjacentHTML('beforeend', '多模态论文社');
   } else {
     wrap.appendChild(document.createTextNode(t('siteTitle')));
   }
@@ -876,14 +876,14 @@ function applyLang() {
     const opt = monthSel.querySelector(`option[value="${i}"]`);
     if (opt) opt.text = t('monthNames')[i - 1];
   }
-  // Category / VLM / Task filters
+  // Category / MM / Task filters
   const catFirst = document.querySelector('#categoryFilter option[value=""]');
   if (catFirst) catFirst.text = t('allCategories');
-  const vlmSel = document.getElementById('vlmFilter');
-  if (vlmSel.options[0]) vlmSel.options[0].text = t('allVLM');
-  if (vlmSel.options[1]) vlmSel.options[1].text = t('vlmOnly');
-  if (vlmSel.options[2]) vlmSel.options[2].text = t('nonVLM');
-  const kwFirst = document.querySelector('#vlmKeywordFilter option[value=""]');
+  const mmSel = document.getElementById('mmFilter');
+  if (mmSel.options[0]) mmSel.options[0].text = t('allMM');
+  if (mmSel.options[1]) mmSel.options[1].text = t('mmOnly');
+  if (mmSel.options[2]) mmSel.options[2].text = t('nonMM');
+  const kwFirst = document.querySelector('#mmKeywordFilter option[value=""]');
   if (kwFirst) kwFirst.text = t('allKeywords');
   const taskFirst = document.querySelector('#taskFilter option[value=""]');
   if (taskFirst) taskFirst.text = t('allTasks');
@@ -956,15 +956,25 @@ const ICON = {
   scholar: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>',
 };
 const TASK_NAMES = {
-  CLS: 'Classification', ITR: 'Image-Text Retrieval', GeoLoc: 'Geolocation',
-  VQA: 'Visual Question Answering', IC: 'Image Captioning', CD: 'Change Detection',
-  OD: 'Object Detection', VG: 'Visual Grounding', SEG: 'Segmentation',
-  SR: 'Super-Resolution', '3D': '3D Reconstruction',
+  MMCLS: 'Multimodal Classification',
+  ITR: 'Image-Text Retrieval',
+  VQA: 'Visual Question Answering',
+  IC: 'Image Captioning',
+  VG: 'Visual Grounding',
+  OVOD: 'Open-Vocabulary Object Detection',
+  OVSEG: 'Open-Vocabulary Segmentation',
+  T2I: 'Text-to-Image Generation',
+  T2V: 'Text-to-Video Generation',
+  I2T: 'Image-to-Text Generation',
+  MRE: 'Multimodal Reasoning',
+  MDI: 'Multimodal Dialogue & Instruction',
+  MAG: 'Multimodal Agent',
+  TAP: 'Tool-Augmented Perception',
 };
 const DATA_SOURCES = [
   { label: 'All Papers', file: 'papers.json', key: 'all' },
-  { label: 'Vision-Language Model', file: 'papers_vlm.json', key: 'vlm' },
-  { label: 'Agent', file: 'papers_agent.json', key: 'agent' },
+  { label: 'Multimodal', file: 'papers_mm.json', key: 'mm' },
+  { label: 'Multiagent Systems', file: 'papers_ma.json', key: 'ma' },
 ];
 let allPapers = [];
 let filtered = [];
@@ -1021,12 +1031,12 @@ async function loadData(file) {
   document.getElementById('qfToday').classList.remove('active');
   document.getElementById('qfWeek').classList.remove('active');
   document.getElementById('searchInput').value = '';
-  // Show/hide VLM filters based on data
-  const hasVlm = allPapers.some(p => '_is_vlm' in p);
-  document.getElementById('vlmFilter').style.display = hasVlm ? '' : 'none';
-  document.getElementById('vlmKeywordFilter').style.display = hasVlm ? '' : 'none';
-  if (hasVlm) populateVlmKeywords();
-  else { document.getElementById('vlmFilter').value = ''; document.getElementById('vlmKeywordFilter').value = ''; }
+  // Show/hide MM filters based on data
+  const hasMm = allPapers.some(p => '_is_mm' in p);
+  document.getElementById('mmFilter').style.display = hasMm ? '' : 'none';
+  document.getElementById('mmKeywordFilter').style.display = hasMm ? '' : 'none';
+  if (hasMm) populateMmKeywords();
+  else { document.getElementById('mmFilter').value = ''; document.getElementById('mmKeywordFilter').value = ''; }
   // Show/hide Category filter
   const hasCat = allPapers.some(p => p.Category);
   const catSel = document.getElementById('categoryFilter');
@@ -1050,7 +1060,8 @@ async function loadData(file) {
     allPapers.forEach(p => {
       (p._tasks || '').split(';').filter(t => t.trim()).forEach(t => { tasks[t] = (tasks[t] || 0) + 1; });
     });
-    Object.entries(tasks).sort((a,b) => b[1] - a[1]).forEach(([t, n]) => {
+    Object.keys(TASK_NAMES).forEach((t) => {
+      const n = tasks[t] || 0;
       const o = document.createElement('option');
       o.value = t; o.textContent = (TASK_NAMES[t] || t) + ' (' + n + ')'; taskSel.appendChild(o);
     });
@@ -1095,13 +1106,13 @@ function cleanRegexLabel(s) {
     .trim();
 }
 
-function populateVlmKeywords() {
-  const sel = document.getElementById('vlmKeywordFilter');
+function populateMmKeywords() {
+  const sel = document.getElementById('mmKeywordFilter');
   sel.innerHTML = `<option value="">${t('allKeywords')}</option>`;
   // Extract readable keyword labels from regex patterns
   const kwSet = new Set();
   allPapers.forEach(p => {
-    const kw = p._vlm_keywords || '';
+    const kw = p._mm_keywords || '';
     if (kw) kw.split(';').forEach(k => { k = k.trim(); if (k) kwSet.add(k); });
   });
   const cleaned = [...kwSet].map(k => ({ raw: k, label: cleanRegexLabel(k) }))
@@ -1163,8 +1174,8 @@ function applyFilters() {
   const yearTo = document.getElementById('yearToFilter').value;
   const month = document.getElementById('monthFilter').value;
 
-  const vlm = document.getElementById('vlmFilter').value;
-  const vlmKw = document.getElementById('vlmKeywordFilter').value;
+  const mm = document.getElementById('mmFilter').value;
+  const mmKw = document.getElementById('mmKeywordFilter').value;
   const catDD = document.getElementById('categoryFilter').value;
   const taskDD = document.getElementById('taskFilter').value;
 
@@ -1203,9 +1214,9 @@ function applyFilters() {
     // Category filter
     if (catSet) { if (!catSet.has(p.Category)) return false; }
     else if (catDD && p.Category !== catDD) return false;
-    if (vlm === 'true' && !p._is_vlm) return false;
-    if (vlm === 'false' && p._is_vlm) return false;
-    if (vlmKw && !(p._vlm_keywords || '').includes(vlmKw)) return false;
+    if (mm === 'true' && !p._is_mm) return false;
+    if (mm === 'false' && p._is_mm) return false;
+    if (mmKw && !(p._mm_keywords || '').includes(mmKw)) return false;
     // Task filter: chart multi-select or dropdown
     if (taskSet) { const pts = (p._tasks || '').split(';'); if (![...taskSet].some(t => pts.includes(t))) return false; }
     else if (taskDD && !(p._tasks || '').split(';').includes(taskDD)) return false;
@@ -1216,7 +1227,7 @@ function applyFilters() {
       if (scope === 'author') haystack = (p.Authors || '').toLowerCase();
       else if (scope === 'title') haystack = (p.Title || '').toLowerCase();
       else if (scope === 'abstract') haystack = (p.Abstract || '').toLowerCase();
-      else haystack = [p.Title, p.Authors, p.Abstract, p.Type, p.Subtype, p['abbr.'], p.Publication, p._vlm_keywords || '', p._tasks || ''].join(' ').toLowerCase();
+      else haystack = [p.Title, p.Authors, p.Abstract, p.Type, p.Subtype, p['abbr.'], p.Publication, p._mm_keywords || '', p._tasks || ''].join(' ').toLowerCase();
 
       if (fuzzySearch) {
         // Fuzzy: split into words, all must appear
@@ -1292,9 +1303,9 @@ function render() {
     const pubTag = p.Publication ? `<span class="tag pub">${escHtml(p.Publication.substring(0, 60))}</span>` : '';
     const codeLink = p.code && p.code.trim() ? `<a href="${escHtml(p.code)}" target="_blank">${ICON.github}${t('code')}</a>` : '';
     const catTag = p.Category ? `<span class="tag category">${escHtml(p.Category)}</span>` : '';
-    const vlmTag = p._is_vlm ? '<span class="tag vlm">VLM</span>' : '';
-    const vlmKwTags = (p._vlm_keywords || '').split(';').filter(k => k.trim()).map(k => {
-      return `<span class="tag vlm-kw">${escHtml(cleanRegexLabel(k))}</span>`;
+    const mmTag = p._is_mm ? '<span class="tag mm">MM</span>' : '';
+    const mmKwTags = (p._mm_keywords || '').split(';').filter(k => k.trim()).map(k => {
+      return `<span class="tag mm-kw">${escHtml(cleanRegexLabel(k))}</span>`;
     }).join('');
     const taskTags = (p._tasks || '').split(';').filter(t => t.trim()).map(t => {
       return `<span class="tag task">${escHtml(TASK_NAMES[t] || t)}</span>`;
@@ -1310,7 +1321,7 @@ function render() {
         <span class="tag">${escHtml(p.Type)}</span>
         ${p.Subtype ? `<span class="tag">${escHtml(p.Subtype.substring(0, 50))}</span>` : ''}
         ${pubTag}
-        ${catTag}${vlmTag}${vlmKwTags}${taskTags}
+        ${catTag}${mmTag}${mmKwTags}${taskTags}
       </div>
       <div class="paper-authors"><span class="field-icon">${ICON.authors}</span>${escHtml(p.Authors)}</div>
       <div class="paper-abstract-wrap"><span class="field-icon">${ICON.abstract}</span><div class="paper-abstract" id="abs-${idx}">${renderLatex(p.Abstract)}</div></div>
@@ -1689,8 +1700,8 @@ document.getElementById('yearFilter').addEventListener('change', () => {
 document.getElementById('yearFromFilter').addEventListener('change', applyFilters);
 document.getElementById('yearToFilter').addEventListener('change', applyFilters);
 document.getElementById('monthFilter').addEventListener('change', applyFilters);
-document.getElementById('vlmFilter').addEventListener('change', applyFilters);
-document.getElementById('vlmKeywordFilter').addEventListener('change', applyFilters);
+document.getElementById('mmFilter').addEventListener('change', applyFilters);
+document.getElementById('mmKeywordFilter').addEventListener('change', applyFilters);
 document.getElementById('taskFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.task.clear(); applyFilters(); });
 document.getElementById('categoryFilter').addEventListener('change', () => { if (!_chartDriven) chartSel.category.clear(); applyFilters(); });
 document.querySelectorAll('.sort-btn').forEach(btn => {
@@ -1906,3 +1917,5 @@ init();
 </script>
 </body>
 </html>
+
+

@@ -5,7 +5,7 @@ import logging
 
 import arxiv
 
-from config import CATEGORY_NAMES
+from config import CATEGORY_NAMES, ALLOWED_PRIMARY_CATEGORIES
 
 logger = logging.getLogger(__name__)
 
@@ -110,6 +110,8 @@ def parse_result(result: arxiv.Result) -> dict:
     categories = [c for c in result.categories]
 
     return {
+        "PrimaryCategory": primary_cat,
+        "Categories": ";".join(categories),
         "Type": get_category_type(primary_cat),
         "Subtype": get_subtype(categories, primary_cat),
         "Date": result.published.strftime("%Y-%m-%d"),
@@ -133,6 +135,8 @@ def parse_results(results: list[arxiv.Result]) -> list[dict]:
     papers = []
     for r in results:
         try:
+            if r.primary_category not in ALLOWED_PRIMARY_CATEGORIES:
+                continue
             papers.append(parse_result(r))
         except Exception as e:
             logger.warning(f"Failed to parse {r.entry_id}: {e}")

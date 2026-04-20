@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='utf-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>RS-Paper-Hub — MA Papers</title>
+  <id>https://rspaper.top/output/feed_ma.xml</id>
+  <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
+  <link href="https://rspaper.top" rel="alternate" type="text/html" />
+  <updated>2026-04-20T09:24:42Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 9 entries</subtitle>
+  <author>
+    <name>RS-Paper-Hub</name>
+    <uri>https://rspaper.top</uri>
+  </author>
+  <entry>
+    <title>Veritas-RPM: Provenance-Guided Multi-Agent False Positive Suppression for Remote Patient Monitoring</title>
+    <link href="http://arxiv.org/abs/2604.16081v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.16081v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Aswini Misro</name>
+    </author>
+    <author>
+      <name>Vikash Sharma</name>
+    </author>
+    <author>
+      <name>Shreyank N Gowda</name>
+    </author>
+    <summary type="text">We present Veritas-RPM, a provenance-guided multi-agent architecture comprising five processing layers: VeritasAgent (ground-truth assembly), SentinelLayer (anomaly detection), DirectorAgent (specialist routing), six domain Specialist Agents, and MetaSentinelAgent (conflict resolution and final decision). We construct a 98-case synthetic taxonomy of false-positive scenarios derived from documented RPM patterns. Synthetic patient epochs (n = 530) were generated directly from taxonomy parameters and processed through the pipeline. Ground-truth labels are known for all cases. Performance is reported as True Suppression Rate (TSR), False Escalation Rate (FER), and Indeterminate Rate (INDR).</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>AstroVLM: Expert Multi-agent Collaborative Reasoning for Astronomical Imaging Quality Diagnosis</title>
+    <link href="http://arxiv.org/abs/2604.16024v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.16024v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Yaohui Han</name>
+    </author>
+    <author>
+      <name>Tianshuo Wang</name>
+    </author>
+    <author>
+      <name>Zixi Zhao</name>
+    </author>
+    <author>
+      <name>Zhengchun Zhu</name>
+    </author>
+    <author>
+      <name>Shuo Ren</name>
+    </author>
+    <author>
+      <name>Yiru Wang</name>
+    </author>
+    <author>
+      <name>Rongliang Fu</name>
+    </author>
+    <author>
+      <name>Tinghuan Chen</name>
+    </author>
+    <author>
+      <name>Tsung-Yi Ho</name>
+    </author>
+    <summary type="text">Vision Language Models (VLMs) have been applied to several specific domains and have shown strong problem-solving capabilities. However, astronomical imaging, a quite complex problem involving multidisciplinary knowledge and several subtasks, has not been adequately studied. Due to the complexity of the astronomical imaging process, both world-class astronomical organizations, such as NASA, and expert enthusiasts devote a great deal of time and effort. This is because the processes in astronomical imaging have complex underlying correlations that significantly influence one another, making the quality diagnosis and error localization of astronomical images challenging. To address this problem, we propose AstroVLM, a collaborative multi-agent system for diagnosing the quality of astronomical images. Experiment results show that AstroVLM outperforms all baselines on real-world astronomical imaging quality diagnosis tasks, providing a reference for language models to handle complicated multi-process tasks.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Computer Vision" />
+  </entry>
+  <entry>
+    <title>Scalable Algorithms with Provable Optimality Bounds for the Multiple Watchman Route Problem</title>
+    <link href="http://arxiv.org/abs/2604.15610v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15610v1</id>
+    <published>2026-04-17T00:00:00Z</published>
+    <updated>2026-04-17T00:00:00Z</updated>
+    <author>
+      <name>Srikar Gouru</name>
+    </author>
+    <author>
+      <name>Ariel Felner</name>
+    </author>
+    <author>
+      <name>Jiaoyang Li</name>
+    </author>
+    <summary type="text">In this paper, we tackle the Multiple Watchman Route Problem (MWRP), which aims to find a set of paths that M watchmen can follow such that every location on the map can be seen by at least one watchman. First, we propose multiple methods to reduce the state space over which a search needs to be conducted by pruning map areas that are guaranteed to be seen en route to other areas. Next, we introduce MWRP-CP3, an efficient optimal planner that combines these methods with techniques that improve the quality and calculation time of existing heuristics. We present several suboptimal algorithms with bounds on solution quality, including MxWA*, a general variant of weighted A* for makespan problems. We also present anytime variations of our suboptimal algorithms, as well as techniques to improve an existing suboptimal solution by solving multiple decomposed sub-problems. We show that MWRP-CP3 can reduce the search space by more than 95% and runs more than 200x faster than existing optimal algorithms on 2D grid maps. We also show that our suboptimal algorithms solve maps 3x larger than those solvable by MWRP-CP3. See mwrp-cp3.github.io for the open source codebase and video demonstrations.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems</title>
+    <link href="http://arxiv.org/abs/2604.14956v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.14956v1</id>
+    <published>2026-04-16T00:00:00Z</published>
+    <updated>2026-04-16T00:00:00Z</updated>
+    <author>
+      <name>Wenhao Wang</name>
+    </author>
+    <author>
+      <name>Haoting Shi</name>
+    </author>
+    <author>
+      <name>Mengying Yuan</name>
+    </author>
+    <author>
+      <name>Yiquan Lin</name>
+    </author>
+    <author>
+      <name>Panrong Tong</name>
+    </author>
+    <author>
+      <name>Hanzhang Zhou</name>
+    </author>
+    <author>
+      <name>Guangyi Liu</name>
+    </author>
+    <author>
+      <name>Pengxiang Zhao</name>
+    </author>
+    <author>
+      <name>Yue Wang</name>
+    </author>
+    <author>
+      <name>Siheng Chen</name>
+    </author>
+    <summary type="text">Training GUI agents with traditional centralized methods faces significant cost and scalability challenges. Federated learning (FL) offers a promising solution, yet its potential is hindered by the lack of benchmarks that capture real-world, cross-platform heterogeneity. To bridge this gap, we introduce FedGUI, the first comprehensive benchmark for developing and evaluating federated GUI agents across mobile, web, and desktop platforms. FedGUI provides a suite of six curated datasets to systematically study four crucial types of heterogeneity: cross-platform, cross-device, cross-OS, and cross-source. Extensive experiments reveal several key insights: First, we show that cross-platform collaboration improves performance, extending prior mobile-only federated learning to diverse GUI environments; Second, we demonstrate the presence of distinct heterogeneity dimensions and identify platform and OS as the most influential factors. FedGUI provides a vital foundation for the community to build more scalable and privacy-preserving GUI agents for real-world deployment. Our code and data are publicly available at https://github.com/wwh0411/FedGUI..</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/wwh0411/FedGUI"&gt;https://github.com/wwh0411/FedGUI&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026 Findings, Camera Ready&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>InfoChess: A Game of Adversarial Inference and a Laboratory for Quantifiable Information Control</title>
+    <link href="http://arxiv.org/abs/2604.15373v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.15373v1</id>
+    <published>2026-04-15T00:00:00Z</published>
+    <updated>2026-04-15T00:00:00Z</updated>
+    <author>
+      <name>Kieran A. Murphy</name>
+    </author>
+    <summary type="text">We propose InfoChess, a symmetric adversarial game that elevates competitive information acquisition to the primary objective. There is no piece capture, removing material incentives that would otherwise confound the role of information. Instead, pieces are used to alter visibility. Players are scored on their probabilistic inference of the opponent's king location over the duration of the game. To explore the space of strategies for playing InfoChess, we introduce a hierarchy of heuristic agents defined by increasing levels of opponent modeling, and train a reinforcement learning agent that outperforms these baselines. Leveraging the discrete structure of the game, we analyze gameplay through natural information-theoretic characterizations that include belief entropy, oracle cross entropy, and predictive log score under the action-induced observation channel. These measures disentangle epistemic uncertainty, calibration mismatch, and uncertainty induced by adversarial movement. The design of InfoChess renders it a testbed for studying multi-agent inference under partial observability. We release code for the environment and agents, and a public interface to encourage further study.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Adaptive and Learning Agents Workshop&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.IT; Machine Learning" />
+  </entry>
+  <entry>
+    <title>[COMP25] The Automated Negotiating Agents Competition (ANAC) 2025 Challenges and Results</title>
+    <link href="http://arxiv.org/abs/2604.13914v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.13914v1</id>
+    <published>2026-04-15T00:00:00Z</published>
+    <updated>2026-04-15T00:00:00Z</updated>
+    <author>
+      <name>Reyhan Aydoğan</name>
+    </author>
+    <author>
+      <name>Tim Baarslag</name>
+    </author>
+    <author>
+      <name>Tamara C. P. Florijn</name>
+    </author>
+    <author>
+      <name>Katsuhide Fujita</name>
+    </author>
+    <author>
+      <name>Catholijn M. Jonker</name>
+    </author>
+    <author>
+      <name>Yasser Mohammad</name>
+    </author>
+    <summary type="text">This paper presents the primary research challenges and key findings from the 15th International Automated Negotiating Agents Competition (ANAC 2025), one of the official competitions of IJCAI 2025. We focus on two critical domains: multi-deal negotiations and the development of agents capable of concurrent negotiation within complex supply chain management environments. Furthermore, this work analyzes the results of the competition and outlines strategic directions for future iterations.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; IJCAI 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>MIND: AI Co-Scientist for Material Research</title>
+    <link href="http://arxiv.org/abs/2604.13699v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.13699v1</id>
+    <published>2026-04-15T00:00:00Z</published>
+    <updated>2026-04-15T00:00:00Z</updated>
+    <author>
+      <name>Geonhee Ahn</name>
+    </author>
+    <author>
+      <name>Donghyun Lee</name>
+    </author>
+    <author>
+      <name>Hayoung Doo</name>
+    </author>
+    <author>
+      <name>Jonggeol Na</name>
+    </author>
+    <author>
+      <name>Hyunsoo Cho</name>
+    </author>
+    <author>
+      <name>Sookyung Kim</name>
+    </author>
+    <summary type="text">Large language models (LLMs) have enabled agentic AI systems for scientific discovery, but most approaches remain limited to textbased reasoning without automated experimental verification. We propose MIND, an LLM-driven framework for automated hypothesis validation in materials research. MIND organizes the scientific discovery process into hypothesis refinement, experimentation, and debate-based validation within a multi-agent pipeline. For experimental verification, the system integrates Machine Learning Interatomic Potentials, particularly SevenNet-Omni, enabling scalable in-silico experiments. We also provide a web-based user interface for automated hypothesis testing. The modular design allows additional experimental modules to be integrated, making the framework adaptable to broader scientific workflows. The code is available at: https://github.com/IMMS-Ewha/MIND, and a demonstration video at: https://youtu.be/lqiFe1OQzN4.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/IMMS-Ewha/MIND"&gt;https://github.com/IMMS-Ewha/MIND&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 4 pages, 3 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.CE" />
+  </entry>
+  <entry>
+    <title>A Multi-Agent Feedback System for Detecting and Describing News Events in Satellite Imagery</title>
+    <link href="http://arxiv.org/abs/2604.12772v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.12772v1</id>
+    <published>2026-04-14T00:00:00Z</published>
+    <updated>2026-04-14T00:00:00Z</updated>
+    <author>
+      <name>Madeline Anderson</name>
+    </author>
+    <author>
+      <name>Mikhail Klassen</name>
+    </author>
+    <author>
+      <name>Ash Hoover</name>
+    </author>
+    <author>
+      <name>Kerri Cahoy</name>
+    </author>
+    <summary type="text">Changes in satellite imagery often occur over multiple time steps. Despite the emergence of bi-temporal change captioning datasets, there is a lack of multi-temporal event captioning datasets (at least two images per sequence) in remote sensing. This gap exists because (1) searching for visible events in satellite imagery and (2) labeling multi-temporal sequences require significant time and labor. To address these challenges, we present SkyScraper, an iterative multi-agent workflow that geocodes news articles and synthesizes captions for corresponding satellite image sequences. Our experiments show that SkyScraper successfully finds 5x more events than traditional geocoding methods, demonstrating that agentic feedback is an effective strategy for surfacing new multi-temporal events in satellite imagery. We apply our framework to a large database of global news articles, curating a new multi-temporal captioning dataset with 5,000 sequences. By automatically identifying imagery related to news events, our work also supports journalism and reporting efforts.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>ARGOS: Who, Where, and When in Agentic Multi-Camera Person Search</title>
+    <link href="http://arxiv.org/abs/2604.12762v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.12762v1</id>
+    <published>2026-04-14T00:00:00Z</published>
+    <updated>2026-04-14T00:00:00Z</updated>
+    <author>
+      <name>Myungchul Kim</name>
+    </author>
+    <author>
+      <name>Kwanyong Park</name>
+    </author>
+    <author>
+      <name>Junmo Kim</name>
+    </author>
+    <author>
+      <name>In So Kweon</name>
+    </author>
+    <summary type="text">We introduce ARGOS, the first benchmark and framework that reformulates multi-camera person search as an interactive reasoning problem requiring an agent to plan, question, and eliminate candidates under information asymmetry. An ARGOS agent receives a vague witness statement and must decide what to ask, when to invoke spatial or temporal tools, and how to interpret ambiguous responses, all within a limited turn budget. Reasoning is grounded in a Spatio-Temporal Topology Graph (STTG) encoding camera connectivity and empirically validated transition times. The benchmark comprises 2,691 tasks across 14 real-world scenarios in three progressive tracks: semantic perception (Who), spatial reasoning (Where), and temporal reasoning (When). Experiments with four LLM backbones show the benchmark is far from solved (best TWS: 0.383 on Track 2, 0.590 on Track 3), and ablations confirm that removing domain-specific tools drops accuracy by up to 49.6 percentage points.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; CVPR 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+    <category term="Artificial Intelligence; Multiagent Systems" />
+  </entry>
+</feed>

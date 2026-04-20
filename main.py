@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-arXiv Remote Sensing Paper Scraper
+arXiv Multimodal Paper Scraper
 
-Fetches remote sensing papers from arXiv (2022-present),
+Fetches multimodal papers from arXiv,
 enriches with code links from Papers With Code,
 and exports to CSV + JSON. Supports resumable operation.
 """
@@ -36,6 +36,7 @@ def save_results(papers: list[dict], output_dir: str):
     os.makedirs(output_dir, exist_ok=True)
 
     columns = [
+        "PrimaryCategory", "Categories",
         "Type", "Subtype", "Date", "Month", "Year", "Institute",
         "Title", "abbr.", "Paper_link", "Abstract",
         "code", "Publication", "BibTex", "Authors",
@@ -69,7 +70,7 @@ def load_existing(output_dir: str) -> set[str]:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Scrape arXiv remote sensing papers"
+        description="Scrape arXiv multimodal papers"
     )
     parser.add_argument(
         "--start-year", type=int, default=START_YEAR,

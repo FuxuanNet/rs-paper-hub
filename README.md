@@ -4,7 +4,7 @@
 
 # RS-Paper-Hub
 
-**A curated collection of Remote Sensing & Earth Observation papers from arXiv, with automated scraping, cleaning, task tagging, VLM filtering, and Agent filtering.**
+**A curated collection of multimodal papers from arXiv, with automated scraping, cleaning, task tagging, MM filtering, and MA filtering.**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![arXiv](https://img.shields.io/badge/source-arXiv-b31b1b.svg)](https://arxiv.org/)
@@ -20,22 +20,22 @@
 
 ## Overview
 
-RS-Paper-Hub automatically scrapes remote sensing and earth observation papers from arXiv, extracts structured metadata, and provides a one-click pipeline for data cleaning, task tagging, VLM filtering, Agent filtering, and classification. Updated daily via GitHub Actions (Mon–Fri, synced with arXiv announcement schedule).
+RS-Paper-Hub automatically scrapes multimodal papers from arXiv, extracts structured metadata, and provides a one-click pipeline for data cleaning, task tagging, MM filtering, MA filtering, and classification. Updated daily via GitHub Actions (Mon–Fri, synced with arXiv announcement schedule).
 
 ### Key Features
 
-- **Dual Search Scope** — Covers both "remote sensing" and "earth observation" papers from arXiv
+- **Tiered arXiv Retrieval** — Fully includes `cs.MM` and `cs.MA`; includes `cs.CV` only when multimodal terms are matched
 - **Daily Automated Updates** — GitHub Actions fetches the latest papers (last 7 days) Mon–Fri at 00:30 UTC (08:30 Beijing Time), aligned with arXiv's announcement schedule
 - **Incremental Pipeline** — Only new papers go through cleaning, classification, and tagging; existing data is preserved
-- **Task Tagging** — Auto-tags papers with 11 task types: Classification, Object Detection, Change Detection, Segmentation, VQA, Image Captioning, Visual Grounding, Image-Text Retrieval, Geolocation, Super-Resolution, 3D Reconstruction
+- **Task Tagging** — Auto-tags papers with 14 multimodal task types: MMCLS, ITR, VQA, IC, VG, OVOD, OVSEG, T2I, T2V, I2T, MRE, MDI, MAG, TAP
 - **Paper Classification** — Labels papers as `Method`, `Dataset`, or `Survey` based on title keywords
-- **VLM Filtering** — Keyword-based filtering for Vision-Language Model related papers with context-aware rules (avoids false positives from non-VLM cross-modal or retrieval terms)
-- **Agent Filtering** — Keyword-based filtering for Agent / Autonomous Decision-Making related papers (multi-agent systems, RL-based agents, LLM agents, agentic workflows, etc.)
-- **Three-Tab Web Viewer** — Browse All Papers, VLM subset, or Agent subset; with search, multi-dimensional chart filtering, task/category/year filters, Google Scholar links, and mobile-friendly UI
+- **MM Filtering** — Keyword-based filtering for Vision-Language Model related papers with context-aware rules (avoids false positives from non-MM cross-modal or retrieval terms)
+- **MA Filtering** — Category-based filtering for Multiagent Systems papers (`cs.MA`), with keyword hits retained for explainability
+- **Three-Tab Web Viewer** — Browse All Papers, MM subset, or MA subset; with search, multi-dimensional chart filtering, task/category/year filters, Google Scholar links, and mobile-friendly UI
 - **Paper Collection** — Collect papers across multiple searches into a personal collection, then view or export them together
 - **BibTeX Batch Export** — Export filtered results, current page, custom range, or collection as timestamped `.bib` file with optional abstracts
 - **Code Discovery** — Automatically extracts code repository URLs from abstracts
-- **RSS/Atom Feeds** — Auto-generated Atom feeds (All / VLM / Agent) for Zotero subscription, updated daily with the last 7 days of papers
+- **RSS/Atom Feeds** — Auto-generated Atom feeds (All / MM / MA) for Zotero subscription, updated daily with the last 7 days of papers
 - **PDF Download** — Batch download with deduplication, organized by year
 
 ---
@@ -48,7 +48,7 @@ pip install -r requirements.txt
 # Scrape all papers
 python main.py
 
-# One-click: clean + classify + tag tasks + filter VLM + filter Agent
+# One-click: clean + classify + tag tasks + filter MM + filter MA
 python pipeline.py
 ```
 
@@ -60,11 +60,11 @@ python pipeline.py
 # 1. Grab latest papers (last 7 days, incremental by default)
 python main.py --update
 
-# 2. Run full pipeline (deduplicate → clean → classify → tag → filter VLM & Agent → export)
+# 2. Run full pipeline (deduplicate → clean → classify → tag → filter MM & MA → export)
 python pipeline.py
 ```
 
-That's it. All output files (`papers.csv/json`, `papers_vlm.csv/json`, `papers_agent.csv/json`) are updated in place.
+That's it. All output files (`papers.csv/json`, `papers_mm.csv/json`, `papers_ma.csv/json`) are updated in place.
 
 > **Note:** `--incremental` is enabled by default — existing papers are always skipped. Use `--no-incremental` to force a full re-fetch.
 
@@ -94,7 +94,7 @@ python main.py --status
 ### Pipeline (Recommended)
 
 ```bash
-# One-click: clean + classify + tag tasks + filter VLM + filter Agent
+# One-click: clean + classify + tag tasks + filter MM + filter MA
 python pipeline.py
 
 # Custom input
@@ -106,25 +106,25 @@ python pipeline.py --input output/papers.json
 1. **Load & Deduplicate** — Remove duplicate papers by `Paper_link`
 2. **Clean** — Extract code URLs from abstracts, fill `code` field
 3. **Classify** — Label every paper as Method / Dataset / Survey (title-based)
-4. **Tag Tasks** — Assign task labels (CLS, OD, CD, SEG, VQA, IC, VG, ITR, GeoLoc, SR, 3D)
+4. **Tag Tasks** — Assign task labels (MMCLS, ITR, VQA, IC, VG, OVOD, OVSEG, T2I, T2V, I2T, MRE, MDI, MAG, TAP)
 5. **Save** — Write cleaned `papers.csv` + `papers.json`
-6. **Filter VLM** — Select Vision-Language Model related papers by keyword matching
-7. **Classify VLM** — Refine categories for VLM subset, export `papers_vlm.csv/json`
-8. **Filter & Classify Agent** — Select Agent-related papers by keyword matching, export `papers_agent.csv/json`
-9. **Generate Atom Feeds** — Produce `feed.xml`, `feed_vlm.xml`, `feed_agent.xml` with the last 7 days of papers
+6. **Filter MM** — Include `cs.MM`, and include `cs.CV` papers only when MM keywords are matched
+7. **Classify MM** — Refine categories for MM subset, export `papers_mm.csv/json`
+8. **Filter & Classify MA** — Select papers by `cs.MA` category and classify the subset, export `papers_ma.csv/json`
+9. **Generate Atom Feeds** — Produce `feed.xml`, `feed_mm.xml`, `feed_ma.xml` with the last 7 days of papers
 
 ### Standalone Filter Scripts
 
 ```bash
-# VLM filter only
-python filter_vlm.py --input output/papers.json
+# MM filter only
+python filter_mm.py --input output/papers.json
 
-# Agent filter only
-python filter_agent.py --input output/papers.json
+# MA filter only
+python filter_ma.py --input output/papers.json
 
 # Preview without saving (dry-run)
-python filter_vlm.py --dry-run
-python filter_agent.py --dry-run
+python filter_mm.py --dry-run
+python filter_ma.py --dry-run
 ```
 
 ### PDF Download
@@ -165,7 +165,7 @@ python main.py --download-only
 | `--input` | Input JSON file | `output/papers.json` |
 | `--output-dir` | Output directory | `output` |
 
-### `filter_vlm.py` / `filter_agent.py`
+### `filter_mm.py` / `filter_ma.py`
 
 | Flag | Description | Default |
 |------|-------------|---------|
@@ -195,27 +195,30 @@ All outputs are available in both **CSV** and **JSON** format.
 | `Publication` | Venue (journal/conference) | CVPR 2024 |
 | `BibTex` | BibTeX citation | @article{...} |
 | `Authors` | Author list | Alice, Bob, Charlie |
-| `_tasks` | Task tags (semicolon-separated) | CLS;OD;SEG |
+| `_tasks` | Task tags (semicolon-separated) | MMCLS;ITR;VQA |
 
 ---
 
 ## Task Tags
 
-Papers are automatically tagged with task types based on title and abstract keyword matching:
+Papers are automatically tagged with multimodal task types based on title and abstract keyword matching:
 
 | Tag | Task | Examples |
 |-----|------|----------|
-| **CLS** | Classification | scene classification, land use/cover classification |
-| **OD** | Object Detection | object/vehicle/ship/building detection |
-| **CD** | Change Detection | change detection, bi-temporal analysis |
-| **SEG** | Segmentation | semantic/instance/panoptic/referring segmentation |
+| **MMCLS** | Multimodal Classification | multimodal classification, cross-modal classification |
 | **VQA** | Visual Question Answering | VQA, RSVQA |
 | **IC** | Image Captioning | image captioning, caption generation |
 | **VG** | Visual Grounding | visual grounding, phrase grounding |
 | **ITR** | Image-Text Retrieval | cross-modal retrieval |
-| **GeoLoc** | Geolocation | geolocation, place recognition |
-| **SR** | Super-Resolution | super-resolution, image enhancement |
-| **3D** | 3D Reconstruction | 3D reconstruction, point cloud, depth estimation |
+| **OVOD** | Open-Vocabulary Object Detection | open-vocabulary object detection, zero-shot OD |
+| **OVSEG** | Open-Vocabulary Segmentation | open-vocabulary segmentation, zero-shot segmentation |
+| **T2I** | Text-to-Image Generation | text-to-image generation |
+| **T2V** | Text-to-Video Generation | text-to-video generation |
+| **I2T** | Image-to-Text Generation | image-to-text generation |
+| **MRE** | Multimodal Reasoning | vision-language reasoning |
+| **MDI** | Multimodal Dialogue & Instruction | multimodal dialog, instruction tuning |
+| **MAG** | Multimodal Agent | multimodal agent, vision-language agent |
+| **TAP** | Tool-Augmented Perception | tool use, tool-augmented perception |
 
 ---
 
@@ -224,9 +227,9 @@ Papers are automatically tagged with task types based on title and abstract keyw
 ```
 rs-paper-hub/
 ├── main.py              # Scraper CLI entry point
-├── pipeline.py          # One-click: clean + classify + tag + filter VLM & Agent + RSS
-├── filter_vlm.py        # Standalone VLM filter script
-├── filter_agent.py      # Standalone Agent filter script
+├── pipeline.py          # One-click: clean + classify + tag + filter MM & MA + RSS
+├── filter_mm.py         # Standalone MM filter script
+├── filter_ma.py         # Standalone MA filter script
 ├── rss_generator.py     # Atom feed generator for Zotero
 ├── config.py            # Search configuration
 ├── scraper.py           # arXiv API scraper
@@ -237,23 +240,23 @@ rs-paper-hub/
 ├── cleaning/
 │   ├── abstract_cleaner.py   # Abstract URL extraction
 │   ├── classifier.py         # Paper classifier (Method/Dataset/Survey)
-│   ├── task_tagger.py        # Task tagging (11 task types)
+│   ├── task_tagger.py        # Task tagging (14 multimodal task types)
 │   └── filter/
-│       ├── vlm_filter.py     # VLM keyword rules
-│       └── agent_filter.py   # Agent keyword rules
+│       ├── mm_filter.py      # MM keyword rules
+│       └── ma_filter.py      # MA category rule (cs.MA)
 ├── .github/workflows/
 │   └── daily-update.yml      # Daily CI/CD pipeline (Mon-Fri, synced with arXiv)
-├── index.html               # Interactive web viewer (3 tabs: All / VLM / Agent)
+├── index.html               # Interactive web viewer (3 tabs: All / MM / MA)
 ├── requirements.txt
 └── output/
     ├── papers.csv/json              # All papers (cleaned + classified + tagged)
-    ├── papers_vlm.csv/json          # VLM subset with categories
-    ├── papers_vlm_annotated.json    # Full list with VLM flags
-    ├── papers_agent.csv/json        # Agent subset with categories
-    ├── papers_agent_annotated.json  # Full list with Agent flags
+    ├── papers_mm.csv/json          # MM subset with categories
+    ├── papers_mm_annotated.json    # Full list with MM flags
+    ├── papers_ma.csv/json        # MA subset with categories
+    ├── papers_ma_annotated.json  # Full list with MA flags
     ├── feed.xml                     # Atom feed — all papers (last 7 days)
-    ├── feed_vlm.xml                 # Atom feed — VLM papers (last 7 days)
-    ├── feed_agent.xml               # Atom feed — Agent papers (last 7 days)
+    ├── feed_mm.xml                 # Atom feed — MM papers (last 7 days)
+    ├── feed_ma.xml               # Atom feed — MA papers (last 7 days)
     └── progress.json                # Scraping progress
 ```
 
@@ -261,11 +264,16 @@ rs-paper-hub/
 
 ## Search Scope
 
-Papers are fetched from **all arXiv categories** where the title or abstract contains `"remote sensing"` or `"earth observation"`. To customize, edit `SEARCH_QUERY` in [`config.py`](config.py):
+Search uses a tiered strategy defined in [`config.py`](config.py):
 
-```python
-SEARCH_QUERY = 'ti:"remote sensing" OR abs:"remote sensing" OR ti:"earth observation" OR abs:"earth observation"'
-```
+- Strict categories: `cs.MM`, `cs.MA`
+- Gated category: `cs.CV` (must match multimodal terms in title/abstract)
+
+`SEARCH_QUERY` is composed automatically by `build_search_query()` from:
+
+- `STRICT_CATEGORIES`
+- `GATED_CATEGORY`
+- `CV_MM_TERMS`
 
 ---
 
@@ -279,7 +287,7 @@ python3 -m http.server 8080
 
 Features include:
 
-- **Three data tabs** — Switch between All Papers, VLM subset, and Agent subset
+- **Three data tabs** — Switch between All Papers, MM subset, and MA subset
 - **Quick date filters** — "Today" and "This Week" buttons with red badge counts
 - **Relevance-ranked search** — Title matches prioritized over abstract matches
 - **Multi-dimensional chart filtering** — Click year/type/category/task bars to filter, multi-select supported
@@ -305,8 +313,8 @@ The pipeline automatically generates [Atom](https://en.wikipedia.org/wiki/Atom_(
 | Feed | URL | Content |
 |------|-----|---------|
 | All Papers | `https://rspaper.top/output/feed.xml` | All recent papers |
-| VLM Papers | `https://rspaper.top/output/feed_vlm.xml` | VLM subset |
-| Agent Papers | `https://rspaper.top/output/feed_agent.xml` | Agent subset |
+| MM Papers | `https://rspaper.top/output/feed_mm.xml` | MM subset |
+| MA Papers | `https://rspaper.top/output/feed_ma.xml` | MA subset |
 
 ### Subscribe in Zotero
 
@@ -336,10 +344,10 @@ If you find RS-Paper-Hub useful in your research or work, please consider citing
 ```bibtex
 @software{rs_paper_hub,
   author       = {ML4Sustain},
-  title        = {RS-Paper-Hub: A Curated Collection of Remote Sensing and Earth Observation Papers from arXiv},
+  title        = {RS-Paper-Hub: A Curated Collection of Multimodal Papers from arXiv},
   year         = {2026},
   url          = {https://rspaper.top},
-  note         = {Automated scraping, cleaning, classification, task tagging, VLM filtering, and Agent filtering pipeline for remote sensing papers}
+  note         = {Automated scraping, cleaning, classification, task tagging, MM filtering, and MA filtering pipeline for multimodal papers}
 }
 ```
 
@@ -348,3 +356,4 @@ If you find RS-Paper-Hub useful in your research or work, please consider citing
 ## License
 
 MIT
+

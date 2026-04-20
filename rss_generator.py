@@ -4,8 +4,8 @@ Generate Atom XML feeds from paper datasets for Zotero subscription.
 
 Produces three feeds (last 7 days):
   - feed.xml         All papers
-  - feed_vlm.xml     VLM-related papers
-  - feed_agent.xml   Agent-related papers
+  - feed_mm.xml      MM-related papers
+  - feed_ma.xml      MA-related papers
 """
 
 import os
@@ -80,7 +80,7 @@ def _generate_atom_feed(
     SubElement(feed, "link", href=SITE_URL, rel="alternate", type="text/html")
     SubElement(feed, "updated").text = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
     SubElement(feed, "subtitle").text = (
-        f"Latest remote sensing papers (last {days} days) — {len(recent)} entries"
+        f"Latest multimodal papers (last {days} days) — {len(recent)} entries"
     )
 
     author = SubElement(feed, "author")
@@ -139,8 +139,8 @@ def _generate_atom_feed(
 
 def generate_feeds(
     all_papers: list[dict],
-    vlm_papers: list[dict],
-    agent_papers: list[dict],
+    mm_papers: list[dict],
+    ma_papers: list[dict],
     output_dir: str,
     site_url: str = SITE_URL,
     days: int = 7,
@@ -151,8 +151,8 @@ def generate_feeds(
 
     feeds = [
         (all_papers, "RS-Paper-Hub — All Papers", "feed.xml"),
-        (vlm_papers, "RS-Paper-Hub — VLM Papers", "feed_vlm.xml"),
-        (agent_papers, "RS-Paper-Hub — Agent Papers", "feed_agent.xml"),
+        (mm_papers, "RS-Paper-Hub — MM Papers", "feed_mm.xml"),
+        (ma_papers, "RS-Paper-Hub — MA Papers", "feed_ma.xml"),
     ]
 
     for papers, title, filename in feeds:

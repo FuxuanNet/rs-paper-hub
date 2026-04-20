@@ -183,7 +183,7 @@
 
 <div class="header">
   <h1><span class="h1-text-wrap"><img src="../asset/logo.png" alt="Logo"><span id="siteTitle">RS Paper Hub</span></span></h1>
-  <p id="siteSubtitle">A curated collection of remote sensing papers from arXiv</p>
+  <p id="siteSubtitle">A curated collection of multimodal papers from arXiv</p>
   <nav class="nav-bar">
     <a href="../"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span data-i18n="home">Home</span></a>
     <a href="https://github.com/ML4Sustain/rs-paper-hub" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg><span data-i18n="github">GitHub</span></a>
@@ -194,8 +194,8 @@
       <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('open')" title="RSS Feeds"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="6.18" cy="17.82" r="2.18"/><path d="M4 4.44v2.83c7.03 0 12.73 5.7 12.73 12.73h2.83c0-8.59-6.97-15.56-15.56-15.56z"/><path d="M4 10.1v2.83c3.9 0 7.07 3.17 7.07 7.07h2.83c0-5.47-4.43-9.9-9.9-9.9z"/></svg>RSS</a>
       <div class="rss-menu">
         <a href="../output/feed.xml" target="_blank" data-i18n="rssAll">All Papers</a>
-        <a href="../output/feed_vlm.xml" target="_blank" data-i18n="rssVlm">VLM Papers</a>
-        <a href="../output/feed_agent.xml" target="_blank" data-i18n="rssAgent">Agent Papers</a>
+        <a href="../output/feed_mm.xml" target="_blank" data-i18n="rssMM">MM Papers</a>
+        <a href="../output/feed_ma.xml" target="_blank" data-i18n="rssMA">MA Papers</a>
       </div>
     </span>
     <a href="javascript:void(0)" id="langToggle" onclick="toggleLang()">中文</a>
@@ -228,8 +228,8 @@
 
 <section id="overview">
 <h1 data-i18n="overview">Overview</h1>
-<p data-i18n="overviewDesc1">RS Paper Hub is an automated system that collects, filters, and categorizes remote sensing papers from arXiv. It helps researchers stay updated with the latest developments in remote sensing, vision-language models, and AI agents.</p>
-<p data-i18n="overviewDesc2">The project provides multiple ways to access papers: a web interface, RSS feeds, and direct JSON downloads. All papers are automatically tagged with categories, tasks, and VLM-related keywords.</p>
+<p data-i18n="overviewDesc1">RS Paper Hub is an automated system that collects, filters, and categorizes multimodal papers from arXiv. It helps researchers stay updated with the latest developments in multimodal, vision-language models, and AI agents.</p>
+<p data-i18n="overviewDesc2">The project provides multiple ways to access papers: a web interface, RSS feeds, and direct JSON downloads. All papers are automatically tagged with categories, tasks, and MM-related keywords.</p>
 </section>
 
 <section id="features">
@@ -241,15 +241,15 @@
   </div>
   <div class="feature-card">
     <h4 data-i18n="feat2Title">Task Tagging (11 types)</h4>
-    <p data-i18n="feat2Desc">Each paper is automatically tagged with one or more task types: Classification, Retrieval, Geolocation, VQA, Captioning, Change Detection, Object Detection, Visual Grounding, Segmentation, Super-Resolution, and 3D Reconstruction.</p>
+    <p data-i18n="feat2Desc">Each paper is automatically tagged with one or more multimodal task types: MMCLS, ITR, VQA, IC, VG, OVOD, OVSEG, T2I, T2V, I2T, MRE, MDI, MAG, TAP.</p>
   </div>
   <div class="feature-card">
-    <h4 data-i18n="feat3Title">VLM Filtering</h4>
-    <p data-i18n="feat3Desc">Papers related to Vision-Language Models are automatically detected and can be filtered separately.</p>
+    <h4 data-i18n="feat3Title">MM Filtering</h4>
+    <p data-i18n="feat3Desc">Papers related to multimodal methods are automatically detected and can be filtered separately.</p>
   </div>
   <div class="feature-card">
-    <h4 data-i18n="feat4Title">Agent Filtering</h4>
-    <p data-i18n="feat4Desc">Papers related to AI Agents in remote sensing are automatically identified and can be filtered separately.</p>
+    <h4 data-i18n="feat4Title">MA Filtering</h4>
+    <p data-i18n="feat4Desc">Papers in Multiagent Systems (cs.MA) are automatically identified and can be filtered separately.</p>
   </div>
   <div class="feature-card">
     <h4 data-i18n="feat5Title">Paper Classification</h4>
@@ -261,7 +261,7 @@
   </div>
   <div class="feature-card">
     <h4 data-i18n="feat7Title">RSS Feeds & Zotero</h4>
-    <p data-i18n="feat7Desc">Subscribe to RSS feeds for all papers, VLM papers, or Agent papers. Integrate with Zotero for automatic bibliography management.</p>
+    <p data-i18n="feat7Desc">Subscribe to RSS feeds for all papers, MM papers, or MA papers. Integrate with Zotero for automatic bibliography management.</p>
   </div>
 </div>
 </section>
@@ -271,12 +271,12 @@
 <p data-i18n="webViewerIntro">The web interface provides powerful tools for exploring and filtering papers:</p>
 
 <h3 data-i18n="viewer1Title">Three-Tab Data Source Switching</h3>
-<p data-i18n="viewer1Desc">Use the tabs at the top to switch between: All Papers, Vision-Language Model papers, and Agent papers. The selection is preserved in the URL for sharing.</p>
+<p data-i18n="viewer1Desc">Use the tabs at the top to switch between: All Papers, MM papers, and MA papers. The selection is preserved in the URL for sharing.</p>
 
 <h3 data-i18n="viewer2Title">Search & Filtering</h3>
 <ul>
   <li data-i18n="viewer2a">Search by title, author, or abstract with exact phrase or fuzzy (split-word) matching</li>
-  <li data-i18n="viewer2b">Filter by year, month, paper type, category, VLM keywords, and task tags</li>
+  <li data-i18n="viewer2b">Filter by year, month, paper type, category, MM keywords, and task tags</li>
   <li data-i18n="viewer2c">Quick filters for "Today" and "This Week" to see recently published papers</li>
   <li data-i18n="viewer2d">Toggle "With Code" to show only papers with available code</li>
 </ul>
@@ -304,8 +304,8 @@
 <h3 data-i18n="rss1Title">Available RSS Feeds</h3>
 <ul>
   <li><strong>All Papers:</strong> <code>output/feed.xml</code></li>
-  <li><strong>VLM Papers:</strong> <code>output/feed_vlm.xml</code></li>
-  <li><strong>Agent Papers:</strong> <code>output/feed_agent.xml</code></li>
+  <li><strong>MM Papers:</strong> <code>output/feed_mm.xml</code></li>
+  <li><strong>MA Papers:</strong> <code>output/feed_ma.xml</code></li>
 </ul>
 
 <h3 data-i18n="rss2Title">Using with Zotero</h3>
@@ -315,8 +315,8 @@
 <p data-i18n="rss3Desc">For programmatic access, JSON files are also available:</p>
 <ul>
   <li><code>output/papers.json</code> - All papers</li>
-  <li><code>output/papers_vlm.json</code> - VLM papers</li>
-  <li><code>output/papers_agent.json</code> - Agent papers</li>
+  <li><code>output/papers_mm.json</code> - MM papers</li>
+  <li><code>output/papers_ma.json</code> - MA papers</li>
 </ul>
 </section>
 
@@ -327,13 +327,13 @@
 <div class="pipeline">
   <div class="pipeline-step"><div class="num">1</div><div class="label" data-i18n="step1">Fetch arXiv</div></div>
   <div class="pipeline-arrow">→</div>
-  <div class="pipeline-step"><div class="num">2</div><div class="label" data-i18n="step2">Filter RS</div></div>
+  <div class="pipeline-step"><div class="num">2</div><div class="label" data-i18n="step2">Filter MM</div></div>
   <div class="pipeline-arrow">→</div>
   <div class="pipeline-step"><div class="num">3</div><div class="label" data-i18n="step3">Extract Metadata</div></div>
   <div class="pipeline-arrow">→</div>
-  <div class="pipeline-step"><div class="num">4</div><div class="label" data-i18n="step4">VLM Detection</div></div>
+  <div class="pipeline-step"><div class="num">4</div><div class="label" data-i18n="step4">MM Detection</div></div>
   <div class="pipeline-arrow">→</div>
-  <div class="pipeline-step"><div class="num">5</div><div class="label" data-i18n="step5">Agent Detection</div></div>
+  <div class="pipeline-step"><div class="num">5</div><div class="label" data-i18n="step5">MA Detection</div></div>
   <div class="pipeline-arrow">→</div>
   <div class="pipeline-step"><div class="num">6</div><div class="label" data-i18n="step6">Task Tagging</div></div>
   <div class="pipeline-arrow">→</div>
@@ -346,11 +346,11 @@
 
 <ul>
   <li data-i18n="step1Desc"><strong>Fetch arXiv:</strong> Query the arXiv API for recent submissions in relevant categories</li>
-  <li data-i18n="step2Desc"><strong>Filter RS:</strong> Apply keyword-based filtering to identify remote sensing papers</li>
+  <li data-i18n="step2Desc"><strong>Filter MM:</strong> Apply keyword/category rules to identify multimodal papers</li>
   <li data-i18n="step3Desc"><strong>Extract Metadata:</strong> Parse paper titles, abstracts, authors, and dates</li>
-  <li data-i18n="step4Desc"><strong>VLM Detection:</strong> Use regex patterns to identify vision-language model related papers</li>
-  <li data-i18n="step5Desc"><strong>Agent Detection:</strong> Identify AI agent related papers in remote sensing</li>
-  <li data-i18n="step6Desc"><strong>Task Tagging:</strong> Classify papers into 11 task categories based on content</li>
+  <li data-i18n="step4Desc"><strong>MM Detection:</strong> Use regex patterns to identify multimodal related papers</li>
+  <li data-i18n="step5Desc"><strong>MA Detection:</strong> Identify Multiagent Systems papers by cs.MA category</li>
+  <li data-i18n="step6Desc"><strong>Task Tagging:</strong> Classify papers into 14 multimodal task categories based on content</li>
   <li data-i18n="step7Desc"><strong>Classification:</strong> Categorize as Method, Survey, or Dataset</li>
   <li data-i18n="step8Desc"><strong>Generate Feeds:</strong> Create RSS feeds and JSON outputs</li>
   <li data-i18n="step9Desc"><strong>Deploy:</strong> Update the website with new data</li>
@@ -361,19 +361,21 @@
 <h2 data-i18n="cli">CLI Reference</h2>
 <p>Run the pipeline using Python:</p>
 
-<pre><code>python main.py [--category CAT] [--max-results N] [--output DIR]</code></pre>
+<pre><code>python main.py [--start-year YEAR] [--end-year YEAR] [--max-results N] [--output-dir DIR]</code></pre>
 
 <h3 data-i18n="cli1Title">Arguments</h3>
 <div class="table-wrap">
 <table>
   <tr><th>Argument</th><th>Description</th><th>Default</th></tr>
-  <tr><td><code>--category</code>, <code>-c</code></td><td>arXiv category to search (e.g., cs.CV, eess.IV)</td><td>cs.CV</td></tr>
-  <tr><td><code>--max-results</code>, <code>-m</code></td><td>Maximum number of papers to fetch</td><td>300</td></tr>
-  <tr><td><code>--output</code>, <code>-o</code></td><td>Output directory for JSON files</td><td>output/</td></tr>
-  <tr><td><code>--keywords</code>, <code>-k</code></td><td>Additional keywords for filtering (comma-separated)</td><td>remote sensing</td></tr>
-  <tr><td><code>--vlm-keywords</code></td><td>JSON file with VLM keyword patterns</td><td>config/vlm_keywords.json</td></tr>
-  <tr><td><code>--task-tags</code></td><td>JSON file with task tag patterns</td><td>config/task_tags.json</td></tr>
-  <tr><td><code>--dry-run</code></td><td>Show what would be done without making changes</td><td>False</td></tr>
+  <tr><td><code>--start-year</code></td><td>Start year for scraping</td><td>2020</td></tr>
+  <tr><td><code>--end-year</code></td><td>End year for scraping</td><td>2026</td></tr>
+  <tr><td><code>--max-results</code></td><td>Maximum number of papers to fetch</td><td>unlimited</td></tr>
+  <tr><td><code>--output-dir</code></td><td>Output directory</td><td>output</td></tr>
+  <tr><td><code>--update</code></td><td>Quick update (last 7 days)</td><td>off</td></tr>
+  <tr><td><code>--with-code</code></td><td>Enable Papers With Code lookup</td><td>off</td></tr>
+  <tr><td><code>--incremental</code> / <code>--no-incremental</code></td><td>Incremental scraping toggle</td><td>on</td></tr>
+  <tr><td><code>--download</code> / <code>--download-only</code></td><td>PDF download modes</td><td>off</td></tr>
+  <tr><td><code>--status</code></td><td>Show progress and exit</td><td>off</td></tr>
   <tr><td><code>--verbose</code>, <code>-v</code></td><td>Enable verbose logging</td><td>False</td></tr>
 </table>
 </div>
@@ -382,11 +384,11 @@
 <pre><code># Fetch latest papers
 python main.py
 
-# Fetch with custom category and limit
-python main.py --category eess.IV --max-results 500
+# Fetch with custom year range and limit
+python main.py --start-year 2024 --end-year 2026 --max-results 500
 
-# Dry run to see what would be fetched
-python main.py --dry-run
+# Quick update for latest 7 days
+python main.py --update
 
 # Verbose output
 python main.py --verbose</code></pre>
@@ -406,15 +408,18 @@ python main.py --verbose</code></pre>
   <tr><td><code>Date</code></td><td>string</td><td>Submission date (YYYY-MM-DD)</td></tr>
   <tr><td><code>Year</code></td><td>integer</td><td>Publication year</td></tr>
   <tr><td><code>Month</code></td><td>integer</td><td>Publication month (1-12)</td></tr>
-  <tr><td><code>Type</code></td><td>string</td><td>Paper type (e.g., cs.CV, eess.IV)</td></tr>
+  <tr><td><code>PrimaryCategory</code></td><td>string</td><td>arXiv primary category code (e.g., cs.MM)</td></tr>
+  <tr><td><code>Categories</code></td><td>string</td><td>Semicolon-separated raw category codes</td></tr>
+  <tr><td><code>Type</code></td><td>string</td><td>Human-readable name for primary category</td></tr>
   <tr><td><code>Subtype</code></td><td>string</td><td>Paper subtype or arXiv ID</td></tr>
   <tr><td><code>Category</code></td><td>string</td><td>Classification: Method, Survey, or Dataset</td></tr>
   <tr><td><code>Publication</code></td><td>string</td><td>Conference or journal name if published</td></tr>
   <tr><td><code>code</code></td><td>string</td><td>URL to code repository if available</td></tr>
   <tr><td><code>BibTex</code></td><td>string</td><td>BibTeX citation entry</td></tr>
-  <tr><td><code>_is_vlm</code></td><td>boolean</td><td>Whether paper is VLM-related</td></tr>
-  <tr><td><code>_vlm_keywords</code></td><td>string</td><td>Semicolon-separated VLM keywords matched</td></tr>
-  <tr><td><code>_is_agent</code></td><td>boolean</td><td>Whether paper is Agent-related</td></tr>
+  <tr><td><code>_is_mm</code></td><td>boolean</td><td>Whether paper is MM-related</td></tr>
+  <tr><td><code>_mm_keywords</code></td><td>string</td><td>Semicolon-separated MM keywords matched</td></tr>
+  <tr><td><code>_is_ma</code></td><td>boolean</td><td>Whether paper belongs to cs.MA subset</td></tr>
+  <tr><td><code>_ma_keywords</code></td><td>string</td><td>Semicolon-separated MA keyword hits (explainability)</td></tr>
   <tr><td><code>_tasks</code></td><td>string</td><td>Semicolon-separated task tags</td></tr>
 </table>
 </div>
@@ -422,22 +427,25 @@ python main.py --verbose</code></pre>
 
 <section id="task-tags">
 <h2 data-i18n="taskTags">Task Tags</h2>
-<p>Papers are automatically tagged with one or more of the following 11 task types:</p>
+<p>Papers are automatically tagged with one or more of the following 14 multimodal task types:</p>
 
 <div class="table-wrap">
 <table>
   <tr><th>Tag</th><th>Full Name</th><th>Description</th></tr>
-  <tr><td><code>CLS</code></td><td>Classification</td><td>Classifying remote sensing images into categories</td></tr>
+  <tr><td><code>MMCLS</code></td><td>Multimodal Classification</td><td>Classifying multimodal inputs into categories</td></tr>
   <tr><td><code>ITR</code></td><td>Image-Text Retrieval</td><td>Finding images from text queries or vice versa</td></tr>
-  <tr><td><code>GeoLoc</code></td><td>Geolocation</td><td>Predicting the geographic location of images</td></tr>
   <tr><td><code>VQA</code></td><td>Visual Question Answering</td><td>Answering questions about images</td></tr>
   <tr><td><code>IC</code></td><td>Image Captioning</td><td>Generating text descriptions for images</td></tr>
-  <tr><td><code>CD</code></td><td>Change Detection</td><td>Identifying changes between multi-temporal images</td></tr>
-  <tr><td><code>OD</code></td><td>Object Detection</td><td>Detecting and localizing objects in images</td></tr>
   <tr><td><code>VG</code></td><td>Visual Grounding</td><td>Linking text phrases to image regions</td></tr>
-  <tr><td><code>SEG</code></td><td>Segmentation</td><td>Segmenting images at pixel or instance level</td></tr>
-  <tr><td><code>SR</code></td><td>Super-Resolution</td><td>Enhancing image resolution</td></tr>
-  <tr><td><code>3D</code></td><td>3D Reconstruction</td><td>Reconstructing 3D models from images</td></tr>
+  <tr><td><code>OVOD</code></td><td>Open-Vocabulary Object Detection</td><td>Detecting objects with open-vocabulary prompts</td></tr>
+  <tr><td><code>OVSEG</code></td><td>Open-Vocabulary Segmentation</td><td>Segmenting objects with open-vocabulary prompts</td></tr>
+  <tr><td><code>T2I</code></td><td>Text-to-Image Generation</td><td>Generating images from textual prompts</td></tr>
+  <tr><td><code>T2V</code></td><td>Text-to-Video Generation</td><td>Generating videos from textual prompts</td></tr>
+  <tr><td><code>I2T</code></td><td>Image-to-Text Generation</td><td>Generating textual descriptions from images</td></tr>
+  <tr><td><code>MRE</code></td><td>Multimodal Reasoning</td><td>Reasoning across visual and textual evidence</td></tr>
+  <tr><td><code>MDI</code></td><td>Multimodal Dialogue & Instruction</td><td>Multimodal dialog and instruction-following tasks</td></tr>
+  <tr><td><code>MAG</code></td><td>Multimodal Agent</td><td>Agentic multimodal planning and execution</td></tr>
+  <tr><td><code>TAP</code></td><td>Tool-Augmented Perception</td><td>Tool-use enhanced multimodal perception tasks</td></tr>
 </table>
 </div>
 </section>
@@ -450,7 +458,7 @@ python main.py --verbose</code></pre>
 </button>
 
 <footer>
-  <span data-i18n="footer">RS Paper Hub - A curated collection of remote sensing papers from arXiv</span>
+  <span data-i18n="footer">RS Paper Hub - A curated collection of multimodal papers from arXiv</span>
 </footer>
 
 <script>
@@ -458,23 +466,23 @@ python main.py --verbose</code></pre>
 const LANG = {
   en: {
     home: 'Home', github: 'GitHub', issues: 'Issues', docs: 'Docs', contact: 'Contact',
-    rssAll: 'All Papers', rssVlm: 'VLM Papers', rssAgent: 'Agent Papers',
+    rssAll: 'All Papers', rssMM: 'MM Papers', rssMA: 'MA Papers',
     gettingStarted: 'Getting Started', technical: 'Technical',
     overview: 'Overview', features: 'Features', webViewer: 'Web Viewer Guide', rssZotero: 'RSS & Zotero',
     pipeline: 'Pipeline', cli: 'CLI Reference', schema: 'Output Schema', taskTags: 'Task Tags',
-    siteTitle: 'RS Paper Hub', siteSubtitle: 'A curated collection of remote sensing papers from arXiv',
-    overviewDesc1: 'RS Paper Hub is an automated system that collects, filters, and categorizes remote sensing papers from arXiv. It helps researchers stay updated with the latest developments in remote sensing, vision-language models, and AI agents.',
-    overviewDesc2: 'The project provides multiple ways to access papers: a web interface, RSS feeds, and direct JSON downloads. All papers are automatically tagged with categories, tasks, and VLM-related keywords.',
+    siteTitle: 'RS Paper Hub', siteSubtitle: 'A curated collection of multimodal papers from arXiv',
+    overviewDesc1: 'RS Paper Hub is an automated system that collects, filters, and categorizes multimodal papers from arXiv. It helps researchers stay updated with the latest developments in multimodal, vision-language models, and AI agents.',
+    overviewDesc2: 'The project provides multiple ways to access papers: a web interface, RSS feeds, and direct JSON downloads. All papers are automatically tagged with categories, tasks, and MM-related keywords.',
     feat1Title: 'Daily Automated Updates', feat1Desc: 'Papers are fetched and processed automatically every day, ensuring you always have access to the latest research.',
-    feat2Title: 'Task Tagging (11 types)', feat2Desc: 'Each paper is automatically tagged with one or more task types: Classification, Retrieval, Geolocation, VQA, Captioning, Change Detection, Object Detection, Visual Grounding, Segmentation, Super-Resolution, and 3D Reconstruction.',
-    feat3Title: 'VLM Filtering', feat3Desc: 'Papers related to Vision-Language Models are automatically detected and can be filtered separately.',
-    feat4Title: 'Agent Filtering', feat4Desc: 'Papers related to AI Agents in remote sensing are automatically identified and can be filtered separately.',
+    feat2Title: 'Task Tagging (14 types)', feat2Desc: 'Each paper is automatically tagged with one or more multimodal task types: MMCLS, ITR, VQA, IC, VG, OVOD, OVSEG, T2I, T2V, I2T, MRE, MDI, MAG, TAP.',
+    feat3Title: 'MM Filtering', feat3Desc: 'Papers related to multimodal methods are automatically detected and can be filtered separately.',
+    feat4Title: 'MA Filtering', feat4Desc: 'Papers in Multiagent Systems (cs.MA) are automatically identified and can be filtered separately.',
     feat5Title: 'Paper Classification', feat5Desc: 'Papers are classified into Method, Survey, or Dataset categories using rule-based patterns.',
     feat6Title: 'Paper Collection & BibTeX Export', feat6Desc: 'Collect favorite papers and export them as BibTeX for easy reference management.',
-    feat7Title: 'RSS Feeds & Zotero', feat7Desc: 'Subscribe to RSS feeds for all papers, VLM papers, or Agent papers. Integrate with Zotero for automatic bibliography management.',
+    feat7Title: 'RSS Feeds & Zotero', feat7Desc: 'Subscribe to RSS feeds for all papers, MM papers, or MA papers. Integrate with Zotero for automatic bibliography management.',
     webViewerIntro: 'The web interface provides powerful tools for exploring and filtering papers:',
-    viewer1Title: 'Three-Tab Data Source Switching', viewer1Desc: 'Use the tabs at the top to switch between: All Papers, Vision-Language Model papers, and Agent papers. The selection is preserved in the URL for sharing.',
-    viewer2Title: 'Search & Filtering', viewer2a: 'Search by title, author, or abstract with exact phrase or fuzzy (split-word) matching', viewer2b: 'Filter by year, month, paper type, category, VLM keywords, and task tags', viewer2c: 'Quick filters for "Today" and "This Week" to see recently published papers', viewer2d: 'Toggle "With Code" to show only papers with available code',
+    viewer1Title: 'Three-Tab Data Source Switching', viewer1Desc: 'Use the tabs at the top to switch between: All Papers, MM papers, and MA papers. The selection is preserved in the URL for sharing.',
+    viewer2Title: 'Search & Filtering', viewer2a: 'Search by title, author, or abstract with exact phrase or fuzzy (split-word) matching', viewer2b: 'Filter by year, month, paper type, category, MM keywords, and task tags', viewer2c: 'Quick filters for "Today" and "This Week" to see recently published papers', viewer2d: 'Toggle "With Code" to show only papers with available code',
     viewer3Title: 'Charts & Visualization', viewer3Desc: 'Click "Charts" to view distribution visualizations. Click on bars to filter by that category. Multiple selections are supported.',
     viewer4Title: 'Paper Actions', viewer4a: 'Click on paper title to open the arXiv page', viewer4b: 'Click on abstract to expand/collapse', viewer4c: 'Collect papers to your personal collection', viewer4d: 'Export filtered results or collection as BibTeX', viewer4e: 'View BibTeX citation or open in Google Scholar',
     viewer5Title: 'Recent Papers Panel', viewer5Desc: 'Click the "NEW PAPERS" button on the right side to view papers published today or this week.',
@@ -482,29 +490,29 @@ const LANG = {
     rss1Title: 'Available RSS Feeds', rss2Title: 'Using with Zotero', rss2Desc: 'In Zotero, go to File → New Feed, and paste one of the RSS URLs above. Zotero will automatically fetch new papers as they are added.',
     rss3Title: 'Direct JSON Download', rss3Desc: 'For programmatic access, JSON files are also available:',
     pipelineIntro: 'The data processing pipeline consists of 9 steps:',
-    step1: 'Fetch arXiv', step2: 'Filter RS', step3: 'Extract Metadata', step4: 'VLM Detection', step5: 'Agent Detection', step6: 'Task Tagging', step7: 'Classification', step8: 'Generate Feeds', step9: 'Deploy',
-    step1Desc: 'Query the arXiv API for recent submissions in relevant categories', step2Desc: 'Apply keyword-based filtering to identify remote sensing papers', step3Desc: 'Parse paper titles, abstracts, authors, and dates', step4Desc: 'Use regex patterns to identify vision-language model related papers', step5Desc: 'Identify AI agent related papers in remote sensing', step6Desc: 'Classify papers into 11 task categories based on content', step7Desc: 'Categorize as Method, Survey, or Dataset', step8Desc: 'Create RSS feeds and JSON outputs', step9Desc: 'Update the website with new data',
-    cli1Title: 'Arguments', cli2Title: 'Examples', footer: 'RS Paper Hub - A curated collection of remote sensing papers from arXiv',
+    step1: 'Fetch arXiv', step2: 'Filter MM', step3: 'Extract Metadata', step4: 'MM Detection', step5: 'MA Detection', step6: 'Task Tagging', step7: 'Classification', step8: 'Generate Feeds', step9: 'Deploy',
+    step1Desc: 'Query the arXiv API for recent submissions in relevant categories', step2Desc: 'Apply keyword/category rules to identify multimodal papers', step3Desc: 'Parse paper titles, abstracts, authors, and dates', step4Desc: 'Use regex patterns to identify multimodal related papers', step5Desc: 'Identify Multiagent Systems papers by cs.MA category', step6Desc: 'Classify papers into 14 multimodal task categories based on content', step7Desc: 'Categorize as Method, Survey, or Dataset', step8Desc: 'Create RSS feeds and JSON outputs', step9Desc: 'Update the website with new data',
+    cli1Title: 'Arguments', cli2Title: 'Examples', footer: 'RS Paper Hub - A curated collection of multimodal papers from arXiv',
   },
   zh: {
     home: '首页', github: 'GitHub', issues: '问题反馈', docs: '文档', contact: '联系我们',
-    rssAll: '全部论文', rssVlm: 'VLM 论文', rssAgent: 'Agent 论文',
+    rssAll: '全部论文', rssMM: 'MM 论文', rssMA: 'MA 论文',
     gettingStarted: '入门', technical: '技术文档',
     overview: '项目简介', features: '核心功能', webViewer: '网页使用指南', rssZotero: 'RSS 与 Zotero',
     pipeline: '处理流程', cli: '命令行参考', schema: '输出格式', taskTags: '任务标签',
-    siteTitle: '遥感论文社', siteSubtitle: '来自 arXiv 的遥感论文精选合集',
-    overviewDesc1: 'RS Paper Hub 是一个自动化系统，从 arXiv 收集、筛选和整理遥感论文。帮助研究人员及时了解遥感、视觉语言模型和 AI Agent 领域的最新进展。',
-    overviewDesc2: '该项目提供多种访问论文的方式：网页界面、RSS 订阅和直接下载 JSON。所有论文都会自动标记类别、任务和 VLM 相关关键词。',
+    siteTitle: '多模态论文社', siteSubtitle: '来自 arXiv 的多模态论文精选合集',
+    overviewDesc1: 'RS Paper Hub 是一个自动化系统，从 arXiv 收集、筛选和整理多模态论文。帮助研究人员及时了解多模态、视觉语言模型和多智能体系统领域的最新进展。',
+    overviewDesc2: '该项目提供多种访问论文的方式：网页界面、RSS 订阅和直接下载 JSON。所有论文都会自动标记类别、任务和 MM 相关关键词。',
     feat1Title: '每日自动更新', feat1Desc: '论文每天自动获取和处理，确保您始终能够访问最新研究成果。',
-    feat2Title: '任务标签 (11种)', feat2Desc: '每篇论文自动标记一个或多个任务类型：分类、图像文本检索、地理位置、视觉问答、图像描述、变化检测、目标检测、视觉定位、分割、超分辨率和三维重建。',
-    feat3Title: 'VLM 筛选', feat3Desc: '与视觉语言模型相关的论文会自动检测，可单独筛选。',
-    feat4Title: 'Agent 筛选', feat4Desc: '遥感中与 AI Agent 相关的论文会自动识别，可单独筛选。',
+    feat2Title: '任务标签 (14种)', feat2Desc: '每篇论文自动标记一个或多个多模态任务类型：MMCLS、ITR、VQA、IC、VG、OVOD、OVSEG、T2I、T2V、I2T、MRE、MDI、MAG、TAP。',
+    feat3Title: 'MM 筛选', feat3Desc: '与多模态方法相关的论文会自动检测，可单独筛选。',
+    feat4Title: 'MA 筛选', feat4Desc: '属于多智能体系统（cs.MA）的论文会自动识别，可单独筛选。',
     feat5Title: '论文分类', feat5Desc: '使用基于规则的方法将论文分类为方法、综述或数据集。',
     feat6Title: '论文收藏与 BibTeX 导出', feat6Desc: '收藏感兴趣的论文并导出为 BibTeX 格式，方便参考文献管理。',
-    feat7Title: 'RSS 订阅与 Zotero', feat7Desc: '订阅全部论文、VLM 论文或 Agent 论文的 RSS 订阅源。可与 Zotero 集成实现自动文献管理。',
+    feat7Title: 'RSS 订阅与 Zotero', feat7Desc: '订阅全部论文、MM 论文或 MA 论文的 RSS 订阅源。可与 Zotero 集成实现自动文献管理。',
     webViewerIntro: '网页界面提供强大的论文浏览和筛选功能：',
-    viewer1Title: '三标签数据源切换', viewer1Desc: '使用顶部的标签切换：全部论文、视觉语言模型论文和 Agent 论文。选中状态会保存在 URL 中以便分享。',
-    viewer2Title: '搜索与筛选', viewer2a: '按标题、作者或摘要搜索，支持精确匹配或模糊（分词）匹配', viewer2b: '按年份、月份、论文类型、类别、VLM 关键词和任务标签筛选', viewer2c: '"今日"和"本周"快速筛选，查看近期发布的论文', viewer2d: '切换"含代码"仅显示提供代码的论文',
+    viewer1Title: '三标签数据源切换', viewer1Desc: '使用顶部的标签切换：全部论文、MM 论文和 MA 论文。选中状态会保存在 URL 中以便分享。',
+    viewer2Title: '搜索与筛选', viewer2a: '按标题、作者或摘要搜索，支持精确匹配或模糊（分词）匹配', viewer2b: '按年份、月份、论文类型、类别、MM 关键词和任务标签筛选', viewer2c: '"今日"和"本周"快速筛选，查看近期发布的论文', viewer2d: '切换"含代码"仅显示提供代码的论文',
     viewer3Title: '图表与可视化', viewer3Desc: '点击"图表"查看分布可视化。点击柱状图可按该类别筛选。',
     viewer4Title: '论文操作', viewer4a: '点击论文标题打开 arXiv 页面', viewer4b: '点击摘要展开/折叠', viewer4c: '将论文收藏到个人收藏夹', viewer4d: '将筛选结果或收藏夹导出为 BibTeX', viewer4e: '查看 BibTeX 引用或打开谷歌学术',
     viewer5Title: '近期论文面板', viewer5Desc: '点击右侧的"最新论文"按钮查看今日或本周发布的论文。',
@@ -512,9 +520,9 @@ const LANG = {
     rss1Title: '可用 RSS 订阅源', rss2Title: '配合 Zotero 使用', rss2Desc: '在 Zotero 中，转到文件 → 新建订阅源，然后粘贴上述 RSS URL。Zotero 将自动获取新添加的论文。',
     rss3Title: '直接下载 JSON', rss3Desc: '为了方便程序调用，也提供 JSON 文件下载：',
     pipelineIntro: '数据处理流程包含 9 个步骤：',
-    step1: '获取 arXiv', step2: '筛选遥感', step3: '提取元数据', step4: 'VLM 检测', step5: 'Agent 检测', step6: '任务标记', step7: '分类', step8: '生成订阅源', step9: '部署',
-    step1Desc: '查询 arXiv API 获取相关类别的最新提交', step2Desc: '使用关键词筛选识别遥感论文', step3Desc: '解析论文标题、摘要、作者和日期', step4Desc: '使用正则表达式识别视觉语言模型相关论文', step5Desc: '识别遥感中的 AI Agent 相关论文', step6Desc: '根据内容将论文分为 11 个任务类别', step7Desc: '分类为方法、综述或数据集', step8Desc: '创建 RSS 订阅源和 JSON 输出', step9Desc: '更新网站数据',
-    cli1Title: '参数', cli2Title: '示例', footer: '遥感论文社 - 来自 arXiv 的遥感论文精选合集',
+    step1: '获取 arXiv', step2: '筛选多模态', step3: '提取元数据', step4: 'MM 检测', step5: 'MA 检测', step6: '任务标记', step7: '分类', step8: '生成订阅源', step9: '部署',
+    step1Desc: '查询 arXiv API 获取相关类别的最新提交', step2Desc: '使用关键词筛选识别多模态论文', step3Desc: '解析论文标题、摘要、作者和日期', step4Desc: '使用正则表达式识别多模态相关论文', step5Desc: '按 cs.MA 分类识别多智能体系统论文', step6Desc: '根据内容将论文分为 14 个任务类别', step7Desc: '分类为方法、综述或数据集', step8Desc: '创建 RSS 订阅源和 JSON 输出', step9Desc: '更新网站数据',
+    cli1Title: '参数', cli2Title: '示例', footer: '多模态论文社 - 来自 arXiv 的多模态论文精选合集',
   }
 };
 
@@ -577,3 +585,4 @@ applyLang();
 </script>
 </body>
 </html>
+

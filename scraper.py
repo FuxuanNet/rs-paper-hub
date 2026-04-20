@@ -1,4 +1,4 @@
-"""arXiv API scraper for remote sensing papers."""
+"""arXiv API scraper for multimodal papers."""
 
 import time
 import logging
