@@ -2,7 +2,7 @@
 
 <img src="asset/logo.png" alt="RS-Paper-Hub" width="100">
 
-# RS-Paper-Hub
+# MM-Paper-Hub
 
 **arXiv 多模态论文自动采集、清洗、MM 筛选与 MA 筛选工具**
 
