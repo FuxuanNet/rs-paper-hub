@@ -4,12 +4,46 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-22T04:22:21Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 25 entries</subtitle>
+  <updated>2026-04-23T04:27:08Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 27 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Anchor-and-Resume Concession Under Dynamic Pricing for LLM-Augmented Freight Negotiation</title>
+    <link href="http://arxiv.org/abs/2604.20732v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.20732v1</id>
+    <published>2026-04-22T00:00:00Z</published>
+    <updated>2026-04-22T00:00:00Z</updated>
+    <author>
+      <name>Hoang Nguyen</name>
+    </author>
+    <author>
+      <name>Lu Wang</name>
+    </author>
+    <author>
+      <name>Marta Gaia Bras</name>
+    </author>
+    <summary type="text">Freight brokerages negotiate thousands of carrier rates daily under dynamic pricing conditions where models frequently revise targets mid-conversation. Classical time-dependent concession frameworks use a fixed shape parameter $β$ that cannot adapt to these updates. Deriving $β$ from the live spread enables adaptation but introduces a new problem: a pricing shift can cause the formula to retract a previous offer, violating monotonicity. LLM-powered brokers offer flexibility but require expensive reasoning models, produce non-deterministic pricing, and remain vulnerable to prompt injection.   We propose a two-index anchor-and-resume framework that addresses both limitations. A spread-derived $β$ maps each load's margin structure to the correct concession posture, while the anchor-and-resume mechanism guarantees monotonically non-decreasing offers under arbitrary pricing shifts. All pricing decisions remain in a deterministic formula; the LLM, when used, serves only as a natural-language translation layer. Empirical evaluation across 115,125 negotiations shows that the adaptive $β$ tailors behavior by regime: in narrow spreads, it concedes quickly to prioritize deal closure and load coverage; in medium and wide spreads, it matches or exceeds the best fixed-$β$ baselines in broker savings. Against an unconstrained 20-billion-parameter LLM broker, it achieves similar agreement rates and savings. Against LLM-powered carriers as more realistic stochastic counterparties, it maintains comparable savings and higher agreement rates than against rule-based opponents. By decoupling the LLM from pricing logic, the framework scales horizontally to thousands of concurrent negotiations with negligible inference cost and transparent decision-making.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.CL" />
+  </entry>
+  <entry>
+    <title>Trust, Lies, and Long Memories: Emergent Social Dynamics and Reputation in Multi-Round Avalon with LLM Agents</title>
+    <link href="http://arxiv.org/abs/2604.20582v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.20582v1</id>
+    <published>2026-04-22T00:00:00Z</published>
+    <updated>2026-04-22T00:00:00Z</updated>
+    <author>
+      <name>Suveen Ellawela</name>
+    </author>
+    <summary type="text">We study emergent social dynamics in LLM agents playing The Resistance: Avalon, a hidden-role deception game. Unlike prior work on single-game performance, our agents play repeated games while retaining memory of previous interactions, including who played which roles and how they behaved, enabling us to study how social dynamics evolve. Across 188 games, two key phenomena emerge. First, reputation dynamics emerge organically when agents retain cross-game memory: agents reference past behavior in statements like "I am wary of repeating last game's mistake of over-trusting early success." These reputations are role-conditional: the same agent is described as "straightforward" when playing good but "subtle" when playing evil, and high-reputation players receive 46% more team inclusions. Second, higher reasoning effort supports more strategic deception: evil players more often pass early missions to build trust before sabotaging later ones, 75% in high-effort games vs 36% in low-effort games. Together, these findings show that repeated interaction with memory gives rise to measurable reputation and deception dynamics among LLM agents.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.CL" />
+  </entry>
   <entry>
     <title>TeamFusion: Supporting Open-ended Teamwork with Multi-Agent Systems</title>
     <link href="http://arxiv.org/abs/2604.19589v1" rel="alternate" type="text/html" />
@@ -156,6 +190,27 @@
       <name>Taeuk Kim</name>
     </author>
     <summary type="text">Adaptive multi-agent systems (MAS) are increasingly adopted to tackle complex problems.However, the narrow task coverage of their optimization raises the question of whether they can function as general-purpose systems.To address this gap, we conduct an extensive empirical study of adaptive MAS, revealing two key findings: (1) topological overfitting -- they fail to generalize across different domains; and (2) illusory coordination -- they achieve reasonable surface-level accuracy while the underlying agent interactions diverge from ideal MAS behavior, raising concerns about their practical utility.These findings highlight the pressing need to prioritize generalization in MAS development and motivate evaluation protocols that extend beyond simple final-answer correctness.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 27 pages, 4 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.CL" />
+  </entry>
+  <entry>
+    <title>Superficial Success vs. Internal Breakdown: An Empirical Study of Generalization in Adaptive Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2604.18951v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.18951v2</id>
+    <published>2026-04-21T00:00:00Z</published>
+    <updated>2026-04-21T00:00:00Z</updated>
+    <author>
+      <name>Namyoung So</name>
+    </author>
+    <author>
+      <name>Seokgyu Jang</name>
+    </author>
+    <author>
+      <name>Taeuk Kim</name>
+    </author>
+    <summary type="text">Adaptive multi-agent systems (MAS) are increasingly adopted to tackle complex problems. However, the narrow task coverage of their optimization raises the question of whether they can function as general-purpose systems. To address this gap, we conduct an extensive empirical study of adaptive MAS, revealing two key findings: (1) topological overfitting -- they fail to generalize across different domains; and (2) illusory coordination -- they achieve reasonable surface-level accuracy while the underlying agent interactions diverge from ideal MAS behavior, raising concerns about their practical utility. These findings highlight the pressing need to prioritize generalization in MAS development and motivate evaluation protocols that extend beyond simple final-answer correctness.</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 27 pages, 4 figures&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
@@ -622,47 +677,5 @@
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>FedGUI: Benchmarking Federated GUI Agents across Heterogeneous Platforms, Devices, and Operating Systems</title>
-    <link href="http://arxiv.org/abs/2604.14956v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.14956v1</id>
-    <published>2026-04-16T00:00:00Z</published>
-    <updated>2026-04-16T00:00:00Z</updated>
-    <author>
-      <name>Wenhao Wang</name>
-    </author>
-    <author>
-      <name>Haoting Shi</name>
-    </author>
-    <author>
-      <name>Mengying Yuan</name>
-    </author>
-    <author>
-      <name>Yiquan Lin</name>
-    </author>
-    <author>
-      <name>Panrong Tong</name>
-    </author>
-    <author>
-      <name>Hanzhang Zhou</name>
-    </author>
-    <author>
-      <name>Guangyi Liu</name>
-    </author>
-    <author>
-      <name>Pengxiang Zhao</name>
-    </author>
-    <author>
-      <name>Yue Wang</name>
-    </author>
-    <author>
-      <name>Siheng Chen</name>
-    </author>
-    <summary type="text">Training GUI agents with traditional centralized methods faces significant cost and scalability challenges. Federated learning (FL) offers a promising solution, yet its potential is hindered by the lack of benchmarks that capture real-world, cross-platform heterogeneity. To bridge this gap, we introduce FedGUI, the first comprehensive benchmark for developing and evaluating federated GUI agents across mobile, web, and desktop platforms. FedGUI provides a suite of six curated datasets to systematically study four crucial types of heterogeneity: cross-platform, cross-device, cross-OS, and cross-source. Extensive experiments reveal several key insights: First, we show that cross-platform collaboration improves performance, extending prior mobile-only federated learning to diverse GUI environments; Second, we demonstrate the presence of distinct heterogeneity dimensions and identify platform and OS as the most influential factors. FedGUI provides a vital foundation for the community to build more scalable and privacy-preserving GUI agents for real-world deployment. Our code and data are publicly available at https://github.com/wwh0411/FedGUI..</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/wwh0411/FedGUI"&gt;https://github.com/wwh0411/FedGUI&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026 Findings, Camera Ready&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
   </entry>
 </feed>
