@@ -4,12 +4,44 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-24T04:32:30Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 26 entries</subtitle>
+  <updated>2026-04-27T04:39:18Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 15 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2604.22708v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.22708v1</id>
+    <published>2026-04-24T00:00:00Z</published>
+    <updated>2026-04-24T00:00:00Z</updated>
+    <author>
+      <name>Mengzhuo Chen</name>
+    </author>
+    <author>
+      <name>Junjie Wang</name>
+    </author>
+    <author>
+      <name>Fangwen Mu</name>
+    </author>
+    <author>
+      <name>Yawen Wang</name>
+    </author>
+    <author>
+      <name>Zhe Liu</name>
+    </author>
+    <author>
+      <name>Huanxiang Feng</name>
+    </author>
+    <author>
+      <name>Qing Wang</name>
+    </author>
+    <summary type="text">Failure attribution, i.e., identifying the responsible agent and decisive step of a failure, is particularly challenging in LLM-based multi-agent systems (MAS) due to their natural-language reasoning, nondeterministic outputs, and intricate interaction dynamics. A reliable benchmark is therefore essential to guide and evaluate attribution techniques. Yet existing benchmarks rely on partially observable traces that capture only agent outputs, omitting the inputs and context that developers actually use when debugging. We argue that failure attribution should be studied under full execution observability, aligning with real-world developer-facing scenarios where complete traces, rather than only outputs, are accessible for diagnosis. To this end, we introduce TraceElephant, a benchmark designed for failure attribution with full execution traces and reproducible environments. We then systematically evaluate failure attribution techniques across various configurations. Specifically, full traces improve attribution accuracy by up to 76\% over a partial-observation counterpart, confirming that missing inputs obscure many failure causes. TraceElephant provides a foundation for follow-up failure attribution research, promoting evaluation practices that reflect real-world debugging and supporting the development of more transparent MASs.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Dataset&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
   <entry>
     <title>Agentic AI-Enabled Framework for Thermal Comfort and Building Energy Assessment in Tropical Urban Neighborhoods</title>
     <link href="http://arxiv.org/abs/2604.21787v1" rel="alternate" type="text/html" />
@@ -70,6 +102,26 @@
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="physics.soc-ph" />
+  </entry>
+  <entry>
+    <title>DM$^3$-Nav: Decentralized Multi-Agent Multimodal Multi-Object Semantic Navigation</title>
+    <link href="http://arxiv.org/abs/2604.22014v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.22014v1</id>
+    <published>2026-04-23T00:00:00Z</published>
+    <updated>2026-04-23T00:00:00Z</updated>
+    <author>
+      <name>Amin Kashiri</name>
+    </author>
+    <author>
+      <name>Atharva Jamsandekar</name>
+    </author>
+    <author>
+      <name>Yasin Yazıcıoğlu</name>
+    </author>
+    <summary type="text">We present DM$^3$-Nav, a fully decentralized multi-agent semantic navigation system supporting multimodal open-vocabulary goal specification and multi-object missions. In our setting, decentralization implies operation without a central coordinator, global map aggregation, or shared global state at runtime. Robots operate autonomously and coordinate through ad-hoc pairwise communication, exchanging local maps, goal status, and navigation intent without synchronization. An implicit task allocation mechanism combining intent broadcasting and distance-weighted frontier selection reduces redundant exploration while preserving decentralized operation. Evaluations on HM3DSem scenes using the HM3Dv0.2 and GOAT-Bench datasets demonstrate that DM$^3$-Nav matches or exceeds centralized and shared-map baselines while eliminating single points of failure inherent in centralized architectures. Finally, we validate our approach in a real-world office environment using two mobile robots, demonstrating successful deployment relying entirely on onboard sensing and computation. A video of our real-world experiments is available online: https://drive.google.com/file/d/1QiUSCn5rIvtuTUqtuXLPgmt6S8x9-MCZ/view?usp=drive_link</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Robotics" />
   </entry>
   <entry>
     <title>Anchor-and-Resume Concession Under Dynamic Pricing for LLM-Augmented Freight Negotiation</title>
@@ -293,347 +345,5 @@
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="cs.CL" />
-  </entry>
-  <entry>
-    <title>QRAFTI: An Agentic Framework for Empirical Research in Quantitative Finance</title>
-    <link href="http://arxiv.org/abs/2604.18500v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18500v1</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Terence Lim</name>
-    </author>
-    <author>
-      <name>Kumar Muthuraman</name>
-    </author>
-    <author>
-      <name>Michael Sury</name>
-    </author>
-    <summary type="text">We introduce a multi-agent framework intended to emulate parts of a quantitative research team and support equity factor research on large financial panel datasets. QRAFTI integrates a research toolkit for panel data with MCP servers that expose data access, factor construction, and custom coding operations as callable tools. It can help replicate established factors, formulate and test new signals, and generate standardized research reports accompanied by narrative analysis and computational traces. On multi-step empirical tasks, using chained tool calls and reflection-based planning may offer better performance and explainability than dynamic code generation alone.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="q-fin.GN" />
-  </entry>
-  <entry>
-    <title>Aether: Network Validation Using Agentic AI and Digital Twin</title>
-    <link href="http://arxiv.org/abs/2604.18233v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18233v1</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Jordan Auge</name>
-    </author>
-    <author>
-      <name>Sam Betts</name>
-    </author>
-    <author>
-      <name>Giovanna Carofiglio</name>
-    </author>
-    <author>
-      <name>Giulio Grassi</name>
-    </author>
-    <author>
-      <name>Martin Gysi</name>
-    </author>
-    <author>
-      <name>John Kenneth d'Souza</name>
-    </author>
-    <summary type="text">Network change validation remains a critical yet predominantly manual, time-consuming, and error-prone process in modern network operations. While formal network verification has made substantial progress in proving correctness properties, it is typically applied in offline, pre-deployment settings and faces challenges in accommodating continuous changes and validating live production behavior. Current operational approaches typically involve scattered testing tools, resulting in partial coverage and errors that surface only after deployment. In this paper, we present Aether, a novel approach that integrates Generative Agentic AI with a multi-functional Network Digital Twin to automate and streamline network change validation workflows. It features an agentic architecture with five specialized Network Operations AI agents that collaboratively handle the change validation lifecycle from intent analysis to network verification and testing. Aether agents use a unified Network Digital Twin integrating modeling, simulation, and emulation to maintain a consistent, up-to-date network view for verification and testing. By orchestrating agent collaboration atop this digital twin, Aether enables automated, rapid network change validation while reducing manual effort, minimizing errors, and improving operational agility and cost-effectiveness. We evaluate Aether over synthetic network change scenarios covering main classes of network changes and on past incidents from a major ISP operational network, demonstrating promising results in error detection (100%), diagnostic coverage (92-96%), and speed (6-7 minutes) over traditional methods.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 12 pages, 6 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>ConventionPlay: Capability-Limited Training for Robust Ad-Hoc Collaboration</title>
-    <link href="http://arxiv.org/abs/2604.18123v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18123v1</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Abhishek Sriraman</name>
-    </author>
-    <author>
-      <name>Eleni Vasilaki</name>
-    </author>
-    <author>
-      <name>Robert Loftin</name>
-    </author>
-    <summary type="text">Ad-hoc collaboration often relies on identifying and adhering to shared conventions. However, when partners can follow multiple conventions, agents must do more than simply adapt; they must actively steer the team toward the most effective joint strategy. We present ConventionPlay, a reinforcement learning-based approach that extends cognitive hierarchies to include a diverse population of adaptive followers. By training against partners with varied capability limits, our agent learns to probe its partner's repertoire, leading the team when possible and following when necessary. Our results in canonical coordination tasks show that ConventionPlay achieves superior coordination efficiency, particularly in settings where conventions have differentiated payoffs.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation</title>
-    <link href="http://arxiv.org/abs/2604.18005v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18005v1</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Nuo Chen</name>
-    </author>
-    <author>
-      <name>Yicheng Tong</name>
-    </author>
-    <author>
-      <name>Yuzhe Yang</name>
-    </author>
-    <author>
-      <name>Yufei He</name>
-    </author>
-    <author>
-      <name>Xueyi Zhang</name>
-    </author>
-    <author>
-      <name>Zou Qingyun</name>
-    </author>
-    <author>
-      <name>Qian Wang</name>
-    </author>
-    <author>
-      <name>Bingsheng He</name>
-    </author>
-    <summary type="text">Multi-agent systems (MAS) are increasingly used for open-ended idea generation, driven by the expectation that collective interaction will broaden the exploration diversity. However, when and why such collaboration truly expands the solution space remains unclear. We present a systematic empirical study of diversity in MAS-based ideation across three bottom-up levels: model intelligence, agent cognition, and system dynamics. At the model level, we identify a compute efficiency paradox, where stronger, highly aligned models yield diminishing marginal diversity despite higher per-sample quality. At the cognition level, authority-driven dynamics suppress semantic diversity compared to junior-dominated groups. At the system level, group-size scaling yields diminishing returns and dense communication topologies accelerate premature convergence. We characterize these outcomes as collective failures emerging from structural coupling, a process where interaction inadvertently contracts agent exploration and triggers diversity collapse. Our analysis shows that this collapse arises primarily from the interaction structure rather than inherent model insufficiency, highlighting the importance of preserving independence and disagreement when designing MAS for creative tasks. Our code is available at https://github.com/Xtra-Computing/MAS_Diversity.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/Xtra-Computing/MAS_Diversity"&gt;https://github.com/Xtra-Computing/MAS_Diversity&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026 Findings&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CL" />
-  </entry>
-  <entry>
-    <title>Multi-UAV Path Following using Vector-Field Guidance</title>
-    <link href="http://arxiv.org/abs/2604.17995v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17995v1</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Gautam Kumar</name>
-    </author>
-    <author>
-      <name>Amit Shivam</name>
-    </author>
-    <author>
-      <name>Ashwini Ratnoo</name>
-    </author>
-    <summary type="text">This paper presents a decentralized, collision-free framework for path following guidance of multiple uncrewed aerial vehicles (UAVs), while maintaining uniform spacing along a reference path. A vector field-based guidance law is employed to drive each UAV toward the reference path. A rotational repulsion mechanism, utilizing relative distance and bearing between UAVs, is proposed to avoid collisions during convergence to the path, and an inter-UAV spacing error-based velocity control law is presented to achieve uniform separation along the path. Analytical guarantees are established for collision avoidance and convergence of the inter-UAV spacing errors to zero, ensuring uniform separation along the path. Numerical simulations demonstrate the efficacy of the proposed method.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Submitted to 2026 Modeling, Estimation and Control Conference (MECC)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Diversity Collapse in Multi-Agent LLM Systems: Structural Coupling and Collective Failure in Open-Ended Idea Generation</title>
-    <link href="http://arxiv.org/abs/2604.18005v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18005v2</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Nuo Chen</name>
-    </author>
-    <author>
-      <name>Yicheng Tong</name>
-    </author>
-    <author>
-      <name>Yuzhe Yang</name>
-    </author>
-    <author>
-      <name>Yufei He</name>
-    </author>
-    <author>
-      <name>Xueyi Zhang</name>
-    </author>
-    <author>
-      <name>Qingyun Zou</name>
-    </author>
-    <author>
-      <name>Qian Wang</name>
-    </author>
-    <author>
-      <name>Bingsheng He</name>
-    </author>
-    <summary type="text">Multi-agent systems (MAS) are increasingly used for open-ended idea generation, driven by the expectation that collective interaction will broaden the exploration diversity. However, when and why such collaboration truly expands the solution space remains unclear. We present a systematic empirical study of diversity in MAS-based ideation across three bottom-up levels: model intelligence, agent cognition, and system dynamics. At the model level, we identify a compute efficiency paradox, where stronger, highly aligned models yield diminishing marginal diversity despite higher per-sample quality. At the cognition level, authority-driven dynamics suppress semantic diversity compared to junior-dominated groups. At the system level, group-size scaling yields diminishing returns and dense communication topologies accelerate premature convergence. We characterize these outcomes as collective failures emerging from structural coupling, a process where interaction inadvertently contracts agent exploration and triggers diversity collapse. Our analysis shows that this collapse arises primarily from the interaction structure rather than inherent model insufficiency, highlighting the importance of preserving independence and disagreement when designing MAS for creative tasks. Our code is available at https://github.com/Xtra-Computing/MAS_Diversity.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/Xtra-Computing/MAS_Diversity"&gt;https://github.com/Xtra-Computing/MAS_Diversity&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026 Findings&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CL" />
-  </entry>
-  <entry>
-    <title>Multi-UAV Path Following using Vector-Field Guidance</title>
-    <link href="http://arxiv.org/abs/2604.17995v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17995v2</id>
-    <published>2026-04-20T00:00:00Z</published>
-    <updated>2026-04-20T00:00:00Z</updated>
-    <author>
-      <name>Gautam Kumar</name>
-    </author>
-    <author>
-      <name>Amit Shivam</name>
-    </author>
-    <author>
-      <name>Ashwini Ratnoo</name>
-    </author>
-    <summary type="text">This paper presents a decentralized, collision-free framework for path following guidance of multiple uncrewed aerial vehicles (UAVs), while maintaining uniform spacing along a reference path. A vector field-based guidance law is employed to drive each UAV toward the reference path. A rotational repulsion mechanism, utilizing relative distance and bearing between UAVs, is proposed to avoid collisions during convergence to the path, and an inter-UAV spacing error-based velocity control law is presented to achieve uniform separation along the path. Analytical guarantees are established for collision avoidance and convergence of the inter-UAV spacing errors to zero, ensuring uniform separation along the path. Numerical simulations demonstrate the efficacy of the proposed method.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Submitted to 2026 Modeling, Estimation and Control Conference (MECC)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Towards Self-Improving Error Diagnosis in Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.17658v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17658v1</id>
-    <published>2026-04-19T00:00:00Z</published>
-    <updated>2026-04-19T00:00:00Z</updated>
-    <author>
-      <name>Jiazheng Li</name>
-    </author>
-    <author>
-      <name>Emine Yilmaz</name>
-    </author>
-    <author>
-      <name>Bei Chen</name>
-    </author>
-    <author>
-      <name>Dieu-Thu Le</name>
-    </author>
-    <summary type="text">Large Language Model (LLM)-based Multi-Agent Systems (MAS) enable complex problem-solving but introduce significant debugging challenges, characterized by long interaction traces, inter-agent dependencies, and delayed error manifestation. Existing diagnostic approaches often rely on expensive expert annotation or ''LLM-as-a-judge'' paradigms, which struggle to pinpoint decisive error steps within extended contexts. In this paper, we introduce ErrorProbe, a self-improving framework for semantic failure attribution that identifies responsible agents and the originating error step. The framework operates via a three-stage pipeline: (1) operationalizing the MAS failure taxonomy to detect local anomalies, (2) performing symptom-driven backward tracing to prune irrelevant context, and (3) employing a specialized multi-agent team (Strategist, Investigator, Arbiter) to validate error hypotheses through tool-grounded execution. Crucially, ErrorProbe maintains a verified episodic memory that updates only when error patterns are confirmed by executable evidence, without the need for annotation. Experiments across the TracerTraj and Who&amp;When benchmarks demonstrate that ErrorProbe significantly outperforms baselines, particularly in step-level localization, while the verified memory enables robust cross-domain transfer without retraining.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026 Findings&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CL" />
-  </entry>
-  <entry>
-    <title>ARMove: Learning to Predict Human Mobility through Agentic Reasoning</title>
-    <link href="http://arxiv.org/abs/2604.17419v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17419v1</id>
-    <published>2026-04-19T00:00:00Z</published>
-    <updated>2026-04-19T00:00:00Z</updated>
-    <author>
-      <name>Chuyue Wang</name>
-    </author>
-    <author>
-      <name>Jie Feng</name>
-    </author>
-    <author>
-      <name>Yuxi Wu</name>
-    </author>
-    <author>
-      <name>Shenglin Yi</name>
-    </author>
-    <author>
-      <name>Hang Zhang</name>
-    </author>
-    <summary type="text">Human mobility prediction is a critical task but remains challenging due to its complexity and variability across populations and regions. Recently, large language models (LLMs) have made progress in zero-shot prediction, but existing methods suffer from limited interpretability (due to black-box reasoning), lack of iterative learning from new data, and poor transferability. In this paper, we introduce \textbf{ARMove}, a fully transferable framework for predicting human mobility through agentic reasoning. To address these limitations, ARMove employs standardized feature management with iterative optimization and user-specific customization: four major feature pools for foundational knowledge, user profiles for segmentation, and an automated generation mechanism integrating LLM knowledge. Robust generalization is achieved via agentic decision-making that adjusts feature weights to maximize accuracy while providing interpretable decision paths. Finally, large-small model synergy distills strategies from large LLMs (e.g., 72B) to smaller ones (e.g., 7B), reducing costs and enhancing performance ceilings. Extensive experiments on four global datasets show ARMove outperforms state-of-the-art baselines on 6 out of 12 metrics (gains of 0.78\% to 10.47\%), with transferability tests confirming robustness across regions, users, and scales. The other 4 items also achieved suboptimal results. Transferability tests confirm its 19 robustness across regions, user groups, and model scales, while interpretability 20 analysis highlights its transparency in decision-making. Our codes are available at: https://anonymous.4open.science/r/ARMove-F847.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Machine Learning" />
-  </entry>
-  <entry>
-    <title>Dynamics of Cognitive Heterogeneity: Investigating Behavioral Biases in Multi-Stage Supply Chains with LLM-Based Simulation</title>
-    <link href="http://arxiv.org/abs/2604.17220v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17220v1</id>
-    <published>2026-04-19T00:00:00Z</published>
-    <updated>2026-04-19T00:00:00Z</updated>
-    <author>
-      <name>Jiuyun Jiang</name>
-    </author>
-    <author>
-      <name>Yuecheng Hong</name>
-    </author>
-    <author>
-      <name>Bo Yang</name>
-    </author>
-    <author>
-      <name>Jin Yang</name>
-    </author>
-    <author>
-      <name>Guangxin Jiang</name>
-    </author>
-    <author>
-      <name>Xiaomeng Guo</name>
-    </author>
-    <author>
-      <name>Guang Xiao</name>
-    </author>
-    <summary type="text">Modeling coordination among generative agents in complex multi-round decision-making presents a core challenge for AI and operations management. Although behavioral experiments have revealed cognitive biases behind supply chain inefficiencies, traditional methods face scalability and control limitations. We introduce a scalable experimental paradigm using Large Language Models (LLMs) to simulate multi-stage supply chain dynamics. Grounded in a Hierarchical Reasoning Framework, this study specifically analyzes the impact of cognitive heterogeneity on agent interactions. Unlike prior homogeneous settings, we employ DeepSeek and GPT agents to systematically vary reasoning sophistication across supply chain tiers. Through rigorously replicated and statistically validated simulations, we investigate how this cognitive diversity influences collective outcomes. Results indicate that agents exhibit myopic and self-interested behaviors that exacerbate systemic inefficiencies. However, we demonstrate that information sharing effectively mitigates these adverse effects. Our findings extend traditional behavioral methods and offer new insights into the dynamics of AI-enabled organizations. This work underscores both the potential and limitations of LLM-based agents as proxies for human decision-making in complex operational environments.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 18 pages, 8 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Logic-Based Verification of Task Allocation for LLM-Enabled Multi-Agent Manufacturing Systems</title>
-    <link href="http://arxiv.org/abs/2604.17142v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17142v1</id>
-    <published>2026-04-18T00:00:00Z</published>
-    <updated>2026-04-18T00:00:00Z</updated>
-    <author>
-      <name>Jonghan Lim</name>
-    </author>
-    <author>
-      <name>Mostafa Tavakkoli Anbarani</name>
-    </author>
-    <author>
-      <name>Rômulo Meira-Góes</name>
-    </author>
-    <author>
-      <name>Ilya Kovalenko</name>
-    </author>
-    <summary type="text">Manufacturing industries are facing increasing product variability due to the growing demand for personalized products. Under these conditions, ensuring safety becomes challenging as frequent reconfigurations can lead to unintended hazardous behaviors. Multi-agent control architectures have been proposed to improve flexibility through decentralized decision-making and coordination. However, these architectures are based on predefined task models, which limit their ability to adapt task planning to new product requirements while preserving safety. Recently, large language models have been introduced into manufacturing systems to enhance adaptability, but reliability remains a key challenge. To address this issue, we propose a control architecture that leverages the flexibility of large language models while preserving safety on the manufacturing shop floor. Specifically, the proposed framework verifies large language model-enabled task allocations by using temporal logic and discrete event systems. The effectiveness of the proposed framework is demonstrated through a case study that involves a multi-robot assembly scenario, showing that unsafe tasks can be allocated safely before task execution.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation</title>
-    <link href="http://arxiv.org/abs/2604.17072v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17072v1</id>
-    <published>2026-04-18T00:00:00Z</published>
-    <updated>2026-04-18T00:00:00Z</updated>
-    <author>
-      <name>Kuo Tian</name>
-    </author>
-    <author>
-      <name>Pengfei Sun</name>
-    </author>
-    <author>
-      <name>Zhen Wu</name>
-    </author>
-    <author>
-      <name>Junran Ding</name>
-    </author>
-    <author>
-      <name>Xinyu Dai</name>
-    </author>
-    <summary type="text">The autonomous synthesis of deep research reports represents a critical frontier for Large Language Models (LLMs), demanding sophisticated information orchestration and non-linear narrative logic. Current approaches rely on rigid predefined linear workflows, which cause error accumulation, preclude global restructuring from subsequent insights, and ultimately limit in-depth multimodal fusion and report quality. We propose CogGen, a Cognitively inspired recursive framework for deep research report Generation. Leveraging a Hierarchical Recursive Architecture to simulate cognitive writing, CogGen enables flexible planning and global restructuring. To extend this recursivity to multimodal content, we introduce Abstract Visual Representation (AVR): a concise intent-driven language that iteratively refines visual-text layouts without pixel-level regeneration overhead. We further present CLEF, a Cognitive Load Evaluation Framework, and curate a new benchmark from Our World in Data (OWID). Extensive experiments show CogGen achieves state-of-the-art results among open-source systems, generating reports comparable to professional analysts' outputs and surpassing Gemini Deep Research. Our code and dataset are available at https://github.com/NJUNLP/CogGen.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/NJUNLP/CogGen"&gt;https://github.com/NJUNLP/CogGen&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 28 pages, 3 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>CogGen: A Cognitively Inspired Recursive Framework for Deep Research Report Generation</title>
-    <link href="http://arxiv.org/abs/2604.17072v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.17072v2</id>
-    <published>2026-04-18T00:00:00Z</published>
-    <updated>2026-04-18T00:00:00Z</updated>
-    <author>
-      <name>Kuo Tian</name>
-    </author>
-    <author>
-      <name>Pengfei Sun</name>
-    </author>
-    <author>
-      <name>Zhen Wu</name>
-    </author>
-    <author>
-      <name>Junran Ding</name>
-    </author>
-    <author>
-      <name>Xinyu Dai</name>
-    </author>
-    <summary type="text">The autonomous synthesis of deep research reports represents a critical frontier for Large Language Models (LLMs), demanding sophisticated information orchestration and non-linear narrative logic. Current approaches rely on rigid predefined linear workflows, which cause error accumulation, preclude global restructuring from subsequent insights, and ultimately limit in-depth multimodal fusion and report quality. We propose CogGen, a Cognitively inspired recursive framework for deep research report Generation. Leveraging a Hierarchical Recursive Architecture to simulate cognitive writing, CogGen enables flexible planning and global restructuring. To extend this recursivity to multimodal content, we introduce Abstract Visual Representation (AVR): a concise intent-driven language that iteratively refines visual-text layouts without pixel-level regeneration overhead. We further present CLEF, a Cognitive Load Evaluation Framework, and curate a new benchmark from Our World in Data (OWID). Extensive experiments show CogGen achieves state-of-the-art results among open-source systems, generating reports comparable to professional analysts' outputs and surpassing Gemini Deep Research. Our code and dataset are available at https://github.com/NJUNLP/CogGen.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/NJUNLP/CogGen"&gt;https://github.com/NJUNLP/CogGen&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 28 pages, 3 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
   </entry>
 </feed>
