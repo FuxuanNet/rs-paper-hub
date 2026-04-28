@@ -4,12 +4,110 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-27T04:39:18Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 15 entries</subtitle>
+  <updated>2026-04-28T04:48:49Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 13 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>EndoGov: A knowledge-governed multi-agent expert system for endometrial cancer risk stratification</title>
+    <link href="http://arxiv.org/abs/2604.23802v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.23802v1</id>
+    <published>2026-04-26T00:00:00Z</published>
+    <updated>2026-04-26T00:00:00Z</updated>
+    <author>
+      <name>Weiye Dai</name>
+    </author>
+    <author>
+      <name>Liyun Shi</name>
+    </author>
+    <author>
+      <name>Zanxiang He</name>
+    </author>
+    <author>
+      <name>Yuling Ma</name>
+    </author>
+    <author>
+      <name>Mengyuan Lin</name>
+    </author>
+    <author>
+      <name>Dianxiang Sun</name>
+    </author>
+    <author>
+      <name>Liming Nie</name>
+    </author>
+    <summary type="text">Multimodal artificial intelligence models for endometrial cancer (EC) risk stratification typically optimize aggregate predictive performance but provide limited mechanisms for enforcing mandatory guideline overrides, such as assigning POLE-mutated tumors to the low-risk group despite high-grade morphology. We present EndoGov, a two-tier multi-agent expert system that factorizes the decision process as D(x) = G(P(x), R), where specialist agents P extract structured evidence and a governance agent G applies an executable rule set R. Tier 1 comprises pathology, molecular, and clinical agents that independently generate schema-constrained reports from frozen foundation-model features or structured records. Tier 2 queries an evidence-level-weighted Guideline Knowledge Graph, using deterministic hard-path rules for high-priority overrides and constrained soft-path reasoning for ambiguous cases. In TCGA-UCEC (n=541), EndoGov achieved 0.943 accuracy, 0.973 macro AUC, and a conditional logic-violation rate (C-LVR) of 0.93% among trigger-exposed cases. In CPTAC-UCEC (n=95), where reference labels are guideline-derived, EndoGov reached 0.842 accuracy compared with &lt; 0.31 for locked-transfer neural baselines, supporting governance-pathway transfer under distribution shift rather than validation against independent clinical truth. End-to-end safety decomposition localized residual failures primarily to upstream molecular detection rather than downstream governance. Backend-swap experiments further showed that hard-path compliance is invariant to the LLM backend. These findings indicate that explicit clinical-rule governance can provide guideline-compliant, auditable EC risk assignment while preserving competitive discrimination.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>DLM: Unified Decision Language Models for Offline Multi-Agent Sequential Decision Making</title>
+    <link href="http://arxiv.org/abs/2604.23557v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.23557v1</id>
+    <published>2026-04-26T00:00:00Z</published>
+    <updated>2026-04-26T00:00:00Z</updated>
+    <author>
+      <name>Zhuohui Zhang</name>
+    </author>
+    <author>
+      <name>Bin Cheng</name>
+    </author>
+    <author>
+      <name>Bin He</name>
+    </author>
+    <summary type="text">Building scalable and reusable multi-agent decision policies from offline datasets remains a challenge in offline multi-agent reinforcement learning (MARL), as existing methods often rely on fixed observation formats and action spaces that limit generalization. In contrast, large language models (LLMs) offer a flexible modeling interface that can naturally accommodate heterogeneous observations and actions. Motivated by this, we propose the Decision Language Model (DLM), which formulates multi-agent decision making as a dialogue-style sequence prediction problem under the centralized training with decentralized execution paradigm. DLM is trained in two stages: a supervised fine-tuning phase, which leverages dialogue-style datasets for centralized training with inter-agent context and generates executable actions from offline trajectories, followed by a group relative policy optimization phase to enhance robustness to out-of-distribution actions through lightweight reward functions. Experiments on multiple benchmarks show that a unified DLM outperforms strong offline MARL baselines and LLM-based conversational decision-making methods, while demonstrating strong zero-shot generalization to unseen scenarios across tasks.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 22 pages, 11 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence" />
+  </entry>
+  <entry>
+    <title>Architecture Matters for Multi-Agent Security</title>
+    <link href="http://arxiv.org/abs/2604.23459v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.23459v1</id>
+    <published>2026-04-25T00:00:00Z</published>
+    <updated>2026-04-25T00:00:00Z</updated>
+    <author>
+      <name>Ben Hagag</name>
+    </author>
+    <author>
+      <name>William L. Anderson</name>
+    </author>
+    <author>
+      <name>Christian Schroeder de Witt</name>
+    </author>
+    <author>
+      <name>Sarah Scheffler</name>
+    </author>
+    <summary type="text">Multi-agent systems (MAS), composed of networks of two or more autonomous AI agents, have become increasingly popular in production deployments, yet introduce security risks that do not arise in single-agent settings. Even if individual agents exhibit robust security, architectural decisions governing their coordination can create attack surfaces that have not been systematically characterized. In this work, we present an empirical study of how MAS design decisions shape the tradeoff between task performance and attack resistance. Across three agentic environments (browser, desktop, and code) and 13 architectural configurations, we use stagewise evaluations that distinguish planning refusal, execution-stage interception, partial harmful execution, and successful attack completion to study three key design choices: (i) agent roles, which determine how authority and responsibility are allocated; (ii) communication topology, which shapes how and when agents interact; and (iii) memory, which determines the context and state visibility accessible to each agent. We find that multi-agent architectures are more vulnerable than standalone agents in the majority of configurations, with attack success rates varying by up to 3.8x at comparable or higher benign accuracy, and that no single design is universally safer. These results motivate the development of further evaluations that move beyond the security properties of a single agent.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.CR; Machine Learning" />
+  </entry>
+  <entry>
+    <title>Usable Agent Discovery for Decentralized AI Systems</title>
+    <link href="http://arxiv.org/abs/2604.23080v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.23080v1</id>
+    <published>2026-04-25T00:00:00Z</published>
+    <updated>2026-04-25T00:00:00Z</updated>
+    <author>
+      <name>Patrizio Dazzi</name>
+    </author>
+    <author>
+      <name>Emanuele Carlini</name>
+    </author>
+    <author>
+      <name>Matteo Mordacchini</name>
+    </author>
+    <author>
+      <name>Saul Urso</name>
+    </author>
+    <summary type="text">Large-scale agentic systems run on distributed infrastructures where many software agents share physical hosts and are discovered via peer-to-peer mechanisms. Discovery must handle node-level churn from failures and host departures and agent-level churn from demand-driven activation, deactivation, and state changes. Their interaction reshapes classic trade-offs between structured and unstructured overlays. We study decentralized agent discovery under this two-level churn, assuming nodes host multiple agents, overlays are structured or gossip-based, and agents switch between warm and cold states. Using Kademlia as a structured and Cyclon+Vicinity as a gossip baseline, we compare stable, node-churn-only, agent-cooling-only, and combined regimes to see when routing efficiency, resilience, and service readiness align or favor different designs. Structured overlays are more robust and efficient in stable and node-churn regimes, while gossip-based overlays remain competitive and can be faster when readiness dominates.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.DC" />
+  </entry>
   <entry>
     <title>Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems</title>
     <link href="http://arxiv.org/abs/2604.22708v1" rel="alternate" type="text/html" />
@@ -41,6 +139,24 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Dataset&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Beyond Single-Agent Alignment: Preventing Context-Fragmented Violations in Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2604.22879v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.22879v1</id>
+    <published>2026-04-24T00:00:00Z</published>
+    <updated>2026-04-24T00:00:00Z</updated>
+    <author>
+      <name>Jie Wu</name>
+    </author>
+    <author>
+      <name>Ming Gong</name>
+    </author>
+    <summary type="text">We identify and formalize a novel security risk: Context-Fragmented Violations (CFVs) - a class of policy breaches where individual agent actions appear locally safe and reasonable, yet collectively violate organizational policies because critical policy facts are siloed in different departments private contexts. Existing prompt-based alignment mechanisms and monolithic interceptors are poorly matched to violations that span contextual islands. We propose Distributed Sentinel, a distributed zero-trust enforcement architecture that introduces the Semantic Taint Token (STT) Protocol. Through lightweight sidecar proxies, our system propagates security state across organizational boundaries without exposing raw cross-domain data, enabling Counterfactual Graph Simulation for cross-domain policy verification. We construct PhantomEcosystem, a comprehensive benchmark comprising 9 categories of realistic cross-agent violation scenarios with adversarially balanced safe controls. On this benchmark, Distributed Sentinel achieves F1 = 0.95 with 106ms end-to-end latency (16ms verification + 90ms entity extraction on A100), compared to 0.85 F1 for prompt-based filtering and 0.65 for rule-based DLP. To empirically validate the need for external enforcement, we evaluate eight frontier LLMs in execution-oriented multi-agent workflows with per-agent domain world models. All models exhibit substantial violation rates (14-98%), with cross-domain data flows showing systematically higher violation rates than same-domain flows. These results indicate that self-avoidance is unreliable and that multi-agent security benefits from a centralized enforcement layer operating above individual agents.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 34 pages, 3 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.CR; Machine Learning" />
   </entry>
   <entry>
     <title>Agentic AI-Enabled Framework for Thermal Comfort and Building Energy Assessment in Tropical Urban Neighborhoods</title>
@@ -173,177 +289,5 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence; cs.DC" />
-  </entry>
-  <entry>
-    <title>TeamFusion: Supporting Open-ended Teamwork with Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.19589v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.19589v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Jiale Liu</name>
-    </author>
-    <author>
-      <name>Victor S. Bursztyn</name>
-    </author>
-    <author>
-      <name>Lin Ai</name>
-    </author>
-    <author>
-      <name>Haoliang Wang</name>
-    </author>
-    <author>
-      <name>Sunav Choudhary</name>
-    </author>
-    <author>
-      <name>Saayan Mitra</name>
-    </author>
-    <author>
-      <name>Qingyun Wu</name>
-    </author>
-    <summary type="text">In open-ended domains, teams must reconcile diverse viewpoints to produce strong deliverables. Answer aggregation approaches commonly used in closed domains are ill-suited to this setting, as they tend to suppress minority perspectives rather than resolve underlying disagreements. We present TeamFusion, a multi-agent system designed to support teamwork in open-ended domains by: 1. Instantiating a proxy agent for each team member conditioned on their expressed preferences; 2. Conducting a structured discussion to surface agreements and disagreements; and 3. Synthesizing more consensus-oriented deliverables that feed into new iterations of discussion and refinement. We evaluate TeamFusion on two teamwork tasks where team members can assess how well their individual views are represented in team decisions and how consensually strong the final deliverables are, finding that it outperforms direct aggregation baselines across metrics, tasks, and team configurations.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 22 pages&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>FOCAL: Filtered On-device Continuous Activity Logging for Efficient Personal Desktop Summarization</title>
-    <link href="http://arxiv.org/abs/2604.19541v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.19541v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Haoran Yin</name>
-    </author>
-    <author>
-      <name>Zhiyuan Wen</name>
-    </author>
-    <author>
-      <name>Jiannong Cao</name>
-    </author>
-    <author>
-      <name>Bo Yuan</name>
-    </author>
-    <author>
-      <name>Ruosong Yang</name>
-    </author>
-    <summary type="text">Desktop interaction streams provide a continuous, privacy-sensitive record of interleaved user tasks. Transforming these streams into task-organized personal logs on-device faces two main challenges: exhaustive Vision-Language Model (VLM) processing strains local resources, and global stream processing causes cross-task context pollution. We present FOCAL (Filtered On-device Continuous Activity Logging), a privacy-first multi-agent system utilizing a unified filter-plan-log architecture. It cascades a lightweight Filter Agent for noise suppression, a text-only Brain Agent for task attribution, a Record Agent for selective visual reasoning, and a task-isolated Memory Agent for context-coherent summarization. Experiments on DesktopBench (comprising 2,572 screenshots across 420 complex sessions) show FOCAL reduces total token consumption by 60.4% and VLM call count by 72.3% versus a baseline, while boosting Key Information Recall (KIR) from 0.38 to 0.61. Crucially, under $A{\to}B{\to}A$ task interruptions, FOCAL maintains Task Acc 0.81 and KIR 0.80, whereas the baseline collapses to Task Acc 0.03. FOCAL pioneers the efficient, on-device summarization of instruction-free desktop streams into multi-perspective personal logs.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.HC" />
-  </entry>
-  <entry>
-    <title>Mesh Memory Protocol: Semantic Infrastructure for Multi-Agent LLM Systems</title>
-    <link href="http://arxiv.org/abs/2604.19540v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.19540v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Hongwei Xu</name>
-    </author>
-    <summary type="text">Teams of LLM agents increasingly collaborate on tasks spanning days or weeks: multi-day data-generation sprints where generator, reviewer, and auditor agents coordinate in real time on overlapping batches; specialists carrying findings forward across session restarts; product decisions compounding over many review rounds. This requires agents to share, evaluate, and combine each other's cognitive state in real time across sessions. We call this cross-session agent-to-agent cognitive collaboration, distinct from parallel agent execution. To enable it, three problems must be solved together. (P1) Each agent decides field by field what to accept from peers, not accept or reject whole messages. (P2) Every claim is traceable to source, so returning claims are recognised as echoes of the receiver's own prior thinking. (P3) Memory that survives session restarts is relevant because of how it was stored, not how it is retrieved. These are protocol-level properties at the semantic layer of agent communication, distinct from tool-access and task-delegation protocols at lower layers. We call this missing protocol layer "semantic infrastructure," and the Mesh Memory Protocol (MMP) specifies it. Four composable primitives work together: CAT7, a fixed seven-field schema for every Cognitive Memory Block (CMB); SVAF, which evaluates each field against the receiver's role-indexed anchors and realises P1; inter-agent lineage, carried as parents and ancestors of content-hash keys and realising P2; and remix, which stores only the receiver's own role-evaluated understanding of each accepted CMB, never the raw peer signal, realising P3. MMP is specified, shipped, and running in production across three reference deployments, where each session runs an autonomous agent as a mesh peer with its own identity and memory, collaborating with other agents across the network for collective intelligence.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 23 pages, 2 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>ClawCoin: An Agentic AI-Native Cryptocurrency for Decentralized Agent Economies</title>
-    <link href="http://arxiv.org/abs/2604.19026v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.19026v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Shaoyu Li</name>
-    </author>
-    <author>
-      <name>Chaoyu Zhang</name>
-    </author>
-    <author>
-      <name>Hexuan Yu</name>
-    </author>
-    <author>
-      <name>Y. Thomas Hou</name>
-    </author>
-    <author>
-      <name>Wenjing Lou</name>
-    </author>
-    <summary type="text">Autonomous AI agents live or die by the API tokens they consume: without paid inference capacity they cannot reason, act, or delegate. Compute-token cost has become the binding resource of the emerging agent economy, yet it is non-transferable: it is account-bound, vendor-specific, and absent from on-chain ledgers. Existing payment rails such as x402 move fiat-backed value between agents, but they do not represent the quantity agents actually burn. As a result, agents can transport purchasing power but cannot quote, escrow, or settle workflows in a unit aligned with compute cost.   We present ClawCoin, a tokenized, compute-cost-indexed unit of account and settlement asset for decentralized agent economies. ClawCoin combines four layers: a robust basket index over standardized prices; an oracle publishing signed fresh attestations; a NAV-based mint/redeem vault with coverage thresholds and rate limits; and an on-chain settlement layer for multi-hop delegations.   We implement a prototype on an Ethereum-compatible L2 and evaluate it using a multi-agent simulator and the OpenClaw testbed. Across single-agent, multi-agent, workflow, and procurement experiments, ClawCoin stabilizes execution capacity under cost shocks, reduces cross-agent quote dispersion, eliminates partial settlements, and sustains cooperative market dynamics that fiat-denominated baselines cannot. These results suggest that compute-indexed units of account can improve decentralized agent coordination.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CR" />
-  </entry>
-  <entry>
-    <title>Gated Coordination for Efficient Multi-Agent Collaboration in Minecraft Game</title>
-    <link href="http://arxiv.org/abs/2604.18975v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18975v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>HuaDong Jian</name>
-    </author>
-    <author>
-      <name>Chenghao Li</name>
-    </author>
-    <author>
-      <name>Haoyu Wang</name>
-    </author>
-    <author>
-      <name>Jiajia Shuai</name>
-    </author>
-    <author>
-      <name>Jinyu Guo</name>
-    </author>
-    <author>
-      <name>Yang Yang</name>
-    </author>
-    <author>
-      <name>Chaoning Zhang</name>
-    </author>
-    <summary type="text">In long-horizon open-world multi-agent systems, existing methods often treat local anomalies as automatic triggers for communication. This default design introduces coordination noise, interrupts local execution, and overuses public interaction in cases that could be resolved locally. To address this issue, we propose a partitioned information architecture for MLLM agents that explicitly separates private execution states from public coordination states. Building on this design, we introduce two key mechanisms. First, we develop an event-triggered working memory based on system-verified outcomes to maintain compact and low-noise local state representations. Second, we propose a cost-sensitive gated escalation mechanism that determines whether cross-region communication should be initiated by jointly considering node criticality, local recovery cost, and downstream task impact. In this way, communication is transformed from a default reaction into a selective decision. Experiments conducted on long-term construction tasks in open environments demonstrate that, compared to baseline models based on strong communication and planned structures, the introduction of gated communication and a partitioned information architecture results in superior performance in terms of blueprint completion quality and execution chain length. It also improves local self-recovery, reduces ineffective escalations, and increases the utility of public communication.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Superficial Success vs. Internal Breakdown: An Empirical Study of Generalization in Adaptive Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.18951v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18951v1</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Namyoung So</name>
-    </author>
-    <author>
-      <name>Seokgyu Jang</name>
-    </author>
-    <author>
-      <name>Taeuk Kim</name>
-    </author>
-    <summary type="text">Adaptive multi-agent systems (MAS) are increasingly adopted to tackle complex problems.However, the narrow task coverage of their optimization raises the question of whether they can function as general-purpose systems.To address this gap, we conduct an extensive empirical study of adaptive MAS, revealing two key findings: (1) topological overfitting -- they fail to generalize across different domains; and (2) illusory coordination -- they achieve reasonable surface-level accuracy while the underlying agent interactions diverge from ideal MAS behavior, raising concerns about their practical utility.These findings highlight the pressing need to prioritize generalization in MAS development and motivate evaluation protocols that extend beyond simple final-answer correctness.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 27 pages, 4 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CL" />
-  </entry>
-  <entry>
-    <title>Superficial Success vs. Internal Breakdown: An Empirical Study of Generalization in Adaptive Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.18951v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.18951v2</id>
-    <published>2026-04-21T00:00:00Z</published>
-    <updated>2026-04-21T00:00:00Z</updated>
-    <author>
-      <name>Namyoung So</name>
-    </author>
-    <author>
-      <name>Seokgyu Jang</name>
-    </author>
-    <author>
-      <name>Taeuk Kim</name>
-    </author>
-    <summary type="text">Adaptive multi-agent systems (MAS) are increasingly adopted to tackle complex problems. However, the narrow task coverage of their optimization raises the question of whether they can function as general-purpose systems. To address this gap, we conduct an extensive empirical study of adaptive MAS, revealing two key findings: (1) topological overfitting -- they fail to generalize across different domains; and (2) illusory coordination -- they achieve reasonable surface-level accuracy while the underlying agent interactions diverge from ideal MAS behavior, raising concerns about their practical utility. These findings highlight the pressing need to prioritize generalization in MAS development and motivate evaluation protocols that extend beyond simple final-answer correctness.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 27 pages, 4 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CL" />
   </entry>
 </feed>
