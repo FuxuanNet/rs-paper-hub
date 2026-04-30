@@ -4,12 +4,45 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-29T04:43:12Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 16 entries</subtitle>
+  <updated>2026-04-30T04:43:36Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 15 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Preserving Disagreement: Architectural Heterogeneity and Coherence Validation in Multi-Agent Policy Simulation</title>
+    <link href="http://arxiv.org/abs/2604.26561v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.26561v1</id>
+    <published>2026-04-29T00:00:00Z</published>
+    <updated>2026-04-29T00:00:00Z</updated>
+    <author>
+      <name>Ariel Sela</name>
+    </author>
+    <summary type="text">Multi-agent deliberation systems using large language models (LLMs) are increasingly proposed for policy simulation, yet they suffer from artificial consensus: evaluator agents converge on the same option regardless of their assigned value perspectives. We present the AI Council, a three-phase deliberation framework, and conduct 120 deliberations across two policy scenarios to test two interventions. First, architectural heterogeneity (assigning a different 7-9B parameter model to each value perspective) significantly reduces first-choice concentration compared to a homogeneous baseline (child welfare: 70.9% to 46.1%, p &lt; 0.001, r = 0.58; housing: 46.0% to 22.9%, p &lt; 0.001, r = 0.50). This contrasts with accuracy-oriented multi-agent debate, where heterogeneity does not reduce convergence, suggesting model diversity operates differently when no objectively correct answer exists. Second, coherence validation (using a frontier model to assess whether each evaluator's reasoning is grounded in its assigned values) reveals a fidelity-diversity tradeoff: on a scenario with a dominant option, it further reduces concentration (46.1% to 40.8%, p = 0.004), but on a scenario with genuinely competitive options, it increases concentration (22.9% to 26.6%, p = 0.96) by amplifying high-coherence evaluators who cluster on one option. This tradeoff may be a general property of multi-agent systems employing quality weighting. We report negative results from three failed Delphi designs, demonstrate that 8B models exhibit binary rather than graded responses to counter-arguments, and propose the trustworthy tension rate as a diagnostic measure of small-model deliberation capabilities.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 14 pages, 7 tables, 120 deliberations across 2 policy scenarios&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence" />
+  </entry>
+  <entry>
+    <title>When Agents Shop for You: Role Coherence in AI-Mediated Markets</title>
+    <link href="http://arxiv.org/abs/2604.26220v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.26220v1</id>
+    <published>2026-04-29T00:00:00Z</published>
+    <updated>2026-04-29T00:00:00Z</updated>
+    <author>
+      <name>Soogand Alavi</name>
+    </author>
+    <author>
+      <name>Salar Nozari</name>
+    </author>
+    <summary type="text">Consumers are increasingly delegating purchase decisions to AI agents, providing natural-language descriptions of their preferences and identity. We argue that these representations constitute an information channel, role coherence, through which sellers can infer willingness to pay without explicit disclosure by the buyer agent, leading to preference leakage. In an experiment where a language-model buyer agent shops on behalf of a verbal consumer profile, we show that seller-side inference from dialogue alone recovers willingness to pay nearly one-for-one. Comparing this setting to a numeric-budget condition with confidentiality instructions cleanly isolates role coherence as distinct from instruction-following failure. Because this leakage arises from delegation itself, it cannot be mitigated at the prompt level. Instead, we propose architectural interventions that trade off personalization against preference privacy.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; MDI&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="econ.GN" />
+  </entry>
   <entry>
     <title>Pythia: Toward Predictability-Driven Agent-Native LLM Serving</title>
     <link href="http://arxiv.org/abs/2604.25899v1" rel="alternate" type="text/html" />
@@ -187,6 +220,26 @@
     <category term="Artificial Intelligence; cs.CY; cs.DC" />
   </entry>
   <entry>
+    <title>Frontier Coding Agents Can Now Implement an AlphaZero Self-Play Machine Learning Pipeline For Connect Four That Performs Comparably to an External Solver</title>
+    <link href="http://arxiv.org/abs/2604.25067v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.25067v2</id>
+    <published>2026-04-27T00:00:00Z</published>
+    <updated>2026-04-27T00:00:00Z</updated>
+    <author>
+      <name>Joshua Sherwood</name>
+    </author>
+    <author>
+      <name>Ben Aybar</name>
+    </author>
+    <author>
+      <name>Benjamin Kaplan</name>
+    </author>
+    <summary type="text">Forecasting when AI systems will become capable of meaningfully accelerating AI research is a central challenge for AI safety. Existing benchmarks measure broad capability growth, but may not provide ample early warning signals for recursive self-improvement. We propose measuring AI's capability to autonomously implement end-to-end machine learning pipelines from past AI research breakthroughs, given a minimal task description. By providing a concise task description instead of the full prior work as reference, we hope to better elicit emerging AI research taste. We introduce a proof-of-concept benchmark in which frontier coding agents autonomously implement an AlphaZero-style machine learning pipeline for Connect Four on consumer hardware within a three-hour budget, and we evaluate the resulting game AIs in a round-robin tournament anchored to the Pascal Pons Connect Four solver. Across four agents with eight trials each, we find substantial differentiation: Claude Opus 4.7 won as first-mover against Pons in seven of eight trials, statistically significantly better than the other agents tested, none of which exceeded two of eight. The task, which no frontier agent could reliably complete when we began development in January of 2026, is now near-saturation. Our evaluation also surfaced anomalous behavior in GPT-5.4, which consistently used far less of its allocated time budget than other agents. A follow-up 16-trial probe using shorter, less evaluation-coded prompts substantially increased GPT-5.4's time-budget usage, consistent with but not diagnostic of sandbagging; Bradley-Terry ratings across probe conditions showed only directional differences, despite significant differences in time-budget usage. We release our data, code, and prompts to support reproduction and extension.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Machine Learning" />
+  </entry>
+  <entry>
     <title>EndoGov: A knowledge-governed multi-agent expert system for endometrial cancer risk stratification</title>
     <link href="http://arxiv.org/abs/2604.23802v1" rel="alternate" type="text/html" />
     <id>http://arxiv.org/abs/2604.23802v1</id>
@@ -333,86 +386,5 @@
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence; cs.CR; Machine Learning" />
-  </entry>
-  <entry>
-    <title>Agentic AI-Enabled Framework for Thermal Comfort and Building Energy Assessment in Tropical Urban Neighborhoods</title>
-    <link href="http://arxiv.org/abs/2604.21787v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.21787v1</id>
-    <published>2026-04-23T00:00:00Z</published>
-    <updated>2026-04-23T00:00:00Z</updated>
-    <author>
-      <name>Po-Yen Lai</name>
-    </author>
-    <author>
-      <name>Xinyu Yang</name>
-    </author>
-    <author>
-      <name>Derrick Low</name>
-    </author>
-    <author>
-      <name>Huizhe Liu</name>
-    </author>
-    <author>
-      <name>Jian Cheng Wong</name>
-    </author>
-    <summary type="text">In response to the urban heat island effects and building energy demands in Singapore, this study proposes an agentic AI-enabled reasoning framework that integrates large language models (LLMs) with lightweight physics-based models. Through prompt customization, the LLMs interpret urban design tasks, extract relevant policies, and activate appropriate physics-based models for evaluation, forming a closed-loop reasoning-action process. These lightweight physics-based models leverage core thermal and airflow principles, streamlining conventional models to reduce computational time while predicting microclimate variables, such as building surface temperature, ground radiant heat, and airflow conditions, thereby enabling the estimation of thermal comfort indices, e.g., physiological equivalent temperature (PET), and building energy usage. This framework allows users to explore a variety of climate-resilient building surface strategies, e.g., green façades and cool paint applications, that improve thermal comfort while reducing wall heat gain and energy demand. By combining the autonomous reasoning capacity of LLMs with the rapid quantitative evaluation of lightweight physics-based models, the proposed system demonstrates potential for cross-disciplinary applications in sustainable urban design, indoor-outdoor environmental integration, and climate adaptation planning. The source code and data used in this study are available at: https://github.com/PgUpDn/urban-cooling-agent.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/PgUpDn/urban-cooling-agent"&gt;https://github.com/PgUpDn/urban-cooling-agent&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; IAQVEC 2026&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="physics.comp-ph" />
-  </entry>
-  <entry>
-    <title>Architectures for Robust Self-Organizing Energy Systems under Information and Control Constraints</title>
-    <link href="http://arxiv.org/abs/2604.21529v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.21529v1</id>
-    <published>2026-04-23T00:00:00Z</published>
-    <updated>2026-04-23T00:00:00Z</updated>
-    <author>
-      <name>Emilie Frost</name>
-    </author>
-    <author>
-      <name>Astrid Nieße</name>
-    </author>
-    <summary type="text">Applying the concept of controlled self-organization in agent-based Cyber-Physical Energy Systems (CPES) is a promising approach to ensure system robustness. By introducing an observer/controller architecture to the system, this concept allows for self-organization while still enabling intervention when disturbances occur. Thus, it is possible to respond to effects of cyber attacks, a major threat to current energy systems. However, when implementing an observer to monitor the system and a controller to execute actions for controlled self-organization in CPES, it is essential to take into account restrictions on information and actions resulting from the privacy of local distributed energy resources, regulatory constraints, and data exchange requirements. For this reason, this paper presents architecture variants for the observer and controller that take into account restrictions on access to information and limited actions. In addition, it evaluates possible controller actions in various architectures. The results underscore the importance of considering observer/controller architectures when designing agent-based systems to ensure their robustness for real-world applications.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Agents and Artificial Intelligence&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Role of diversity in team performance: the case of missing expertise, an agent based simulation</title>
-    <link href="http://arxiv.org/abs/2604.21328v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.21328v1</id>
-    <published>2026-04-23T00:00:00Z</published>
-    <updated>2026-04-23T00:00:00Z</updated>
-    <author>
-      <name>Tamás Kiss</name>
-    </author>
-    <summary type="text">Theory and empirical research on management teams' influence on firm performance have witnessed continuous development, and by now incorporate numerous details. Classic, experiment-based studies examining social systems collect vast amount of data, but often times investigate only the first one or two modes of the distribution of measured variables, and experience difficulty in analyzing the effect of context. For example, in functional diversity research, management teams are described by measures incorporating complex distributions of capabilities of individual managers and teams of managers. To investigate the effect of hidden distributions, and the effect of functional diversity composition on team communication and performance, we developed an agent-based model, and conducted a series of simulation experiments. Modeling results show that depending on the context, such as communication scheme among interacting agents, or their functional composition, intrapersonal functional diversity (IFD), and dominant function diversity (DFD) might enhance or reduce performance and communication among agents. Furthermore, simulation results also suggest that a third measure is required alongside IFD and DFD capturing the aggregate expertise of the team to comprehensively account for empirical findings.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 20 pages, 13 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="physics.soc-ph" />
-  </entry>
-  <entry>
-    <title>DM$^3$-Nav: Decentralized Multi-Agent Multimodal Multi-Object Semantic Navigation</title>
-    <link href="http://arxiv.org/abs/2604.22014v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.22014v1</id>
-    <published>2026-04-23T00:00:00Z</published>
-    <updated>2026-04-23T00:00:00Z</updated>
-    <author>
-      <name>Amin Kashiri</name>
-    </author>
-    <author>
-      <name>Atharva Jamsandekar</name>
-    </author>
-    <author>
-      <name>Yasin Yazıcıoğlu</name>
-    </author>
-    <summary type="text">We present DM$^3$-Nav, a fully decentralized multi-agent semantic navigation system supporting multimodal open-vocabulary goal specification and multi-object missions. In our setting, decentralization implies operation without a central coordinator, global map aggregation, or shared global state at runtime. Robots operate autonomously and coordinate through ad-hoc pairwise communication, exchanging local maps, goal status, and navigation intent without synchronization. An implicit task allocation mechanism combining intent broadcasting and distance-weighted frontier selection reduces redundant exploration while preserving decentralized operation. Evaluations on HM3DSem scenes using the HM3Dv0.2 and GOAT-Bench datasets demonstrate that DM$^3$-Nav matches or exceeds centralized and shared-map baselines while eliminating single points of failure inherent in centralized architectures. Finally, we validate our approach in a real-world office environment using two mobile robots, demonstrating successful deployment relying entirely on onboard sensing and computation. A video of our real-world experiments is available online: https://drive.google.com/file/d/1QiUSCn5rIvtuTUqtuXLPgmt6S8x9-MCZ/view?usp=drive_link</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Robotics" />
   </entry>
 </feed>
