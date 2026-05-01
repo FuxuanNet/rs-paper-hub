@@ -4,8 +4,8 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-04-30T04:43:36Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 15 entries</subtitle>
+  <updated>2026-05-01T05:10:04Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 14 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
@@ -42,6 +42,24 @@
 &lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; MDI&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="econ.GN" />
+  </entry>
+  <entry>
+    <title>A High-Throughput Compute-Efficient POMDP Hide-And-Seek-Engine (HASE) for Multi-Agent Operations</title>
+    <link href="http://arxiv.org/abs/2604.27162v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2604.27162v1</id>
+    <published>2026-04-29T00:00:00Z</published>
+    <updated>2026-04-29T00:00:00Z</updated>
+    <author>
+      <name>Timothy Flavin</name>
+    </author>
+    <author>
+      <name>Sandip Sen</name>
+    </author>
+    <summary type="text">Reinforcement Learning (RL) algorithms exhibit high sample complexity, particularly when applied to Decentralized Partially Observable Markov Decision Processes (Dec-POMDPs). As a response, projects such as SampleFactory, EnvPool, Brax, and IsaacLab migrate parallel execution of classic environments such as MuJoCo and Atari into C++ thread pools or the GPU to decrease the computational cost of environment steps. We are interested in optimizing the decision-level of human-AI joint operations, so we introduce a compute-efficient Dec-POMDP engine natively architected in C++ called Hide-And-Seek-Engine. By employing Data-Oriented Design (DOD) principles, explicit 64-byte cache-line alignment to remove false sharing, and a zero-copy PyTorch memory bridge using pinned memory and Direct Memory Access (DMA), our engine sustains throughput of up to 33,000,000 steps per second (SPS) in a single-agent, 1024-environment, decentralized observations on an AMD Ryzen 9950X (16 cores). Ten agents reduces FPS to 7M SPS with generating random actions contributing 1/3rd the total runtime for reference. The engine achieves a throughput increase of approximately 3,500$\times$ over the baseline single threaded vectorized NumPy implementation and successfully trains cooperative multi-agent policies via PPO, DQN, and SAC in minutes, validating both its performance and generality.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 21 pages, 10 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning; cs.PF" />
   </entry>
   <entry>
     <title>Pythia: Toward Predictability-Driven Agent-Native LLM Serving</title>
@@ -336,55 +354,5 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence; cs.DC" />
-  </entry>
-  <entry>
-    <title>Seeing the Whole Elephant: A Benchmark for Failure Attribution in LLM-based Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.22708v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.22708v1</id>
-    <published>2026-04-24T00:00:00Z</published>
-    <updated>2026-04-24T00:00:00Z</updated>
-    <author>
-      <name>Mengzhuo Chen</name>
-    </author>
-    <author>
-      <name>Junjie Wang</name>
-    </author>
-    <author>
-      <name>Fangwen Mu</name>
-    </author>
-    <author>
-      <name>Yawen Wang</name>
-    </author>
-    <author>
-      <name>Zhe Liu</name>
-    </author>
-    <author>
-      <name>Huanxiang Feng</name>
-    </author>
-    <author>
-      <name>Qing Wang</name>
-    </author>
-    <summary type="text">Failure attribution, i.e., identifying the responsible agent and decisive step of a failure, is particularly challenging in LLM-based multi-agent systems (MAS) due to their natural-language reasoning, nondeterministic outputs, and intricate interaction dynamics. A reliable benchmark is therefore essential to guide and evaluate attribution techniques. Yet existing benchmarks rely on partially observable traces that capture only agent outputs, omitting the inputs and context that developers actually use when debugging. We argue that failure attribution should be studied under full execution observability, aligning with real-world developer-facing scenarios where complete traces, rather than only outputs, are accessible for diagnosis. To this end, we introduce TraceElephant, a benchmark designed for failure attribution with full execution traces and reproducible environments. We then systematically evaluate failure attribution techniques across various configurations. Specifically, full traces improve attribution accuracy by up to 76\% over a partial-observation counterpart, confirming that missing inputs obscure many failure causes. TraceElephant provides a foundation for follow-up failure attribution research, promoting evaluation practices that reflect real-world debugging and supporting the development of more transparent MASs.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; ACL 2026&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Dataset&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Beyond Single-Agent Alignment: Preventing Context-Fragmented Violations in Multi-Agent Systems</title>
-    <link href="http://arxiv.org/abs/2604.22879v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.22879v1</id>
-    <published>2026-04-24T00:00:00Z</published>
-    <updated>2026-04-24T00:00:00Z</updated>
-    <author>
-      <name>Jie Wu</name>
-    </author>
-    <author>
-      <name>Ming Gong</name>
-    </author>
-    <summary type="text">We identify and formalize a novel security risk: Context-Fragmented Violations (CFVs) - a class of policy breaches where individual agent actions appear locally safe and reasonable, yet collectively violate organizational policies because critical policy facts are siloed in different departments private contexts. Existing prompt-based alignment mechanisms and monolithic interceptors are poorly matched to violations that span contextual islands. We propose Distributed Sentinel, a distributed zero-trust enforcement architecture that introduces the Semantic Taint Token (STT) Protocol. Through lightweight sidecar proxies, our system propagates security state across organizational boundaries without exposing raw cross-domain data, enabling Counterfactual Graph Simulation for cross-domain policy verification. We construct PhantomEcosystem, a comprehensive benchmark comprising 9 categories of realistic cross-agent violation scenarios with adversarially balanced safe controls. On this benchmark, Distributed Sentinel achieves F1 = 0.95 with 106ms end-to-end latency (16ms verification + 90ms entity extraction on A100), compared to 0.85 F1 for prompt-based filtering and 0.65 for rule-based DLP. To empirically validate the need for external enforcement, we evaluate eight frontier LLMs in execution-oriented multi-agent workflows with per-agent domain world models. All models exhibit substantial violation rates (14-98%), with cross-domain data flows showing systematically higher violation rates than same-domain flows. These results indicate that self-avoidance is unreliable and that multi-agent security benefits from a centralized enforcement layer operating above individual agents.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 34 pages, 3 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CR; Machine Learning" />
   </entry>
 </feed>
