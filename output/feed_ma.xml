@@ -4,12 +4,84 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-05-05T04:46:31Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 19 entries</subtitle>
+  <updated>2026-05-06T04:46:49Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 20 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Physics-Grounded Multi-Agent Architecture for Traceable, Risk-Aware Human-AI Decision Support in Manufacturing</title>
+    <link href="http://arxiv.org/abs/2605.04003v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.04003v1</id>
+    <published>2026-05-05T00:00:00Z</published>
+    <updated>2026-05-05T00:00:00Z</updated>
+    <author>
+      <name>Danny Hoang</name>
+    </author>
+    <author>
+      <name>Ryan Matthiessen</name>
+    </author>
+    <author>
+      <name>Christopher Miller</name>
+    </author>
+    <author>
+      <name>Nasir Mannan</name>
+    </author>
+    <author>
+      <name>Ruby ElKharboutly</name>
+    </author>
+    <author>
+      <name>David Gorsich</name>
+    </author>
+    <author>
+      <name>Matthew P. Castanier</name>
+    </author>
+    <author>
+      <name>Farhad Imani</name>
+    </author>
+    <summary type="text">High-precision CNC machining of free-form aerospace components requires bounded compensations informed by inspection, simulation, and process knowledge. Off-the-shelf large language model (LLM) assistants can generate text, but they do not reliably execute risk-constrained multi-step numerical workflows or provide auditable provenance for high-stakes decisions. We present multi-agent knowledge analysis (MAKA), a human-in-the-loop decision-support architecture that separates intent routing, tools-only quantitative analysis, knowledge graph retrieval, and critic-based verification that enforces physical plausibility, safety bounds, and provenance completeness before recommendations are surfaced for human approval. MAKA is instantiated on a Ti-6Al-4V rotor blade machining testbed by fusing virtual-machining path-tracking error fields, cutting-force and deflection simulations, and scan-based 3D inspection deviation maps from 16 blades. The analysis decomposes deviation into an evidence-linked pathing component, a drift-based wear proxy capturing systematic evolution across parts, a residual systematic compliance term, and a variability proxy for instability-aware escalation. In a three-level tool-orchestration benchmark (single-step through $\geq$3-step stateful sequences), MAKA improves successful tool execution by up to 87.5 percentage points relative to an unstructured single-model interaction pattern with identical tool access. Digital twin what-if studies show MAKA can coordinate traceable compensation candidates that reduce predicted surface deviation from order $10^{-2}$in to approximately $\pm 10^{-3}$in over most of the blade within the simulation environment, providing a pre-deployment verification signal for risk-aware human decision-making.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Information Retrieval" />
+  </entry>
+  <entry>
+    <title>MemFlow: Intent-Driven Memory Orchestration for Small Language Model Agents</title>
+    <link href="http://arxiv.org/abs/2605.03312v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.03312v1</id>
+    <published>2026-05-05T00:00:00Z</published>
+    <updated>2026-05-05T00:00:00Z</updated>
+    <author>
+      <name>Jiayi Chen</name>
+    </author>
+    <author>
+      <name>Yingcong Li</name>
+    </author>
+    <author>
+      <name>Guiling Wang</name>
+    </author>
+    <summary type="text">Modern language agents must operate over long-horizon, multi-turn histories, yet deploying such agents with Small Language Models (SLMs) remains fundamentally difficult. Full-context prompting causes context overflow, flat retrieval exposes the model to noisy evidence, and open-ended agentic loops are unreliable under limited reasoning capacity. We argue that a substantial portion of SLM memory failure arises from mismatched memory operations: different query types demand categorically different retrieval strategies, evidence transformations, and context budgets that SLMs cannot reliably self-orchestrate through open-ended reasoning. We introduce MemFlow, a training-free memory orchestration framework that externalizes memory planning from the SLM. A Router Agent classifies each query by intent and dispatches it to the Memory Agent, which executes one of three specialized tiers (Profile Lookup, Targeted Retrieval, or Deep Reasoning) and assembles the resulting evidence under a dynamic, tier-aware token budget. An Answer Agent then generates a response from this compact context, and a Validator Agent optionally retries with a heavier memory tier when the response is not supported by the provided evidence. This route-then-compile design avoids tool-selection hallucination and reasoning loops while keeping the answer context compact. Evaluated on a frozen Qwen3-1.7B backbone across long-horizon memory benchmarks - LongMemEval, LoCoMo, and LongBench - MemFlow improves accuracy by nearly 2x over full-context SLM baselines. These results suggest that structured intent routing and deterministic evidence preparation can make limited-capacity models substantially more effective in resource-constrained long-horizon agents.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Coordination as an Architectural Layer for LLM-Based Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2605.03310v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.03310v1</id>
+    <published>2026-05-05T00:00:00Z</published>
+    <updated>2026-05-05T00:00:00Z</updated>
+    <author>
+      <name>Maksym Nechepurenko</name>
+    </author>
+    <author>
+      <name>Pavel Shuvalov</name>
+    </author>
+    <summary type="text">Multi-agent LLM systems fail in production at rates between 41% and 87%, mostly due to coordination defects rather than base-model capability. Existing responses split between cataloguing failure modes empirically and shipping declarative orchestration frameworks as engineering tools; neither delivers a principled mapping from coordination configuration to predictable failure-mode signature. We argue that coordination should be treated as a configurable architectural layer, separable from agent logic and from information access, enabling architectural reasoning rather than only engineering productivity.   We instantiate this with an information-controlled design on prediction markets: a single LLM, fixed tools, fixed per-call output cap, and fixed prompt template across five reference coordination configurations, with total compute per question treated as an endogenous architectural output. The Murphy decomposition of the Brier score separates calibration from discriminative power, so configurations leave distinguishable signatures even when aggregate scores coincide.   On 100 Polymarket binary markets resolved after the model's training cutoff (claude-opus-4-6) we report Murphy signatures, a cost-quality Pareto frontier, category-conditioned analysis, and a bootstrap power-projection. Three of five pre-specified predictions are upheld in direction; two configurations dominate the Pareto frontier within this regime; exploratory bootstrap intervals separate consensus alignment from others, though pairwise tests do not survive Bonferroni correction at n=100. We also deploy the same configurations as live agents on Foresight Arena under web-search-enabled conditions, as an on-chain replication channel accumulating in parallel. Harness, trace dataset, and production agents are released. We position this as a methodology-validating first instantiation, not a general cross-model claim.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 31 pages, 7 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning; q-fin.TR" />
+  </entry>
   <entry>
     <title>When Stress Becomes Signal: Detecting Antifragility-Compatible Regimes in Multi-Agent LLM Systems</title>
     <link href="http://arxiv.org/abs/2605.02463v1" rel="alternate" type="text/html" />
@@ -78,6 +150,53 @@
     <summary type="text">As LLM-based agents are increasingly interacting in multi-party settings, they need to properly handle information asymmetry, i.e., knowing when and to whom to disclose information is appropriate. Yet, existing benchmarks fail to measure this ability in realistic multi-party settings. Thus, we introduce SOTOPIA-TOM, a multi-dimensional benchmarking framework to evaluate LLM agents' ability to successfully navigate information asymmetric and privacy sensitive multi-party interactions. We create an interaction environment which enables both public (broadcast) and private (direct message) communication, and craft 160 human-reviewed scenarios across eight industry sectors, each involving 3 to 5 agents with partitioned private knowledge and channel-dependent sharing policies. To measure interaction abilities, we create a multi-dimensional evaluation framework to assess how well agents share useful information, seek missing details, coordinate efficiently, and protect privacy, which we also combine into a composite INFOMGMT metric. Results show that, across 6 LLM backbones and prompting strategies (vanilla, CoT-privacy, and ToM-based interventions), even the largest high-reasoning model (GPT-5) reaches only a 62% INFOMGMT score, which indicates persistent deficiencies in information seeking and privacy-aware decision-making. Additionally, ToM-based interventions more consistently improve the overall coordination-privacy balance (for example, relative to the vanilla baseline, ToM-Coach reduces critical privacy violations on GPT-4o from 9.9% to 2.2% while increasing the composite InfoMgmt score more than 2.5x from 15% to 40%). Overall, SOTOPIA-TOM exposes persistent limitations of current LLM agents in complex, information-asymmetric coordination and provides an extensible testbed for developing more privacy-aware, theory-of-mind capable multi-agent systems.</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 37 pages, 22 Figures&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Enwar 3.0: An Agentic Multi-Modal LLM Orchestrator for Situation-Aware Beamforming, Blockage Prediction, and Handover Management</title>
+    <link href="http://arxiv.org/abs/2605.03215v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.03215v1</id>
+    <published>2026-05-04T00:00:00Z</published>
+    <updated>2026-05-04T00:00:00Z</updated>
+    <author>
+      <name>Ahmad M. Nazar</name>
+    </author>
+    <author>
+      <name>Abdulkadir Celik</name>
+    </author>
+    <author>
+      <name>Asmaa Abdallah</name>
+    </author>
+    <author>
+      <name>Mohamed Y. Selim</name>
+    </author>
+    <author>
+      <name>Daji Qiao</name>
+    </author>
+    <author>
+      <name>Ahmed M. Eltawil</name>
+    </author>
+    <summary type="text">Maintaining robust millimeter-wave (mmWave) connectivity in vehicular networks requires real-time adaptation to environmental dynamics, sensor degradation, and link variability. This paper presents Enwar 3.0, an environment-aware reasoning framework that unifies multi-modal sensing, agentic large language models (LLMs), and context-driven model selection for predictive beamforming, blockage detection, and handover management. Building upon prior iterations of Enwar, the proposed architecture integrates a classifier-driven assessment of sensor health with a primed LLM that orchestrates multiple specialized agents through structured, task-aware prompting. A novel synthetic degradation pipeline enables the training of a sensor degradation classifier that detects real-time impairments across camera, radar, LiDAR, and GPS inputs, achieving over 99% accuracy. The LLM, trained via chain-of-thought (CoT) priming and human-in-the-loop feedback, coordinates agent calls for beam selection, blockage forecasting, and environment perception while dynamically loading sensor-specific models based on environmental context. Extensive evaluations across 15 sensor combinations demonstrate that Enwar 3.0 delivers state-of-the-art performance in both predictive accuracy and interpretability, with beam selection accuracy exceeding 88%, blockage F1-scores surpassing 98%, and reasoning correctness reaching 87% on complex decision prompts. This work establishes a scalable foundation for LLM-integrated wireless systems that reason, perceive, and adapt in real-time.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>MARS-DA: A Hierarchical Reinforcement Learning Framework for Risk-Aware Multi-Agent Bidding in Power Grids</title>
+    <link href="http://arxiv.org/abs/2605.03142v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.03142v1</id>
+    <published>2026-05-04T00:00:00Z</published>
+    <updated>2026-05-04T00:00:00Z</updated>
+    <author>
+      <name>Jiayi Chen</name>
+    </author>
+    <author>
+      <name>Xuan Zhang</name>
+    </author>
+    <author>
+      <name>Guiling Wang</name>
+    </author>
+    <summary type="text">The increasing penetration of renewable energy has introduced substantial volatility into wholesale electricity markets, complicating the optimal bidding strategies for power producers. Traditional Reinforcement Learning (RL) approaches often struggle to balance profit maximization with risk management, frequently overfitting to specific market conditions or failing to account for the stochastic spread between Day-Ahead (DA) and Real-Time (RT) settlements. To address these challenges, this paper makes two primary contributions. First, we introduce and open-source a high-fidelity gymnasium environment for two-settlement electricity market bidding. Grounded in extensive empirical data from the PJM Interconnection, the environment explicitly models the interplay between DA commitments and RT deviations, providing a standardized testbed for general and risk-sensitive agents. Second, we propose MARS-DA (Multi-Agent Regime-Switching for Day-Ahead markets), a novel hierarchical framework that orchestrates distinct sub-policies for risk management and profit seeking. MARS-DA utilizes a top-level Meta-Controller to dynamically blend the actions of two specialized base agents: a "Safe Agent" that optimizes for reliable DA allocation and a "Speculator Agent" that targets volatile RT arbitrage opportunities. Extensive experiments demonstrate that MARS-DA achieves superior risk-adjusted returns compared to state-of-the-art baselines while maintaining robust regime alignment during periods of extreme market volatility.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
   </entry>
   <entry>
@@ -346,75 +465,6 @@
     </author>
     <summary type="text">Studies attempting to simulate human behavior with $\textit{Silicon Societies}$ grow in numbers while LLM-only social networks have started appearing outside of controlled settings. However, the design space of these networks remains under-studied, which contributes to a gap in validating model realism. To enable future works to make more informed design decisions, we perform a systematic analysis of the consequences and interactions of key design choices in simulated social networks, including the choice of base model used to model individual agents, and how they are connected to each other. Using surveys as a proxy for agent opinions, our findings suggest that the geometry of the design space is non-trivial, with some parameters behaving in additive ways while others display more complex interactions. In particular, the choice of the base LLM is the most important variable impacting the simulation outcomes.</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 20 pages, 12 tables, under review at COLM 2026&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Preserving Disagreement: Architectural Heterogeneity and Coherence Validation in Multi-Agent Policy Simulation</title>
-    <link href="http://arxiv.org/abs/2604.26561v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.26561v1</id>
-    <published>2026-04-29T00:00:00Z</published>
-    <updated>2026-04-29T00:00:00Z</updated>
-    <author>
-      <name>Ariel Sela</name>
-    </author>
-    <summary type="text">Multi-agent deliberation systems using large language models (LLMs) are increasingly proposed for policy simulation, yet they suffer from artificial consensus: evaluator agents converge on the same option regardless of their assigned value perspectives. We present the AI Council, a three-phase deliberation framework, and conduct 120 deliberations across two policy scenarios to test two interventions. First, architectural heterogeneity (assigning a different 7-9B parameter model to each value perspective) significantly reduces first-choice concentration compared to a homogeneous baseline (child welfare: 70.9% to 46.1%, p &lt; 0.001, r = 0.58; housing: 46.0% to 22.9%, p &lt; 0.001, r = 0.50). This contrasts with accuracy-oriented multi-agent debate, where heterogeneity does not reduce convergence, suggesting model diversity operates differently when no objectively correct answer exists. Second, coherence validation (using a frontier model to assess whether each evaluator's reasoning is grounded in its assigned values) reveals a fidelity-diversity tradeoff: on a scenario with a dominant option, it further reduces concentration (46.1% to 40.8%, p = 0.004), but on a scenario with genuinely competitive options, it increases concentration (22.9% to 26.6%, p = 0.96) by amplifying high-coherence evaluators who cluster on one option. This tradeoff may be a general property of multi-agent systems employing quality weighting. We report negative results from three failed Delphi designs, demonstrate that 8B models exhibit binary rather than graded responses to counter-arguments, and propose the trustworthy tension rate as a diagnostic measure of small-model deliberation capabilities.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 14 pages, 7 tables, 120 deliberations across 2 policy scenarios&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>When Agents Shop for You: Role Coherence in AI-Mediated Markets</title>
-    <link href="http://arxiv.org/abs/2604.26220v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.26220v1</id>
-    <published>2026-04-29T00:00:00Z</published>
-    <updated>2026-04-29T00:00:00Z</updated>
-    <author>
-      <name>Soogand Alavi</name>
-    </author>
-    <author>
-      <name>Salar Nozari</name>
-    </author>
-    <summary type="text">Consumers are increasingly delegating purchase decisions to AI agents, providing natural-language descriptions of their preferences and identity. We argue that these representations constitute an information channel, role coherence, through which sellers can infer willingness to pay without explicit disclosure by the buyer agent, leading to preference leakage. In an experiment where a language-model buyer agent shops on behalf of a verbal consumer profile, we show that seller-side inference from dialogue alone recovers willingness to pay nearly one-for-one. Comparing this setting to a numeric-budget condition with confidentiality instructions cleanly isolates role coherence as distinct from instruction-following failure. Because this leakage arises from delegation itself, it cannot be mitigated at the prompt level. Instead, we propose architectural interventions that trade off personalization against preference privacy.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; MDI&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="econ.GN" />
-  </entry>
-  <entry>
-    <title>A High-Throughput Compute-Efficient POMDP Hide-And-Seek-Engine (HASE) for Multi-Agent Operations</title>
-    <link href="http://arxiv.org/abs/2604.27162v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2604.27162v1</id>
-    <published>2026-04-29T00:00:00Z</published>
-    <updated>2026-04-29T00:00:00Z</updated>
-    <author>
-      <name>Timothy Flavin</name>
-    </author>
-    <author>
-      <name>Sandip Sen</name>
-    </author>
-    <summary type="text">Reinforcement Learning (RL) algorithms exhibit high sample complexity, particularly when applied to Decentralized Partially Observable Markov Decision Processes (Dec-POMDPs). As a response, projects such as SampleFactory, EnvPool, Brax, and IsaacLab migrate parallel execution of classic environments such as MuJoCo and Atari into C++ thread pools or the GPU to decrease the computational cost of environment steps. We are interested in optimizing the decision-level of human-AI joint operations, so we introduce a compute-efficient Dec-POMDP engine natively architected in C++ called Hide-And-Seek-Engine. By employing Data-Oriented Design (DOD) principles, explicit 64-byte cache-line alignment to remove false sharing, and a zero-copy PyTorch memory bridge using pinned memory and Direct Memory Access (DMA), our engine sustains throughput of up to 33,000,000 steps per second (SPS) in a single-agent, 1024-environment, decentralized observations on an AMD Ryzen 9950X (16 cores). Ten agents reduces FPS to 7M SPS with generating random actions contributing 1/3rd the total runtime for reference. The engine achieves a throughput increase of approximately 3,500$\times$ over the baseline single threaded vectorized NumPy implementation and successfully trains cooperative multi-agent policies via PPO, DQN, and SAC in minutes, validating both its performance and generality.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 21 pages, 10 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Machine Learning; cs.PF" />
-  </entry>
-  <entry>
-    <title>The Cost of Consensus: Isolated Self-Correction Prevails Over Unguided Homogeneous Multi-Agent Debate</title>
-    <link href="http://arxiv.org/abs/2605.00914v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.00914v1</id>
-    <published>2026-04-29T00:00:00Z</published>
-    <updated>2026-04-29T00:00:00Z</updated>
-    <author>
-      <name>Blaž Bertalanič</name>
-    </author>
-    <author>
-      <name>Carolina Fortuna</name>
-    </author>
-    <summary type="text">Multi-agent debate, where teams of LLMs iteratively exchange rationales and vote on answers, is widely deployed under the assumption that peer review filters hallucinations. Yet the failure dynamics of homogeneous debate remain poorly understood, therefore we report findings from a controlled empirical study of teams of $N{=}10$ homogeneous agents (Qwen2.5-7B, Llama-3.1-8B, Ministral-3-8B) across $R{=}3$ debate rounds on two high-difficulty benchmarks (GSM-Hard and MMLU-Hard). We compare peer debate against isolated self-correction and a stochastic noise control that injects rationales from unrelated problems. We decompose debate failure into three model-dependent pathways: sycophantic conformity, where agents uncritically adopt majority answers (modal adoption up to 85.5%); contextual fragility, where peer rationales destabilize previously correct reasoning (vulnerability rate up to 70.0%); and consensus collapse, where plurality voting discards correct answers already present in the generation pool (oracle gap up to 32.3 percentage points). Ablations over communication density ($K \in \{2,4,9\}$) and sampling temperature ($T \in \{0.4, 0.7\}$) show that conformity reaches high levels at minimal peer exposure ($K{=}2$) and intensifies with greater initial diversity. Across all configurations, debate consumes 2.1-3.4$\times$ more tokens (up to 28,631 tokens per problem) than self-correction for equal or lower accuracy. Our results indicate that, within the 7-8B parameter class, homogeneous teams without structured roles do not benefit from unguided peer exchange, and that isolated self-correction consistently offers a more favorable cost-accuracy tradeoff.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 19 pages, ACM Conference on AI and Agentic Systems&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence" />
