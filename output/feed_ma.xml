@@ -4,12 +4,144 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-05-08T04:32:09Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 32 entries</subtitle>
+  <updated>2026-05-11T05:23:54Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 29 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Emergence of Social Reality of Emotion through a Social Allostasis Model with Dynamic Interpretants</title>
+    <link href="http://arxiv.org/abs/2605.07761v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07761v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Kentaro Nomura</name>
+    </author>
+    <author>
+      <name>Yushi Tsubamoto</name>
+    </author>
+    <author>
+      <name>Takato Horii</name>
+    </author>
+    <summary type="text">The theory of constructed emotion defines social reality as the community-level consensus on emotion concepts assigned to interoceptive sensations arising from bodily allostasis and social interaction. In this study, we simulate this emergence process using a computational model that integrates symbol emergence with degrees of freedom in symbol interpretation and active inference. Two agents receive interoceptive signals, exchange inferred symbols, and simultaneously adapt their bodily control goals and symbol interpretations to each other. Experimental results show that the interoceptive prior preferences and symbol probability distributions of the two agents converge, confirming the emergence of social reality grounded in social consensus.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 10 pages, 4 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Synchronizing Minds through Collective Predictive Coding: A Computational Model of Parent-Infant Homeostatic Co-Regulation</title>
+    <link href="http://arxiv.org/abs/2605.07524v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07524v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Yushi Tsubamoto</name>
+    </author>
+    <author>
+      <name>Takato Horii</name>
+    </author>
+    <summary type="text">Inter-brain synchrony (IBS) observed in real-time dyadic interactions, including parent--infant exchanges, suggests that two agents come to share aligned latent representations through interaction. Yet computational accounts of how such alignment can arise between agents that have only local sensory access and asymmetric internal knowledge remain underdeveloped. We propose a constructive model of parent--infant homeostatic co-regulation that integrates a POMDP formulation of active interoceptive inference with the Metropolis--Hastings Naming Game (MHNG) derived from the Collective Predictive Coding (CPC) hypothesis. In our model, the parent observes the infant only through an exteroceptive signal while the infant directly senses its own interoceptive state; the two agents agree on regulatory actions through a shared communicative variable whose acceptance is determined by a locally computable Metropolis--Hastings probability. The agents are further endowed with asymmetric generative-model knowledge: the parent knows how actions transform visceral states but must learn what the infant's body is communicating, whereas the infant perceives its visceral state directly but must learn how actions affect it. In a $6 \times 6$ visceral-state grid world, MHNG-mediated interaction regulated the infant's visceral state more adaptively than one-sided control conditions, and the two posteriors became rapidly aligned. Notably, this latent-state alignment emerged far earlier than the convergence of the learned generative matrices, indicating that representational synchrony does not presuppose fully shared world models. These results offer a minimal constructive account of latent-state alignment compatible with IBS reported in hyperscanning studies and support CPC as a candidate computational basis for inter-brain alignment.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 9pages, 4figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>OrchJail: Jailbreaking Tool-Calling Text-to-Image Agents by Orchestration-Guided Fuzzing</title>
+    <link href="http://arxiv.org/abs/2605.07414v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07414v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Jianming Chen</name>
+    </author>
+    <author>
+      <name>Yawen Wang</name>
+    </author>
+    <author>
+      <name>Junjie Wang</name>
+    </author>
+    <author>
+      <name>Zhe Liu</name>
+    </author>
+    <author>
+      <name>Qing Wang</name>
+    </author>
+    <author>
+      <name>Fanjiang Xu</name>
+    </author>
+    <summary type="text">Tool-calling text-to-image (T2I) agents can plan and execute multi-step tool chains to accomplish complex generation and editing queries. However, this capability introduces a new safety attack surface: harmful outputs may arise from tool orchestration, where individually benign steps combine into unsafe results, making prompt-only jailbreak techniques insufficient. We present OrchJail, an orchestration-guided fuzzing framework for jailbreaking tool-calling T2I agents. Its core idea is to exploit high-risk tool-orchestration patterns: by learning from successful jailbreak tool-calling traces and their causal relationships to prompt wording, OrchJail directly guides the fuzzing search toward prompts that are more likely to trigger unsafe multi-step tool behaviors, rather than relying on surface-level textual perturbations. Extensive experiments demonstrate that OrchJail improves jailbreak effectiveness and efficiency across representative toolcalling T2I agents, achieving higher attack success rates, better image fidelity, and lower query costs, while remaining robust against common jailbreak defenses. Our work highlights tool orchestration as a critical, previously unexplored attack surface and provides a novel framework for uncovering safety risks in T2I agents.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; T2I&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.CR" />
+  </entry>
+  <entry>
+    <title>Rethinking Priority Scheduling for Sequential Multi-Agent Decision Making in Stackelberg Games</title>
+    <link href="http://arxiv.org/abs/2605.07240v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07240v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Xiangyu Liu</name>
+    </author>
+    <author>
+      <name>Liang Zhang</name>
+    </author>
+    <author>
+      <name>Bo Jin</name>
+    </author>
+    <author>
+      <name>Ziqi Wei</name>
+    </author>
+    <summary type="text">Current research applying N-level Stackelberg Game to multi-agent systems often uses the default decision order of agents provided by the environment. However, this raises the question: does the order of agents necessarily affect the final equilibrium point of the game? To address this, we formally analyze the N-level Stackelberg Game, where changing the order in which agents make decisions typically leads to an overdetermined system. As a result, the equilibrium point shifts unless special structural conditions are satisfied. Based on this analysis, we propose the Hierarchical Priority Adjustment (HPA) method, which adjusts and selects the agents' decision order. At the upper level, an upper policy dynamically selects the optimal decision order of agents based on the current game state. At the lower level, agents execute strategies in the Spatio-Temporal Sequential Markov Game (STMG) according to the selected order. To coordinate learning across time scales, we employ a slow-fast update scheme with shared intrinsic rewards derived from the advantage function of the upper policy. Experimental results on high-precision control tasks, including multi-agent MuJoCo, show that HPA outperforms benchmark algorithms and robustly adapts to changing environments. These results highlight the crucial role of optimizing the agents' decision order in N-level Stackelberg Game.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Decentralized Diffusion Policy Learning for Enhanced Exploration in Cooperative Multi-agent Reinforcement Learning</title>
+    <link href="http://arxiv.org/abs/2605.07101v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07101v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Yuyang Zhang</name>
+    </author>
+    <author>
+      <name>Haldun Balim</name>
+    </author>
+    <author>
+      <name>Na Li</name>
+    </author>
+    <summary type="text">Cooperative multi-agent reinforcement learning (MARL) involves complex agent interactions and requires effective exploration strategies. A prominent class of MARL algorithms, decentralized softmax policy gradient (DecSPG), addresses this through energy-based policy updates. In practice, however, such energy-based policies are intractable to maintain and are commonly projected onto the Gaussian policy class. In this work, we show that the limited expressiveness of Gaussian policies severely hinders exploration in DecSPG, and this limitation worsens as the number of agents grows. To address this issue, we propose decentralized diffusion policy learning (DDPL), which parameterizes each agent's policy with a denoising diffusion probabilistic model, an expressive generative model that captures multi-modal action distributions for enhanced exploration. DDPL enables efficient online training of diffusion policies via importance sampling score matching (ISSM), a novel training method with theoretical guarantee. We evaluate DDPL on representative continuous-action MARL benchmarks, including multi-agent particle environment, multi-agent MuJoCo, IsaacLab, and JAX-reimplemented StarCraft multi-agent challenge, and observe consistently improved performance.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning (Statistics)" />
+  </entry>
+  <entry>
+    <title>Social Theory Should Be a Structural Prior for Agentic AI: A Formal Framework for Multi-Agent Social Systems</title>
+    <link href="http://arxiv.org/abs/2605.07069v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07069v1</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Lynnette Hui Xian Ng</name>
+    </author>
+    <author>
+      <name>Iain J. Cruickshank</name>
+    </author>
+    <author>
+      <name>Adrian Xuan Wei Lim</name>
+    </author>
+    <author>
+      <name>Kathleen M. Carley</name>
+    </author>
+    <summary type="text">Agentic AI systems are increasingly deployed not in isolation, but inside social environments populated by other agents and humans, such as in social media platforms, multi-agent LLM pipelines or autonomous robotics fleets. In these settings, system behavior emerges not from individual agents alone, but from the multi-agent interactions over time. Emergent dynamics of individuals in a social group have been long studied by social scientists in human contexts. \textbf{This position paper argues that agentic AI systems must be modeled with social theory as a structural prior, and formalizes a Multi-Agent Social Systems (MASS) framework for how agents interact and influence to generate system-level outcomes.} We represent MASS as a class of dynamical system of information generation, local influence and interaction structure, formulated by four structural priors anchored in social theory: strategic heterogeneity, networked-constrained dependence, co-evolution and distributional instability. We demonstrate the importance of each structural prior through formal propositions, and articulate a research agenda for how MASS should be modeled, evaluated and governed.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.CY" />
+  </entry>
   <entry>
     <title>Coordination Matters: Evaluation of Cooperative Multi-Agent Reinforcement Learning</title>
     <link href="http://arxiv.org/abs/2605.06557v1" rel="alternate" type="text/html" />
@@ -170,6 +302,75 @@
     <title>Active Learning for Communication Structure Optimization in LLM-Based Multi-Agent Systems</title>
     <link href="http://arxiv.org/abs/2605.05703v1" rel="alternate" type="text/html" />
     <id>http://arxiv.org/abs/2605.05703v1</id>
+    <published>2026-05-07T00:00:00Z</published>
+    <updated>2026-05-07T00:00:00Z</updated>
+    <author>
+      <name>Huchen Yang</name>
+    </author>
+    <author>
+      <name>Xinghao Dong</name>
+    </author>
+    <author>
+      <name>Dan Negrut</name>
+    </author>
+    <author>
+      <name>Jin-Long Wu</name>
+    </author>
+    <summary type="text">Optimizing the communication structure of large language model based multi-agent systems (LLM-MAS) has been shown to improve downstream performance and reduce token usage. Existing methods typically rely on randomly sampled training tasks. However, tasks may differ substantially in difficulty and domain, and thus they are not equally informative for updating communication structure, making optimization under limited training budgets often unstable and highly sensitive to the particular training set. To actively identify the most valuable tasks for communication-structure optimization, we propose an ensemble-based information-theoretic task selection framework. The proposed method estimates task informativeness by how much a candidate task changes the distribution over graph parameters, using ensemble Kalman inversion as an efficient and derivative-free approximation of the corresponding Bayesian update. The resulting estimator is especially suitable for black-box and noisy multi-agent systems. To enhance scalability, we construct a compact candidate pool through embedding-based representative selection and combine the informative selection with surrogate modeling and batch Thompson sampling. We validate our method in both benign settings and settings with agent attacks, demonstrating its effectiveness for communication-structure optimization under constrained computational budgets.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Machine Learning" />
+  </entry>
+  <entry>
+    <title>The Cost of Consensus: Malignant Epistemic Herding and Adaptive Gating in Distributed Multi-Agent Search</title>
+    <link href="http://arxiv.org/abs/2605.06988v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.06988v1</id>
+    <published>2026-05-07T00:00:00Z</published>
+    <updated>2026-05-07T00:00:00Z</updated>
+    <author>
+      <name>David Farr</name>
+    </author>
+    <author>
+      <name>Iain Cruickshank</name>
+    </author>
+    <author>
+      <name>Kate Starbird</name>
+    </author>
+    <author>
+      <name>Jevin West</name>
+    </author>
+    <summary type="text">Distributed agents in real-world settings frequently must coordinate under uncertainty with only partial observations. Coordination is necessary to share beliefs to aid in task completion, but communication costs bandwidth, introduces latency, and if done poorly, can degrade collective reasoning. This tension is especially acute in bandwidth-constrained deployments such as distributed sensing networks, autonomous reconnaissance, and collaborative cyber defense, where excessive transmission carries direct operational costs. Existing work has focused on multi-agent exploration and communication strategies, but not on how communication frequency and content jointly shape the collective belief state. Central to this challenge is the degree to which agents maintain compatible internal beliefs about the environment, a property we term \textit{epistemic alignment}. When agents share beliefs effectively, they converge on correct hypotheses; when communication is poorly designed, agents may converge confidently on wrong ones. We formalize this distinction and show it is not detectable from coordination metrics alone such as Jensen-Shannon Divergence or rate to consensus.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.IT; Robotics" />
+  </entry>
+  <entry>
+    <title>Generalising Travel Time Prediction To Varying Route Choices In Urban Networks</title>
+    <link href="http://arxiv.org/abs/2605.06918v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.06918v1</id>
+    <published>2026-05-07T00:00:00Z</published>
+    <updated>2026-05-07T00:00:00Z</updated>
+    <author>
+      <name>Łukasz Gorczyca</name>
+    </author>
+    <author>
+      <name>Kacper Drozd</name>
+    </author>
+    <author>
+      <name>Michał Bujak</name>
+    </author>
+    <author>
+      <name>Rafał Kucharski</name>
+    </author>
+    <summary type="text">Previous methods that predict system-wide travel time, predominantly grounded in graph neural networks, remain limited to typical and recurring demand patterns. While they successfully predict future congestion following daily commute, they inherently approximate a single demand realisation and fail to capture varying route choices. In this work, we propose a Generalised Travel Time Predictor (GenTTP) that successfully differentiates route choices and offers accurate flow and travel time predictions. Our framework learns to uncover complex spatiotemporal traffic patterns and microscopic relationships between route choices and the resulting travel times. This addresses a critical gap: the lack of travel time prediction models that generalise across varying route assignments, where the same demand can produce substantially different network-wide outcomes depending on how travellers are distributed over available paths.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning" />
+  </entry>
+  <entry>
+    <title>Active Learning for Communication Structure Optimization in LLM-Based Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2605.05703v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.05703v2</id>
     <published>2026-05-07T00:00:00Z</published>
     <updated>2026-05-07T00:00:00Z</updated>
     <author>
@@ -506,261 +707,5 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="cs.HC" />
-  </entry>
-  <entry>
-    <title>When Stress Becomes Signal: Detecting Antifragility-Compatible Regimes in Multi-Agent LLM Systems</title>
-    <link href="http://arxiv.org/abs/2605.02463v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.02463v1</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Jose Manuel de la Chica</name>
-    </author>
-    <author>
-      <name>Juan Manuel Vera</name>
-    </author>
-    <author>
-      <name>Jairo Rodríguez</name>
-    </author>
-    <summary type="text">Multi-agent LLM systems are increasingly used to solve complex tasks through decomposition, debate, specialization, and ensemble reasoning. However, these systems are usually evaluated in terms of robustness: whether performance is preserved under perturbation. This paper studies a different question: whether semantic stress exposes structured variation that could support future antifragile learning. We introduce CAFE, a statistical framework for detecting antifragility-compatible regimes in multi-agent architectures. CAFE models a controlled expected distribution of semantic stressors, reconstructs an architecture-specific observed effective stress distribution from multi-dimensional judge signals, and compares both distributions using a distributional Jensen Gap under a convex stress potential. A positive gap does not imply immediate performance improvement; instead, it indicates a convex-expansive deformation of the observed stress distribution, suggesting that the architecture exposes learnable stress structure. We evaluate CAFE on a banking-risk analysis benchmark with five multi-agent architectures: flat, hierarchical, debate, meta-adaptive, and ensemble. Across all architectures, semantic stress reduces average judged quality by roughly one third. Yet all architectures exhibit positive distributional Jensen Gaps with bootstrap confidence intervals above zero. These results show that immediate quality degradation can coexist with statistically detectable antifragility-compatible stress geometry. CAFE is therefore not an antifragile learner itself, but a measurement layer for identifying when and where antifragility learning may be worth applying.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CE" />
-  </entry>
-  <entry>
-    <title>LLM-enabled Social Agents</title>
-    <link href="http://arxiv.org/abs/2605.02335v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.02335v1</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Önder Gürcan</name>
-    </author>
-    <author>
-      <name>Moharram Challenger</name>
-    </author>
-    <summary type="text">Large Language Models (LLMs) have transformed agent-agent and human-agent interaction by enabling software, physical, and simulation agents to communicate and deliberate through natural language. Yet fluent language use does not by itself yield socially intelligible behaviour. Most current systems remain weakly grounded in roles, norms, intentions, and contextual constraints, limiting their capacity for meaningful participation in social environments. This paper develops a conceptual baseline for LLM-enabled social agents by arguing that they should be grounded in role definitions operationalized through persona descriptions. On this basis, we outline research directions for representation, hybrid control, and evaluation. The paper concludes that persona-based role definitions are a necessary foundation for turning language competence into social behaviour.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 11 pages, 1 figure&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>SOTOPIA-TOM: Evaluating Information Management in Multi-Agent Interaction with Theory of Mind</title>
-    <link href="http://arxiv.org/abs/2605.02307v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.02307v1</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Yashwanth YS</name>
-    </author>
-    <author>
-      <name>Ruichen Wang</name>
-    </author>
-    <author>
-      <name>Shihua Zeng</name>
-    </author>
-    <author>
-      <name>Xuhui Zhou</name>
-    </author>
-    <author>
-      <name>Koichi Onoue</name>
-    </author>
-    <author>
-      <name>Vasudha Varadarajan</name>
-    </author>
-    <author>
-      <name>Maarten Sap</name>
-    </author>
-    <summary type="text">As LLM-based agents are increasingly interacting in multi-party settings, they need to properly handle information asymmetry, i.e., knowing when and to whom to disclose information is appropriate. Yet, existing benchmarks fail to measure this ability in realistic multi-party settings. Thus, we introduce SOTOPIA-TOM, a multi-dimensional benchmarking framework to evaluate LLM agents' ability to successfully navigate information asymmetric and privacy sensitive multi-party interactions. We create an interaction environment which enables both public (broadcast) and private (direct message) communication, and craft 160 human-reviewed scenarios across eight industry sectors, each involving 3 to 5 agents with partitioned private knowledge and channel-dependent sharing policies. To measure interaction abilities, we create a multi-dimensional evaluation framework to assess how well agents share useful information, seek missing details, coordinate efficiently, and protect privacy, which we also combine into a composite INFOMGMT metric. Results show that, across 6 LLM backbones and prompting strategies (vanilla, CoT-privacy, and ToM-based interventions), even the largest high-reasoning model (GPT-5) reaches only a 62% INFOMGMT score, which indicates persistent deficiencies in information seeking and privacy-aware decision-making. Additionally, ToM-based interventions more consistently improve the overall coordination-privacy balance (for example, relative to the vanilla baseline, ToM-Coach reduces critical privacy violations on GPT-4o from 9.9% to 2.2% while increasing the composite InfoMgmt score more than 2.5x from 15% to 40%). Overall, SOTOPIA-TOM exposes persistent limitations of current LLM agents in complex, information-asymmetric coordination and provides an extensible testbed for developing more privacy-aware, theory-of-mind capable multi-agent systems.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 37 pages, 22 Figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Enwar 3.0: An Agentic Multi-Modal LLM Orchestrator for Situation-Aware Beamforming, Blockage Prediction, and Handover Management</title>
-    <link href="http://arxiv.org/abs/2605.03215v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.03215v1</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Ahmad M. Nazar</name>
-    </author>
-    <author>
-      <name>Abdulkadir Celik</name>
-    </author>
-    <author>
-      <name>Asmaa Abdallah</name>
-    </author>
-    <author>
-      <name>Mohamed Y. Selim</name>
-    </author>
-    <author>
-      <name>Daji Qiao</name>
-    </author>
-    <author>
-      <name>Ahmed M. Eltawil</name>
-    </author>
-    <summary type="text">Maintaining robust millimeter-wave (mmWave) connectivity in vehicular networks requires real-time adaptation to environmental dynamics, sensor degradation, and link variability. This paper presents Enwar 3.0, an environment-aware reasoning framework that unifies multi-modal sensing, agentic large language models (LLMs), and context-driven model selection for predictive beamforming, blockage detection, and handover management. Building upon prior iterations of Enwar, the proposed architecture integrates a classifier-driven assessment of sensor health with a primed LLM that orchestrates multiple specialized agents through structured, task-aware prompting. A novel synthetic degradation pipeline enables the training of a sensor degradation classifier that detects real-time impairments across camera, radar, LiDAR, and GPS inputs, achieving over 99% accuracy. The LLM, trained via chain-of-thought (CoT) priming and human-in-the-loop feedback, coordinates agent calls for beam selection, blockage forecasting, and environment perception while dynamically loading sensor-specific models based on environmental context. Extensive evaluations across 15 sensor combinations demonstrate that Enwar 3.0 delivers state-of-the-art performance in both predictive accuracy and interpretability, with beam selection accuracy exceeding 88%, blockage F1-scores surpassing 98%, and reasoning correctness reaching 87% on complex decision prompts. This work establishes a scalable foundation for LLM-integrated wireless systems that reason, perceive, and adapt in real-time.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>MARS-DA: A Hierarchical Reinforcement Learning Framework for Risk-Aware Multi-Agent Bidding in Power Grids</title>
-    <link href="http://arxiv.org/abs/2605.03142v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.03142v1</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Jiayi Chen</name>
-    </author>
-    <author>
-      <name>Xuan Zhang</name>
-    </author>
-    <author>
-      <name>Guiling Wang</name>
-    </author>
-    <summary type="text">The increasing penetration of renewable energy has introduced substantial volatility into wholesale electricity markets, complicating the optimal bidding strategies for power producers. Traditional Reinforcement Learning (RL) approaches often struggle to balance profit maximization with risk management, frequently overfitting to specific market conditions or failing to account for the stochastic spread between Day-Ahead (DA) and Real-Time (RT) settlements. To address these challenges, this paper makes two primary contributions. First, we introduce and open-source a high-fidelity gymnasium environment for two-settlement electricity market bidding. Grounded in extensive empirical data from the PJM Interconnection, the environment explicitly models the interplay between DA commitments and RT deviations, providing a standardized testbed for general and risk-sensitive agents. Second, we propose MARS-DA (Multi-Agent Regime-Switching for Day-Ahead markets), a novel hierarchical framework that orchestrates distinct sub-policies for risk management and profit seeking. MARS-DA utilizes a top-level Meta-Controller to dynamically blend the actions of two specialized base agents: a "Safe Agent" that optimizes for reliable DA allocation and a "Speculator Agent" that targets volatile RT arbitrage opportunities. Extensive experiments demonstrate that MARS-DA achieves superior risk-adjusted returns compared to state-of-the-art baselines while maintaining robust regime alignment during periods of extreme market volatility.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>When Stress Becomes Signal: Detecting Antifragility-Compatible Regimes in Multi-Agent LLM Systems</title>
-    <link href="http://arxiv.org/abs/2605.02463v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.02463v2</id>
-    <published>2026-05-04T00:00:00Z</published>
-    <updated>2026-05-04T00:00:00Z</updated>
-    <author>
-      <name>Jose Manuel de la Chica</name>
-    </author>
-    <author>
-      <name>Juan Manuel Vera</name>
-    </author>
-    <author>
-      <name>Jairo Rodríguez</name>
-    </author>
-    <summary type="text">Multi-agent LLM systems are increasingly used to solve complex tasks through decomposition, debate, specialization, and ensemble reasoning. However, these systems are usually evaluated in terms of robustness: whether performance is preserved under perturbation. This paper studies a different question: whether semantic stress exposes structured variation that could support future antifragile learning. We introduce CAFE (Cognitive Antifragility Framework for Evaluation), a statistical framework for detecting antifragility-compatible regimes in multi-agent architectures. CAFE models a controlled expected distribution of semantic stressors, reconstructs an architecture-specific observed effective stress distribution from multi-dimensional judge signals, and compares both distributions using a distributional Jensen Gap under a convex stress potential. A positive gap does not imply immediate performance improvement; instead, it indicates a convex-expansive deformation of the observed stress distribution, suggesting that the architecture exposes learnable stress structure. We evaluate CAFE on a banking-risk analysis benchmark with five multi-agent architectures: flat, hierarchical, debate, meta-adaptive, and ensemble. Across all architectures, semantic stress reduces average judged quality by roughly one third. Yet all architectures exhibit positive distributional Jensen Gaps with bootstrap confidence intervals above zero. These results show that immediate quality degradation can coexist with statistically detectable antifragility-compatible stress geometry. CAFE is therefore not an antifragile learner itself, but a measurement layer for identifying when and where antifragility learning may be worth applying.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CE" />
-  </entry>
-  <entry>
-    <title>Coopetition-Gym v1: A Formally Grounded Platform for Mixed-Motive Multi-Agent Reinforcement Learning under Strategic Coopetition</title>
-    <link href="http://arxiv.org/abs/2605.02063v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.02063v1</id>
-    <published>2026-05-03T00:00:00Z</published>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <author>
-      <name>Vik Pant</name>
-    </author>
-    <author>
-      <name>Eric Yu</name>
-    </author>
-    <summary type="text">We present Coopetition-Gym v1, a benchmark platform for mixed-motive multi-agent reinforcement learning under strategic coopetition. The platform comprises twenty environments organized into four mechanism classes that correspond to four foundational technical reports: interdependence and complementarity (arXiv:2510.18802), trust and reputation dynamics (arXiv:2510.24909), collective action and loyalty (arXiv:2601.16237), and sequential interaction and reciprocity (arXiv:2604.01240). Each environment carries a closed-form payoff structure and a calibrated interdependence matrix derived from the corresponding report.   Every environment exposes a parameterized reward layer configurable across three structurally distinct modes (private, integrated, cooperative). This separation of payoff from reward enables reward-type ablation, the platform's principal methodological apparatus. Four of the twenty environments are calibrated against historically documented coopetitive relationships and reproduce their outcomes at 98.3, 81.7, 86.7, and 87.3 percent on the validation rubric (Samsung-Sony LCD, Renault-Nissan Alliance, Apache HTTP Server, Apple iOS App Store).   The platform exposes Gymnasium, PettingZoo Parallel, and PettingZoo AEC interfaces and ships 126 reference algorithms: 16 learning algorithms, 7 game-theoretic oracles, 2 heuristic baselines, and 101 constant-action policies. A reference experimental study trained the 16 learning algorithms on every environment under every reward configuration with seven random seeds, producing a 25,708-run training corpus and a 1,116-run behavioral audit corpus, both released under CC-BY-4.0 with Croissant 1.0 metadata. Coopetition-Gym v1 is the first platform to combine continuous-action mixed-motive environments, parameterized reward mutuality, calibrated interdependence coefficients, game-theoretic oracle baselines, and validated case studies.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 82 pages, 14 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; Machine Learning" />
-  </entry>
-  <entry>
-    <title>Quality-Aware Exploration Budget Allocation for Cooperative Multi-Agent Reinforcement Learning</title>
-    <link href="http://arxiv.org/abs/2605.01865v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.01865v1</id>
-    <published>2026-05-03T00:00:00Z</published>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <author>
-      <name>Dahyun Oh</name>
-    </author>
-    <author>
-      <name>Minhyuk Yoon</name>
-    </author>
-    <author>
-      <name>H. Jin Kim</name>
-    </author>
-    <summary type="text">Cooperative multi-agent reinforcement learning (MARL) requires agents to discover joint strategies in a combinatorially large state-action space, yet effective coordination configurations are exceedingly rare. Intrinsic motivation, which augments task rewards with novelty bonuses, is a popular approach for driving exploration, but its effectiveness hinges on the exploration intensity $β$, where too large a value overwhelms the task signal and causes coordination collapse, while too small a value prevents discovery of rare strategies. We address two complementary challenges: adapting $β$ globally over training, and allocating the exploration budget across agents whose intrinsic reward signals vary in reliability. Our framework combines a return-conditioned sigmoid schedule (RCB) for global intensity control with a per-agent Reward Signal Quality (RSQ) metric that concentrates the exploration budget on agents with reliable signals. The core insight is that agents receiving noisy intrinsic rewards should explore less aggressively, and this allocation can be determined automatically from signal-to-noise statistics. Successor Distance (SD), a quasimetric intrinsic reward, naturally produces distinguishable per-agent signal quality, completing the framework with convergence and ordering preservation guarantees. On seven cooperative benchmarks (MPE, SMAX, MABrax), our method achieves top-tier returns across all environments.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Submitted to Neurocomputing&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>MAGIC: Multi-Step Advantage-Gated Causal Influence for Multi-agent Reinforcement Learning</title>
-    <link href="http://arxiv.org/abs/2605.01805v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.01805v1</id>
-    <published>2026-05-03T00:00:00Z</published>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <author>
-      <name>Haohan Yu</name>
-    </author>
-    <author>
-      <name>Jinmiao Cong</name>
-    </author>
-    <author>
-      <name>Shengzhi Wang</name>
-    </author>
-    <author>
-      <name>Lu Wang</name>
-    </author>
-    <author>
-      <name>Chanjuan Liu</name>
-    </author>
-    <summary type="text">A key challenge in multi-agent reinforcement learning (MARL) lies in designing learning signals that effectively promote coordination among agents. Designing such signals necessitates the ability to quantify the true, long-term causal influence between agents. To address this, we introduce Multi-step Advantage-Gated Interventional Causal MARL (MAGIC), a framework that extracts multi-step causal influences between agents and selectively converts them into intrinsic rewards. MAGIC uses causal intervention with conditional mutual information to quantify long-horizon agent influence, and introduces an advantage-based gating mechanism to ensure exploration is directed toward beneficial, goal-aligned behaviors. Experiments across multiple standard MARL benchmarks and task families, including MPE and SMAC/SMACv2, demonstrate that MAGIC outperforms state-of-the-art methods by a significant margin, achieving an improvement of at least 10.1% in the main evaluation metric.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Machine Learning" />
-  </entry>
-  <entry>
-    <title>Koopman Representations for Early Outbreak Warning and Minimal Counterfactual Intervention in Multi-Agent Epidemic Simulations</title>
-    <link href="http://arxiv.org/abs/2605.01803v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.01803v1</id>
-    <published>2026-05-03T00:00:00Z</published>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <author>
-      <name>Florin Leon</name>
-    </author>
-    <summary type="text">This paper presents a Koopman-based framework for early outbreak detection and intervention selection in a multi-agent epidemic simulation. Agents exhibit mobility patterns, heterogeneous susceptibility, immunity-dependent viral load progression, and local transmission through co-location. The goal of the simulation is to study near-critical epidemic regimes in which small changes in exposure or timing can alter the final outcome. Aggregate daily observables from early trajectory windows are encoded into a low-dimensional Koopman latent space whose approximately linear evolution supports short-horizon forecasting and outbreak risk estimation. These representations are combined with a random forest classifier trained to predict whether the final attack rate exceeds a major outbreak threshold. Experiments near the system tipping points show strong early warning performance, with Koopman-derived features contributing to class separation. Counterfactual analysis further shows that minimal interventions, such as keeping a single selected agent at home for one day, can reduce attack rates and, often, shift the trajectory below the outbreak threshold.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 37 pages, 12 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Talk is Cheap, Communication is Hard: Dynamic Grounding Failures and Repair in Multi-Agent Negotiation</title>
-    <link href="http://arxiv.org/abs/2605.01750v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.01750v1</id>
-    <published>2026-05-03T00:00:00Z</published>
-    <updated>2026-05-03T00:00:00Z</updated>
-    <author>
-      <name>Yiheng Yao</name>
-    </author>
-    <author>
-      <name>Chelsea Zou</name>
-    </author>
-    <author>
-      <name>Robert D. Hawkins</name>
-    </author>
-    <summary type="text">Grounding is the collaborative process of establishing mutual belief sufficient for the current communicative purpose. While static grounding maps language to a shared, externally observable context, dynamic grounding is a joint activity where meaning is negotiated through interaction. Current multi-agent Large Language Model (LLM) benchmarks focus on static, one-shot tasks, overlooking the ability to repair grounding breakdowns across turns. We introduce an iterated, multi-turn negotiation game in which two agents allocate shared resources toward private projects with verifiable jointly optimal outcomes. While individual agents can identify Pareto-optimal allocations in isolation, agent dyads consistently fail to reach them across open- and closed-source models. Our investigation reveals four failure modes: (1) coordination degrades when shared interaction history is absent; (2) yet accumulated context can itself become a liability through stubborn anchoring, where initial proposals are treated as axiomatic rather than negotiable; (3) a reliance on perfunctory fairness (equal resource splits) over reward-maximizing coordination; and (4) failures in referential binding, where agents lose track of commitments across turns. These results highlight dynamic grounding as a critical and understudied axis of multi-agent coordination. Our framework decomposes the coordination gap into measurable components: the oracle baseline establishes that the gap is not attributable to individual reasoning limitations; the no-talk baseline establishes that communication is necessary; and a full-transparency intervention establishes that information exchange alone is insufficient: the bottleneck lies in the interactive processes of joint plan formation, commitment, and execution that constitute dynamic grounding.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>rAIson: Developing Reliable Decision-Making Agents</title>
-    <link href="http://arxiv.org/abs/2605.01351v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.01351v1</id>
-    <published>2026-05-02T00:00:00Z</published>
-    <updated>2026-05-02T00:00:00Z</updated>
-    <author>
-      <name>Pavlos Moraitis</name>
-    </author>
-    <author>
-      <name>Nikolaos Spanoudakis</name>
-    </author>
-    <author>
-      <name>Antonis Kakas</name>
-    </author>
-    <summary type="text">This paper presents the rAIson platform, a high-level technological environment for the development of automated, reliable and explainable decision-making agents. The research underlying the platform and its technological progress has now reached a mature stage that allows the platform to be used for the development of complex real-life applications without writing a single line of code.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Accepted as demonstration paper for publication at AAMAS 2026&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
   </entry>
 </feed>
