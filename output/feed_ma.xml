@@ -4,12 +4,106 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-05-12T04:23:37Z</updated>
+  <updated>2026-05-13T05:04:32Z</updated>
   <subtitle>Latest multimodal papers (last 7 days) — 47 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Events as Triggers for Behavioral Diversity in Multi-Agent Reinforcement Learning</title>
+    <link href="http://arxiv.org/abs/2605.12388v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.12388v1</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Hannes Büchi</name>
+    </author>
+    <author>
+      <name>Manon Flageat</name>
+    </author>
+    <author>
+      <name>Eduardo Sebastián</name>
+    </author>
+    <author>
+      <name>Amanda Prorok</name>
+    </author>
+    <summary type="text">Effective multi-agent cooperation requires agents to adopt diverse behaviors as task conditions evolve-and to do so at the right moment. Yet, current Multi-Agent Reinforcement Learning (MARL) frameworks that facilitate this diversity are still limited by the fact that they bind fixed behaviors to fixed agent identities. Consequently, they are ill-equipped for tasks where agents need to take on different roles at very specific moments in time. We argue that, to define these behavioral transitions, the missing ingredient is events. Events are changes in the state of the system that induce qualitative changes in the task. Based on this view, we introduce a framework that decouples agent identity from behavior, capturing a continuous manifold from which agents instantiate their behaviors in response to events. This framework is based on two elements. First, to build an expressive behavior manifold, we introduce Neural Manifold Diversity (NMD), a formal distance metric that remains well-defined when behaviors are transient and agent-agnostic. Second, we use an event-based hypernetwork that generates Low-Rank Adaptation (LoRA) modules over a shared team policy, enabling on-the-fly agent-policy reconfiguration in response to events. We prove that this construction ensures that diversity does not interfere with reward maximization by design. Empirical results demonstrate that our framework outperforms established baselines across benchmarks while exhibiting zero-shot generalization, and being the only method that solves tasks requiring sequential behavior reassignment.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning" />
+  </entry>
+  <entry>
+    <title>GeomHerd: A Forward-looking Herding Quantification via Ricci Flow Geometry on Agent Interactive Simulations</title>
+    <link href="http://arxiv.org/abs/2605.11645v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11645v1</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Lake Yang</name>
+    </author>
+    <author>
+      <name>Junwei Su</name>
+    </author>
+    <author>
+      <name>Jingfeng Zeng</name>
+    </author>
+    <author>
+      <name>Wenhao Lu</name>
+    </author>
+    <author>
+      <name>Xingzhi Qian</name>
+    </author>
+    <author>
+      <name>Weitong Zhang</name>
+    </author>
+    <author>
+      <name>Chuan Wu</name>
+    </author>
+    <author>
+      <name>Dunhong Jin</name>
+    </author>
+    <summary type="text">Herding -- where agents align their behaviors and act collectively -- is a central driver of market fragility and systemic risk. Existing approaches to quantify herding rely on price-correlation statistics, which inherently lag because they only detect coordination after it has already moved realised returns. We propose GeomHerd, a forward-looking geometric framework that bypasses this observability lag by quantifying coordination directly on upstream agent-interaction graphs. To generate these graphs, we treat a heterogeneous LLM-driven multi-agent simulator -- each financial trader instantiated by a persona-conditioned LLM call -- as a forecastable world, and evaluate the geometric pipeline on the Cividino--Sornette continuous-spin agent-based substrate as our headline financial testbed. By tracking the discrete Ollivier--Ricci curvature of these action graphs, GeomHerd captures the structural topology of emerging coordination. Theoretically, we establish a mean-field bridge mapping our graph-theoretic metric to CSAD, the classical macroscopic herding statistic, linking GeomHerd to downstream price-dispersion measurement. Empirically, GeomHerd anticipates herding long before aggregate market baselines: on the continuous-spin substrate, our primary detector fires a median of 272 steps before order-parameter onset; a contagion detector ($β_{-}$) recalls 65% of critical trajectories 318 steps early; and on co-firing trajectories the agent-graph signal precedes price-correlation-graph baselines by 40 steps. As a complementary indicator, the effective vocabulary of agent actions contracts during cascades. The geometric signature transfers out-of-domain to the Vicsek self-driven-particle model, and a curvature-conditioned forecasting head reduces cascade-window log-return MAE over detector-conditioned and price-only baselines.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning; q-fin.ST" />
+  </entry>
+  <entry>
+    <title>Distance-Constrained Unlabeled Multi-Agent Pathfinding</title>
+    <link href="http://arxiv.org/abs/2605.11503v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11503v1</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Takahiro Suzuki</name>
+    </author>
+    <author>
+      <name>Yuma Tamura</name>
+    </author>
+    <author>
+      <name>Keisuke Okumura</name>
+    </author>
+    <summary type="text">We study a graph pathfinding problem Distance-$r$ Independent Unlabeled Multi-Agent Pathfinding, finding a set of collision-free paths between two sets where agents must stay at pairwise distance at least $r+1$ at all times. This additional constraint, generalizing collision modeling for classical MAPF, targets aspects of real-world multi-agent coordination. This additional distance constraint makes feasibility (i.e., whether a solution exists) PSPACE-complete, in contrast to standard (unlabeled) MAPF, where it can be decided in polynomial time. We address the challenge via two complementary approaches: (i) reduction-based optimal algorithms with a feasibility-preserving compression procedure, and (ii) a configuration generator-based search. Despite the hardness, empirical results show that our algorithm can handle hundreds of agents in a practical timeframe.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Predictive Maps of Multi-Agent Reasoning: A Successor-Representation Spectrum for LLM Communication Topologies</title>
+    <link href="http://arxiv.org/abs/2605.11453v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11453v1</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Ethan David James Park</name>
+    </author>
+    <author>
+      <name>Dalal Alharthi</name>
+    </author>
+    <summary type="text">Practitioners deploying multi-agent large language model (LLM) systems must currently choose between communication topologies such as chain, star, mesh, and richer variants without any pre-inference diagnostic for which topology will amplify drift, converge to consensus, or remain robust under perturbation. Existing evaluation answers these questions only post hoc and only for the task measured. We introduce a structural diagnostic for multi-agent LLM communication graphs based on the successor representation $M = (I - γP)^{-1}$ of the row-stochastic communication operator, and we connect three of its spectral quantities, the spectral radius $ρ(M)$, the spectral gap $Δ(M)$, and the condition number $κ(M)$, to three distinct failure modes. We derive closed-form spectra for the chain, star, and mesh under row-stochastic normalization, and validate the predictions on a 12-step structured state-tracking task with Qwen2.5-7B-Instruct over 100 independent trials. The condition number is a perfect rank-order predictor of empirical perturbation robustness ($r_s = 1.0$); the spectral gap partially predicts consensus dynamics ($r_s = 0.5$); and the spectral radius is perfectly \emph{inverted} with respect to cumulative error ($r_s = -1.0$). We trace this inversion to a regime in which linear spectra are blind to non-contracting bias drift, and we propose an affine-noise extension of the predictive map that recovers the empirical ordering. We read this as a first step toward representational, drift-aware structural diagnostics for multi-agent LLM systems, sitting alongside classical spectral and consensus theory.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Machine Learning; cs.SI" />
+  </entry>
   <entry>
     <title>AllocMV: Optimal Resource Allocation for Music Video Generation via Structured Persistent State</title>
     <link href="http://arxiv.org/abs/2605.10723v1" rel="alternate" type="text/html" />
@@ -184,6 +278,43 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; IEEE Globecom 2026&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Information and Contract Design for Repeated Interactions between Agents with Misaligned Incentives</title>
+    <link href="http://arxiv.org/abs/2605.11294v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11294v1</id>
+    <published>2026-05-11T00:00:00Z</published>
+    <updated>2026-05-11T00:00:00Z</updated>
+    <author>
+      <name>Nanda Kishore Sreenivas</name>
+    </author>
+    <author>
+      <name>Kate Larson</name>
+    </author>
+    <summary type="text">We study the consequences of information asymmetries and misaligned incentives in settings with multiple independent agents. We model an interaction between a Sender, who holds vital private information but cannot act, and a Receiver, who must make decisions but is dependent on the Sender's information. We find that the Sender learns an optimal communication strategy that the Receiver reliably acts on. Importantly, this strategy is highly sensitive to the degree of conflict in the agents' rewards and the amount of environmental information the Receiver can already observe. We introduce a mechanism allowing the agents to form linear contracts, where a price is established for the information. We demonstrate that the Sender learns to use these payment structures to improve its rewards, though this comes at a cost of "fairness" between agents as the Sender is able to extract much of the Receiver's surplus. This raises questions about fairness, contract design, and learning in the context of multi-agent systems.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; IJCAI 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Control Charts for Multi-agent Systems</title>
+    <link href="http://arxiv.org/abs/2605.11135v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11135v1</id>
+    <published>2026-05-11T00:00:00Z</published>
+    <updated>2026-05-11T00:00:00Z</updated>
+    <author>
+      <name>Hayden Helm</name>
+    </author>
+    <author>
+      <name>Carey Priebe</name>
+    </author>
+    <author>
+      <name>Brandon Duderstadt</name>
+    </author>
+    <summary type="text">Generative agents have proven to be powerful assistants in a wide variety of contexts. Given this success, users are now deploying agents with minimal restrictions in open ended, multi-agent environments. Current methods for monitoring the dynamics of open-ended multi-agent systems are limited to qualitative inspection. In this paper, we extend the process-theoretic notion of adaptive control charts to multi-agent systems to enable automated monitoring. Using simulation, we demonstrate that adaptive control charts are necessary for monitoring multi-agent systems that can learn from their environment. We further demonstrate, both empirically and theoretically, that adaptive control charts are susceptible to adversarial agents that defect sufficiently slowly. These results illustrate a fundamental tradeoff in multi-agent system control: either agents in a system cannot learn or the system is susceptible to adversaries.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Machine Learning" />
   </entry>
   <entry>
     <title>CalBench: Evaluating Coordination-Privacy Trade-offs in Multi-Agent LLMs</title>
@@ -750,6 +881,46 @@
     <category term="cs.CY" />
   </entry>
   <entry>
+    <title>Dynamic Latent-Belief Synchrony through Collective Predictive Coding: A Computational Model of Parent--Infant Homeostatic Co-Regulation</title>
+    <link href="http://arxiv.org/abs/2605.07524v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07524v2</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Yushi Tsubamoto</name>
+    </author>
+    <author>
+      <name>Takato Horii</name>
+    </author>
+    <summary type="text">Inter-brain synchrony (IBS) observed in real-time dyadic interactions, including parent--infant exchanges, suggests that two agents can align their internal representations through interaction. Yet computational accounts of how such alignment can arise between agents that have only local sensory access and asymmetric internal knowledge remain underdeveloped. We propose a constructive model of parent--infant homeostatic co-regulation that integrates a POMDP formulation of active interoceptive inference with the Metropolis--Hastings Naming Game (MHNG) derived from the Collective Predictive Coding (CPC) hypothesis. In our model, the parent and infant agents agree on homeostatic regulatory actions for the infant's visceral state through a shared communicative variable generated by a locally computable Metropolis--Hastings probability. The parent observes the infant through body-generated exteroceptive cues, whereas the infant directly senses its own visceral state through interoception. This difference in access modality is implemented as asymmetric generative-model knowledge: the parent knows how actions transform visceral states but must learn what the infant's bodily cues indicate, whereas the infant perceives its visceral state directly but must learn how actions affect it. We operationalize representational alignment as the Jensen--Shannon divergence between the two agents' latent representations. Notably, this alignment emerged far earlier than the convergence of the generative-model learning and was maintained across successive state transitions during social interactions, indicating that latent representational synchrony does not presuppose fully shared world models. These findings offer a minimal constructive account of internal state synchrony compatible with IBS reported in hyperscanning studies and support CPC as a candidate computational basis for inter-brain alignment.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 11pages&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Social Theory Should Be a Structural Prior for Agentic AI: A Formal Framework for Multi-Agent Social Systems</title>
+    <link href="http://arxiv.org/abs/2605.07069v3" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.07069v3</id>
+    <published>2026-05-08T00:00:00Z</published>
+    <updated>2026-05-08T00:00:00Z</updated>
+    <author>
+      <name>Lynnette Hui Xian Ng</name>
+    </author>
+    <author>
+      <name>Iain J. Cruickshank</name>
+    </author>
+    <author>
+      <name>Adrian Xuan Wei Lim</name>
+    </author>
+    <author>
+      <name>Kathleen M. Carley</name>
+    </author>
+    <summary type="text">Agentic AI systems are increasingly deployed not in isolation, but inside social environments populated by other agents and humans, such as in social media platforms, multi-agent LLM pipelines or autonomous robotics fleets. In these settings, system behavior emerges not from individual agents alone, but from the multi-agent interactions over time. Emergent dynamics of individuals in a social group have been long studied by social scientists in human contexts. \textbf{This position paper argues that agentic AI systems must be modeled with social theory as a structural prior, and formalizes a Multi-Agent Social Systems (MASS) framework for how agents interact and influence to generate system-level outcomes.} We represent MASS as a class of dynamical system of information generation, local influence and interaction structure, formulated by four structural priors anchored in social theory: strategic heterogeneity, networked-constrained dependence, co-evolution and distributional instability. We demonstrate the importance of each structural prior through formal propositions, and articulate a research agenda for how MASS should be modeled, evaluated and governed.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.CY" />
+  </entry>
+  <entry>
     <title>Coordination Matters: Evaluation of Cooperative Multi-Agent Reinforcement Learning</title>
     <link href="http://arxiv.org/abs/2605.06557v1" rel="alternate" type="text/html" />
     <id>http://arxiv.org/abs/2605.06557v1</id>
@@ -1007,203 +1178,6 @@
       <name>John deVadoss</name>
     </author>
     <summary type="text">Enterprise interest in multi-agent systems has shifted from generic software agents to large-language-model (LLM) based intelligent agents that plan, use tools, maintain contextual memory, inspect intermediate results, collaborate with other agents, and sometimes act in systems of record. This paper revises the enterprise architecture thesis around a design-first claim: governance is necessary, but it cannot be the primary organizing abstraction. The primary abstraction must be agent design - capability boundaries, autonomy allocation, interaction protocols, tool and data authority, state and memory design, verification design, and human interaction design. We propose CEAD (Capability-Aligned Enterprise Agent Design), a reference architecture for intelligent agents that uses service-oriented architecture (SOA) as an exemplar for contracts, registries, loose coupling, and policy-aware integration, while explicitly rejecting the idea that services are agents. It treats microservices as a cautionary precedent: decomposition without design discipline produces distributed complexity, cost, operational fragility, and agent proliferation. We evaluate CEAD over 10,000 enterprise tasks, comparing five architectures: a prompt-first mono-agent, a role-based micro-agent swarm, SOA-brokered agents, a governance-first but design-poor agent grid, and the proposed CEAD architecture. CEAD achieves 70.6% safe success, versus 45.2% for the mono-agent baseline, 23.1% for the ungoverned micro-agent swarm, 58.8% for SOA-brokered agents, and 50.8% for the control-heavy, design-poor grid. The results support the conclusion that design quality is the first-order enterprise concern; governance, security, policy, audit, and assurance should support and enforce good design rather than substitute for it.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Evolving Idea Graphs with Learnable Edits-and-Commits for Multi-Agent Scientific Ideation</title>
-    <link href="http://arxiv.org/abs/2605.04922v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04922v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Jiangwen Dong</name>
-    </author>
-    <author>
-      <name>Bo Li</name>
-    </author>
-    <author>
-      <name>Wanyu Lin</name>
-    </author>
-    <summary type="text">LLM-empowered multi-agent systems offer new potential to accelerate scientific discovery by generating novel research ideas. However, existing methods typically coordinate agents through temporary texts, such as drafts or chat logs; it is difficult to pinpoint the weaknesses in the generated ideas and how the agents refine them. To this end, we introduce \textbf{Evolving Idea Graphs} (EIG), a graph-based multi-agent scientific ideation framework that can generate high-performance research ideas across various benchmark-native metrics, such as novelty, feasibility, and clarity. Instead of coordinating solely through texts, EIG represents a partially formed proposal as an evolving idea graph, where nodes capture scientific claims and edges encode relations (e.g., support and conflict), enabling unresolved weaknesses to remain identifiable throughout the idea evolving process. Specifically, a learned two-head controller operates over the evolving graph to guide the ideation: one head selects graph edits for agents to execute, while the other decides when the graph is ready for commit as final proposal synthesis. On AI Idea Bench 2025 and LiveIdeaBench, EIG outperforms all compared systems on both automatic benchmark scores and blind expert ratings. Ablations further show that explicit graph state provides the main performance gains, and learned edit-and-commit control adds consistent improvements.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Tree-based Credit Assignment for Multi-Agent Memory System</title>
-    <link href="http://arxiv.org/abs/2605.04811v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04811v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Marina Mao</name>
-    </author>
-    <author>
-      <name>Alexandr Liu</name>
-    </author>
-    <author>
-      <name>Pengbo Li</name>
-    </author>
-    <author>
-      <name>Siheng Li</name>
-    </author>
-    <author>
-      <name>Bo Zhou</name>
-    </author>
-    <author>
-      <name>Xiang Wang</name>
-    </author>
-    <summary type="text">Memory systems are widely adopted to enhance LLMs for long-horizon tasks, and are commonly organized as multi-agent pipelines with memory building, summarizing, and retrieval agents. To empower this system, existing RL-based methods either apply final downstream task rewards (e.g., QA accuracy) for all agents uniformly, which are coarse and ambiguous, or design task-specific rewards for agents on different subtasks, which require costly annotations (e.g., key evidence) and are difficult to define reliably. To address these limitations, we propose Tree-based Credit Assignment for Multi-Agent Memory Systems (TreeMem), which derives agent-specific credit from the final reward without task-specific annotations. Specifically, TreeMem extends the multi-agent pipeline (builder--summarizer--retrieval) into a tree structure, where each agent's outputs are expanded into multiple subsequent branches. The contribution of each agent is estimated via Monte Carlo averaging over its subsequent branches, capturing how intermediate agent actions may influence the final reward. This converts the coarse final reward into agent-specific optimization signals. These signals are then used to update all agent policies simultaneously, helping heterogeneous agents specialize effectively. Experiments on long-horizon benchmarks show that TreeMem improves memory system performance over strong baselines, validating the effectiveness of tree-structured credit assignment for the multi-agent memory system.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Bridging Perception and Action: A Lightweight Multimodal Meta-Planner Framework for Robust Earth Observation Agents</title>
-    <link href="http://arxiv.org/abs/2605.04777v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04777v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Jinghui Xu</name>
-    </author>
-    <author>
-      <name>Boyi Shangguan</name>
-    </author>
-    <author>
-      <name>Mengke Zhu</name>
-    </author>
-    <author>
-      <name>Hao Liu</name>
-    </author>
-    <author>
-      <name>Junhuan Jiang</name>
-    </author>
-    <author>
-      <name>Guangjun He</name>
-    </author>
-    <author>
-      <name>Pengming Feng</name>
-    </author>
-    <author>
-      <name>Shichao Jin</name>
-    </author>
-    <author>
-      <name>Bin Liang</name>
-    </author>
-    <author>
-      <name>Yongzhe Chang</name>
-    </author>
-    <author>
-      <name>Junbo Tan</name>
-    </author>
-    <author>
-      <name>Tiantian Zhang</name>
-    </author>
-    <author>
-      <name>Xueqian Wang</name>
-    </author>
-    <summary type="text">Autonomous Earth Observation (EO) agents are transitioning from passive perception to complex, multi-step task execution. However, current architectures that integrate planning and execution within a single model often struggle with combinatorial complexity and reasoning errors in dynamic EO scenarios. To resolve these challenges, we propose the Lightweight Multimodal Meta-Planner (LMMP) framework. LMMP incorporates a dual-awareness mechanism that grounds strategic plans in both multimodal image features and high-level task semantics. Crucially, we introduce a Meta Task Library to inject remote sensing expert knowledge directly into the workflow, which standardizes domain logic and ensures plans are physically feasible. We further implement a two-stage training pipeline, initializing the Meta-Planner via expert-distilled Supervised Fine-Tuning and refining it through Direct Preference Optimization based on execution feedback. Extensive experiments on a dataset derived from EarthBench and ThinkGeo demonstrate that LMMP significantly improves tool-calling accuracy and task success rates. Moreover, the framework exhibits strong ``plug-and-play'' versatility, consistently enhancing the performance of diverse executor backbones across previously unseen EO missions.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Hierarachical Multiagent Reinforcement Learning for Multi-Group Tax Game</title>
-    <link href="http://arxiv.org/abs/2605.04741v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04741v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Honglei Guo</name>
-    </author>
-    <author>
-      <name>Yuhan Zhao</name>
-    </author>
-    <author>
-      <name>Yexin Li</name>
-    </author>
-    <summary type="text">Reinforcement learning has increasingly been used to study economic decision-making, such as taxation, public spending, and labour supply. However, most existing RL-based economic models focus on a single government--household group, thereby overlooking the strategic interactions that arise when multiple governments compete while managing their own populations. In practice, many economic systems (e.g., taxation) exhibit a multi-group structure, where each government must optimize its fiscal policy in response not only to household behaviour within its jurisdiction, but also to the policies of other competing governments. To capture this structure, we formulate taxation as a hierarchical multi-group game. Within each group, the interaction between the government and households is modelled as a leader--follower game; across groups, governments are modelled as players in a competitive game. This results in a hybrid hierarchical game that is difficult to solve using standard multi-agent reinforcement learning algorithms. We therefore propose a bi-level training framework built on multi-agent reinforcement learning, together with \textit{ Curriculum Learning} and a \textit{ Closed-Loop Sequential Update} strategy, to stabilize training and promote convergence. We instantiate this framework in a taxation game simulation environment grounded in classical economic models. The environment supports the evaluation of different taxation algorithms and provides multiple economic indicators for assessing policy performance. Experiments show that our approach can learn stable tax policies that benefit all participating groups. Compared with a two-group baseline without the proposed update mechanisms, our method avoids premature game collapse, extends the effective game duration by 60.92\%, produces more sustainable and robust tax policies, and reduces GDP disparities among governments by 44.12\%.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>SWE-WebDevBench: Evaluating Coding Agent Application Platforms as Virtual Software Agencies</title>
-    <link href="http://arxiv.org/abs/2605.04637v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04637v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Siddhant Saxena</name>
-    </author>
-    <author>
-      <name>Nilesh Trivedi</name>
-    </author>
-    <author>
-      <name>Vinayaka Jyothi</name>
-    </author>
-    <summary type="text">The emergence of "vibe coding" platforms, where users describe applications in natural language and AI agents autonomously generate full-stack software, has created a need for rigorous evaluation beyond code-level benchmarks. In order to assess them as virtual software development agencies on understanding business requirements, making architectural decisions, writing production code, handling iterative modifications, and maintaining business readiness, we introduce SWE-WebDev Bench, a 68-metric evaluation framework spanning 25 primary and 43 diagnostic metrics across seven groups, organized along three dimensions: Interaction Mode (App Creation Request (ACR) vs. App Modification Request (AMR)), Agency Angle (Product Manager (PM), Engineering, Ops), and Complexity Tier (T4 multi-role SaaS, T5 AI-native).   Our evaluation (six platforms, three domains, 18 evaluation cells) reveals four recurring shortcomings in the current generation of AI app builders: (1) A specification bottleneck, where platforms compress rich business requirements into oversimplified technical plans, (2) A pervasive frontend-backend decoupling, where visually polished UIs mask absent or broken backend infrastructure, (3) A steep production-readiness cliff, where no platform scores above 60% on engineering quality and post-generation human effort varies substantially across platforms and (4) Widespread security and infrastructure failures, with no platform exceeding 65% Security Score against a 90% target and concurrency handling as low as 6%. These observations are descriptive of our sample and require larger-scale replication to establish generality. We release SWE-WebDev Bench as a community benchmark to enable such replication and help platform builders identify and address these gaps.   Code and benchmark resources are available at: https://github.com/snowmountainAi/webdevbench and https://webdevbench.com/.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/snowmountainAi/webdevbench"&gt;https://github.com/snowmountainAi/webdevbench&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 35 pages, 12 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.SE" />
-  </entry>
-  <entry>
-    <title>Autonomous Synchronization of Discrete-Time Heterogeneous Multiagent Systems</title>
-    <link href="http://arxiv.org/abs/2605.04627v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04627v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Wei Hu</name>
-    </author>
-    <author>
-      <name>Quanyi Liang</name>
-    </author>
-    <summary type="text">This paper investigates the autonomous synchronization problem for discrete-time heterogeneous multiagent systems.   The synchronization problem is transformed into the asymptotic decoupling problem of stable modes in a class of discrete-time linear time-varying systems,   for which we provide a sufficient condition.   Leveraging this condition, synchronization conditions are established.   The synchronization conditions are based on the average of the agents' initial dynamic matrices,   without requiring the differences among these matrices to be small.   This approach reduces the conservativeness of existing conditions and achieves a unification of both homogeneous and heterogeneous systems.   Numerical simulation results are provided to support the theoretical findings.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 9 pages, 7 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>DAO-enabled decentralized physical AI: A new paradigm for human-machine collaboration</title>
-    <link href="http://arxiv.org/abs/2605.04522v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04522v1</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Mark C. Ballandies</name>
-    </author>
-    <author>
-      <name>Florian Spychiger</name>
-    </author>
-    <author>
-      <name>Uwe Serdült</name>
-    </author>
-    <author>
-      <name>Claudio J. Tessone</name>
-    </author>
-    <summary type="text">We propose DAO-enabled decentralized physical AI (DePAI), a democratic architecture for coordinating humans and autonomous machines in the operation and governance of physical-digital systems. We (1) synthesize foundations in blockchains, decentralized autonomous organizations (DAOs), and cryptoeconomics; (2) connect DAO design with digital-democracy research on deliberation and voting, showing how each can advance the other; (3) position DAO-governed decentralized physical infrastructure networks (DePIN) within a vertically integrated stack that links energy and sensing to connectivity, storage/compute, models, and robots; (4) show how these elements specify workflows that couple machine execution with human oversight, enabling enhanced self-organization of techno-socio-economic systems, which we call DePAI; and (5) analyze risks, including security, centralization, incentive failure, legal exposure, and the crowding-out of intrinsic motivation, and argue for value-sensitive design and continuously adaptive governance. DePAI offers a path to scalable, resilient self-organization that integrates physical infrastructure, AI, and community ownership under transparent rules, on-chain incentives, and permissionless participation, aiming to preserve human autonomy.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CY; econ.GN" />
-  </entry>
-  <entry>
-    <title>Hierarchical Multiagent Reinforcement Learning for Multi-Group Tax Game</title>
-    <link href="http://arxiv.org/abs/2605.04741v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.04741v2</id>
-    <published>2026-05-06T00:00:00Z</published>
-    <updated>2026-05-06T00:00:00Z</updated>
-    <author>
-      <name>Honglei Guo</name>
-    </author>
-    <author>
-      <name>Yuhan Zhao</name>
-    </author>
-    <author>
-      <name>Yexin Li</name>
-    </author>
-    <summary type="text">Reinforcement learning has increasingly been applied to economic decision-making, including taxation, public spending, and labor supply. However, existing RL-based economic models typically consider only a single government-household group, overlooking strategic interactions among competing governments. To address this limitation, we formulate taxation as a hierarchical multi-group game. Within each group, the government and households form a leader--follower game, while governments compete across groups through strategic fiscal policies. This coupled structure is difficult to solve using standard multi-agent reinforcement learning (MARL) methods. We therefore propose a bilevel MARL framework with \textit{Curriculum Learning} and a \textit{Closed-Loop Sequential Update} mechanism to improve training stability and convergence. We instantiate the framework in a taxation simulation environment grounded in classical economic models, supporting the evaluation of taxation policies under inter-group competition. Experiments show that the proposed method learns stable and sustainable tax policies. Compared with a two-group baseline without the proposed mechanisms, our approach avoids premature game collapse, extends the effective game duration by 60.92\%, and reduces GDP disparities among governments by 44.12\%.</summary>
     <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
   </entry>
