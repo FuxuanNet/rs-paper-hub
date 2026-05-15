@@ -4,12 +4,108 @@
   <id>https://rspaper.top/output/feed_ma.xml</id>
   <link href="https://rspaper.top/output/feed_ma.xml" rel="self" type="application/atom+xml" />
   <link href="https://rspaper.top" rel="alternate" type="text/html" />
-  <updated>2026-05-14T05:03:40Z</updated>
-  <subtitle>Latest multimodal papers (last 7 days) — 49 entries</subtitle>
+  <updated>2026-05-15T05:14:31Z</updated>
+  <subtitle>Latest multimodal papers (last 7 days) — 46 entries</subtitle>
   <author>
     <name>RS-Paper-Hub</name>
     <uri>https://rspaper.top</uri>
   </author>
+  <entry>
+    <title>Multi-Agentic Approach for History Matching of Oil Reservoirs</title>
+    <link href="http://arxiv.org/abs/2605.15028v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.15028v1</id>
+    <published>2026-05-14T00:00:00Z</published>
+    <updated>2026-05-14T00:00:00Z</updated>
+    <author>
+      <name>Linar Samigullin</name>
+    </author>
+    <author>
+      <name>Sergei Shumilin</name>
+    </author>
+    <author>
+      <name>Evgeny Burnaev</name>
+    </author>
+    <summary type="text">History matching is a central inverse problem in reservoir engineering, where uncertain reservoir parameters must be calibrated against observations. Although automated history matching can reduce manual effort, practical deployment remains difficult because engineers must still configure heterogeneous workflows involving parameter selection, physically admissible bounds, optimizer choice, hyperparameter tuning, simulator execution, and diagnostic reporting. We propose PetroGraph, a multi-agent framework for intelligent reservoir history matching that decomposes this workflow into specialized agents for model review, experimental planning, parameterization, optimization, simulation, and summarization. The system combines large language model agents with domain-specific tools, retrieval-augmented access to simulator documentation, validation of modified ECLIPSE input decks, human-in-the-loop checkpoints, and an OPM Flow-based simulation backend. This design enables users to initiate and steer history matching through natural language while preserving explicit control over selected parameters and optimization settings. We evaluate PetroGraph on three reservoir models of increasing complexity: the synthetic SPE1 model, the faulted SPE9 benchmark, and the real-field Norne model. Using weighted normalized root mean square error as the objective, PetroGraph reduces the mismatch by 95% on SPE1, 69% on SPE9, and 13% on Norne. These results demonstrate that multi-agent orchestration can automate key decisions in history matching, lower the expertise barrier for operating complex simulation workflows, and provide a flexible foundation for extensible, domain-aware reservoir model adaptation.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Temporal Fair Division in Multi-Agent Systems: From Precise Alternation Metrics to Scalable Coordination Proxies</title>
+    <link href="http://arxiv.org/abs/2605.14879v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.14879v1</id>
+    <published>2026-05-14T00:00:00Z</published>
+    <updated>2026-05-14T00:00:00Z</updated>
+    <author>
+      <name>Nikolaos Al. Papadopoulos</name>
+    </author>
+    <summary type="text">A plethora real-world environments require agents to compete repeatedly for the same limited resource, calling for a temporal notion of fairness judged across entire interaction histories. This paper advances the theory of temporal fair division by introducing Rotational Periodicity (RP), a family of lightweight metrics, alongside the ALT family of sliding-window measures, within a unified framework for repeated multi-agent resource competition.   We formalise the Multi-Agent Battle of the Exes (MBoE) as a repeated fair division instance and establish Perfect Alternation (PA) as its canonical temporally fair solution, drawing connections to proportionality, envy-freeness, and n-periodic round-robin allocation. RP decomposes temporal fairness into two complementary sub-measures: Rotational Score (RS) and Waiting Periods Evaluation (WPE), achieving O(nu+n) time complexity versus the O(nu*n) of ALT, where nu is the episode count and n the agent count.   Empirical evaluation across n in {2,3,5,8,10} reveals three findings. First, both RP and ALT expose a coordination failure invisible to traditional metrics: Q-learning agents perform worse than random policies by 10-73% on RP and 7-35% on CALT, while Reward Fairness remains misleadingly high (above 0.92 for n&gt;=3). Second, RP achieves 12-25x computational speedup over ALT, growing with n. Third, the two families are complementary: ALT provides richer discrimination for small populations; RP scales reliably where ALT becomes intractable. Together they form a diagnostic toolkit for temporal fair division.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 15 pages, 3 figures&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="cs.GT; Machine Learning" />
+  </entry>
+  <entry>
+    <title>Decision-Level Fusion for Robust Wearable Affect Recognition</title>
+    <link href="http://arxiv.org/abs/2605.14878v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.14878v1</id>
+    <published>2026-05-14T00:00:00Z</published>
+    <updated>2026-05-14T00:00:00Z</updated>
+    <author>
+      <name>Lokesh Singh</name>
+    </author>
+    <author>
+      <name>Athina Georgara</name>
+    </author>
+    <author>
+      <name>Jayati Deshmukh</name>
+    </author>
+    <author>
+      <name>Tan Viet Tuyen Nguyen</name>
+    </author>
+    <author>
+      <name>Sarvapali D. Ramchurn</name>
+    </author>
+    <summary type="text">Automatic recognition of affective state from wearable physiology has clear societal impact for public health, preventive care, and stress-aware interventions, but real deployments require robustness to non-stationary dynamics, artefacts, and missing sensors. We study this problem on WESAD, using baseline, stress, and amusement conditions, where common fixed-basis spectral features such as FFT bandpower and Welch PSD can oversmooth short-lived discriminative patterns. We propose a non-stationary pipeline that combines Fourier-Bessel Series Expansion (FBSE) with EWT data-driven spectral segmentation to extract mode-wise transient descriptors. For multimodal integration, we adopt decision-level aggregation over per-modality predictors and weight each modality by predictive uncertainty and modality reliability. Results on WESAD, using 15 subjects and ECG, EDA, BVP, EMG, and ACC signals across three classes, indicate that decision-level aggregation is approximately 84 percent of the time at least as good as feature-level aggregation, and approximately 48 percent of the time strictly better, suggesting improved robustness under heterogeneous and partially reliable sensing.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>IFPV: An Integrated Multi-Agent Framework for Generative Operational Planning and High-Fidelity Plan Verification</title>
+    <link href="http://arxiv.org/abs/2605.14851v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.14851v1</id>
+    <published>2026-05-14T00:00:00Z</published>
+    <updated>2026-05-14T00:00:00Z</updated>
+    <author>
+      <name>Zhigao Huang</name>
+    </author>
+    <author>
+      <name>Zhengqing Hu</name>
+    </author>
+    <author>
+      <name>Dong Chen</name>
+    </author>
+    <author>
+      <name>Shaohan Zhang</name>
+    </author>
+    <author>
+      <name>Zhao Jin</name>
+    </author>
+    <author>
+      <name>Bo Zhang</name>
+    </author>
+    <author>
+      <name>Han Wu</name>
+    </author>
+    <author>
+      <name>Mingliang Xu</name>
+    </author>
+    <summary type="text">Operational plan generation and verification are critical for modern complex and rapidly changing battlefield environments, yet traditional generation and verification methods still respectively face the challenges of generation infeasibility and verification insufficiency. To alleviate these limitations, we propose an Integrated Multi-Agent Framework for Generative Operational Planning and High-Fidelity Plan Verification (IFPV). IFPV consists of two tightly coupled modules: Multi-Perspective Hierarchical Agents (MPHA) for generative operational planning and an Adversarial Cognitive Simulation Engine (ACSE) for high-fidelity adversarial plan verification. MPHA decomposes commander intent into executable multi-platform tactical action sequences through the collaboration of Pathfinder, Analyst, and Planner agents. ACSE introduces an opponent equipped with a customized world model, which predicts the future evolution of mission-critical platforms and conducts dynamic counteractions against candidate plans. Simulation experiments in the Asymmetric Combat Tactic Simulator (ACTS) show that IFPV improves mission success by 19.4% and reduces operational cost by 41.7% compared with a single-step large language model (LLM) planning baseline. Compared with a traditional rule-based validator, ACSE increases the average suppression rate by 31.8%, indicating that the proposed verification environment is stricter and more discriminative in revealing the latent vulnerabilities of candidate plans. The code for IFPV can be found at https://github.com/zhigao3ks/IFPV.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Code:&lt;/strong&gt; &lt;a href="https://github.com/zhigao3ks/IFPV"&gt;https://github.com/zhigao3ks/IFPV&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Submitted to Neurocomputing&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence" />
+  </entry>
   <entry>
     <title>EconAI: Dynamic Persona Evolution and Memory-Aware Agents in Evolving Economic Environments</title>
     <link href="http://arxiv.org/abs/2605.13762v1" rel="alternate" type="text/html" />
@@ -235,6 +331,73 @@
     <category term="Artificial Intelligence; cs.AR; Machine Learning" />
   </entry>
   <entry>
+    <title>Privacy Preserving Multi Agent Path Finding</title>
+    <link href="http://arxiv.org/abs/2605.14119v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.14119v1</id>
+    <published>2026-05-13T00:00:00Z</published>
+    <updated>2026-05-13T00:00:00Z</updated>
+    <author>
+      <name>Rotem Lev Lehman</name>
+    </author>
+    <author>
+      <name>Roni Stern</name>
+    </author>
+    <author>
+      <name>Guy Shani</name>
+    </author>
+    <summary type="text">In the multi-agent path finding (MAPF) problem, a group of agents search in a graph for a path for each agent where no two paths collide. While in all applications of MAPF the agents must not collide with each other, in some of them the agents may not wish to share their paths due to privacy constraints. In this work, we formulate two types of privacy constraints for MAPF and propose algorithms that preserve them. The first type of privacy we consider is planning-level privacy, which means that during planning, the agents cannot identify exactly the planned location of the other agents. We propose a general framework for obtaining planning-level privacy, which works by adding mock agents to the planning process. The second type of privacy we consider is execution-level privacy, which is relevant when agents have limited sensing capabilities. Execution-level privacy is preserved if none of the agents is allowed to sense the location of the other agents during execution. We show how to adapt two popular MAPF algorithms, namely PIBT and LaCAM, such that they preserve execution-level privacy. Lastly, we propose a post-processing technique that allows the agents to reduce the sum of costs of the returned solution without losing any privacy. We also implemented our algorithms and evaluated them empirically, showing that the proposed post-processing technique indeed improved cost significantly.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; AAMAS 2026 as an extended abstract&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>ProtoMedAgent: Multimodal Clinical Interpretability via Privacy-Aware Agentic Workflows</title>
+    <link href="http://arxiv.org/abs/2605.14113v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.14113v1</id>
+    <published>2026-05-13T00:00:00Z</published>
+    <updated>2026-05-13T00:00:00Z</updated>
+    <author>
+      <name>Alvaro Lopez Pellicer</name>
+    </author>
+    <author>
+      <name>Plamen Angelov</name>
+    </author>
+    <author>
+      <name>Marwan Bukhari</name>
+    </author>
+    <author>
+      <name>Yi Li</name>
+    </author>
+    <author>
+      <name>Eduardo Soares</name>
+    </author>
+    <author>
+      <name>Jemma Kerns</name>
+    </author>
+    <summary type="text">While interpretable prototype networks offer compelling case-based reasoning for clinical diagnostics, their raw continuous outputs lack the semantic structure required for medical documentation. Bridging this gap via standard Retrieval-Augmented Generation (RAG) routinely triggers ``retrieval sycophancy,'' where Large Language Models (LLMs) hallucinate post-hoc rationalizations to align with visual predictions. We introduce ProtoMedAgent, a framework that formalizes multimodal clinical reporting as an iterative, zero-gradient test-time optimization problem over a strict neuro-symbolic bottleneck. Operating on a frozen prototype backbone, we distill latent visual and tabular features into a discrete semantic memory. Online generation is strictly constrained by exact set-theoretic differentials and a reflective Scribe-Critic loop, mathematically precluding unsupported narrative claims. To safely bound data disclosure, we introduce a semantic privacy gate governed by $k$-anonymity and $\ell$-diversity. Evaluated on a 4,160-patient clinical cohort, ProtoMedAgent achieves 91.2\% Comparison Set Faithfulness where it fundamentally outperforms standard RAG (46.2\%). ProtoMedAgent additionally leverages a binding $\ell$-diversity phase transition to systematically reduce artifact-level membership inference risks by an absolute 9.8\%.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; CVR 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Computer Vision" />
+    <category term="Artificial Intelligence; Machine Learning; Multiagent Systems" />
+  </entry>
+  <entry>
+    <title>Constitutional Governance in Metric Spaces</title>
+    <link href="http://arxiv.org/abs/2605.13362v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.13362v2</id>
+    <published>2026-05-13T00:00:00Z</published>
+    <updated>2026-05-13T00:00:00Z</updated>
+    <author>
+      <name>Ehud Shapiro</name>
+    </author>
+    <author>
+      <name>Nimrod Talmon</name>
+    </author>
+    <summary type="text">Computational social choice and algorithmic decision theory offer rich aggregation theory but no comprehensive process for egalitarian self-governance: aggregation, deliberation, amendment, and consensus are each considered in isolation, with key metric-space aggregators being NP-hard. Here, we propose constitutional governance in metric spaces, integrating these stages into a coherent polynomial-time protocol for constitutional governance. The constitution assigns, per amendable component including itself, a metric space, aggregation rule, and supermajority threshold. Amendments proceed by members voting with their ideal elements, followed by members submitting public proposals carrying supermajority public support under the revealed votes. Public proposals can be sourced from deliberation among members, vote aggregation, or AI mediation. The constitutional rule adopts a supported proposal with positive maximal score, if there is one, else retains the status quo. With Constitutional Consensus, a community can run the constitutional governance protocol on members' personal computing devices (e.g., smartphones), achieving digital sovereignty. We focus on the utility of the generalised median, prove that at majority threshold no misreport weakly dominates sincere voting, and study the compromise gap between best peak and unconstrained optimum. We instantiate the framework to seven canonical settings -- electing officers, setting rates, allocating budgets, ranking priorities, selecting boards, drafting bylaws, and amending the constitution. By unifying metric-space aggregation, reality-aware social choice, supermajority amendment, constitutional consensus, deliberative coalition formation, and AI mediation, this work delivers a comprehensive solution to the constitutional governance of digital communities and organisations.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; cs.DC; cs.GT" />
+  </entry>
+  <entry>
     <title>Events as Triggers for Behavioral Diversity in Multi-Agent Reinforcement Learning</title>
     <link href="http://arxiv.org/abs/2605.12388v1" rel="alternate" type="text/html" />
     <id>http://arxiv.org/abs/2605.12388v1</id>
@@ -388,6 +551,50 @@
     <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Machine Learning" />
+  </entry>
+  <entry>
+    <title>Ready from Day 1: Population-Aware Coordination for Large-Scale Constrained Multi-Agent Systems</title>
+    <link href="http://arxiv.org/abs/2605.13900v1" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.13900v1</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Angel Wang</name>
+    </author>
+    <author>
+      <name>Dominique Perrault-Joncas</name>
+    </author>
+    <author>
+      <name>Alvaro Maggiar</name>
+    </author>
+    <author>
+      <name>Carson Eisenach</name>
+    </author>
+    <author>
+      <name>Dean Foster</name>
+    </author>
+    <summary type="text">In large-scale multi-agent systems with shared resource constraints, an upstream planner must iteratively evaluate candidate resource plans -- assessing feasibility, aggregate response, and marginal cost -- before committing to one. Lagrangian relaxation separates local decisions through a broadcast cost signal, but the planner still needs the cost-to-utilization response map to explore plan space, and this map depends on population composition that changes across planning cycles. We propose \emph{population-aware coordination interfaces}: learned primal and dual maps, conditioned on compact population summaries, that the planner queries inside its iterative loop. The primal map predicts aggregate utilization under a proposed cost trajectory; the dual map predicts the cost trajectory for a target plan. By encoding response-relevant population structure, these maps remain reliable across evolving populations without per-cycle retraining, and support coordination of large populations from compact subsamples. We additionally cast Sim2Real transfer as a backtestable procedure, enabling evaluation before deployment. In a supply-chain capacity-control case study, population-aware interfaces reduce forecast error by 16--19\% and capacity violations by 20--51\% relative to population-unaware baselines under composition shift; 20K-agent cohorts support accurate coordination of 500K-agent populations; and simulator-trained primal maps achieve 11.1\% MAPE on real observations versus 13--24\% for baselines.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; NeurIPS 2026&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Machine Learning" />
+  </entry>
+  <entry>
+    <title>Predictive Maps of Multi-Agent Reasoning: A Successor-Representation Spectrum for LLM Communication Topologies</title>
+    <link href="http://arxiv.org/abs/2605.11453v2" rel="alternate" type="text/html" />
+    <id>http://arxiv.org/abs/2605.11453v2</id>
+    <published>2026-05-12T00:00:00Z</published>
+    <updated>2026-05-12T00:00:00Z</updated>
+    <author>
+      <name>Ethan Parks</name>
+    </author>
+    <author>
+      <name>Dalal Alharthi</name>
+    </author>
+    <summary type="text">Practitioners deploying multi-agent large language model (LLM) systems must currently choose between communication topologies such as chain, star, mesh, and richer variants without any pre-inference diagnostic for which topology will amplify drift, converge to consensus, or remain robust under perturbation. Existing evaluation answers these questions only post hoc and only for the task measured. We introduce a structural diagnostic for multi-agent LLM communication graphs based on the successor representation $M = (I - γP)^{-1}$ of the row-stochastic communication operator, and we connect three of its spectral quantities, the spectral radius $ρ(M)$, the spectral gap $Δ(M)$, and the condition number $κ(M)$, to three distinct failure modes. We derive closed-form spectra for the chain, star, and mesh under row-stochastic normalization, and validate the predictions on a 12-step structured state-tracking task with Qwen2.5-7B-Instruct over 100 independent trials. The condition number is a perfect rank-order predictor of empirical perturbation robustness ($r_s = 1.0$); the spectral gap partially predicts consensus dynamics ($r_s = 0.5$); and the spectral radius is perfectly \emph{inverted} with respect to cumulative error ($r_s = -1.0$). We trace this inversion to a regime in which linear spectra are blind to non-contracting bias drift, and we propose an affine-noise extension of the predictive map that recovers the empirical ordering. We read this as a first step toward representational, drift-aware structural diagnostics for multi-agent LLM systems, sitting alongside classical spectral and consensus theory.</summary>
+    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
+    <category term="Multiagent Systems" />
+    <category term="Artificial Intelligence; Machine Learning; cs.SI" />
   </entry>
   <entry>
     <title>AllocMV: Optimal Resource Allocation for Music Video Generation via Structured Persistent State</title>
@@ -953,273 +1160,5 @@
 &lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
     <category term="Multiagent Systems" />
     <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Emergence of Social Reality of Emotion through a Social Allostasis Model with Dynamic Interpretants</title>
-    <link href="http://arxiv.org/abs/2605.07761v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07761v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Kentaro Nomura</name>
-    </author>
-    <author>
-      <name>Yushi Tsubamoto</name>
-    </author>
-    <author>
-      <name>Takato Horii</name>
-    </author>
-    <summary type="text">The theory of constructed emotion defines social reality as the community-level consensus on emotion concepts assigned to interoceptive sensations arising from bodily allostasis and social interaction. In this study, we simulate this emergence process using a computational model that integrates symbol emergence with degrees of freedom in symbol interpretation and active inference. Two agents receive interoceptive signals, exchange inferred symbols, and simultaneously adapt their bodily control goals and symbol interpretations to each other. Experimental results show that the interoceptive prior preferences and symbol probability distributions of the two agents converge, confirming the emergence of social reality grounded in social consensus.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 10 pages, 4 figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Synchronizing Minds through Collective Predictive Coding: A Computational Model of Parent-Infant Homeostatic Co-Regulation</title>
-    <link href="http://arxiv.org/abs/2605.07524v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07524v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Yushi Tsubamoto</name>
-    </author>
-    <author>
-      <name>Takato Horii</name>
-    </author>
-    <summary type="text">Inter-brain synchrony (IBS) observed in real-time dyadic interactions, including parent--infant exchanges, suggests that two agents come to share aligned latent representations through interaction. Yet computational accounts of how such alignment can arise between agents that have only local sensory access and asymmetric internal knowledge remain underdeveloped. We propose a constructive model of parent--infant homeostatic co-regulation that integrates a POMDP formulation of active interoceptive inference with the Metropolis--Hastings Naming Game (MHNG) derived from the Collective Predictive Coding (CPC) hypothesis. In our model, the parent observes the infant only through an exteroceptive signal while the infant directly senses its own interoceptive state; the two agents agree on regulatory actions through a shared communicative variable whose acceptance is determined by a locally computable Metropolis--Hastings probability. The agents are further endowed with asymmetric generative-model knowledge: the parent knows how actions transform visceral states but must learn what the infant's body is communicating, whereas the infant perceives its visceral state directly but must learn how actions affect it. In a $6 \times 6$ visceral-state grid world, MHNG-mediated interaction regulated the infant's visceral state more adaptively than one-sided control conditions, and the two posteriors became rapidly aligned. Notably, this latent-state alignment emerged far earlier than the convergence of the learned generative matrices, indicating that representational synchrony does not presuppose fully shared world models. These results offer a minimal constructive account of latent-state alignment compatible with IBS reported in hyperscanning studies and support CPC as a candidate computational basis for inter-brain alignment.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 9pages, 4figures&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>OrchJail: Jailbreaking Tool-Calling Text-to-Image Agents by Orchestration-Guided Fuzzing</title>
-    <link href="http://arxiv.org/abs/2605.07414v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07414v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Jianming Chen</name>
-    </author>
-    <author>
-      <name>Yawen Wang</name>
-    </author>
-    <author>
-      <name>Junjie Wang</name>
-    </author>
-    <author>
-      <name>Zhe Liu</name>
-    </author>
-    <author>
-      <name>Qing Wang</name>
-    </author>
-    <author>
-      <name>Fanjiang Xu</name>
-    </author>
-    <summary type="text">Tool-calling text-to-image (T2I) agents can plan and execute multi-step tool chains to accomplish complex generation and editing queries. However, this capability introduces a new safety attack surface: harmful outputs may arise from tool orchestration, where individually benign steps combine into unsafe results, making prompt-only jailbreak techniques insufficient. We present OrchJail, an orchestration-guided fuzzing framework for jailbreaking tool-calling T2I agents. Its core idea is to exploit high-risk tool-orchestration patterns: by learning from successful jailbreak tool-calling traces and their causal relationships to prompt wording, OrchJail directly guides the fuzzing search toward prompts that are more likely to trigger unsafe multi-step tool behaviors, rather than relying on surface-level textual perturbations. Extensive experiments demonstrate that OrchJail improves jailbreak effectiveness and efficiency across representative toolcalling T2I agents, achieving higher attack success rates, better image fidelity, and lower query costs, while remaining robust against common jailbreak defenses. Our work highlights tool orchestration as a critical, previously unexplored attack surface and provides a novel framework for uncovering safety risks in T2I agents.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Tasks:&lt;/strong&gt; T2I&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence; cs.CR" />
-  </entry>
-  <entry>
-    <title>Rethinking Priority Scheduling for Sequential Multi-Agent Decision Making in Stackelberg Games</title>
-    <link href="http://arxiv.org/abs/2605.07240v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07240v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Xiangyu Liu</name>
-    </author>
-    <author>
-      <name>Liang Zhang</name>
-    </author>
-    <author>
-      <name>Bo Jin</name>
-    </author>
-    <author>
-      <name>Ziqi Wei</name>
-    </author>
-    <summary type="text">Current research applying N-level Stackelberg Game to multi-agent systems often uses the default decision order of agents provided by the environment. However, this raises the question: does the order of agents necessarily affect the final equilibrium point of the game? To address this, we formally analyze the N-level Stackelberg Game, where changing the order in which agents make decisions typically leads to an overdetermined system. As a result, the equilibrium point shifts unless special structural conditions are satisfied. Based on this analysis, we propose the Hierarchical Priority Adjustment (HPA) method, which adjusts and selects the agents' decision order. At the upper level, an upper policy dynamically selects the optimal decision order of agents based on the current game state. At the lower level, agents execute strategies in the Spatio-Temporal Sequential Markov Game (STMG) according to the selected order. To coordinate learning across time scales, we employ a slow-fast update scheme with shared intrinsic rewards derived from the advantage function of the upper policy. Experimental results on high-precision control tasks, including multi-agent MuJoCo, show that HPA outperforms benchmark algorithms and robustly adapts to changing environments. These results highlight the crucial role of optimizing the agents' decision order in N-level Stackelberg Game.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Decentralized Diffusion Policy Learning for Enhanced Exploration in Cooperative Multi-agent Reinforcement Learning</title>
-    <link href="http://arxiv.org/abs/2605.07101v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07101v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Yuyang Zhang</name>
-    </author>
-    <author>
-      <name>Haldun Balim</name>
-    </author>
-    <author>
-      <name>Na Li</name>
-    </author>
-    <summary type="text">Cooperative multi-agent reinforcement learning (MARL) involves complex agent interactions and requires effective exploration strategies. A prominent class of MARL algorithms, decentralized softmax policy gradient (DecSPG), addresses this through energy-based policy updates. In practice, however, such energy-based policies are intractable to maintain and are commonly projected onto the Gaussian policy class. In this work, we show that the limited expressiveness of Gaussian policies severely hinders exploration in DecSPG, and this limitation worsens as the number of agents grows. To address this issue, we propose decentralized diffusion policy learning (DDPL), which parameterizes each agent's policy with a denoising diffusion probabilistic model, an expressive generative model that captures multi-modal action distributions for enhanced exploration. DDPL enables efficient online training of diffusion policies via importance sampling score matching (ISSM), a novel training method with theoretical guarantee. We evaluate DDPL on representative continuous-action MARL benchmarks, including multi-agent particle environment, multi-agent MuJoCo, IsaacLab, and JAX-reimplemented StarCraft multi-agent challenge, and observe consistently improved performance.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Machine Learning (Statistics)" />
-  </entry>
-  <entry>
-    <title>Social Theory Should Be a Structural Prior for Agentic AI: A Formal Framework for Multi-Agent Social Systems</title>
-    <link href="http://arxiv.org/abs/2605.07069v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07069v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Lynnette Hui Xian Ng</name>
-    </author>
-    <author>
-      <name>Iain J. Cruickshank</name>
-    </author>
-    <author>
-      <name>Adrian Xuan Wei Lim</name>
-    </author>
-    <author>
-      <name>Kathleen M. Carley</name>
-    </author>
-    <summary type="text">Agentic AI systems are increasingly deployed not in isolation, but inside social environments populated by other agents and humans, such as in social media platforms, multi-agent LLM pipelines or autonomous robotics fleets. In these settings, system behavior emerges not from individual agents alone, but from the multi-agent interactions over time. Emergent dynamics of individuals in a social group have been long studied by social scientists in human contexts. \textbf{This position paper argues that agentic AI systems must be modeled with social theory as a structural prior, and formalizes a Multi-Agent Social Systems (MASS) framework for how agents interact and influence to generate system-level outcomes.} We represent MASS as a class of dynamical system of information generation, local influence and interaction structure, formulated by four structural priors anchored in social theory: strategic heterogeneity, networked-constrained dependence, co-evolution and distributional instability. We demonstrate the importance of each structural prior through formal propositions, and articulate a research agenda for how MASS should be modeled, evaluated and governed.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CY" />
-  </entry>
-  <entry>
-    <title>Too Many Specialists: Emergent Inefficiencies and Bottlenecks for Multi-agent Ad-hoc Collaboration</title>
-    <link href="http://arxiv.org/abs/2605.08540v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.08540v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Benjamin Panny</name>
-    </author>
-    <author>
-      <name>Shashank Mehrotra</name>
-    </author>
-    <author>
-      <name>Zahra Zahedi</name>
-    </author>
-    <author>
-      <name>Teruhisa Misu</name>
-    </author>
-    <author>
-      <name>Kumar Akash</name>
-    </author>
-    <summary type="text">Computational models of collaboration without prior coordination often overlook how heterogeneous agent traits and complex task structures jointly produce systemic bottlenecks, inefficiencies, and contribution inequalities. We address this by using an agent-based model of ad-hoc teamwork in a kitchen environment. Our model integrates diverse agent personas with tasks that combine serial and parallel dependencies. We identify a specialist's dilemma, where rigid role assertion generates system-level bottlenecks, amplifies workload inequality, and fosters fragmented, homophilous networks. We also find that team size and communication overhead interact with problem structure to generate diminishing returns and redundant collaboration. Linking micro-level behavior to macro-level outcomes provides insights into emergent collaboration and design principles for effective multi-agent teamwork.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; Proceedings of Proc&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.HC" />
-  </entry>
-  <entry>
-    <title>SceneFactory: GPU-Accelerated Multi-Agent Driving Simulation with Physics-Based Vehicle Dynamics</title>
-    <link href="http://arxiv.org/abs/2605.08528v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.08528v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Yicheng Zhu</name>
-    </author>
-    <author>
-      <name>Yang Chen</name>
-    </author>
-    <author>
-      <name>Tao Li</name>
-    </author>
-    <author>
-      <name>Zilin Bian</name>
-    </author>
-    <summary type="text">Autonomous-driving simulators typically trade physical fidelity for scalable parallelism. Physics-based platforms such as CARLA and MetaDrive provide articulated vehicle dynamics and contact, but their non-vectorized interfaces make batched training difficult. GPU-batched systems such as Waymax and GPUDrive scale to hundreds of scenarios by replacing rigid-body physics with simplified kinematic models, omitting tire--road interaction, suspension, contact dynamics, and road-condition-dependent friction. We introduce SceneFactory, a GPU-vectorized platform for procedural scene construction, physics-based multi-agent simulation, and RL in autonomous-driving environments. Built on NVIDIA Isaac Sim + Isaac Lab, SceneFactory represents worlds and agents as batched tensors: control, observations, rewards, resets, and policy inference run as GPU tensor operations over the Isaac Lab tensor API. SceneFactory converts Waymo Open Motion Dataset road topologies into simulation-ready USD worlds, runs many worlds concurrently on one GPU, populates each with multiple articulated PhysX vehicles, and maps precipitation and road-surface type to PhysX material friction coefficients. With GPU vectorization, SceneFactory achieves up to 127$\times$ higher throughput than a non-vectorized PhysX baseline on the same GPU and physics solver, reaching 19,250 controlled-agent simulation steps per second at 256 worlds $\times$ 16 agents. Cross-simulator transfer reveals an asymmetric dynamics gap: physics-grounded RL policies transfer to a simplified kinematic bicycle model with 99.5% success, whereas reverse transfer drops to 47.3%. Under wet-road friction, friction-aware policies reduce mean peak DRAC from 58.7 to 27.8,m/s$^2$ without sacrificing goal reach. SceneFactory shows that scalable autonomous-driving training need not discard articulated rigid-body dynamics or physically grounded road-condition variation.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Robotics" />
-  </entry>
-  <entry>
-    <title>Insider Attacks in Multi-Agent LLM Consensus Systems</title>
-    <link href="http://arxiv.org/abs/2605.08268v1" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.08268v1</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Xiaolin Sun</name>
-    </author>
-    <author>
-      <name>Zixuan Liu</name>
-    </author>
-    <author>
-      <name>Yibin Hu</name>
-    </author>
-    <author>
-      <name>Zizhan Zheng</name>
-    </author>
-    <summary type="text">Large language models (LLMs) are increasingly deployed in multi-agent systems where agents communicate in natural language to solve tasks jointly. A key capability in such systems is consensus formation, where agents iteratively exchange messages and update decisions to reach a shared outcome. However, most existing multi-agent LLM frameworks assume that all participating agents are aligned with the system objective. In practice, a malicious insider may participate as a legitimate member of the group while pursuing a hidden adversarial goal. In this work, we study insider manipulation in multi-agent LLM consensus systems. We formalize the problem as a sequential decision-making task in which a malicious agent seeks to delay or prevent agreement among benign agents. To make attack optimization tractable, we propose a world-model-based framework that learns surrogate dynamics over the latent behavioral states of benign agents and then trains an attacker using reinforcement learning based on this learned model. Preliminary results show that the trained attacker reduces the benign consensus rate and prolongs disagreement more effectively than the direct malicious-prompt baseline. These results suggest that combining latent world models with reinforcement learning is a promising direction for adaptive insider attacks in language-based multi-agent systems.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="Artificial Intelligence" />
-  </entry>
-  <entry>
-    <title>Social Theory Should Be a Structural Prior for Agentic AI: A Formal Framework for Multi-Agent Social Systems</title>
-    <link href="http://arxiv.org/abs/2605.07069v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07069v2</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Lynnette Hui Xian Ng</name>
-    </author>
-    <author>
-      <name>Iain J. Cruickshank</name>
-    </author>
-    <author>
-      <name>Adrian Xuan Wei Lim</name>
-    </author>
-    <author>
-      <name>Kathleen M. Carley</name>
-    </author>
-    <summary type="text">Agentic AI systems are increasingly deployed not in isolation, but inside social environments populated by other agents and humans, such as in social media platforms, multi-agent LLM pipelines or autonomous robotics fleets. In these settings, system behavior emerges not from individual agents alone, but from the multi-agent interactions over time. Emergent dynamics of individuals in a social group have been long studied by social scientists in human contexts. \textbf{This position paper argues that agentic AI systems must be modeled with social theory as a structural prior, and formalizes a Multi-Agent Social Systems (MASS) framework for how agents interact and influence to generate system-level outcomes.} We represent MASS as a class of dynamical system of information generation, local influence and interaction structure, formulated by four structural priors anchored in social theory: strategic heterogeneity, networked-constrained dependence, co-evolution and distributional instability. We demonstrate the importance of each structural prior through formal propositions, and articulate a research agenda for how MASS should be modeled, evaluated and governed.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CY" />
-  </entry>
-  <entry>
-    <title>Dynamic Latent-Belief Synchrony through Collective Predictive Coding: A Computational Model of Parent--Infant Homeostatic Co-Regulation</title>
-    <link href="http://arxiv.org/abs/2605.07524v2" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07524v2</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Yushi Tsubamoto</name>
-    </author>
-    <author>
-      <name>Takato Horii</name>
-    </author>
-    <summary type="text">Inter-brain synchrony (IBS) observed in real-time dyadic interactions, including parent--infant exchanges, suggests that two agents can align their internal representations through interaction. Yet computational accounts of how such alignment can arise between agents that have only local sensory access and asymmetric internal knowledge remain underdeveloped. We propose a constructive model of parent--infant homeostatic co-regulation that integrates a POMDP formulation of active interoceptive inference with the Metropolis--Hastings Naming Game (MHNG) derived from the Collective Predictive Coding (CPC) hypothesis. In our model, the parent and infant agents agree on homeostatic regulatory actions for the infant's visceral state through a shared communicative variable generated by a locally computable Metropolis--Hastings probability. The parent observes the infant through body-generated exteroceptive cues, whereas the infant directly senses its own visceral state through interoception. This difference in access modality is implemented as asymmetric generative-model knowledge: the parent knows how actions transform visceral states but must learn what the infant's bodily cues indicate, whereas the infant perceives its visceral state directly but must learn how actions affect it. We operationalize representational alignment as the Jensen--Shannon divergence between the two agents' latent representations. Notably, this alignment emerged far earlier than the convergence of the generative-model learning and was maintained across successive state transitions during social interactions, indicating that latent representational synchrony does not presuppose fully shared world models. These findings offer a minimal constructive account of internal state synchrony compatible with IBS reported in hyperscanning studies and support CPC as a candidate computational basis for inter-brain alignment.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Publication:&lt;/strong&gt; 11pages&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-  </entry>
-  <entry>
-    <title>Social Theory Should Be a Structural Prior for Agentic AI: A Formal Framework for Multi-Agent Social Systems</title>
-    <link href="http://arxiv.org/abs/2605.07069v3" rel="alternate" type="text/html" />
-    <id>http://arxiv.org/abs/2605.07069v3</id>
-    <published>2026-05-08T00:00:00Z</published>
-    <updated>2026-05-08T00:00:00Z</updated>
-    <author>
-      <name>Lynnette Hui Xian Ng</name>
-    </author>
-    <author>
-      <name>Iain J. Cruickshank</name>
-    </author>
-    <author>
-      <name>Adrian Xuan Wei Lim</name>
-    </author>
-    <author>
-      <name>Kathleen M. Carley</name>
-    </author>
-    <summary type="text">Agentic AI systems are increasingly deployed not in isolation, but inside social environments populated by other agents and humans, such as in social media platforms, multi-agent LLM pipelines or autonomous robotics fleets. In these settings, system behavior emerges not from individual agents alone, but from the multi-agent interactions over time. Emergent dynamics of individuals in a social group have been long studied by social scientists in human contexts. \textbf{This position paper argues that agentic AI systems must be modeled with social theory as a structural prior, and formalizes a Multi-Agent Social Systems (MASS) framework for how agents interact and influence to generate system-level outcomes.} We represent MASS as a class of dynamical system of information generation, local influence and interaction structure, formulated by four structural priors anchored in social theory: strategic heterogeneity, networked-constrained dependence, co-evolution and distributional instability. We demonstrate the importance of each structural prior through formal propositions, and articulate a research agenda for how MASS should be modeled, evaluated and governed.</summary>
-    <content type="html">&lt;p&gt;&lt;strong&gt;Category:&lt;/strong&gt; Method&lt;/p&gt;</content>
-    <category term="Multiagent Systems" />
-    <category term="cs.CY" />
   </entry>
 </feed>
